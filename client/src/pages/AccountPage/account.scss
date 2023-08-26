@@ -1,0 +1,286 @@
+.card-image{
+    width: 100%;
+    height: 10%;
+    overflow: hidden;
+    z-index: 1;
+
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+}
+
+.main-card{
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 200px 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    .overview{
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        top: 0;
+        width: 96.8%;
+        margin-left: -10px;
+        padding: 60px;
+        color: white;
+        background-color: rgba(0,0,0,0.6);
+    }
+
+    .card-container{
+       
+        height: 100%;
+        padding: 20px;
+
+        .card-top{
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            
+            .col-md-6{
+                box-shadow: var(--box-shadow);
+                margin: 10px;
+                width: 100%;
+                padding: auto;
+                
+
+                .card-heading{
+                    font-size: 25px;
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 500;
+                    color: #071b28;
+                    padding: 10px 50px;
+
+                    
+                }
+            }
+            .card-main{
+                box-shadow: var(--box-shadow);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 20%;
+
+                .card-h-100{
+                    width: 100%;
+                    height: 100%;
+                    padding: 30px;
+                    align-items: center;
+                    
+                    .card-heading{
+                        font-size: 25px;
+                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        font-weight: 500;
+                        color: #071b28;
+                        padding: 10px 50px;
+                    }
+
+                        .card-body{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .card-title{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                padding: 5px 10px;
+                                font-size: 15px;
+                                    font-weight: 200;
+                                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                    color: gray;
+
+                                h3{
+                                font-size: 17px;
+                                font-weight: 100;
+                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                
+                                text-align: center;
+                                color: black;
+                                }
+
+                                p{
+                                    font-size: 15px;
+                                    font-weight: 200;
+                                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                    color: gray;
+
+                                }
+                            }
+                        }
+                    
+                }
+                
+            }
+
+        }
+
+    }
+
+
+    
+
+}
+
+.header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+
+/* ORDER */
+
+.order-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.order-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.4;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.order-item {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.order-price {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.MuiBox-root .css-19kzrtu {
+    padding: 0;
+}
+
+.order-list {
+    flex: 1;
+    overflow-y: auto;
+    height: 35rem;
+}
+
+.order-details-list {
+    flex: 1;
+    overflow-y: auto;
+    height: 23rem;
+}
+
+/* REVIEW */
+.review-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.review-details {
+    padding: 0 1rem;
+}
+
+.review-list {
+    flex: 1;
+    overflow-y: auto;
+    height: 45rem;
+}
+
+
+
+
+
+@media only screen and (max-width: 480px) {
+    .review-details {
+        padding: 0;
+    }
+
+    .order-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .order-item {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+    .card-title {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+    .card-text {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1em;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .review-details {
+        padding: 0;
+    }
+
+    .order-title {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1.2;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+
+}
+

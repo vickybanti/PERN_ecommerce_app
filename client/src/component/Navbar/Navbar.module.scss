@@ -1,0 +1,507 @@
+.fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  
+}
+
+header {
+  width: 100%;
+  background-color: whitesmoke;
+  color: black;
+  position: fixed;
+  box-shadow: 1px 0 2px rgb(1, 2, 2);
+  z-index: 7777;
+  height: 13rem;
+
+  
+
+
+
+  .header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .classics{
+      display:flex;
+      padding: 5px;
+      font-size: 15px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      list-style: none;
+      width: 200px;
+      margin-left: 100px;
+
+      .navbar {
+        background-color: inherit;
+        color: #fff;
+        width: 500px;
+      
+      }
+      
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 200px;
+      }
+      
+      .menu-item {
+        position: relative;
+        margin-right: 20px;
+
+        span{
+          color:#111010;
+          cursor: pointer;
+
+          &:hover{
+            text-decoration: underline;
+
+            transition: 0.3s ease-out;
+          }
+        }
+      }
+      
+      .menu-item:hover .submenu {
+        display: block;
+      }
+      
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: whitesmoke;
+        padding: 10px;
+        list-style: none;
+        margin: 0;
+        transition: 0.4s linear all;
+
+      }
+      
+      .submenu li {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        transition: 0.2s ease-in all;
+        &:hover{
+          transition: 0.2s ease-out all;
+          margin-right: 2px;
+
+        }
+
+
+        Button{
+          transition: 0.2s ease-out all;
+          font-size: 12px;
+          color: black;
+
+        }
+      }
+      
+    }
+
+    .searchbar{
+      transition:all 1s step-end;
+      list-style: none;
+      z-index: 8888;
+    }
+      
+
+      @media screen and (max-width:460px) {
+        .searchbar{
+        margin-left: -300px;
+        
+      }
+    
+    }
+
+    @media screen and (max-width:820px) {
+      .searchbar{
+      margin-left: -400px;
+      
+    }
+    @media screen and (max-width:320px) {
+      .searchbar{
+       
+       margin-left:-320px;
+      }     
+   }
+
+   @media screen and (max-width:280px) {
+    .searchbar{
+     
+     margin-left:-340px;
+     padding: 0;
+    }     
+ }
+  
+  }
+    
+  }
+
+  @media screen and (max-width:912px) {
+    header{
+      width: 100px;
+    .header{
+      margin-left: -10px;
+
+      ul{
+        display: none;
+      }
+
+      
+    }
+  }
+  }
+
+  .logo a h2 {
+    width: 10%;
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                      font-style: Bold;
+                      font-weight: 600px;
+                      font-size: 28px;
+                      line-height: 1.1;
+                      color: #000000;
+                      cursor: pointer;
+    span {
+      color: rgb(3, 15, 31);
+    }
+  }
+
+  nav {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      .logo-mobile {
+        display: none;
+      }
+
+      li {
+        margin: 0 5px;
+        a {
+          color: black;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         font-size: 15px;
+          &:hover {
+            color: rgb(13, 62, 85);
+            font-size: medium;
+            transition: 0.2em;
+          }
+        
+        
+        }
+
+        /*search bar */
+
+
+
+
+
+
+
+        
+      }
+
+    }
+  }
+
+  .header-right {
+    display: flex;
+    font-weight: bold;
+    margin-right: 20px;
+
+    .cart  {
+      display: flex;
+      color: #161618;
+      position: relative;
+      font-size: 20px;
+
+      
+      &:hover {
+         color: rgb(37, 3, 5);
+        
+      }
+      &.active {
+        color: var(--color-danger);
+      }
+      p {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        font-weight: 500;
+      }
+    }
+
+    span {
+      
+      display: flex;
+
+      p {
+        color: #5a0d0d;
+      }
+    }
+
+    .links a {
+      margin: 0 5px;
+      color: #111010;
+      &:hover {
+        color: rgb(43, 24, 17);
+      }
+      &.active {
+        color: var(--dark-blue);
+      }
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+
+  }
+
+  @media screen and (max-width: 820px) {
+    nav {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100vh;
+      
+      padding: 1rem;
+      z-index: 9999;
+      transform: translateX(-200%);
+      transition: all 0.3s;
+      background-color: rgb(7, 36, 44);
+
+      .nav-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.4);
+        transform: translateX(-200%);
+        transition: all 0.3s;
+      }
+
+      .show-nav-wrapper {
+        transform: translateX(100%);
+      }
+
+      ul {
+        display: block;
+        .logo-mobile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          > * {
+            cursor: pointer;
+          }
+        }
+        li {
+          padding: 5px 0;
+          a {
+            display: block;
+            color: white;
+            font-weight: bold;
+            &:hover{
+              color: rgb(28, 102, 163);
+              font-size: medium;
+            }
+          }
+        }
+      }
+
+      .header-right {
+        display: block;
+        .cart {
+          background-color: white;
+          // display: block;
+          // padding: 5px 0;
+          // a {
+          //   position: relative;
+          //   p {
+          //     position: absolute;
+          //     top: -1rem;
+          //     left: 5rem;
+          //     font-weight: 500;
+          //   }
+          // }
+        }
+
+        .links {
+          display: block;
+          a {
+            display: block;
+            margin: 0;
+            padding: 5px 0;
+            color: black;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+
+            
+          }
+          
+        }
+
+        @media screen and (max-width:360px) {
+          .loginButton{
+            width: 20vw;
+          }
+        }
+
+       
+      }
+      
+    }
+    .cart {
+      display: block;
+      padding: 5px 0;
+      // border-bottom: 1px solid #333;
+      a {
+        color:black;
+        position: relative;
+        &:hover {
+          color: orangered;
+        }
+        p {
+          position: absolute;
+          top: -1rem;
+          left: 5rem;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+    .show-nav {
+      transform: translateX(0);
+    }
+    .hide-nav {
+      transform: translateX(-200%);
+    }
+    .menu-icon {
+      display: flex;
+      > * {
+        margin-left: 2rem;
+      }
+    }
+  }
+  @media screen and (max-width:600px) {
+    
+  }
+}
+
+@media screen and (max-width:600px) {
+  header{
+    width: 100%;
+
+    .header{
+      width: 100%;
+    }
+
+
+  }
+  
+}
+
+@media screen and (max-width:464px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 90%;
+
+      .logo{
+        width: 10%;
+
+        h2{
+          font-size: 15px;
+        }
+      }
+
+      
+    }
+
+
+  }
+  
+}
+
+
+
+.active {
+  position: relative;
+  color: var(--color-danger);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #581010;
+}
+.categories{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 7vh;
+  padding-top:20px;
+  font-weight: 100;
+  font-size: 15px;
+  
+
+  ul{
+    
+    padding: 0;
+    margin: 0 50px;
+    
+
+  
+    li{
+      display: flex;
+      color:black;
+      padding: 0 10px;
+      justify-content: space-around;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.2em;
+      font-size: 17px;
+      font-weight: 100;
+      transition: 4s linear all;
+
+        &:hover{
+          border-bottom: 0.2px solid gray;
+          transition: 4s linear all;
+
+        }
+      
+      
+      
+      }
+    }
+    @media screen and (max-width:820px) {
+      display: none;
+    }
+  
+}
+
+
+  

@@ -1,0 +1,52 @@
+.pay{
+    padding: 200px 200px;
+    border-radius: 10px solid white;
+    box-shadow: -2px 2px 2px;
+
+    span{
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+
+        .price{
+            color: red;
+        }
+    }
+
+}
+
+.message{
+    color: green;
+    font-size: 15px;
+    padding: 20px;
+}
+
+
+.success{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 150px;
+
+    .successImg{
+        width: 50%;
+        height: 40%;
+    }
+    
+    .pay-details{
+        text-align: center;
+        margin: auto;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 10px 300px;
+
+        
+
+        h2{
+            color: rgb(8, 27, 8);
+            font-size: 30px;
+        }
+       
+    }
+}

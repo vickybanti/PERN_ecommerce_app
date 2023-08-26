@@ -1,0 +1,349 @@
+
+.images{
+    display:flex;
+   justify-content:flex-end;  
+   margin-right: 170px;
+   margin-top: -50px;
+   
+   img{
+       aspect-ratio: 3/2;
+       object-fit: contain;
+       width: auto;
+       mix-blend-mode: color-burn;
+   }
+}
+
+
+.checkout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:  0 20px;
+    padding-top: 100px;
+
+
+.left{
+        justify-content: left;
+        width:50%;
+        margin: 10px auto;
+        font-size: 20px;
+        border-left: 1px solid gray;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    
+        padding:40px 30px 0 30px; 
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+
+        .checkFooter{
+            height: 50%;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 30px;
+
+            img{
+                width: 100%;
+                object-fit: contain;
+                aspect-ratio: 3/2;
+                padding-right: 10px;
+                align-items: center;
+            }
+            h4{
+                position: inherit;
+                transform: rotate(0);  
+                margin: auto;              
+            }
+
+            .p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                font-size: 0.9em;
+            }
+        }
+        
+
+
+.carts{
+    border: 1px solid white;
+    padding: 30px;
+    max-height: 50%;
+    border-radius: 5px;
+    width: 100%;
+
+        .coupon{
+            color: white;
+            background-color: #181616;
+            padding: 10px;
+        }
+
+
+        span{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        h2{
+            padding-top: 20px;
+        }
+
+        form{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+}
+}
+    .mainBox{
+        width:50%;
+        font-size: 100px;
+        border: 1px solid white;
+        box-shadow: -2px 0 30px 0;
+        padding: 10px 30px 0 30px; 
+        margin-bottom:30px;
+        border-radius: 5px;
+        margin-top: 0;
+
+        .check{
+            background-color:var(--color-primary);
+            border-radius:50%;
+            color:white;
+            font-size:70px;
+            margin:auto;
+            padding:10px;
+            transition: 0.7s ease-in-out all;
+            transform: animation linear all;
+
+            @keyframes animation {
+                to{
+                    transform-style: flat;
+                }
+            }
+               
+        }
+        
+
+        .contact{
+            background-color:#181616;
+            border-radius:50%;
+            color:white;
+            font-size:70px;
+            margin:auto;
+            padding:10px;
+            
+            
+        }
+        
+
+        .paymentSvg{
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-self: flex-end;
+            margin-top: -100px;
+            margin-left: 350px;
+        }
+    }
+
+.boxes{
+    font-size: large;
+}
+
+} 
+
+
+
+@media screen and (max-width:1024px) {
+    .images{
+        img{
+            width: 60px;
+        }
+    }
+    .checkout{
+        
+        width: 100%;
+        margin: 0;
+        padding: 40px 10px;
+
+        .left{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+        .checkFooter{
+            
+            img{
+                width:50px;
+            }
+            .d-flex{
+                display: flex;
+                justify-content: center;
+                padding: 0 10px;
+            }
+            
+
+        }     
+            
+        }
+
+        .mainBox{
+            width: 100%;
+            margin-top: 50px;
+
+            .paymentSvg{
+                margin-left: 180px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width:600px) {
+    .images{
+        img{
+            width: 60px;
+        }
+    }
+    .checkout{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 40px 0;
+
+        .left{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+        .checkFooter{
+            
+            img{
+                width:50px;
+            }
+            
+
+        }     
+            
+        }
+
+        .mainBox{
+            width: 70%;
+
+            .paymentSvg{
+                margin-left: 180px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:540px) {
+    .images{
+        margin: auto;
+    }
+    
+    .checkout{
+        .left{
+            .checkFooter{
+                strong{
+                    z-index: 1;
+                    padding-top: 50px;
+                    font-size: 15px;
+                }
+                
+                .p{
+                    display: none;                    
+                }
+
+                
+            }
+        }
+        
+
+        .mainBox{
+            width: 90%;
+            .contact{
+                font-size: 50px;
+            }
+            .check{
+                font-size: 50px;
+            }
+
+            .paymentSvg{
+                margin-left: 130px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width:480px) {
+    .images{
+        margin: auto;
+    }
+    
+    .checkout{
+        .left{
+            .checkFooter{
+                strong{
+                    z-index: 1;
+                    padding-top: 50px;
+                    font-size: 15px;
+                }
+                
+                .p{
+                    display: none;                    
+                }
+
+                
+            }
+        }
+        
+
+        .mainBox{
+            width: 90%;
+
+            .paymentSvg{
+                margin-left: 130px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:820px) {
+    
+    .mainBox{
+
+        width: 100%;
+
+
+       
+
+}
+}
+

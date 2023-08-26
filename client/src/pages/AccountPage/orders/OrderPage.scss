@@ -1,0 +1,175 @@
+.order-container{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    height: 100%;
+    background-color: white;
+
+   .order{
+    padding: 10px 10px;
+    height: 100%;
+    background-color: white;
+
+    .order-id{
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border: 1px solid white;
+        overflow: hidden;
+
+
+        .allOrders{
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: -2px 2px 5px;
+            border-radius: 5px;
+            height: 100%;
+            overflow: hidden;
+
+
+            .details{
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                padding: 20px 0;
+
+            
+
+            
+    
+      
+    
+            .orderbtn{
+                display: inherit;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: #071b28;
+                color: white;
+                font-size: 13px;
+                width: 30%;
+                padding: 5px;
+                margin-top: 15px;
+                text-align: center;
+            }
+            }
+
+            img{
+                position: absolute;
+                width: 220px;
+                height: 207.5px;
+                margin-bottom: 90px;
+                object-fit: cover;
+            }
+        
+        }
+        
+    
+
+    h3{
+        font-size: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        font-weight: 300;
+    }
+
+    span{
+        color: white;
+        font-size: 17px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 200;
+        line-height: 1.2em;
+    }
+    .order-title{
+        color: black;
+        font-weight: 400;
+    }
+    .order-count,.order-price{
+        color: gray;
+        font-size: 15px;
+        padding: 5px;
+
+    }
+    p{
+        color: white;
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 1.2em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+}  
+    
+
+    
+    .paymentdetails{
+        display: flex;
+        justify-content: space-around;
+
+        
+
+        
+
+        .status{
+            background-color: green;
+            text-align: center;
+            color: white;
+            width: 10%;
+            padding: 20px;
+            font-size: 15px;
+            font-weight: 200;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+
+    .show-nav {
+        transform: translateY(0);
+        position: relative;
+        animation: slide-down 2s ease 0.5s;
+        animation-fill-mode:inherit;
+        width: 100%;
+        height: auto;
+        background-color: #071b28;
+        z-index: 10;
+        padding: 5px 10px;
+        margin: 10px 0;
+        overflow: hidden;
+      }
+         
+      .hide-nav {
+        transform: translateY(-200%);
+        display: none;
+        height: 0;
+        transition: 2s linear all;
+        animation: slide-up 2s ease 0.5s;
+        animation-fill-mode:inherit;
+
+      }
+
+      
+      
+      
+
+}
+
+   
+   
+      
+}
+.information{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 200px 0;
+
+
+    .payment{
+        border: 1px solid gray;
+        padding: 20px;
+        .heading{
+            border-bottom: 1px solid gray;
+        }
+    }
+   }
+   

@@ -1,0 +1,117 @@
+
+
+
+  
+
+
+
+
+.card{
+    height:20vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    background-color: whitesmoke;
+
+    
+    
+    h1{
+        color: white;
+        padding: auto;
+    }
+    h2{
+        font-size: 16px;
+        font-weight:500;
+        margin-top: -80px;
+        padding-top:40px;
+        padding-left: 30px;
+    }
+
+    .price{
+        display:flex;
+        gap: 20px;
+        color: firebrick;
+        font-weight: 500;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 20px;
+
+        
+        h3{
+            font-size: 12px;
+           font-weight:500;
+           margin-top: -30px;
+           font-size: 15px;
+
+           &:first-child{
+            color: gray;
+            text-decoration: line-through;
+           }
+        }
+    }
+
+    .image{
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        padding: 2px;
+        
+        
+
+        img{
+            width: 80%;
+            height:80%;
+            object-fit: cover;
+            position: absolute;
+            transition: all 0.5s ease-out;
+            margin-left:15px;
+            &:hover{
+                width: 90%;
+                height: 90%;
+                margin-left:10px;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+        
+        }
+        span{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: white;
+            color: teal;
+            padding: 3px 5px;
+            z-index: 3;
+            font-size: 12px;
+            font-weight: 500;
+            
+        }
+        button {
+            background: rgb(2,0,36);
+            color: white;
+            padding: 10px;
+            font: arial;
+            width:100%;
+            border: none;
+            transition: all 20s linear ;
+            cursor: pointer;
+
+            &:hover{
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 43%, rgba(4,125,197,1) 71%, rgba(0,212,255,1) 100%);
+                transition: all 20s linear ;
+
+            }
+
+
+        }
+    } 
+    
+.avatar{
+    position: absolute;
+    color:rgb(16, 56, 107);
+}
+
+
+

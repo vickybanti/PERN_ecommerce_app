@@ -1,0 +1,183 @@
+.list{
+    display:grid;
+    row-gap: 20px;
+    column-gap: 1.33%;
+    padding:120px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, 250px);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+
+    .products{
+        padding-top: 90px;
+    }
+    .--btn{
+        justify-content: center;
+        align-items: center;
+        margin-top: 450px;
+        
+
+    }
+    
+
+}  
+
+.stack{
+    padding: 0.5em 0;
+    width:100%; 
+    display: flex;
+    justify-content:center;
+    align-items:center
+}
+
+
+
+    @media screen and (max-width:360px) {
+        .list{
+                    
+
+            
+            .noProducts{
+                padding: 0 70px;
+                text-align: center;
+            }
+        
+
+        }
+    }
+
+    @media screen and (max-width:375px) {
+        .list{
+            padding: 1px ;
+            margin: 0 20px 0 -50px;
+            
+            .products{
+                padding: 3px 2px;
+                margin: 0 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        
+            
+            .noProducts{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        
+        }
+       
+
+
+    @media screen and (max-width:720px) {
+        .list{
+            padding: 20px;
+            .products{
+                padding: 50px 20px;
+            }
+            
+
+            
+            .noProducts{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        
+
+        }
+    }
+
+    @media screen and (max-width:820px) {
+        .list{
+            column-gap: 7%;
+            padding: 50px;
+            .products{
+                padding : 10% 20%;
+            }
+            
+
+            
+            .noProducts{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        
+
+        }
+    }
+
+    @media screen and (max-width:912px) {
+        .list{
+            column-gap: 10%;
+            padding: 70px;
+
+            .products{
+                padding-top: 100px;
+            }
+            
+
+            .--btn{
+                margin-top: 50px;
+            }
+            
+
+            
+            .noProducts{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        
+
+        }
+    }
+
+    @media screen and (max-width:320px) {
+        .list{
+            .products{
+                padding: 50px 20px;
+            }
+    
+            
+    
+            
+            .noProducts{
+                padding: 0 70px;
+                text-align: center;
+            }
+        
+    
+        }
+    }
+
+    @media screen and (max-width:420px) {
+        .list{
+            padding: 80px 40px ;
+            
+    
+            
+    
+            
+            .noProducts{
+                padding: 0 70px;
+                text-align: center;
+            }
+
+            .--btn{
+                margin: 50px 20px;
+            }
+        
+    
+        }
+    }
+   
+    
+

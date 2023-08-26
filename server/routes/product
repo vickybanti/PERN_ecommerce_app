@@ -1,0 +1,29 @@
+const router = require("express").Router();
+const pool = require("../db");
+
+
+router.get("/:id", async (req, res) => {
+    try{
+        const { id } = req.params;
+        
+        const product = await pool.query(`SELECT * FROM products WHERE id = ${id}`)
+        res.json(product.rows);
+    } catch (err) {
+        console.error(err.message);
+        res.status(400).send(err.message);
+    }
+})
+
+router.delete("/delete/:id", async (req, res) => {
+    try{
+        const { id } = req.params;
+        
+        const product = await pool.query(`DELETE FROM products WHERE id = ${id}`)
+        res.json(product.rows);
+    } catch (err) {
+        console.error(err.message);
+        res.status(400).send(err.message);
+    }
+})
+
+module.exports = router;

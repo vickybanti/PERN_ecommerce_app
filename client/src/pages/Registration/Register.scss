@@ -1,0 +1,86 @@
+body{
+    background-image: url("../../../public/images/brian-lawson-jRztw-pVdyk-unsplash.jpeg");
+    // background: rgb(2,0,36);
+    // background-color: linear-gradient(60deg, rgb(19, 16, 73) 0%, rgb(89, 89, 218) 43%, rgba(4,125,197,1) 71%, rgba(0,212,255,1) 100%);
+     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+
+    
+    .login-box{
+        display: flex;
+        flex-direction: column;
+        width:70%;
+        height: 1000px;
+        background:rgba(0,0,0,0.5);
+        margin: 250px 0px;
+        color: #fff;
+        top:50%;
+        left:50%;
+        position:absolute;
+        transform:translate(-50%, -50%);
+        box-sizing: border-box;
+        padding :50px 20px;
+
+    }
+    .avatar{
+        width:100px;
+        height:100px;
+        position:absolute;
+        border-radius:50%;
+        top:-50px;
+        left:calc(50% - 50px);
+    }
+    h1{
+        margin:0;
+        padding: 0 0 20px;
+        text-align:center;
+        font-size:22px;
+    }
+    .login-box p{
+        margin: 0;
+        padding:0;
+        font-weight:bold;
+
+    }
+    .login-box input{
+        width:100%;
+        margin-bottom:40px
+    }
+    .login-box input[type="email"], input[type="password"],input[type="text"] {
+        border:none;
+        border-bottom:1px solid #fff;
+        background:transparent;
+        outline:none;
+        height:40px;
+        color: #fff;
+        font-size:16px;
+    }
+    .login-box input[type="submit"] {
+        border:none;
+        outline:none;
+        height: 40px;
+        background:#1c8adb;
+        color:#fff;
+        font-size:18px;
+        border-radius:20px;
+    }
+    .login-box input[type="submit"]:hover {
+        cursor:pointer;
+        background: #31ac66;
+        color:000;
+
+    }
+    .login-box a{
+        font-decoration:none;
+        font-size:14px;
+        color:#fff;
+
+    }
+
+    .login-box a:hover{
+        color: #31ac66;
+    }
+}

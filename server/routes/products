@@ -1,0 +1,34 @@
+const router = require("express").Router();
+const pool = require("../db");
+const fs = require('fs');
+const multer = require('multer');
+    
+
+    
+
+router.get("/", async(req, res) => {
+    try {
+        const products = await pool.query(`SELECT * FROM products`);
+        res.json(products.rows);
+    } catch (err) {
+        console.log(err.message)
+        
+    }
+})
+
+router.get("/:id", async(req, res) => {
+    const {id} = req.params
+    try {
+        const cat = await pool.query(`SELECT cat_id FROM products WHERE id = ${id}`);
+        const getCat = cat.rows[0].cat_id
+        if(getCat){
+            const product = await pool.query(`SELECT * FROM products WHERE cat_id = '${getCat}'`)
+            res.json(product.rows)
+        }
+    } catch (err) {
+        console.error(err.message)
+    }
+})
+
+
+module.exports = router;

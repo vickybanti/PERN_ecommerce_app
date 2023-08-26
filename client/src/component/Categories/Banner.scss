@@ -1,0 +1,11 @@
+.banner{
+    background-image: url("../../../public/img/banner/2.jpg");
+
+    .content{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+    }
+}
