@@ -214,7 +214,7 @@ const [size, setSize]  = useState(38)
 
             </button><div className='link'>
               <div className='items'>
-                <FavoriteIcon onClick={addSave} sx={{color:isFav?"red":"black", fontSize:"28px"}}/> ADD TO WISHLIST
+                <FavoriteIcon onClick={addSave} sx={{color:isFav?"red":"black", fontSize:"28px"}}/> {isFav?"REMOVE FROM WISHLIST" :"ADD TO WISHLIST"}
               </div>
               
             </div><hr /><div className='info'>

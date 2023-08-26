@@ -182,13 +182,18 @@ function addSave() {
 
     setCount(count >1? count -1: 1)
   }
-  
+  const [sizes,setSize] = useState("")
+  function handleSizes(e){
+    e.preventDefault()
+    setSize(e.target.value)
+  }
   
   
   
 
   async function handleClick() {
-    addProduct(dispatch,item,imageData,count)
+
+    addProduct(dispatch,item,imageData,count,sizes)
     
   }
   
@@ -237,11 +242,26 @@ function addSave() {
         <div className="icon">
           
        
-        <FavoriteBorderIcon style={{color:isFav?"red":"black", fontSize:"20px"}} onClick={addSave}/> 
+        <FavoriteBorderIcon style={{color:isFav?"red":"white", fontSize:"30px"}} onClick={addSave}/> 
           
         </div>
+
+        <div className='icon'>
+          <Box 
+          value={sizes}
+          onChange={handleSizes}
+          style={{display:"flex"}}
+          >
+          {item.sizes?.map((size) => (
+            <Box value={size}
+            style={{backgroundColor:"black", color:"white",padding:"5px", margin:"2px"}}>{size}</Box>
+          ))}
+          
+          
+          </Box>
+        </div>
         <div className="icon">
-        <AddShoppingCart sx={{color:"black", fontSize:"20px"}} onClick={()=>handleClick()}/>
+        <AddShoppingCart sx={{color:"white", fontSize:"30px"}} onClick={()=>handleClick()}/>
     </div>
 
 
