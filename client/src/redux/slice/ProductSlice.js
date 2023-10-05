@@ -13,7 +13,7 @@ const productSlice = createSlice({
     name: "product",
     initialState,
     reducers: {
-        fetchProduct:(state)=> {
+        fetchProducts:(state)=> {
             state.status = "pending"
         },
         productSuccess:(state, action)=> {
@@ -25,6 +25,6 @@ const productSlice = createSlice({
         }
     }
 })
-export const {fetchProduct,productSuccess,fetchError} = productSlice.actions
+export const {fetchProducts,productSuccess,fetchError} = productSlice.actions
 export default productSlice.reducer
 //passed to index.js

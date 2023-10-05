@@ -13,11 +13,13 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AlternateEmailRounded, FunctionsOutlined, Lock } from "@mui/icons-material";
 import { toast } from "react-toastify";
+import { logout } from "../../../redux/apiCalls";
 
 function DeleteAccount() {
+  const dispatch = useDispatch()
   const user = useSelector((state) => state.auth.userID)
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("")
@@ -27,15 +29,23 @@ function DeleteAccount() {
 
   async function deleteAccount(e) {
     e.preventDefault()
+
+    const body={
+      email:showEmail,
+      password:password
+    }
     try {
-      const del = await fetch(`http://localhost:5000/auth/delete/${user}`,{
+      const del = await fetch(`http://localhost:5000/auth/delete`,{
         method:"DELETE",
-        body:JSON.stringify({password:password, user:user}),
+        body:JSON.stringify(body),
         headers: {"Content-Type": "application/json"}
       })
       const deleteAcc = del.json()
-      if(!deleteAcc){
-        toast.error("Cannot delete account")
+      if(deleteAcc){
+        toast.success("Successfully deleted account...")
+        logout(dispatch)
+        navigate("/")
+
       }
     } catch (err) {
       console.error(err.message)
@@ -63,7 +73,7 @@ function DeleteAccount() {
   };
 
   return (
-    <div className="main-card">
+    <div className="col-md-12">
 
       <p className="card-heading">
         <IconButton onClick={() => navigate("/profile/manage")}>
@@ -107,40 +117,41 @@ function DeleteAccount() {
           sx={{fontSize:"20px"}}
           fullWidth />
 
-        <OutlinedInput type={showPassword ? "text" : "password"}
-          placeholder='password'
+          <OutlinedInput type={showPassword ? "text" : "password"} 
+          placeholder='password' 
           value={password}
-          fullWidth
-          sx={{ marginBottom: "20px", marginTop: "20px", height:"80px", fontSize:"20px"}}
-          onChange={(e) => setPassword(e.target.value)}
+          fullWidth  
+          sx={{ marginBottom:"20px", marginTop:"20px", padding:"5px", fontSize:"20px"}}
+          onChange={(e)=>setPassword(e.target.value)}
           required
-          endAdornment={<InputAdornment position="end">
-            <IconButton
-              aria-label="toggle password visibility"
-              onClick={handleClickShowPassword}
-              onMouseDown={handleMouseDownPassword}
-              position="end"
-              sx={{backgroundColor:"black"}}
+          endAdornment={
+            <InputAdornment position="end"
+            
+            sx={{position:"relative", color:"black", marginRight:"80px", marginTop:"-50px"}}>
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="inside"
+                sx={{backgroundColor:"gray", marginTop:"10px"}}
+                
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+          startAdornment={
+            <InputAdornment position="start">
+              <Lock />
+            </InputAdornment>
+          }
+          label="Password"
 
-            >
-              {showPassword ? <VisibilityOff /> : <Visibility />}
-            </IconButton>
-          </InputAdornment>}
-          startAdornment={<InputAdornment position="start">
-            <Lock />
-          </InputAdornment>}
-          label="Password" />
+          />
     </div>
         <Button
           variant="contained"
-          sx={{
-            width: "100%",
-            fontSize: "1.1em",
-            backgroundColor: "skyblue",
-            "&:hover": {
-              backgroundColor: "#4a90e2",
-            },
-          }}
+          className="deletebtn"
           type="submit"
         >
           DELETE ACCOUNT

@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { TextField, Autocomplete, InputAdornment, Fab, Zoom } from "@mui/material";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './SearchBar.scss';
 import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
 
 function SearchBar() {
 
-  const banner = (
-    <>
-    <img style={{ width: "150px", height: "40px", transition: "2s linear all", marginRight: "20px" }} src="uploads/shoes/3940543.jpg" alt="" className="search-image"  />
-    <h2>GET 50% DISCOUNT ON CLASSICS...</h2>
-
-    </>
-  )
+  
 
 
 
@@ -35,7 +26,7 @@ function SearchBar() {
       setButtonVisible(false)       
     }
 
-    function haandleSubmit(e){
+    function handleSubmit(e){
       e.preventDefault()
       navigate(`/search/${note}`)
     }
@@ -53,7 +44,7 @@ function SearchBar() {
 
         <>
         <div className="form" >
-        <form  onSubmit={haandleSubmit}>
+        <form  onSubmit={handleSubmit}>
 
 
         <div

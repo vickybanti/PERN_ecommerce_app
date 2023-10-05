@@ -4,11 +4,12 @@ import Skeleton from "./Skeleton"
 function OrderItems() {
   return (
     
-    <div className='orderItems'>
-      <Skeleton classes="title width-25" />
-      <Skeleton classes="title width-25" />
-      <Skeleton classes="title width-25" />
-      <Skeleton classes="title width-25" />
+    <div className='right'>
+    
+      <Skeleton classes="text width-25" />
+      <Skeleton classes="text width-25" />
+      <Skeleton classes="text width-25" />
+      <Skeleton classes="text width-25" />
       
       </div>
 

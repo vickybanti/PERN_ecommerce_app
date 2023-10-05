@@ -1,6 +1,6 @@
 .card-image{
-    width: 100%;
-    height: 10%;
+    width: 64vw;
+    height: 18vh;
     overflow: hidden;
     z-index: 1;
 
@@ -12,136 +12,61 @@
         
     }
 }
+.row{
+    gap:0;
+}
 
-.main-card{
-    width: 100%;
-    height: 100%;
-    padding: 10px 10px 200px 10px;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.col-md-6{
+    margin-top: 40px;
+    padding:20px 10px;
 
-    .overview{
-        position: absolute;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        top: 0;
-        width: 96.8%;
-        margin-left: -10px;
-        padding: 60px;
+    .newsletter{
         color: white;
-        background-color: rgba(0,0,0,0.6);
-    }
-
-    .card-container{
-       
-        height: 100%;
-        padding: 20px;
-
-        .card-top{
-            padding: 10px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            
-            .col-md-6{
-                box-shadow: var(--box-shadow);
-                margin: 10px;
-                width: 100%;
-                padding: auto;
-                
-
-                .card-heading{
-                    font-size: 25px;
-                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                    font-weight: 500;
-                    color: #071b28;
-                    padding: 10px 50px;
-
-                    
-                }
-            }
-            .card-main{
-                box-shadow: var(--box-shadow);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                height: 20%;
-
-                .card-h-100{
-                    width: 100%;
-                    height: 100%;
-                    padding: 30px;
-                    align-items: center;
-                    
-                    .card-heading{
-                        font-size: 25px;
-                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                        font-weight: 500;
-                        color: #071b28;
-                        padding: 10px 50px;
-                    }
-
-                        .card-body{
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-
-                            .card-title{
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                padding: 5px 10px;
-                                font-size: 15px;
-                                    font-weight: 200;
-                                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                                    color: gray;
-
-                                h3{
-                                font-size: 17px;
-                                font-weight: 100;
-                                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                                
-                                text-align: center;
-                                color: black;
-                                }
-
-                                p{
-                                    font-size: 15px;
-                                    font-weight: 200;
-                                    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                                    color: gray;
-
-                                }
-                            }
-                        }
-                    
-                }
-                
-            }
-
-        }
-
-    }
-
-
+        margin:auto;
+        background-color: rgb(1, 19, 27);
+        font-weight: 500;
+        font-family: Arial;
+        font-size: 12px;
     
+    }
 
+    .card-h-100{
+        border-radius: 5px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .card-heading{
+        font-size: 20px;
+        padding: 5px;
+    }
+    .card-title{
+        font-size: 15px;
+
+        h3{
+            font-size: 17px;
+        }
+    }
+    .card-body{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    
+}
+.overview{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 64vw;
+    height: 18vh;
+    padding: 20px;
+    color: white;
 }
 
-.header {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    text-transform: capitalize;
-    color: #000000;
+.card-top{
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
 }
-
 
 /* ORDER */
 

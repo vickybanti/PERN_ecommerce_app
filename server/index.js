@@ -11,8 +11,8 @@ const fs = require('fs');
 // Set a higher limit for the request body size'''
 app.use(cors());
 
-app.use(bodyParser.json({ limit: '100000mb' }));
-app.use(bodyParser.urlencoded({ limit: '100000mb', extended: true }));
+app.use(bodyParser.json({ limit: '100000000mb' }));
+app.use(bodyParser.urlencoded({ limit: '100000000mb', extended: true }));
 
 
 
@@ -23,9 +23,10 @@ app.use(bodyParser.urlencoded({ limit: '100000mb', extended: true }));
 
 //register and login routes
 app.set('view engine', "ejs");
-app.use("/auth", require("./routes/jwAuth"));
 
 //login routes
+app.use("/auth", require("./routes/jwAuth"));
+
 
 app.use("/dashboard", require("./routes/dashboard"));
 
@@ -43,6 +44,8 @@ app.use("/review", require("./routes/review"))
 app.use("/saveditems", require("./routes/saved"));
 
 app.use("/checkout", require("./routes/checkouts"))
+app.use("/users", require("./routes/users"))
+
 
 
 //ROUTES//

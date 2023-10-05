@@ -1,0 +1,93 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: url("../../../../server/uploads/shoes/3940543.jpg");
+  background-position-y: top;
+
+  .img {
+    animation: slide-down 0.5s ease;
+  }
+
+  .form {
+    width: 45rem;
+    padding: 1.5rem;
+    animation: slide-up 0.5s ease;
+    color:white;
+    background-color: rgba(0,0,0,0.8);
+    padding:60px;
+
+    span{
+      font-size: 15px;
+      font-weight: 400;
+      transition: 1s ease-in all;
+    }
+
+    button{
+      padding: 2rem;
+      &:disabled{
+        color:gray;
+        cursor: not-allowed;
+      }
+    }
+    h2,p {
+      text-align: center;
+      font-size: 30px;
+      margin: 0;
+    }
+    
+    form {
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 300;
+        padding: 2rem;
+        margin: 1rem auto;
+        width: 100%;
+        border: 1px solid #777;
+        border-radius: 3px;
+        outline: none;
+        color: white;
+
+        .links {
+          display: flex;
+          justify-content: space-between;
+          margin: 5px 0;
+          color: gray;
+  
+          &:hover{
+            color:white;
+          }
+        }
+        
+
+        
+      }
+     
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(-5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-down {
+    0% {
+      transform: translateY(5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+

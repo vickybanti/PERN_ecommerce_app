@@ -21,49 +21,45 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/checkout/config").then(async (r) => {
-      const { publishableKey } = await r.json();
-      setStripePromise(loadStripe(publishableKey));
-    });
-  }, []);
-
-  useEffect(() => {
-    
-     fetch("http://localhost:5000/checkout/create-payment-intent", {
+    fetch("http://localhost:5000/checkout/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(requestBody), 
-      
-      
-      
-    }).then(async (result) => {
-      var { clientSecret } = await result.json();
-      setClientSecret(clientSecret);
-    });
-  }, [requestBody]); 
-
-
+      body: JSON.stringify(requestBody),
+    })
+      .then(async (result) => {
+        if (!result.ok) {
+          throw new Error("Failed to fetch payment intent");
+        }
   
-
+        const { clientSecret } = await result.json();
+        setClientSecret(clientSecret);
+      })
+      .catch((error) => {
+        console.error("Error fetching payment intent:", error);
+      });
+  }, [requestBody, setClientSecret]);
+  
+  // Render the CheckoutForm only when clientSecret is available
   return (
     <div className="pay">
       <h1>Items</h1>
-      {cart.map((item)=>(
-        <><span>{item.title}</span><h4>Total Amount - {item.price * item.count}</h4></>
+      {cart.map((item) => (
+        <div key={item.id}>
+          <span>{item.title}</span>
+          <h4>Total Amount - {item.price * item.count}</h4>
+        </div>
       ))}
-      
+  
       {clientSecret && stripePromise && (
-        <Elements stripe={stripePromise} options={{ clientSecret }} >
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm requestBody={requestBody} />
         </Elements>
       )}
-
-      
     </div>
-    
   );
+  
 }
 
 export default Payment;

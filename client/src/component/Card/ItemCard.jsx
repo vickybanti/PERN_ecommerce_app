@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import './ItemCard.scss'
-import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
-import { Button, IconButton, Typography, Box, Divider } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { Box, SpeedDial, SpeedDialAction } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components';
 import Avatar from '@mui/material/Avatar';
-import {AddShoppingCart, AddShoppingCartOutlined, Remove, SearchOutlined } from '@mui/icons-material'
-import { addToCart } from '../../redux/slice/cartSlice'
-import { SET_ACTIVE_USER, selectUserID } from '../../redux/slice/authSlice'
-import {toast} from 'react-toastify'
+import {AddShoppingCart} from '@mui/icons-material'
 import {deleteItem, saveItem, setItemOpen} from '../../redux/slice/savedItemSlice'
 import { responsive } from '../Responsive'
-import { useSelect } from '@mui/base'
 import { addProduct } from '../../redux/apiCalls'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import useFetchProducts from '../../hooks/useFetchProducts'
 
 
 // const Info = styled.div`
@@ -112,6 +108,8 @@ function ItemCard({item}) {
 
   const [imageData, setImageData] = useState(null);
 
+  const {allProducts} = useFetchProducts()
+
   useEffect(() => {
     if (item.images) {
       const newImageDataArray = [];
@@ -182,27 +180,26 @@ function addSave() {
 
     setCount(count >1? count -1: 1)
   }
-  const [sizes,setSize] = useState("")
-  function handleSizes(e){
-    e.preventDefault()
-    setSize(e.target.value)
+
+  const [size,setSize] = useState("")
+
+  function handleSize(selectedSize) {
+    setSize(selectedSize);
   }
-  
-  
+  console.log(size)
   
 
-  async function handleClick() {
+  function handleClick(e, selectedSize) {
+    e.preventDefault()
+    addProduct(dispatch,item,imageData,count,selectedSize)
 
-    addProduct(dispatch,item,imageData,count,sizes)
+
     
   }
-  
-  
-  console.log(imageData)
 
-  
-
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
 
   return (
@@ -246,22 +243,35 @@ function addSave() {
           
         </div>
 
-        <div className='icon'>
-          <Box 
-          value={sizes}
-          onChange={handleSizes}
-          style={{display:"flex"}}
-          >
-          {item.sizes?.map((size) => (
-            <Box value={size}
-            style={{backgroundColor:"black", color:"white",padding:"5px", margin:"2px"}}>{size}</Box>
+     
+        <div className="icon" >
+        
+        <Box
+        value={size}
+        onChange={handleSize}
+        sx={{height:60, transform: 'translateZ(0px)', flexGrow: 1, background:"none" }}>
+        <SpeedDial
+          ariaLabel="SpeedDial controlled open example"
+          sx={{ position: 'absolute', bottom:0, right: 0}}
+          icon={<AddShoppingCart sx={{fontSize:"30px",borderRadius:"none", background:"inherit"}}/>}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          open={open}
+        >
+          {item.sizes?.map((sizeOption) => (
+            <SpeedDialAction
+            key={sizeOption}
+              value={sizeOption}
+              onChange={handleSize}
+              icon={sizeOption}
+              onClick={(e)=>handleClick(e, sizeOption)}
+              sx={{color:"black", fontSize:"20px", fontFamily:"fantasy"}}
+            />
           ))}
-          
-          
-          </Box>
-        </div>
-        <div className="icon">
-        <AddShoppingCart sx={{color:"white", fontSize:"30px"}} onClick={()=>handleClick()}/>
+        </SpeedDial>
+      </Box>
+
+      
     </div>
 
 

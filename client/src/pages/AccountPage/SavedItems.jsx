@@ -4,23 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import "./account.scss";
 import "./saved.scss";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Delete } from "@mui/icons-material";
 import { deleteItem } from "../../redux/slice/savedItemSlice";
 
 
 const NoSavedItem = () => {
-  const navigate = useNavigate();
   return (
     <div
       className="d-flex justify-content-center pt-5"
       style={{ textAlign: "center" }}
     >
-      <div className="py-4">
+      <div className="col-md-7">
         <div
           style={{
-            background: "rgba(30, 40, 50, 0.05)",
-            padding: "1em",
+            background: "rgba(30, 40, 50, 0.5)",
+            padding: "10em",
             height: "8em",
             width: "8em",
             borderRadius: "50%",

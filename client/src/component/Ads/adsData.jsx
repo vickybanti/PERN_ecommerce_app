@@ -1,12 +1,19 @@
 export const adsData = [
     {
       
-      image: "uploads/shoes/leather shoe banner.jpg",
+      image: "img/banner/57620.jpg",
+      "desc":"WELCOME TO MOORESTORE"
       
     },
-    
     {
-      image: "uploads/shoes/leather shoe banner.jpg",
+      
+      image: "img/banner/57620.jpg",
+      "desc":"HOME OF SHOES, FLIPS, JACKETS"
+      
+    },
+    {
+      image: "img/banner/57620.jpg",
+      "desc":"50% DISCOUNT ON ITALIAN SHOES"
       
     },
     

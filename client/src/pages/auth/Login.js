@@ -4,9 +4,8 @@ import styles from './auth.module.scss'
 import { AlternateEmailRounded, Google, Label, Lock, LoginOutlined, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { firebaseLogin, login } from '../../redux/apiCalls';
-import { Button, Divider, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
+import { Button, CircularProgress, Divider, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 
 
 
@@ -128,15 +127,7 @@ function Login() {
         <LoginOutlined />{isFetching?
           
           
-          <img src='img/loader/Rolling-1s-200px.gif' 
-          style={{aspectRatio:"3/2",
-          width:"15%",
-       objectFit:"contain",
-       mixBlendMode:"luminosity",
-       color:"white"         
-        }}
-          alt=''/>
-          
+          <CircularProgress sx={{color:"white"}}/>
           
           :"Login"}</Button>
             <span>{error && message}</span>

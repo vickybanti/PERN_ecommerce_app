@@ -1,5 +1,5 @@
 
-import {Box, Typography, TextField} from "@mui/material"
+import {Box, Typography, TextField, Input} from "@mui/material"
 import React from 'react'
 import "./Checkout.scss"
 
@@ -16,8 +16,7 @@ function Details({
             Contact Info
         </Typography>
 
-        <TextField  
-            fontSize="20px"
+        <Input  
             fullWidth
             type="text"
             label="Email"
@@ -28,9 +27,9 @@ function Details({
             // !! coverts to a boolean forcefully
             error={!!touched.email && !!errors.email}
             helperText={touched.email && errors.email }
-            sx={{ gridColumn:"span 4", marginBottom:"15px"}}
+            sx={{ gridColumn:"span 4", marginBottom:"15px",fontSize:"15px"}}
             />
-            <TextField  
+            <Input 
             fullWidth
             type="text"
             label="Phone Number"
@@ -41,7 +40,7 @@ function Details({
             // !! coverts to a boolean forcefully
             error={!!touched.phoneNumber && !!errors.phoneNumber}
             helperText={touched.email && errors.email }
-            sx={{ gridColumn:"span 4"}}
+            sx={{ gridColumn:"span 4", fontSize:"15px"}}
             />
       </Box>
     </Box>

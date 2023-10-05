@@ -74,7 +74,6 @@ function Navbar() {
 
 
   const [showMenu, setMenu] = useState(false);
-  const [message, setMessage] = useState("");
   const {catData} = useCat();
 
 
@@ -112,7 +111,7 @@ function Navbar() {
     e.preventDefault();
     
     logout(dispatch);
-    toast.success("Logged out successfully...")
+    toast.success(<h2>Logged out successfully...</h2>)
 
   }
   
@@ -126,7 +125,7 @@ function Navbar() {
     <ul class="dropdown-menu dropdown-menu-light" style={{ textAlign:"center"}}>
     
     
-    <li><NavLink to={`/profile`}><AccountBox /> Account Page</NavLink></li>
+    <li><NavLink to={`/profile/summary`}><AccountBox /> Account Page</NavLink></li>
       
     <li><NavLink to={`/saved`}>{favourite}</NavLink></li>
       <li><hr class="dropdown-divider" style={{width:"100%"}}/></li>
@@ -150,31 +149,7 @@ function Navbar() {
 
         {logo}
 
-        <div className={styles.classics}>
-      <nav class={styles.navbar}>
-      <ul class={styles.menu}>
-        <li class={styles["menu-item"]}>
-          <span>SHOES </span>
-          <ul class={styles.submenu}>
-            <li><Button >Flips</Button></li>
-            <li><Button >Casual</Button></li>
-            <li><Button >Classics</Button></li>
-          </ul>
-        </li>
-        <li class={styles["menu-item"]}>
-          <span>JACKETS </span>
-          <ul class={styles.submenu}>
-            <li><Button>Outdoors</Button></li>
-            <li><Button>Parties</Button></li>
-            <li><Button>Casual</Button></li>
-          </ul>
-          </li>
-          
-      </ul>
-    </nav>
-    
-        
-        </div>
+
 
               <li className={styles.searchbar}>
           <SearchBar />

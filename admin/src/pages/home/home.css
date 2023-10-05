@@ -1,0 +1,32 @@
+.home{
+    margin:0 auto;
+    font-family: 'Nunito', sans-serif, 'Urbanist';
+    display: flex;
+}
+
+
+.title{
+    color:white;
+}
+.charts {
+    display: flex;
+    padding: 10px 20px;
+    gap:20px;
+  }
+
+.recharts{
+    height: 100%;
+}
+
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    flex: 5;
+
+}
+
+.homewidgets{
+    display: flex;
+    width: 100%;
+}

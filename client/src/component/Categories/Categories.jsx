@@ -26,9 +26,9 @@ function Categories() {
         </div><div className='categories'>
 
 
-                <div className='col'>
+                <div className='column'>
 
-                    <div className='row'>
+                    <div className='rows'>
                     <h4 className="catheading">Discover trending categories</h4>
                         <img src="uploads/shoes/classic shoes.jpg" alt='' className='catimg'/>
 
@@ -41,8 +41,8 @@ function Categories() {
                     </div>
                 </div>
                 
-                <div className='col col-l'>
-                    <div className='row'>
+                <div className='column column-large'>
+                    <div className='rows'>
                                 <img src="img/blog/2.jpg" alt='' className='catimg'/>
 
                                 <Button className="catbutton">
@@ -50,7 +50,7 @@ function Categories() {
 
                                 </Button>
                         </div>
-                    <div className='row'>
+                    <div className='rows'>
                     <img src="img/blog/3.webp" alt='' className='catimg'/>
 
 

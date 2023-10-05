@@ -1,0 +1,57 @@
+.app.dark{
+    background-color: #010d14;
+    color: rgb(156,156,156);
+
+
+.chatGrid{
+    stroke: rgba(228, 228, 228, 0.219);
+}
+
+.table{
+    background-color: #010d14;
+    
+}
+
+.dataGridTable{
+    color: gray;
+    border-color: #333;
+}
+.dataGridTable pagination{
+    color: gray;
+}
+
+.topbar{
+    background-color: #010d14;
+    color: gray;
+    border-bottom: 0.5px solid #333;
+
+
+.search{
+    border-color: gray;
+}
+
+
+
+.logo{
+    color: white;
+
+}
+}
+
+.sidebar{
+    background-color: #010d14;
+    border-color: #333;
+
+    .sidebarListItem.active,
+    .sidebarListItem:hover {
+    background-color: #070707;
+    }
+}
+input{
+    background-color: gray;
+}
+option{
+    background-color: gray;
+}
+
+}

@@ -19,8 +19,11 @@ import RateReviewIcon from "@mui/icons-material/RateReview";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { logout } from "../../redux/apiCalls";
+import { useDispatch } from "react-redux";
+
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -42,6 +45,8 @@ function ScrollTop(props) {
     }
   };
 
+  
+
   return (
     <Fade in={trigger}>
       <Box
@@ -61,6 +66,14 @@ function UserAccount() {
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  function logoutUser(){
+    logout(dispatch)
+    navigate("/")
+  }
 
   return (
     <>
@@ -243,53 +256,7 @@ function UserAccount() {
                     </ListItem>
                   </Link>
                   <Divider sx={{ backgroundColor: "gray" }} />
-                  <Link
-                    to="manage"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <ListItem disablePadding>
-                      <ListItemButton
-                        selected={selectedIndex === 5}
-                        onClick={(event) => handleListItemClick(event, 5)}
-                        sx={{
-                          minHeight: 48,
-                          py: 3,
-                          backgroundColor:
-                            selectedIndex === 5 ? "#4a90e2" : "transparent",
-                        }}
-                      >
-                   
-                        <ListItemText
-                          primary="Address Book"
-                          primaryTypographyProps={{ fontSize: "17px", 
-                          fontFamily:"fantasy" }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
-                  </Link>
-                  <Link
-                    to="newsletter"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <ListItem disablePadding>
-                      <ListItemButton
-                        selected={selectedIndex === 7}
-                        onClick={(event) => handleListItemClick(event, 7)}
-                        sx={{
-                          minHeight: 48,
-                          py: 3,
-                          backgroundColor:
-                            selectedIndex === 7 ? "#4a90e2" : "transparent",
-                        }}
-                      >
-                        <ListItemText
-                          primary="NewsLetter Preference"
-                          primaryTypographyProps={{ fontSize: "17px", 
-                          fontFamily:"fantasy" }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
-                  </Link>
+
                   <Link
                     to="close"
                     style={{ textDecoration: "none", color: "inherit" }}
@@ -314,8 +281,45 @@ function UserAccount() {
                     </ListItem>
                   </Link>
                   <Divider sx={{ backgroundColor: "gray" }} />
+
+
+                  <Link
+                
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      selected={selectedIndex === 9}
+                      onClick={logoutUser}
+                      sx={{
+                        minHeight: 48,
+                        py: 3,
+                        backgroundColor:
+                          selectedIndex === 9 ? "#4a90e2" : "transparent",
+                      }}
+                    >
+
+                    <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: "1em",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <LogoutIcon sx={{ fontSize: 30 }} />
+                  </ListItemIcon>
+                      <ListItemText
+                        primary="SIGN OUT"
+                        primaryTypographyProps={{ fontSize: "17px", 
+                        fontFamily:"fantasy", color:"red", lineSpacing:"5px" }}
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                </Link>
                   
                 </List>
+
+                
               </Box>
             </div>
             <div className="col-md-9">

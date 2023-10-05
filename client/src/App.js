@@ -49,7 +49,13 @@ function App() {
 const user = useSelector((state)=> state.auth.isLoggedIn)
   return (
     <>
-    <ToastContainer />
+    <ToastContainer 
+    position="bottom-left"
+    theme="dark"
+    autoClose="2000"
+    closeOnClick
+    
+    />
     <Navbar />
     <CartItem />   
 
@@ -95,7 +101,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
       <Route path="payment" element={<Payment />} />
       <Route path='reset' element={<ResetPassword />} />
       <Route path='cart' element={<Cart /> } />
-      <Route path='success' element={<CheckoutSuccess />  } />
+      <Route path='success' element={user? <CheckoutSuccess /> :<NoMatch /> } />
       <Route path='*' element={<NoMatch /> } />
 
 

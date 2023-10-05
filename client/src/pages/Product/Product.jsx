@@ -20,13 +20,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Box } from '@mui/material';
-import { useLocation } from 'react-router-dom';
 import { addProduct } from '../../redux/apiCalls';
 import SkeletonProduct from '../../component/skeleton/SkeletonProduct';
 import SkeletonProductImg from '../../component/skeleton/SkeletonProductImg';
-import SkeletonImg from '../../component/skeleton/SkeletonImg';
-import { InsertChart } from '@mui/icons-material';
-
+import { toast } from 'react-toastify';
 
 
 
@@ -81,9 +78,13 @@ function Product({item}) {
 
   
   
-
+const [message, setMessage] = useState(false)
   function handleClick() {
+    if(!size){
+      setMessage(true)
+    } else{
     addProduct(dispatch, proData[0], imageData,count,size)
+    }
   }
   
   const favourites = useSelector((state) => state.savedProducts.savedItems);
@@ -109,7 +110,7 @@ function Product({item}) {
     setFav(!isFav);
   }
   
-const [size, setSize]  = useState(38)
+const [size, setSize]  = useState("")
     
     const handleChange = (event) => {
       setSize(event.target.value);
@@ -181,7 +182,7 @@ const [size, setSize]  = useState(38)
 
             
              
-            <Box sx={{ minWidth: 120 }} >
+            <Box sx={{ minWidth: 120, borderColor:message? "red": "black" }} >
             
 
             <FormControl fullWidth>
@@ -204,6 +205,8 @@ const [size, setSize]  = useState(38)
             </FormControl>
         
           </Box>
+          
+          {message && <h2>Select a shoe size</h2>}
         
           
       

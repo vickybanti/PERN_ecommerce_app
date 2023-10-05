@@ -1,0 +1,72 @@
+.sidebar {
+  flex: 1;
+  position: sticky;
+  top: 10;
+  font-family: 'Nunito';
+  padding: 10px;  
+  border-right: 0.5px solid rgb(226, 223, 223);
+}
+
+.sidebarWrapper {
+  color: #555;
+  position: sticky;
+
+}
+
+.sidebarMenu {
+  margin-bottom: 10px;
+}
+
+.sidebarTitle {
+  font-size: 13px;
+  color: rgb(187, 186, 186);
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 5px;
+}
+
+.sidebarListItem {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: cadetblue;
+  cursor: pointer;
+}
+
+.sidebarListItem.active,
+.sidebarListItem:hover {
+  background-color: rgb(240, 240, 255);
+}
+
+.sidebarIcon{
+    margin-right: 5px;
+    font-size: 20px !important;
+}
+
+.sideBottom{
+  display: flex;
+  padding: 10px;
+}
+.gray{
+  border-radius: 5px ;
+  background-color: white;
+  border:1px solid gray;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.dark{
+  border-radius: 5px;
+  background-color: black;
+  padding: 10px;
+  cursor: pointer;
+}

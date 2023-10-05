@@ -12,6 +12,7 @@ import { LocalShipping, Payment, ContactPage, Check } from '@mui/icons-material'
 import { toast } from 'react-toastify';
 import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
+import useFetchProducts from '../../hooks/useFetchProducts';
 
 
 
@@ -81,6 +82,8 @@ const checkoutSchema = [
 function Checkout() {
   const totalPrice = useSelector((state)=>state.cart.totalPrice)
   const cartItems = useSelector((state)=>state.cart.cartItems)
+  const counts = cartItems.map((cart) => cart.count)
+  console.log(counts)
     const navigate = useNavigate()
     const [activeStep, setActiveStep] = useState(0);
     const isFirstStep = activeStep===0;
@@ -104,6 +107,8 @@ function Checkout() {
   
     console.log(formValues)
 
+    
+
 
     
 
@@ -113,6 +118,16 @@ function Checkout() {
         setCoupon(e.target.value)
       }
 
+      const generateTransactionCode = () => {
+        const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let code = "";
+        for (let i = 0; i < 6; i++) {
+          code += characters[Math.floor(Math.random() * (characters.length - 1))];
+        }
+      
+        return code;
+      }
+
       
 async function makePayment(values) {
     
@@ -120,6 +135,7 @@ const newRequestBody = {
   userId,
   email:values.email,
   cart: JSON.stringify(cartItems),
+  count:counts,
   totalPrice:totalPrice,
   phoneNumber:values.phoneNumber,
   country:values.billingAddress.country,
@@ -219,6 +235,8 @@ const handleFormSubmit = async(values, actions) => {
 
 
 
+
+
    
 
   return (
@@ -260,15 +278,15 @@ const handleFormSubmit = async(values, actions) => {
 
   <Box className="checkFooter">
   <h4 className="py-2">Why Buy From Us?</h4>
-  <div className="row mb-2">
-    <div className="col-3">
-      <img
-        src="img/payment/g1.png"
-        alt="guarantee"
-        
-      />
-    </div>
+  <div className="checkFooterRow">
+  <img
+  src="img/payment/g1.png"
+  alt="guarantee"
+  className='guarantee'
+  
+/>
     <div className="col-9 my-auto">
+    
       <h4 style={{ fontSize: "0.9em" }}>
         <strong>100% Satisfaction Guarantee</strong>
       </h4>
@@ -278,14 +296,13 @@ const handleFormSubmit = async(values, actions) => {
       </p>
     </div>
   </div>
-  <div className="row">
-    <div className="col-3 ">
+  <div className="checkFooterRow">
       <img
         src="img/payment/g2.png"
         alt="guarantee"
+        className='guarantee'
         
       />
-    </div>
     <div className="col-9 my-auto">
       <h4 style={{ fontSize: "0.9em" }}>
         <strong>

@@ -26,10 +26,11 @@ export const cartSlice = createSlice({
           const existingProduct = state.cartItems.find(
             (item) => item.id === productToAdd.id
           );
+
         
           if (existingProduct) {
             // If the product already exists in the cart, show a notification and return the current state
-            toast.info("Product has already been added to cart")
+            toast.info(<h2 style={{color:"white"}}>Product has already been added to cart</h2>)
         
                
             // alert("added already")
@@ -41,11 +42,14 @@ export const cartSlice = createSlice({
           state.cartItems.push(productToAdd);
           state.totalQuantity += productToAdd.count;
           state.totalPrice += productToAdd.price * productToAdd.count;
-          localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
-          toast.success(`${action.payload.title} added to cart`,{
-            position:"bottom-left",
-            
-          })
+          const cartDataToStore = state.cartItems.map((item) => ({
+            id: item.id,
+            count: item.count,
+          }));
+        
+          localStorage.setItem("cartItems", JSON.stringify(cartDataToStore));
+        
+          toast.success(<h2 style={{color:"white"}}>{action.payload.title} added to cart</h2>)
         },          
         
         removeFromCart (state, action) {
@@ -63,15 +67,13 @@ export const cartSlice = createSlice({
             const updatedQuantity = state.cartItems.length;
             state.totalQuantity = updatedQuantity;
             localStorage.removeItem("item", JSON.stringify(state.cartItems))
-            toast.error(`${action.payload.title} removed from cart`,{
-                position:"bottom-left"
-            })
+            toast.error(<h2 style={{color:"red"}}>{action.payload.title} removed from cart</h2>)
 
 
         },
 
         increaseCount: (state, action) => {
-            state.cart = state.cart.map((item) => {
+            state.cartItems = state.cartItems.map((item) => {
                 if (item.id === action.payload.id){
                     item.count++;
                 }
@@ -82,7 +84,7 @@ export const cartSlice = createSlice({
 
         decreaseCount: (state, action) => {
            
-            state.cart = state.cart.map((item) => {
+            state.cartItems = state.cartItems.map((item) => {
                 if (item.id === action.payload.id && item.count >1){
                     item.count--;
                 }

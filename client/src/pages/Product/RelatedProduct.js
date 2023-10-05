@@ -37,17 +37,12 @@ function RelatedProduct() {
     <Carousel responsive={responsive} className='carousel' >
     
     {
-        // loading?
-        // [...Array(4).keys()].map(i => {
-        //   return <SkeletonImg 
-        //   key={i} />}):
+        loading?
+        [...Array(4).keys()].map(i => {
+          return <SkeletonImg 
+          key={i} />}):
         products?.map((item) => (
-        // 
-        //     <img src="uploads/large_brian_lawson_j_Rztw_p_Vdyk_unsplash_e07bf15972.jpeg" alt=''/>
-        //     <Button onClick={()=>navigate(`/product/${product.id}`)} className="button">{product.title}</Button>
-           
-
-        //       </div>
+        
         <div className="cardPro">
 
         <ItemCard item={item} key={item.id} />

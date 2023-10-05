@@ -17,6 +17,19 @@ const stripe = require("stripe")("sk_test_51NDulnFA3ATF2zMu8VuG068289VxPGuC2xFdT
 //     }
 // });
 
+//GET ALL ORDERS
+router.get("/", async(req, res) => {
+    try {
+        //payload from authoriaztion has the user payload
+        const newOrder = await pool.query(`SELECT * FROM orders ORDER BY id DESC`);
+        res.json(newOrder.rows);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json("Server error")
+    }
+});
+
+
 //GET ALL ORDERS BY ID
 router.get("/:userId", async(req, res) => {
     const {userId} = req.params
@@ -30,14 +43,27 @@ router.get("/:userId", async(req, res) => {
     }
 });
 
-//GET ALL ORDERS BY ID
-router.get("/:id", async(req, res) => {
+//GET AN ORDER
+router.get("/id/:userId", async(req, res) => {
     const {userId} = req.params
-    const {id} = req.params
     try {
         //payload from authoriaztion has the user payload
-        const newOrder = await pool.query(`SELECT * FROM orders WHERE user_id = '${userId}'ORDER BY DESC`);
-        res.json(newOrder.rows);
+        const newOrder = await pool.query(`SELECT * FROM orders WHERE user_id = '${userId}'`);
+        res.json(newOrder.rows[0]);
+        console.log(res.json(newOrder.rows[0]))
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json("Server error")
+    }
+});
+
+router.get("/order/:id", async(req, res) => {
+    const {id} = req.params
+    console.log(id)
+    try {
+        const newOrder = await pool.query(`SELECT * FROM orders WHERE id = '${id}'`);
+        const orders = await res.json(newOrder.rows);
+        console.log(orders)
     } catch (err) {
         console.error(err.message);
         res.status(500).json("Server error")
@@ -69,12 +95,24 @@ router.post("/address", async(req,res) => {
 
 //UPDATE ORDER STATUS
 
-router.put("/:userId", authorization, async(req, res) => {
-    const userId = req.user
+router.put("/status/:id", async(req, res) => {
+    const {id} = req.body
     try {
         //payload from authoriaztion has the user payload
-        const updateOrder = await pool.query(`UPDATE orders SET(delivery_status="delivered" WHERE user_id=${userId}) RETURNING *`)
-        res.json(updateOrder.rows[0]);
+        const updateOrder = await pool.query(`UPDATE orders SET delivery_status='delivered' WHERE id='${id}'`)
+        res.json(updateOrder.rows);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).json("Server error")
+    }
+});
+
+router.put("/status/pending/:id", async(req, res) => {
+    const {id} = req.body
+    try {
+        //payload from authoriaztion has the user payload
+        const updateOrder = await pool.query(`UPDATE orders SET delivery_status='pending' WHERE id='${id}'`)
+        res.json(updateOrder.rows);
     } catch (err) {
         console.error(err.message);
         res.status(500).json("Server error")
@@ -82,18 +120,18 @@ router.put("/:userId", authorization, async(req, res) => {
 });
 
 
-router.get("/month", async(req, res) => {
-    const month = new Date().getMonth();
+
+router.get("/total/month", async(req, res) => {
+    const month = new Date().getDay();
     try {
-        const getIncome = await pool.query(`SELECT SUM(amount) FROM orders GROUP BY month LIMIT 2`)
-        res.json(getIncome.rows)
-        
+        const getIncome = await pool.query(`SELECT sum(total) FROM orders`)
+        res.json(getIncome.rows[0])
         
     } catch (err) {
         console.error(err.message)
     }
 
-    res.send({url: session.url});
+    
 
 })
 //DELETE 

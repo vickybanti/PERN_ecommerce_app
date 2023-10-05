@@ -1,0 +1,80 @@
+.single{
+    display: flex;
+    width: 100%;
+}
+.singleContainer{
+    flex:6;
+}
+
+.top{
+    padding: 20px;
+    display: flex;
+    gap:20px;
+
+}
+
+
+.left{
+    flex: 2;
+    box-shadow: var(--box-shadow);
+    padding:20px;
+
+}
+.useritem{
+    display: flex;
+    gap: 20px;
+}
+
+.itemImg{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 50px;
+}
+.editButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 12px;
+    color: palegreen;
+    background-color: #15151618;
+    cursor: pointer;
+    border-radius:0px 0px 0px 5px;
+}
+
+
+.itemInfo{
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: rgb(177, 173, 173);
+}
+.itemDetails{
+    margin-bottom: 15px;
+    font-size: 24px;
+
+}
+.detailItem{
+    padding-bottom: 10px;
+}
+.itemKey{
+    font-weight: bold;
+    color: gray;
+    margin-right: 5px;
+}
+
+.images{
+    display: flex;
+    width: 50%;
+    margin-top: 200px;
+    margin-left: -150px;    
+}
+
+.right{
+    flex: 2;
+}
+.userbottom{
+    padding: 20px;
+    display: block;
+}

@@ -82,13 +82,13 @@ router.post("/login",validator, async (req, res) => {
 
         const user  = await pool.query(`SELECT * FROM users WHERE email='${email}'`);
         if (user.rows.length === 0) {
-            return res.status(500).send("email is incorrect")
+            return res.status(500).send({error:"incorrect email"})
         }
         const validPassword = await bcrypt.compare(password, user.rows[0].password);
 
         if(!validPassword) {
 
-            return res.status(401).json("Invalid password");
+            return res.status(401).send({error:"incorrect pasword"})
         }
         const user_id = user.rows[0].user_id
         const token = jwtGenerator(user_id);
@@ -161,34 +161,52 @@ router.put("/reset",validator, async(req,res) => {
 
 //delete user
 
-router.delete("/delete/:user",authorization, async(req, res) =>{
+router.delete("/delete", async (req, res) => {
     try {
-        const {password, user} = req.body
-        console.log(password)
-        console.log(req.user)
+      const { password, email } = req.body;
+      console.log(password);
+      console.log(email);
+  
+      const getUserQuery = `SELECT user_id, password FROM users WHERE email = $1`;
+      const userResult = await pool.query(getUserQuery, [email]);
+  
+      if (userResult.rows.length === 0) {
+        return res.status(404).json("User not found");
+      }
+  
+      const user = userResult.rows[0];
+      const userPassword = user.password;
+      const userId = user.user_id;
+  
+      const validPassword = bcrypt.compare(password, userPassword);
+  
+      if (validPassword) {
+        // Now you can delete the user from the "users" table
         
         
-        const getPassword = await query(`SELECT password FROM users WHERE user_id = ${user}`)
 
-        if (password === getPassword){
+       await pool.query(`ALTER TABLE orders
+            DROP CONSTRAINT orders_user_id_fkey;
 
+            ALTER TABLE orders
+            ADD CONSTRAINT orders_user_id_fkey
+            FOREIGN KEY (user_id)
+            REFERENCES users(user_id)
+            ON DELETE SET NULL`);
 
-    console.log("user_id=",user_id)
-    console.log("req.user=",req.user)
-    
-    const delQuery = await pool.query(`DELETE FROM users WHERE user_id='${req.user}'`)
-    if (delQuery){
-        res.status(200).json("User has been deleted")
-    } else {
-    
-        res.status(403).json("Wrong password.Not allowed to delete the user")
-    }
-}
+        const deleteUserQuery = `DELETE FROM users WHERE user_id = $1`;
+        await pool.query(deleteUserQuery, [userId]);
+  
+        res.status(200).json("User has been deleted");
+      } else {
+        res.status(403).json("Wrong password. Not allowed to delete the user");
+      }
     } catch (err) {
-        console.error(err.message)
+      console.error(err.message);
+      res.status(500).json("Internal server error");
     }
-    
-})
+  });
+  
 //get all users 
 router.get("/users", async (req, res) => {
     try {
@@ -206,23 +224,14 @@ router.get("/user/:userId", async (req, res) => {
     const {userId} = req.params
     try {
         const users = await pool.query(`SELECT * FROM users WHERE user_id='${userId}'`)
-        res.json(users.rows)
+        res.json(users.rows[0])
         
     } catch (err) {
         console.error(err.message)
     }
 })
 
-router.delete("/:userId", async (req, res) => {
-    const {userId} = req.params
-    try {
-        const users = await pool.query(`DELETE FROM users CASCADE WHERE user_id='${userId}'`)
-        res.json(users.rows)
-        
-    } catch (err) {
-        console.error(err.message)
-    }
-})
+
 
 router.get("/stats", async (req, res) => {
     try {

@@ -48,21 +48,28 @@ function Slider() {
         <ArrowBackIosNewIcon className='arrow prev' onClick={prevSlide} />
         <ArrowForwardIosIcon className='arrow next' onClick={nextSlide}/>
         {sliderData.map((slider, index) => {
-            const {image, desc, heading} = slider
+            const {image, desc, heading, heading2, desc2} = slider
             return (
                 <div className={index === slide ? "slide current":"slide"}>
                     {index ===slide && (
                         <>
                         {console.log(image)}
                             <img src={image} alt="slide" />
+                            <h3 className='heading2'>{heading2}</h3>
+                            <p className='desc2'>{desc2}</p>
                             <div className='content'>
                                 <h2>{heading}</h2>
                                 <p style={{fontSize:"12px"}}>{desc}</p>
+                                
                                 <hr />
                                 <NavLink href='#brands' className='--btn --btn-primary'>
                                 <ShoppingBag />
                                     Shop Now
                                 </NavLink>
+                            </div>
+
+                            <div className='content2'>
+                            
                             </div>
                         </>
                     )}

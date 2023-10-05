@@ -41,16 +41,18 @@ function Ads() {
     
         
         {adsData.map((slider, index) => {
-            const {image} = slider
+            const {desc} = slider
             return (
                 <div className={index === slide ? "slide current":"adslide"}>
                     {index ===slide && (
                         <>
-                        {console.log(image)}
-                            <img src={image} alt="adslide" />
+                        
+                            <p style={{fontSize:"25px",color:"black"}}>{desc}</p>
                   
                         </>
+                        
                     )}
+                    
                 </div>
             )
         })}

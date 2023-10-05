@@ -12,6 +12,7 @@ function AccountSummary() {
   console.log(user);
 
   const [users, setGetUser] = useState([])
+  console.log(users)
 
 
   // const [orders, setOrders] = useState([])
@@ -64,27 +65,28 @@ function AccountSummary() {
 
         <div className="card-container">
           <div className="card-top">
-            <div className="card-main">
+            <div className="col-md-6 ">
+          
               <div className="card-h-100">
                 <p className="card-heading">ACCOUNT DETAILS</p>
                 <div className="card-body">
-                  {users.map((user) => (
+                  
                     <>
                       <div className="card-title">
                         <h3>First name</h3>
-                        <p>{user?.firstname}</p>
+                        <p>{users?.firstname}</p>
                       </div>
 
                       <div className="card-title">
                         <h3>Last name</h3>
-                        <p>{user?.lastname}</p>
+                        <p>{users?.lastname}</p>
                       </div>
 
                       <div className="card-title">
                         <h3>Email</h3>
-                        <p>{user?.email}</p>
+                        <p>{users?.email}</p>
                       </div></>
-                  ))}
+                  
 
                 </div>
               </div>
@@ -106,36 +108,35 @@ function AccountSummary() {
                   <div className="card-title">
                     <h4>Your default shipping address:</h4>
 
-                    {users.map((user) => (
-
+                    
                       <>
                         <p style={{
                           fontSize: "15px",
                           color: "gray"
-                        }}> {user.street}</p>
+                        }}> {users.street}</p>
                         <br />
                         <p style={{
                           fontSize: "15px",
                           color: "gray"
                         }}>
-                          {user.city}
+                          {users.city}
                         </p>
                         <br />
                         <p style={{
                           fontSize: "15px",
                           color: "gray"
                         }}>
-                          {user.state}
+                          {users.state}
                         </p>
                         <br />
                         <p style={{
                           fontSize: "15px",
                           color: "gray"
                         }}>
-                          {user.country}
+                          {users.country}
                         </p>
                       </>
-                    ))}
+                    
                   </div>
                 </div>
 
@@ -157,13 +158,13 @@ function AccountSummary() {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               <div className="card h-100">
                 <p className="card-heading">NEWSLETTER</p>
                 <div className="card-body">
                   <p style={{
                     fontSize: "15px",
-                    color: "gray"
+                    color: "gray",
                   }}>
                     You are currently not subscribed to any of our newsletters.
                   </p>
@@ -171,7 +172,8 @@ function AccountSummary() {
                 <div className="card-footer" style={{ border: "none" }}>
                   <Button
                     variant="text"
-                    sx={{ color: "skyblue" }}
+                   className="newsletter"
+                  
                     onClick={() => navigate("/profile/newsletter")}
                   >
                     EDIT NEWSLETTER REFERENCE

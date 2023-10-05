@@ -20,7 +20,6 @@ flex:1;
 width:250px;
 height:300px;
 position: relative;
-margin-bottom: 70px;  
 }
 
 .card-container{
@@ -28,12 +27,14 @@ margin-bottom: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 28%;
+    width: 29%;
     height: 30px;
     padding: 20px;
-    margin-top: 250px;
+    margin-top: 300px;
     background-color: #071b28;
     color: white;
+    margin-bottom: 80px;
+
 
     .span{
         font-size: 25px;
@@ -44,10 +45,11 @@ margin-bottom: 70px;
 
 
 .savedImage{
-    height: 240px;
+    height: 100%;
     width: 100%;
     justify-content: center;
     cursor:pointer;
     position:inherit;
+    padding-top: 50px;
 }
 }

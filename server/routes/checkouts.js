@@ -4,6 +4,8 @@ require("dotenv").config();
 const router = require("express").Router();
 const express = require("express")
 const pool = require("../db");
+const crypto = require("crypto");
+
 
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
@@ -27,7 +29,24 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
     const stringForm = JSON.stringify(req.body.formValues)
 
-    console.log(cart)
+
+    function getMonthInWords() {
+      const months = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
+    
+      const currentDate = new Date();
+      const currentMonthIndex = currentDate.getMonth();
+      const currentMonthInWords = months[currentMonthIndex];
+    
+      return currentMonthInWords;
+    }
+    
+    const currentMonth = getMonthInWords();
+
+
     console.log(userId)
     console.log(email)
     console.log(firstName)
@@ -49,10 +68,11 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     
  
     
-   const total =  carts.map((item) => (
+   const totals =  carts.map((item) => (
     item.price * 100
        
   ));
+  const total = parseFloat(totals)
 
 
   
@@ -69,22 +89,21 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     try {
     
         if(paymentIntent.id) {
-          const paymentIntent = paymentIntent.id
+          const paymentIntentId = paymentIntent.id
+          console.log(paymentIntentId)
         
 
-    const createOrder =await pool.query(`INSERT INTO orders (user_id,firstname, lastname,cart,
-        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total)
-      VALUES('${userId}','${firstName}','${lastName}','${cart}','${country}',
-      '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntent}',
-      'pending','${total}','${total}')` );
+    const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total, month)
+      VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
+      '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
+      'pending','${total}','${total}', '${currentMonth}')` );
 
         
       res.json({
         clientSecret: paymentIntent.client_secret,
         orders: createOrder.rows,
-      });
-
-      
+      });      
       }
       
   } catch (err) {
@@ -95,8 +114,25 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
   
 
   router.post("/payOnDelivery", async(req,res) => {
-    const { cartItems,totalPrice, email, city,userId, firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
+    const { cartItems,count,stock,proId,totalPrice, email, city,userId, firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
+    function getMonthInWords() {
+      const months = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
     
+      const currentDate = new Date();
+      const currentMonthIndex = currentDate.getMonth();
+      const currentMonthInWords = months[currentMonthIndex];
+    
+      return currentMonthInWords;
+    }
+    
+    const currentMonth = getMonthInWords();
+
+
+    const total = parseFloat(totalPrice)
     console.log(cartItems)
     console.log(email)
     console.log(firstName)
@@ -105,16 +141,37 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     console.log(state)
     console.log(totalPrice)
     console.log(userId)
+    console.log(currentMonth)
+    console.log(stock)
+    console.log(proId)
+    console.log(count)
+
+const generateTransactionCode = () => {
+  // Generate a random string of 6 characters
+  const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let code = "";
+  for (let i = 0; i < 10; i++) {
+    code += chars[crypto.randomInt(chars.length)];
+  }
+
+  return code;
+};
 
     try {  
-  const createOrder =await pool.query(`INSERT INTO orders (user_id,firstname, lastname,cart,
-      country, city, state, street1,street2, email, phone_number, payment_status, delivery_status, subtotal, total)
-    VALUES('${userId}','${firstName}','${lastName}','${cartItems}','${country}',
+      const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let code = "";
+  for (let i = 0; i < 10; i++) {
+    code += chars[crypto.randomInt(chars.length)];
+  }
+  const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+      country, city, state, street1,street2, email, phone_number, payment_status, delivery_status, subtotal, total, month)
+    VALUES('${userId}','${code}','${firstName}','${lastName}','${cartItems}','${country}',
     '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'pay on delivery',
-    'pending','${totalPrice}','${totalPrice}')` );
-    res.json(createOrder.rows);
+    'pending','${total}','${total}', '${currentMonth}')` );
 
-      
+    // const removeFromStock = await pool.query(`UPDATE products SET stock-='${count}' WHERE id='${proId}'`)
+     
+    const response =  res.json(createOrder.rows);   
     
 } catch (err) {
   console.error(err.message)

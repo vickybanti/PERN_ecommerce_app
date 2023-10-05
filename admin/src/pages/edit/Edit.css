@@ -1,0 +1,97 @@
+.newUser {
+    display: flex;
+    width: 100%;
+  }
+  
+  .newContainer{
+    flex: 6;
+  }
+  .newUserForm {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .top, .newUserBottom{
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+  
+  }
+  .newUserBottom{
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    gap:70px;
+  
+  }
+  
+  .newUserLeft{
+    flex: 2;
+    text-align: center;
+    padding-top: 10%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .newUserLeft img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .newUserRight{
+    flex-wrap: wrap;
+    
+    flex: 3;
+  }
+  
+  h1{
+    color: gray;
+    font-size: 20px;
+  }
+  
+  .newUserItem {
+    
+  
+  }
+  
+  .newUserItem > label {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+    color: rgb(151, 150, 150);
+  }
+  
+  .newUserItem > input {
+    height: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .newUserGender > input {
+    margin-top: 15px;
+  }
+  
+  .newUserGender>label{
+      margin: 10px;
+      font-size: 18px;
+      color: #555;
+  }
+  
+  .newUserSelect{
+      height: 40px;
+      border-radius: 5px;
+  }
+  
+  .newUserButton{
+      width: 200px;
+      border: none;
+      background-color: teal;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+  
+  }

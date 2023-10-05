@@ -2,10 +2,13 @@ import localStorage from "redux-persist/es/storage";
 import {  LOGIN_FAILURE, LOGIN_START, REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "./slice/authSlice";
 import { toast } from "react-toastify";
 import { addToCart, clearCart, removeFromCart, setIsCartOpen } from "./slice/cartSlice";
-import { fetchProduct, productSuccess } from "./slice/ProductSlice";
+import { fetchProducts, productSuccess } from "./slice/ProductSlice";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from '../firebase/config';
 import { v5 as uuidv5 } from 'uuid';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import useFetchProducts from "../hooks/useFetchProducts";
 
 
 
@@ -47,6 +50,19 @@ export const firebaseLogin = async(dispatch) => {
 
 export const login = async(dispatch, user) => { 
 
+       
+  function res(response) {
+    if (response.status === 500) {
+      dispatch(LOGIN_FAILURE({error:true,
+        errorMessage:"email not found...",
+      isFetching:false})); // Response text ("email is incorrect")
+    } else if (response.status === 401) {
+      dispatch(LOGIN_FAILURE({error:true,
+        errorMessage:"wrong password...",
+      isFetching:false}))
+    } 
+  }
+
 
   try {
       dispatch(LOGIN_START());
@@ -87,13 +103,15 @@ export const login = async(dispatch, user) => {
         dispatch(LOGIN_FAILURE({error:true,
         errorMessage:"INVALID EMAIL/PASSWORD...",
       isFetching:false}))
+      } else {
+        res(response)
       }
-    
-    
+      
+
       
     } catch (error) {
       dispatch(LOGIN_FAILURE({error:true,
-        errorMessage:error.message,
+        errorMessage:"email not found",
         isFetching:false}))
       }
   }
@@ -136,10 +154,45 @@ export const clearProductsFromCart = (dispatch)=> {
     }
   };
 
+
+
+
+//add to cart
+export const addProduct = async(dispatch, item, imageData,count,size) => {
+    dispatch(addToCart({...item,imageData,count,size }))
+
+    
+    
+}
+
+export const deleteFromCart = async(dispatch,item,id) => {
+ 
+    dispatch(removeFromCart(item, id))
+}
+
+//PRODUCTS
+
+//fetch a product
+
+export const getAllProducts = async(dispatch) => {
+  dispatch(fetchProducts())
+  try {
+    const fetchProduct = await fetch(`http://localhost:5000/products`,{
+      method: "GET",
+        headers: {"Content-Type": "application/json"},
+    })
+    const product = await fetchProduct.json()
+    dispatch(productSuccess(product))
+  } catch (err) {
+    console.error(err.message)
+  }
+}
+
+
 //fetch a product
 
 export const getProduct = async(dispatch, id) => {
-  dispatch(fetchProduct())
+  dispatch(fetchProducts())
   try {
     const fetchProduct = await fetch(`http://localhost:5000/product/${id}`,{
       method: "GET",
@@ -152,18 +205,6 @@ export const getProduct = async(dispatch, id) => {
   }
 }
 
-
-//add to cart
-export const addProduct = async(dispatch, item, imageData,count,size) => {
-    dispatch(addToCart({...item,imageData,count,size }))
-    dispatch(setIsCartOpen({}))
-
-}
-
-export const deleteFromCart = async(dispatch,item,id) => {
- 
-    dispatch(removeFromCart(item, id))
-}
-
 //ORDERS
-
+export  const reduceCount = async(dispatch, id) => {
+}

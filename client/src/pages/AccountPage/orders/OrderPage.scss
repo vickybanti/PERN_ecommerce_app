@@ -58,8 +58,7 @@
             img{
                 position: absolute;
                 width: 220px;
-                height: 207.5px;
-                margin-bottom: 90px;
+                height: 222px;
                 object-fit: cover;
             }
         
@@ -135,19 +134,30 @@
         padding: 5px 10px;
         margin: 10px 0;
         overflow: hidden;
+        
       }
          
       .hide-nav {
         transform: translateY(-200%);
         display: none;
         height: 0;
-        transition: 2s linear all;
-        animation: slide-up 2s ease 0.5s;
-        animation-fill-mode:inherit;
+        
 
       }
 
       
+.show-slide-down {
+    max-height: 1000px; /* Adjust the value as needed */
+    transition: max-height 1.5s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .hide-slide-up {
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  
       
       
 
@@ -173,3 +183,9 @@
     }
    }
    
+   .row button{
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }

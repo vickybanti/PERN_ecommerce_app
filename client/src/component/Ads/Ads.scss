@@ -1,10 +1,10 @@
 .adslider {
     width: 100%;
-    height: 40px;
+    height: 30px;
     object-fit: cover;
     position: relative;
     overflow: hidden;
-    background-color: black;
+    transition: all 1s linear;
   
     
   }
@@ -12,15 +12,14 @@
   .adslide {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 30px;
     opacity: 0;
-    transform:perspective(20%);
-    transition: all 2s ease-out;
+    transition: all 1s linear;
   
     img{
-      width: 100%;
-    height: 100%;
+      width: 50%;
+    height: 50%;
     }
   }
   @media screen and (max-width:600px) {

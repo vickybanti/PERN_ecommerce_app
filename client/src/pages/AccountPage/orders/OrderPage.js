@@ -19,17 +19,20 @@ function OrderPage() {
   const [showMenu, setMenu] = useState(false);
 
 
-  
+  const [selectedOrderIndex, setSelectedOrderIndex] = useState(null);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
 
 
-  
-  const toggleMenu = (index) =>{
-    setMenu(!showMenu)
+  // ... Existing useEffect ...
+
+  // Modify the toggleMenu function to set the selected order index
+  const toggleMenu = (orderIndex, itemIndex) => {
+    setSelectedOrderIndex(orderIndex === selectedOrderIndex ? null : orderIndex);
+    setSelectedItemIndex(itemIndex);
   };
 
-  const hideMenu = ()=>{
-    setMenu(false)
-  };
+
+  
 
 
 
@@ -73,12 +76,12 @@ function OrderPage() {
         <><><div className="order" key={value.order_id}>
 
 
-                        {loading?<OrderItems style={{float:"right"}}/> : value.cart.map((item) => (
+                        {loading?<OrderItems style={{float:"right"}}/> : value.cart.map((item,itemIndex) => (
 
               
 
 
-              <div className="order-id">
+              <div className="order-id" key={itemIndex}>
 
                 <div className='allOrders'>
                 <div className='order-image'>
@@ -98,11 +101,27 @@ function OrderPage() {
                   }}>{value.payment_status}</span> <p style={{color:"black",paddingRight:"10px"}}>{value.payment_intent}</p></div>
 
                  
-                  <NavLink onClick={()=>toggleMenu(index)} className="orderbtn" key={value.order_id===index}>See shipping details</NavLink>
+                  <NavLink
+                  onClick={() => toggleMenu(index, itemIndex)}
+                  className="orderbtn"
+                  key={value.order_id}
+                >
+                See shipping details
+                </NavLink>
 
                   
-                  <div className='address' key={index.order_id}>
-                  <div className={showMenu ? 'show-nav' : 'hide-nav'}>
+                <div
+                className={`address ${
+                  index === selectedOrderIndex && itemIndex === selectedItemIndex
+                    ? ' show-slide-down' 
+                    : ' hide-slide-up'
+                }`}
+                key={index.order_id}
+              >
+              <div className={index === selectedOrderIndex && itemIndex === selectedItemIndex 
+                ? 'show-nav' : 'hide-nav'}>
+
+
                     
                     <h3>Shipping details</h3>
                     <span className='shipping'>
@@ -114,13 +133,13 @@ function OrderPage() {
                       <p className='status' style={{ backgroundColor: value.delivery_status === "delivered" ? "green" : "gray", textAlign: "center", padding: "3px", width: "30%" }}> {value.delivery_status}</p>
 
                     </span>
-                    <Button onClick={hideMenu}>hide</Button>
+                    <Button onClick={()=>toggleMenu(!index)}>hide</Button>
 
                   </div>
 
-                </div>
+                
 
-
+</div>
                   </div>
 
 

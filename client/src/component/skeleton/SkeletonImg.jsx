@@ -6,8 +6,10 @@ function SkeletonImg() {
     <div className='card'>
       <Skeleton classes="img" />
       <Skeleton classes="text width-100" />
-      <Skeleton classes="text width-50" />
-      <Skeleton classes="text width-50" />
+      <div className='width' style={{display:"flex",justifyContent:"space-between"}}>
+      <Skeleton classes="text width-25" />
+      <Skeleton classes="text width-25" />
+      </div>
     </div>
   )
 }
