@@ -33,13 +33,13 @@ header {
       font-size: 15px;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       list-style: none;
-      width: 200px;
-      margin-left: 100px;
+      width: 50px;
+      margin-left: 10px;
+      cursor: pointer;
 
       .navbar {
         background-color: inherit;
-        color: #fff;
-        width: 500px;
+        color: black;
       
       }
       
@@ -48,26 +48,27 @@ header {
         padding: 0;
         margin: 0;
         display: flex;
-        width: 150px;
+        width: 50px;
       }
       
-      .menu-item {
+      .menuItem {
         position: relative;
         margin-right: 0 10px;
+        width: 150px;
 
         span{
           color:#111010;
           cursor: pointer;
 
           &:hover{
-            text-decoration: underline;
+            background-color: aliceblue;
 
-            transition: 0.3s ease-out;
+            transition: 0.4s ease-out all;
           }
         }
       }
       
-      .menu-item:hover .submenu {
+      .menuItem:hover .submenu {
         display: block;
       }
       
@@ -85,13 +86,13 @@ header {
       }
       
       .submenu li {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         display: flex;
         justify-content: space-around;
         transition: 0.2s ease-in all;
         &:hover{
           transition: 0.2s ease-out all;
-          margin-right: 2px;
+          margin-right: 7px;
 
         }
 

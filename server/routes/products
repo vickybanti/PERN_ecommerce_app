@@ -19,10 +19,11 @@ router.get("/", async(req, res) => {
 router.get("/:id", async(req, res) => {
     const {id} = req.params
     try {
-        const cat = await pool.query(`SELECT cat_id FROM products WHERE id = ${id}`);
-        const getCat = cat.rows[0].cat_id
+        const cat = await pool.query(`SELECT cat_title FROM products WHERE id = ${id}`);
+        const getCat = cat.rows[0].cat_title
+        console.log(getCat)
         if(getCat){
-            const product = await pool.query(`SELECT * FROM products WHERE cat_id = '${getCat}'`)
+            const product = await pool.query(`SELECT * FROM products WHERE cat_title = '${getCat}' LIMIT 10`)
             res.json(product.rows)
         }
     } catch (err) {

@@ -8,16 +8,23 @@ import useProCat from '../../hooks/useProCat';
 import Zoom from '@mui/material/Zoom';
 import { ZoomIn } from "@mui/icons-material";
 import Fab from '@mui/material/Fab';
+import { useEffect } from 'react';
 
 
 
 function Categories() {
-    const title = [
-        "spinach",
-        "seeds",
-        "cinnamon",
-        "ketchup"
-    ]
+    const {catData} = useCat()
+    const [title,setTitle] = useState([])
+
+    useEffect(() => {
+        catData.map((cat) => (
+            setTitle(cat.cat_title)
+        ))
+    },[catData])
+
+    console.log(title)
+
+    
     
     return (
         
@@ -46,7 +53,7 @@ function Categories() {
                                 <img src="img/blog/2.jpg" alt='' className='catimg'/>
 
                                 <Button className="catbutton">
-                                    <NavLink style={{ color: "white" }} to={`products`}>Men's jacket</NavLink>
+                                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
 
                                 </Button>
                         </div>
@@ -55,7 +62,7 @@ function Categories() {
 
 
                                 <Button className="catbutton">
-                                <NavLink to={`products`} style={{ color: "white" }}>
+                                <NavLink to={`categories/brands/nike}`} style={{ color: "white" }}>
 
                                      Casual Sneakers
                                     </NavLink>

@@ -22,6 +22,7 @@ function RelatedProduct() {
                     method:"GET"
                 })
                 const allProducts = await getCat.json()
+                console.log(allProducts)
 
                 setProducts(allProducts)
             } catch (err) {

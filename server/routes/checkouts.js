@@ -72,6 +72,8 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     item.price * 100
        
   ));
+    const proId = carts.map((item)=>item.id)
+  const count = carts.map((item) => (item.count))
   const total = parseFloat(totals)
 
 
@@ -100,10 +102,15 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
       'pending','${total}','${total}', '${currentMonth}')` );
 
         
-      res.json({
+      const payment = res.json({
         clientSecret: paymentIntent.client_secret,
         orders: createOrder.rows,
-      });      
+      });  
+      
+      if(payment){
+        const getPro = await pool.query(`UPDATE products SET stock=stock-${count} WHERE id=${proId}`)
+        res.json(getPro.rows)
+      }
       }
       
   } catch (err) {
@@ -114,7 +121,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
   
 
   router.post("/payOnDelivery", async(req,res) => {
-    const { cartItems,count,stock,proId,totalPrice, email, city,userId, firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
+    const { cartItems,stock,totalPrice, email, city,userId, firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
     function getMonthInWords() {
       const months = [
         "January", "February", "March", "April",
@@ -131,6 +138,10 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     
     const currentMonth = getMonthInWords();
 
+   
+    const carts = JSON.parse(cartItems)
+    const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
+
 
     const total = parseFloat(totalPrice)
     console.log(cartItems)
@@ -143,9 +154,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     console.log(userId)
     console.log(currentMonth)
     console.log(stock)
-    console.log(proId)
-    console.log(count)
-
+    
 const generateTransactionCode = () => {
   // Generate a random string of 6 characters
   const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -169,9 +178,21 @@ const generateTransactionCode = () => {
     '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'pay on delivery',
     'pending','${total}','${total}', '${currentMonth}')` );
 
-    // const removeFromStock = await pool.query(`UPDATE products SET stock-='${count}' WHERE id='${proId}'`)
      
-    const response =  res.json(createOrder.rows);   
+    
+    if(createOrder){
+      await Promise.all(proIdCountPairs.map(async ({ id, count }) => {
+      await pool.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [count, id]);
+        await pool.query('COMMIT');
+  
+      }));
+
+
+  
+    }   
+    res.json({orders:createOrder.rows}); 
+ 
+  
     
 } catch (err) {
   console.error(err.message)

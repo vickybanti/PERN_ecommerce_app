@@ -66,11 +66,14 @@ function SavedItems() {
         // <ItemCard item={item} key={item?.id} imageData={item?.imageData}/>
         
         <div className="savedProduct">
-            <div className="card-container">
-            <NavLink to={`/product/${item.id}`}><span className="span">View product</span></NavLink>
-            <Delete sx={{fontSize:"30px", cursor:"pointer"}}  onClick={()=>dispatch(deleteItem(item))}/>
-            </div>
-           <img onClick={()=>navigate(`/product/${item.id}`)} className="savedImage" src={item.imageData} alt='' height="150px" width="150px" />
+            
+          <div className="savedImage">
+           <img onClick={()=>navigate(`/product/${item.id}`)} src={item.imageData} alt='' height="150px" width="150px" />
+           <div className="card-container">
+           <NavLink to={`/product/${item.id}`}><span className="span">View product</span></NavLink>
+           <Delete sx={{fontSize:"30px", cursor:"pointer", color:"red"}}  onClick={()=>dispatch(deleteItem(item))}/>
+           </div>
+          </div>
         </div>
         
 

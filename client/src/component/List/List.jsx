@@ -8,11 +8,13 @@ import { responsive } from '../Responsive';
 import SkeletonImg from '../skeleton/SkeletonImg';
 
 function List({ size, filters }) {
-  const { id, note } = useParams();
+  const { title, note, brand } = useParams();
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const perPage = 12;
+
+  console.log(title)
 
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
@@ -77,7 +79,9 @@ setLoading(false);
 
     try {
       const res = await fetch(
-        id ? `http://localhost:5000/categories/${id}`
+        title ? `http://localhost:5000/categories/${title}`
+        :
+        brand ? `http://localhost:5000/brands/${brand}` 
         :
         note ?  `http://localhost:5000/search/?title=${note}`
         :
@@ -106,7 +110,7 @@ setLoading(false);
 
   }
   
-}, [filters,id,note,size]);
+}, [filters,title,note,brand,size]);
 
   const renderProducts = () => {
 
@@ -117,7 +121,7 @@ setLoading(false);
    
    return productsToShow.map(item => (
       <div className="products" key={item.id}>
-        <ItemCard item={item} />
+        <ItemCard item={item} key={item.id}/>
       </div>
       
     ))
@@ -134,7 +138,7 @@ setLoading(false);
           return <SkeletonImg 
           key={i} />}) : renderProducts()}
         <div className='button'>
-          {id && (
+          {(title || brand )&& (
             <NavLink className="--btn --btn-primary" to={"/products"}>
               Browse all other products
             </NavLink>

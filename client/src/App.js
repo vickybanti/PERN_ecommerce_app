@@ -88,7 +88,8 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
         </Route>
 
 
-      <Route path='categories/:id' element={<List />} />
+      <Route path='categories/:title' element={<List />} />
+      <Route path='brands/:brand' element={<List />} />
       <Route path='search/:note' element={<List />} />
 
       <Route path='product/:id' element={<Product />} />

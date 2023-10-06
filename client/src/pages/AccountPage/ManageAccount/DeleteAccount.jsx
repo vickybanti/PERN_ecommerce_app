@@ -25,6 +25,7 @@ function DeleteAccount() {
   const [password, setPassword] = useState("")
   const navigate = useNavigate();
   const [showEmail, setEmail] = useState("")
+  
 
 
   async function deleteAccount(e) {
@@ -59,12 +60,13 @@ function DeleteAccount() {
         method:"GET"
       })
       const emailJson = await showEmail.json()
+      console.log("info=",emailJson)
 
-      setEmail(emailJson[0].email)
+      setEmail(emailJson.email)
     }
     getEmail()
   },[user])
-  console.log(showEmail)
+  console.log("showemail=",showEmail)
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -127,13 +129,13 @@ function DeleteAccount() {
           endAdornment={
             <InputAdornment position="end"
             
-            sx={{position:"relative", color:"black", marginRight:"80px", marginTop:"-50px"}}>
+            sx={{color:"black", marginRight:"80px"}}>
               <IconButton
                 aria-label="toggle password visibility"
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
                 edge="inside"
-                sx={{backgroundColor:"gray", marginTop:"10px"}}
+                sx={{backgroundColor:"gray"}}
                 
               >
                 {showPassword ? <VisibilityOff /> : <Visibility />}

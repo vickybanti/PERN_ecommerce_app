@@ -13,6 +13,7 @@ import useCat from '../../hooks/useCat';
 import { setIsCartOpen } from '../../redux/slice/cartSlice';
 import CategoriesBar from './Categories';
 import SearchBar from './SearchBar/SearchBar'
+import useBrand from '../../hooks/useBrands';
 
  
 
@@ -75,6 +76,7 @@ function Navbar() {
 
   const [showMenu, setMenu] = useState(false);
   const {catData} = useCat();
+  const {brandData} = useBrand()
 
 
   
@@ -148,6 +150,22 @@ function Navbar() {
       <div className={styles.header}>
 
         {logo}
+
+        <div className={styles.classics}>
+        <div className={styles.navbar}>
+  <li className={styles.menuItem}> 
+    Popular brands 
+    <ul className={styles.submenu}>
+    {brandData.map((brand) => (
+      
+      <NavLink to={`/brands/${brand.brand_title}`}><li>{brand.brand_title}</li></NavLink>
+      
+    ))}
+      
+    </ul>
+  </li>
+</div>
+</div>
 
 
 

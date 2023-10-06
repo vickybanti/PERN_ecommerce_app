@@ -1,8 +1,7 @@
 import React from 'react'
 import useCat from '../../hooks/useCat'
 import styles from './Navbar.module.scss';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 
 function CategoriesBar() {
@@ -20,7 +19,7 @@ function CategoriesBar() {
             width: '100%',
             
             justifyContent: "center", alignItems:"center"}}
-        to={`categories/${cat.id}`}>
+        to={`categories/${cat.cat_title}`}>
        
         <li key={cat.id} style={{fontWeight:"100"}}> {cat.cat_title}</li>
         

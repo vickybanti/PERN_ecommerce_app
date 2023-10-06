@@ -24,6 +24,11 @@ import { addProduct } from '../../redux/apiCalls';
 import SkeletonProduct from '../../component/skeleton/SkeletonProduct';
 import SkeletonProductImg from '../../component/skeleton/SkeletonProductImg';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+              
 
 
 
@@ -130,7 +135,45 @@ const [size, setSize]  = useState("")
       fontWeight: 'bold',
     }
   
-
+    function CustomTabPanel(props) {
+      const { children, value, index, ...other } = props;
+    
+      return (
+        <div
+          role="tabpanel"
+          hidden={value !== index}
+          id={`simple-tabpanel-${index}`}
+          aria-labelledby={`simple-tab-${index}`}
+          {...other}
+        >
+          {value === index && (
+            <Box sx={{ p: 3 }}>
+              <Typography>{children}</Typography>
+            </Box>
+          )}
+        </div>
+      );
+    }
+    
+    CustomTabPanel.propTypes = {
+      children: PropTypes.node,
+      index: PropTypes.number.isRequired,
+      value: PropTypes.number.isRequired,
+    };
+    
+    function a11yProps(index) {
+      return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+      };
+    }
+    
+    
+      const [value, setValue] = useState(0);
+    
+      const handleTabChange = (event, newValue) => {
+        setValue(newValue);
+      };
   
      
     
@@ -219,24 +262,49 @@ const [size, setSize]  = useState("")
               <div className='items'>
                 <FavoriteIcon onClick={addSave} sx={{color:isFav?"red":"black", fontSize:"28px"}}/> {isFav?"REMOVE FROM WISHLIST" :"ADD TO WISHLIST"}
               </div>
+
+
+
+
+
+
               
-            </div><hr /><div className='info'>
-              <h3>DESCRIPTION</h3>
-              <span>{pro.desc}</span>
-              <hr />
-              <h3>REVIEW</h3>
-              <div className='review'>
-              {reviews?reviews.map((item)=>(
-                <span>{item.review}</span>
-              )) :
-              <h2>No review for this product yet....</h2>
-            }
-            </div>
-              <hr />
+              
+              
+                
+                  <Box sx={{ width: '100%', marginTop:'30px'}} className='info'>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                      <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
+                        <Tab label="DESCRIPTION" {...a11yProps(0)} sx={{fontSize:'20px'}}/>
+                        <Tab label="REVIEW" {...a11yProps(1)} sx={{fontSize:'20px'}}/>
+                      </Tabs>
+                    </Box>
+                    <CustomTabPanel value={value} index={0}>
+                      {pro.desc}
+                    </CustomTabPanel>
+                    <CustomTabPanel value={value} index={1}>
+
+                    
+                    {reviews?reviews.map((item)=>(
+                      <span>{item.review}</span>
+                    )) :
+                    <h2>No review for this product yet....</h2>
+                  }
+                    </CustomTabPanel>
+                    
+                  </Box>
+                
+              
               
 
 
-            </div></>
+
+
+
+
+
+              
+            </div><hr /></>
           ))}
           
 

@@ -40,6 +40,7 @@ app.use("/products", require("./routes/products"))
 app.use("/product", require("./routes/product"))
 app.use("/search", require("./routes/search"))
 app.use("/categories", require("./routes/categories"))
+app.use("/brands", require("./routes/brands"))
 app.use("/review", require("./routes/review"))
 app.use("/saveditems", require("./routes/saved"));
 

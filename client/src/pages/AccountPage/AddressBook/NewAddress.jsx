@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import '../account.scss'
 
 function NewAddress() {
   const navigate = useNavigate();
@@ -152,9 +153,11 @@ function NewAddress() {
             <Button
               variant="contained"
               sx={{
-                width: "100%",
+                width: "60%",
                 fontSize: "1.1em",
                 backgroundColor: "skyblue",
+                height:"50px",
+                marginBottom:"20px",
                 "&:hover": {
                   backgroundColor: "#4a90e2",
                 },

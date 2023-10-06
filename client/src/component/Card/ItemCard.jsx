@@ -249,11 +249,11 @@ function addSave() {
         <Box
         value={size}
         onChange={handleSize}
-        sx={{height:60, transform: 'translateZ(0px)', flexGrow: 1, background:"none" }}>
+        sx={{height:60, transform: 'translateZ(0px)', flexGrow: 1, color:"white" }}>
         <SpeedDial
           ariaLabel="SpeedDial controlled open example"
           sx={{ position: 'absolute', bottom:0, right: 0}}
-          icon={<AddShoppingCart sx={{fontSize:"30px",borderRadius:"none", background:"inherit"}}/>}
+          icon={<AddShoppingCart sx={{fontSize:"30px",borderRadius:"none", color:"white"}}/>}
           onClose={handleClose}
           onOpen={handleOpen}
           open={open}

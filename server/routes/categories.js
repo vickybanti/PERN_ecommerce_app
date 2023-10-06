@@ -2,13 +2,25 @@ const router = require("express").Router();
 const pool = require("../db");
 
 
-router.get("/:id", async (req, res) => {
+// router.get("/:id", async (req, res) => {
+//     try{
+//         const {id} = req.params;
+//         console.log(id)
+//         const catPro = await pool.query(`SELECT * FROM categories 
+//         LEFT JOIN products ON products.cat_id = categories.id
+//         WHERE categories.id =${id}`);
+//         res.json(catPro.rows);        
+//     } catch (err) {
+//         console.log(err.message);
+//         res.status(400).send(err.message);
+
+//     }
+// })
+
+router.get("/:title", async (req, res) => {
     try{
-        const {id} = req.params;
-        console.log(id)
-        const catPro = await pool.query(`SELECT * FROM categories 
-        LEFT JOIN products ON products.cat_id = categories.id
-        WHERE categories.id =${id}`);
+        const {title} = req.params;
+        const catPro = await pool.query(`SELECT * FROM products WHERE cat_title ='${title}'`);
         res.json(catPro.rows);        
     } catch (err) {
         console.log(err.message);
@@ -16,6 +28,8 @@ router.get("/:id", async (req, res) => {
 
     }
 })
+
+
 
 router.get("/browseCategories/:title", async (req, res) => {
     try{
@@ -33,7 +47,7 @@ router.get("/browseCategories/:title", async (req, res) => {
 
 
 router.get("/", async (req, res) => {
-    try {
+    try { 
         const allCategories = await pool.query(`SELECT * FROM categories`);
         res.json(allCategories.rows);
     } catch (err) {

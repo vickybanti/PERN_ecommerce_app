@@ -42,7 +42,7 @@ router.put("/admin/:idd", async(req, res) => {
     }
 });
 
-router.put("/notadmin/:idd", async(req, res) => {
+router.put("/notadmin/:id", async(req, res) => {
     const {id} = req.body
     console.log(req.body)
     try {
