@@ -1,18 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Slider from 'react-slick'; // Import react-slick
+import React, { useState, useEffect } from 'react'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { CSSTransition } from 'react-transition-group';
 import './Product.scss'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import useFetchAProduct from '../../hooks/useFetchAProduct';
-import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
-import { addToCart } from '../../redux/slice/cartSlice'
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Loader from '../../component/loader/Loader';
 import RelatedProduct from './RelatedProduct';
 import { deleteItem, saveItem } from '../../redux/slice/savedItemSlice';
 import InputLabel from '@mui/material/InputLabel';
@@ -126,14 +120,7 @@ const [size, setSize]  = useState("")
     // Additional settings for the carousel
     
 
-    const captionStyle = {
-      fontSize: '2em',
-      fontWeight: 'bold',
-    }
-    const slideNumberStyle = {
-      fontSize: '20px',
-      fontWeight: 'bold',
-    }
+    
   
     function CustomTabPanel(props) {
       const { children, value, index, ...other } = props;

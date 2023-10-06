@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import {
   Button,
-  FormControl,
   IconButton,
   Input,
   InputAdornment,
-  InputLabel,
   OutlinedInput,
-  TextField,
 } from "@mui/material";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { AlternateEmailRounded, FunctionsOutlined, Lock } from "@mui/icons-material";
+import { AlternateEmailRounded, Lock } from "@mui/icons-material";
 import { toast } from "react-toastify";
 import { logout } from "../../../redux/apiCalls";
 

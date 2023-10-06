@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Navbar.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import {  AccountBox, Favorite, LabelOffRounded, Login, Logout, Person,  ShoppingBagSharp } from '@mui/icons-material';
+import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagSharp } from '@mui/icons-material';
 import {HiOutlineMenuAlt3} from 'react-icons/hi';
 import {useDispatch, useSelector} from 'react-redux';
 import { REMOVE_ACTIVE_USER, selectUserName } from '../../redux/slice/authSlice';
 import ShowOnLogin, { ShowOnLogout } from '../Hiddenlink';
-import { Alert, Badge, Button, Divider, IconButton } from '@mui/material';
+import { Badge, Divider, IconButton } from '@mui/material';
 import { logout } from "../../redux/apiCalls";
 import { toast } from 'react-toastify';
 import useCat from '../../hooks/useCat';

@@ -9,7 +9,6 @@ import {deleteItem, saveItem, setItemOpen} from '../../redux/slice/savedItemSlic
 import { responsive } from '../Responsive'
 import { addProduct } from '../../redux/apiCalls'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import useFetchProducts from '../../hooks/useFetchProducts'
 
 
 // const Info = styled.div`
@@ -108,7 +107,6 @@ function ItemCard({item}) {
 
   const [imageData, setImageData] = useState(null);
 
-  const {allProducts} = useFetchProducts()
 
   useEffect(() => {
     if (item.images) {
@@ -170,17 +168,6 @@ function addSave() {
 
   
   
-  
-  function increaseCount(){
-    setCount(count + 1)
-    
-  }
-
-  function decreaseCount() {
-
-    setCount(count >1? count -1: 1)
-  }
-
   const [size,setSize] = useState("")
 
   function handleSize(selectedSize) {
