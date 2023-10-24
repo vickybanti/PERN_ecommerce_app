@@ -13,7 +13,7 @@ export const adsData = [
     },
     {
       image: "img/banner/57620.jpg",
-      "desc":"50% DISCOUNT ON ITALIAN SHOES"
+      "desc":"50% DISCOUNT ON NIKE SHOES"
       
     },
     

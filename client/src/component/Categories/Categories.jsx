@@ -22,6 +22,8 @@ function Categories() {
         ))
     },[catData])
 
+    
+
     console.log(title)
 
     
@@ -41,7 +43,7 @@ function Categories() {
 
                         <Button className="catbutton">
 
-                            <NavLink style={{ color: "black" }} to={`products`}>Men's classic</NavLink>
+                            <NavLink style={{ color: "black" }} to={`categories/leather shoes`}>Men's classic</NavLink>
 
 
                         </Button>
@@ -62,9 +64,9 @@ function Categories() {
 
 
                                 <Button className="catbutton">
-                                <NavLink to={`categories/brands/nike}`} style={{ color: "white" }}>
+                                <NavLink to={`brands/Nike` || `brands/Addidas`} style={{ color: "white" }}>
 
-                                     Casual Sneakers
+                                     Top Sneakers
                                     </NavLink>
 
 

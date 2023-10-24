@@ -12,7 +12,7 @@ function OrderSkeleton() {
         <Skeleton classes="text width-25" />
         <Skeleton classes="text width-25" />
         
-        </div>
+      </div>
 
           
           

@@ -136,10 +136,10 @@ function Product({activeClassName}) {
                
 
                
-                {console.log(params.row.id)}
+               
 
                 
-                <button onClick={()=>navigate(`/products/${params.row.id}`)}>View</button>
+                <button onClick={()=>navigate(`/products/${params.row.id}`)} style={{cursor:"pointer"}}>View</button>
 
                 {isConfirmationOpen && (
                    
@@ -151,10 +151,11 @@ function Product({activeClassName}) {
                   className="userListDelete"
                   onClick={()=>deleteProduct(params.row.id)}
                   key={params.row.id}
+                  style={{cursor:"pointer"}}
                   
                 />
                 <Link to={"edit/" + params.row.id}>
-                <button className="userListEdit">Edit</button>
+                <button className="userListEdit" style={{cursor:"pointer"}}>Edit</button>
               </Link>
               </>
             );

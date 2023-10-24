@@ -31,6 +31,7 @@ return (
                 return <SkeletonImg 
                 key={i} />})
               : data.map(item => (
+                item.stock===0?"":
               <ItemCard item={item}
               key={item.id}/>
             ))}

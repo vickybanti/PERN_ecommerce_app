@@ -6,6 +6,14 @@ const refreshGenerator = require("../utils/refreshgenerator");
 const validator = require("../middleware/validator")
 const authorization = require("../middleware/authorization")
 const refresh = require("../middleware/refresh")
+const sendEmail = require("../sendEmail")
+
+const myModule = require("../template");
+
+
+
+//ORDER EMAIL
+const welcome = myModule.welcome;
 
 
 
@@ -14,7 +22,7 @@ const refresh = require("../middleware/refresh")
 router.post("/register",validator, async(req,res) => {
     try {
         //destructure the req.body(name, email, password)
-        const { email, password} = req.body
+        const { email, password,firstname} = req.body
 
         const user =  await pool.query("SELECT * FROM users WHERE email = $1",[email]);
 
@@ -33,11 +41,18 @@ router.post("/register",validator, async(req,res) => {
         //enter a new user
         const date = new Date()
         const created = new Date().getMonth();
-        const newUser = await pool.query(`INSERT INTO users (email, password, createdat, updatedat, isadmin) VALUES ('${email}','${bcryptPassword}','${created}','${created}','false' ) RETURNING*`);
+        const newUser = await pool.query(`INSERT INTO users (email, password, firstname,createdat,
+             updatedat, isadmin) VALUES 
+             ('${email}','${bcryptPassword}','${firstname}','${date}','${date}','false' ) RETURNING*`);
 
         //generating a user token
 
         const token = jwtGenerator(newUser.rows[0].user_id);
+        const subject = "Welcome to moore store";
+            const sent_from = "olamuyiwavictor@outlook.com";
+            const send_to = email;
+            const message = welcome;
+            await sendEmail(subject, message, send_to, sent_from);
         res.json({ token });
         
     } catch (err) {
@@ -91,12 +106,14 @@ router.post("/login",validator, async (req, res) => {
             return res.status(401).send({error:"incorrect pasword"})
         }
         const user_id = user.rows[0].user_id
+        const firstname = user.rows[0].firstname
         const token = jwtGenerator(user_id);
         const refreshToken = refreshGenerator(user_id);
+
         refreshTokens.push(refreshToken)
         console.log(refreshTokens)
 
-        res.json({user_id, token, refreshToken})  
+        res.json({user_id, firstname,token, refreshToken})  
     } catch (err) {
         console.log(err.message);
         res.status(500).send("Server error");
@@ -134,7 +151,7 @@ router.put("/reset",validator, async(req,res) => {
         
         const user  = await pool.query(`SELECT * FROM users WHERE email='${email}'`);
         if (user.rows.length === 0) {
-            return res.status(500).send("email is incorrect")
+            return res.status(500).json("email is incorrect")
         }
         const validPassword = await bcrypt.compare(password, user.rows[0].password);
 

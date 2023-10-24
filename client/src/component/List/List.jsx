@@ -116,7 +116,7 @@ setLoading(false);
 
     
     if (productsToShow.length === 0) {
-      return <div className='noProducts'><h1>No products found</h1></div>;
+      return <div><h1 className='noProducts'>No products found</h1></div>;
     }
    
    return productsToShow.map(item => (

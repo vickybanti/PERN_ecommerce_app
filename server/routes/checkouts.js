@@ -5,14 +5,23 @@ const router = require("express").Router();
 const express = require("express")
 const pool = require("../db");
 const crypto = require("crypto");
-
-
-
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-08-01",
 });
 
+const sendEmail = require("../sendEmail")
+
+const myModule = require("../template");
+
+
+
+//ORDER EMAIL
+const orderEmail = myModule.createOrderEmail;
+    
+
+
 router.use(express.static(process.env.STATIC_DIR));
+
 
 router.get("/", (req, res) => {
   const path = resolve(process.env.STATIC_DIR + "/index.html");
@@ -45,6 +54,8 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     }
     
     const currentMonth = getMonthInWords();
+    const currentDate = new Date();
+
 
 
     console.log(userId)
@@ -72,8 +83,8 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     item.price * 100
        
   ));
-    const proId = carts.map((item)=>item.id)
-  const count = carts.map((item) => (item.count))
+  const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
+
   const total = parseFloat(totals)
 
 
@@ -90,28 +101,43 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     
     try {
     
-        if(paymentIntent.id) {
+        
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
         
 
     const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
-        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total, month)
+        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
       VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
       '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
-      'pending','${total}','${total}', '${currentMonth}')` );
+      'pending','${total}','${total}','${currentDate}', '${currentMonth}')` );
 
-        
-      const payment = res.json({
-        clientSecret: paymentIntent.client_secret,
-        orders: createOrder.rows,
-      });  
       
-      if(payment){
-        const getPro = await pool.query(`UPDATE products SET stock=stock-${count} WHERE id=${proId}`)
-        res.json(getPro.rows)
-      }
-      }
+
+    
+      // await Promise.all(proIdCountPairs.map(async ({ id, count }) => {
+      //   await pool.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [count, id]);
+      //     await pool.query('COMMIT');
+      //   }))
+  
+          
+          
+               
+      
+        res.json({
+          clientSecret: paymentIntent.client_secret,
+          orders: createOrder.rows,
+        });  
+
+        // const send_to = email;
+        // const subject = "New orders";
+        // const sent_from = "olamuyiwavictor@outlook.com";
+        // const message =  orderEmail(currentDate, paymentIntentId, carts,total)
+        // await new Promise((resolve) => setTimeout(resolve, 1000));
+        // await sendEmail(subject, message, send_to, sent_from);
+
+      
+      
       
   } catch (err) {
     console.error(err.message)
@@ -137,6 +163,8 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     }
     
     const currentMonth = getMonthInWords();
+    const currentDate = new Date();
+
 
    
     const carts = JSON.parse(cartItems)
@@ -173,23 +201,29 @@ const generateTransactionCode = () => {
     code += chars[crypto.randomInt(chars.length)];
   }
   const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
-      country, city, state, street1,street2, email, phone_number, payment_status, delivery_status, subtotal, total, month)
+      country, city, state, street1,street2, email, phone_number, payment_status, delivery_status, subtotal, total, date,month)
     VALUES('${userId}','${code}','${firstName}','${lastName}','${cartItems}','${country}',
     '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'pay on delivery',
-    'pending','${total}','${total}', '${currentMonth}')` );
+    'pending','${total}','${total}', '${currentDate}', '${currentMonth}')` );
 
      
     
-    if(createOrder){
+    
       await Promise.all(proIdCountPairs.map(async ({ id, count }) => {
       await pool.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [count, id]);
         await pool.query('COMMIT');
-  
-      }));
+      }))
 
-
+        
+        
+              const send_to = email;
+              const subject = "New orders";
+              const sent_from = "olamuyiwavictor@outlook.com";
+              const message =  orderEmail(currentDate, code, carts,total)
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              await sendEmail(subject, message, send_to, sent_from);
   
-    }   
+     
     res.json({orders:createOrder.rows}); 
  
   

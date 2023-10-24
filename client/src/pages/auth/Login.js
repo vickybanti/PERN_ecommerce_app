@@ -130,7 +130,7 @@ function Login() {
           <CircularProgress sx={{color:"white"}}/>
           
           :"Login"}</Button>
-            <span>{error && message}</span>
+            <span style={{color:"red"}}>{error && message}</span>
             <div className={styles.links}>
                 <Link to="/reset"><h4><Label />Reset Password</h4></Link>
             </div>

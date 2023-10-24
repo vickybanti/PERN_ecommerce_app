@@ -39,6 +39,12 @@ import NewAddress from './pages/AccountPage/AddressBook/NewAddress';
 import DefaultAddress from './pages/AccountPage/AddressBook/DefaultAddress';
 import DeleteAccount from './pages/AccountPage/ManageAccount/DeleteAccount';
 import ResetPassword from './pages/auth/Reset/ResetPassword';
+import PrivacyPolicy from './pages/Company/PrivacyPolicy';
+import AboutUs from './pages/Company/AboutUs';
+import Terms from './pages/Company/Terms';
+import Shipping from './pages/FAQ/Shipping';
+import Return from './pages/FAQ/Return';
+import Frequent from './pages/FAQ/Frequent';
 
 // const Products = React.lazy(()=> import('./pages/Products/Products'))
 
@@ -52,6 +58,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
     <ToastContainer 
     position="bottom-left"
     theme="dark"
+    color="white"
     autoClose="2000"
     closeOnClick
     
@@ -109,6 +116,14 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
  {      // <Route path='order' element={user? <Orders /> : <Login />} />
 }      <Route path='order/:userId' element={user ? <OrderPage /> : <Login />} />
       <Route path='upload' element={<ImageUploader /> } />
+
+      <Route path='aboutus' element={<AboutUs />}></Route>
+      <Route path='privacyPolicy' element={<PrivacyPolicy />}></Route>
+      <Route path='shipping' element={<Shipping />}></Route>
+      <Route path='returns' element={<Return />}></Route>
+      <Route path='payment' element={<Payment />}></Route>
+      <Route path='frequent' element={<Frequent />}></Route>
+      <Route path='termsAndConditions' element={<Terms />}></Route>
 
     </Routes>
 

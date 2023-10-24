@@ -36,8 +36,11 @@ export const savedItemSlice = createSlice({
           // If the product doesn't exist in the cart, add it as a new item
           state.savedItems.push(productToAdd);
           state.totalQuantity += productToAdd.count;
-          toast.success(`${action.payload.title} added to saved item`)
-          localStorage.setItem("savedItems", JSON.stringify(state.savedItems))
+          const itemToSave = state.savedItems.map((item) => ({
+            id: item.id,
+          }));
+          toast.success(<h2 style={{color:"white"}}>{action.payload.title} added to saved item</h2>)
+          localStorage.setItem("savedItems", JSON.stringify(itemToSave))
         },          
         
         deleteItem (state, action) {
@@ -49,9 +52,7 @@ export const savedItemSlice = createSlice({
             const updatedQuantity = state.savedItems.length;
             state.totalQuantity = updatedQuantity;
             localStorage.removeItem("item", JSON.stringify(state.savedItems))
-            toast.error(`${action.payload.title} deleted from saved items`)
-
-
+            toast.error(<h2 style={{color:"white"}}>{action.payload.title} removed from saved item</h2>)
         }
     }
     });

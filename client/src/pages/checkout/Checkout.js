@@ -12,8 +12,6 @@ import { LocalShipping, Payment, ContactPage, Check } from '@mui/icons-material'
 import { toast } from 'react-toastify';
 import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
-import useFetchProducts from '../../hooks/useFetchProducts';
-
 
 
 
@@ -244,7 +242,6 @@ const handleFormSubmit = async(values, actions) => {
     
       
       <div className='checkout'>
-
       
 
       <Box className="left">
@@ -317,7 +314,7 @@ const handleFormSubmit = async(values, actions) => {
   </div>
   <hr />
   <div className="d-flex justify-content-between">
-    <NavLink to="/return" style={{ textDecoration: "none" ,padding:"40px"}}>
+    <NavLink to="/returns" style={{ textDecoration: "none" ,padding:"40px"}}>
       Return Policy
     </NavLink>
     <NavLink to="/shipping" style={{ textDecoration: "none", padding:"40px" }}>

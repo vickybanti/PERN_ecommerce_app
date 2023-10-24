@@ -1,23 +1,71 @@
 .auth {
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  background-image: url("../../../../server/uploads/shoes/3940543.jpg");
-  background-position-y: top;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  overflow:hidden;
+  scroll-behavior: smooth;
 
   .img {
-    animation: slide-down 0.5s ease;
+    // animation: slide-down 0.5s ease;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+
+  }
+
+  .loginImage{
+    height:690px;
+    width:50%;
+    padding: 0;
+    position: relative;
+
+    .show-slide-down {
+      max-height: 1000px; /* Adjust the value as needed */
+      transition: max-height 1.5s ease-in-out;
+      overflow: hidden;
+    }
+    
+    .hide-slide-up {
+      max-height: 0;
+      transition: max-height 0.5s ease-in-out;
+      overflow: hidden;
+    }
+    
+
+    .loginSpan{
+      color:white;
+      position:absolute; 
+      background-color: brown;
+      margin:60% 20%;
+      padding:30px;
+      transition:  1.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    .loginHeading{
+      color:white;
+      position:absolute; 
+      margin:40% 10%;
+      font-weight: bold;
+      font-size: 30px;
+      padding:30px;
+      background-color: rgba(0,0,0,0.1);
+
+      
+    }
+    
   }
 
   .form {
-    width: 45rem;
-    padding: 1.5rem;
-    animation: slide-up 0.5s ease;
+    width: 55%;
+    height: 100%;
+    //animation: slide-up 0.5s ease;
     color:white;
-    background-color: rgba(0,0,0,0.8);
-    padding:60px;
+    background-color: rgb(4, 17, 24);
+    padding:60px 120px;
 
     span{
       font-size: 15px;

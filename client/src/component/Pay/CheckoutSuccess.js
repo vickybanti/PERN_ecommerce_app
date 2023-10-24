@@ -36,6 +36,11 @@ function CheckoutSuccess() {
 
   }
 
+
+
+
+
+
   return (
     <div className='success'>
     <img src='img/about/happy.svg' alt='' className='successImg'/>

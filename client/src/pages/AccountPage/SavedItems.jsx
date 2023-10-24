@@ -1,5 +1,4 @@
-import { Alert, Button, Snackbar } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import "./account.scss";

@@ -22,12 +22,20 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+import Grid from "@mui/material/Grid";
+import ImageCarouselZoom from "./ImageCarousel";
+import { Container } from "@mui/material";
+import ImageCarousel from './ImageCarousel';
               
 
 
 
 
-function Product({item}) {
+function Product() {
   const { proData, loading, imageData} = useFetchAProduct();
   console.log(proData)
 
@@ -175,7 +183,17 @@ const [size, setSize]  = useState("")
         <div className='mainImg'>
       
         {loading ? <SkeletonProductImg /> : 
-          <img src={imageData && imageData[image]} alt='' />
+          // <img src={imageData && imageData[image]} alt='' />
+         <>
+          <Container maxWidth='lg' sx={{mt:3,zIndex:'0'}}>
+          <Grid container spacing={7}>
+            <Grid item xl={10} >
+                <ImageCarousel data={imageData}/>
+            </Grid>
+          </Grid>
+        </Container>
+          
+      </>
     }
         </div>
 
@@ -275,7 +293,7 @@ const [size, setSize]  = useState("")
                     {reviews?reviews.map((item)=>(
                       <span>{item.review}</span>
                     )) :
-                    <h2>No review for this product yet....</h2>
+                    <h3>No review for this product yet....</h3>
                   }
                     </CustomTabPanel>
                     

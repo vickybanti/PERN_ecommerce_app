@@ -3,7 +3,21 @@
     width:250px;
     height:300px;
     position: relative;
-    margin-bottom: 70px;    
+    margin-bottom: 70px; 
+
+    .out{
+        background-color: rgba(0,0,0,0.2);
+        text-align: center;
+        width: 250px;
+        height: 300px;
+        background-size: cover;
+        position: absolute;
+
+        .stock{
+            
+            padding-top: 50%;
+        }
+    }   
 
    /* Define styles for the 'img' element */
 img {

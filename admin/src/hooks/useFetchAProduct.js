@@ -13,7 +13,6 @@ const useFetchAProduct = () => {
 
   
     const processImages = useCallback(async (proImages) => {
-      console.log(proImages)
       if (proImages && proImages.length > 0) {
         const newImageDataArray = [];
     
@@ -64,10 +63,7 @@ const useFetchAProduct = () => {
         }
         fetchData();
     }, [id])
-    console.log(proData)
-
     return { proData, loading, error, imageData};
-
 }
 
 export default useFetchAProduct;

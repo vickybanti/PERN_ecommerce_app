@@ -75,8 +75,8 @@ function OrderPage() {
         
         <><><div className="order" key={value.order_id}>
 
-
-                        {loading?<OrderItems style={{float:"right"}}/> : value.cart.map((item,itemIndex) => (
+                        <h4> {value.date} </h4>
+                        {loading?<OrderItems style={{display:"flex", flexDirection:"column"}}/> : value.cart.map((item,itemIndex) => (
 
               
 

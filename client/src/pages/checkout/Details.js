@@ -19,7 +19,7 @@ function Details({
         <Input  
             fullWidth
             type="text"
-            label="Email"
+            placeholder="Email"
             onBlur={handleBlur}
             onChange={handleChange}
             value={values.email}
@@ -32,7 +32,7 @@ function Details({
             <Input 
             fullWidth
             type="text"
-            label="Phone Number"
+            placeholder="Phone Number"
             onBlur={handleBlur}
             onChange={handleChange}
             value={values.phoneNumber}

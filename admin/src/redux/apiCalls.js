@@ -36,11 +36,18 @@ export const login = async(dispatch, user) => {
         body: JSON.stringify(user)
       });
       const parseRes = await response.json()
-      if (parseRes){
-        const response = await fetch(`http://localhost:5000/auth/user/${parseRes.user_id}`,{
+
+      if(!response){
+        res(response)
+      }
+
+    
+      
+    if (parseRes){
+        const res = await fetch(`http://localhost:5000/auth/user/${parseRes.user_id}`,{
           method:"GET"
         });
-      const getAdmin = await response.json()
+      const getAdmin = await res.json()
       console.log(getAdmin)
 
       if(getAdmin && getAdmin.isadmin===true){
@@ -72,37 +79,33 @@ export const login = async(dispatch, user) => {
         
 
       }
-      // if (getAdmin.isadmin===false) {
-      //     dispatch(LOGIN_FAILURE({error:true,
-      //     errorMessage:"USER IS NOT AN ADMIN...",
+       //else if(getAdmin.isadmin===false){
+      //   dispatch(LOGIN_FAILURE({error:true,
+      //     errorMessage:"User is not admin...",
       //   isFetching:false}))
-        
-      // }
+      // } 
       
+    } 
       
-           
-      } 
-      if(!parseRes) {
-          dispatch(LOGIN_FAILURE({error:true,
-          errorMessage:"INVALID EMAIL/PASSWORD...",
-        isFetching:false}))
-        
-      }
-      
+    
       
 
       
     } catch (error) {
-      if(error.res === 500){
-      dispatch(LOGIN_FAILURE({error:true,
-        errorMessage:"email not found...",
-        isFetching:false}))
-      } else if(error.res.status ===401) {
+      if (error.status === 500) {
         dispatch(LOGIN_FAILURE({error:true,
-          errorMessage:"nvalid password",
-          isFetching:false}))
+          errorMessage:"email not found...",
+        isFetching:false})); // Response text ("email is incorrect")
+      } else if (error.status === 401) {
+        dispatch(LOGIN_FAILURE({error:true,
+          errorMessage:"wrong password...",
+        isFetching:false}))
+      } else{
+        dispatch(LOGIN_FAILURE({error:true,
+          errorMessage:"User is not admin...",
+        isFetching:false}))
       }
-    }
+  }
   }
   
 

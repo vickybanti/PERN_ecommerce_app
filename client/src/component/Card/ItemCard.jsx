@@ -178,7 +178,7 @@ function addSave() {
 
   function handleClick(e, selectedSize) {
     e.preventDefault()
-    addProduct(dispatch,item,imageData,count,selectedSize)
+    addProduct(dispatch,item,count,selectedSize)
 
 
     
@@ -191,13 +191,17 @@ function addSave() {
 
   return (
     <div className= "contain" responsive={responsive} key={item.id}>
-    {item.type &&
+    {item.stock <= 0 && <div className='out'>
+      <h3 className='stock'>Out of stock</h3>
+    </div>}
+    {item.stock<=0?"":item.type &&
       <Avatar
           alt={item.type}
           className="avatar"
           component="div"
           sizes="12px"
-          sx={{backgroundColor: item.type==="newArrivals"?"orangered" : "#071b28", marginTop:"20", 
+          sx={{backgroundColor:item.stock <=0?"rgba(0,0,0,0.4)":
+            item.type==="newArrivals"?"orangered" : "#071b28", marginTop:"20", 
           position:"absolute",
           width: "80px",
           borderRadius:"0", 
@@ -218,53 +222,57 @@ function addSave() {
       
       <div className="infos">
         
-              
+              {item.stock <=0 ? "" :
          
         
         
         
-        <div className="icon">
-          
-       
-        <FavoriteBorderIcon style={{color:isFav?"red":"white", fontSize:"30px"}} onClick={addSave}/> 
-          
-        </div>
-
-     
-        <div className="icon" >
-        
-        <Box
-        value={size}
-        onChange={handleSize}
-        sx={{height:60, transform: 'translateZ(0px)', flexGrow: 1, color:"white" }}>
-        <SpeedDial
-          ariaLabel="SpeedDial controlled open example"
-          sx={{ position: 'absolute', bottom:0, right: 0}}
-          icon={<AddShoppingCart sx={{fontSize:"30px",borderRadius:"none", color:"white"}}/>}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          open={open}
-        >
-          {item.sizes?.map((sizeOption) => (
-            <SpeedDialAction
-            key={sizeOption}
-              value={sizeOption}
-              onChange={handleSize}
-              icon={sizeOption}
-              onClick={(e)=>handleClick(e, sizeOption)}
-              sx={{color:"black", fontSize:"20px", fontFamily:"fantasy"}}
-            />
-          ))}
-        </SpeedDial>
-      </Box>
-
-      
-    </div>
+        <><div className="icon">
 
 
+
+            <FavoriteBorderIcon style={{ color: isFav ? "red" : "white", fontSize: "30px" }} onClick={addSave} />
+
+          </div><div className="icon">
+
+              {item.stock === 0 ? <span>Out of stock</span> :
+
+                <Box
+                  value={size}
+                  onChange={handleSize}
+                  sx={{ height: 60, transform: 'translateX(0px)', flexGrow: 2 }}>
+                  <SpeedDial
+                    ariaLabel="SpeedDial controlled open example"
+                    sx={{ position: 'absolute', bottom: 0, right: 0, border: "none" }}
+                    icon={<AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    open={open}
+                  >
+                    {item.sizes?.map((sizeOption) => (
+                      <SpeedDialAction
+                        key={sizeOption}
+                        value={sizeOption}
+                        onChange={handleSize}
+                        icon={sizeOption}
+                        onClick={(e) => handleClick(e, sizeOption)}
+                        sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
+                    ))}
+                  </SpeedDial>
+                </Box>}
+
+
+            </div></>
+
+        }
       </div>
+      <div style={{display:"flex", justifyContent:"space-between"}}>
       <div className= "h3">
         {item.title}
+      </div>
+      <div className="cat" style={{color:"gray", fontFamily:"cursive", fontSize:"14px"}}>
+        {item.brand_title}
+      </div>
       </div>
       <div className="price">
        <div className='old'> $ {item.oldPrice}</div>

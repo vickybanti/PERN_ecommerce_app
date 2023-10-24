@@ -4,18 +4,22 @@ import Topbar from "../../components/topbar/Topbar";
 import "./Edit.css";
 import { useEffect, useState } from "react";
 import useCat from "../../hooks/useCat";
+import useBrand from "../../hooks/useBrands";
 import useFetchAProduct from "../../hooks/useFetchAProduct";
 import { useParams } from "react-router";
 
 export default function Edit() {
   const { catData } = useCat();
+  const {brandData} = useBrand()
   const { proData, imageData } = useFetchAProduct();
   const { id } = useParams();
 
   const proDatas = proData.map((pro) => {
     return {
       id: pro.id,
+      cat:pro.cat_title,
       title: pro.title,
+      brand:pro.brand_title,
       description: pro.desc,
       stock: pro.stock,
       sizes: pro.sizes,
@@ -25,7 +29,11 @@ export default function Edit() {
     };
   });
 
-  const [formData, setFormData] = useState(proDatas[0] || {});
+  console.log("proData",proDatas.title)
+  console.log(proDatas.title)
+  console.log(proDatas.description)
+
+  const [formData, setFormData] = useState(proDatas || {});
   const [selectedImages, setSelectedImages] = useState([]);
   const [selectedSizes, setSizes] = useState([]);
 
@@ -49,27 +57,36 @@ export default function Edit() {
 
     const editedFields = {
       title: formData.title,
+      type:formData.type,
       description: formData.description,
       oldPrice: formData.oldPrice,
       price: formData.price,
       stock: formData.stock,
       sizes: selectedSizes,
       cat: formData.cat,
+      brand:formData.brand
     };
-
+    console.log(editedFields)
     const formDataToBackend = new FormData();
-    formDataToBackend.append("data", JSON.stringify(editedFields));
+    formDataToBackend.append("editedFields", JSON.stringify(editedFields));
+    console.log(formDataToBackend)
 
-    for (const file of selectedImages) {
-      formDataToBackend.append("images", file);
+    const body = {
+      editedFields:editedFields,
+      images : []
     }
 
+    for (const file of selectedImages) {
+      body.images.append("images", file);
+    }
+
+    
     try {
       const enterProducts = await fetch(
         `http://localhost:5000/product/edit/${id}`,
         {
           method: "PUT",
-          body: formDataToBackend,
+          body: JSON.stringify(body),
         }
       );
 
@@ -120,7 +137,7 @@ export default function Edit() {
                 <label>Title</label>
                 <input
                   type="text"
-                  placeholder={proDatas[0].title}
+                  placeholder={proDatas.title}
                   name="title"
                   value={formData.title || ""}
                   onChange={handleInputChange}
@@ -128,7 +145,7 @@ export default function Edit() {
                 <label>Description</label>
                 <input
                   type="text"
-                  placeholder={proDatas[0].description}
+                  placeholder={proDatas.description}
                   name="description"
                   value={formData.description || ""}
                   onChange={handleInputChange}
@@ -136,7 +153,7 @@ export default function Edit() {
                 <label>Old price</label>
                 <input
                   type="text"
-                  placeholder={proDatas[0].oldPrice}
+                  placeholder={proDatas.oldprice}
                   name="oldPrice"
                   value={formData.oldPrice || ""}
                   onChange={handleInputChange}
@@ -144,14 +161,13 @@ export default function Edit() {
                 <label>Price</label>
                 <input
                   type="text"
-                  placeholder={proDatas[0].price}
+                  placeholder={proDatas.price}
                   name="price"
                   value={formData.price || ""}
                   onChange={handleInputChange}
                 />
                 <label>Type</label>
                 <select value={formData.type || ""}
-                placeholder={proDatas[0].type}
                 onChange={handleInputChange}>
                   <option value="">Regular</option>
                   <option value="trending">Trending</option>
@@ -160,7 +176,7 @@ export default function Edit() {
                 <label>Stock</label>
                 <input
                   type="text"
-                  placeholder="in stock"
+                  placeholder={proDatas.stock}
                   name="stock"
                   value={formData.stock || ""}
                   onChange={handleInputChange}
@@ -168,7 +184,7 @@ export default function Edit() {
                 <label>Sizes</label>
                 <input
                   type="text"
-                  placeholder={proDatas[0].sizes}
+                  placeholder={proDatas.sizes}
                   name="sizes"
                   value={selectedSizes || ""}
                   onChange={handleSizes}
@@ -192,6 +208,24 @@ export default function Edit() {
                   ))}
                 </select>
               </div>
+
+              <div className="newUserItem">
+              <label>Brands</label>
+              <select
+                className="newUserSelect"
+                value={formData.brand || ""}
+                name="brand"
+                onChange={handleInputChange}
+                id="active"
+              >
+                <option disabled>select category</option>
+                {brandData.map((brand) => (
+                  <option value={brand.brand_id} key={brand.brand_id}>
+                    {brand.brand_title}
+                  </option>
+                ))}
+              </select>
+            </div>
 
               <button className="newUserButton" type="submit">
                 Update

@@ -6,6 +6,6 @@ function refreshGenerator(user_id) {
         user: user_id
     }
 
-    return jwt.sign(payload, process.env.refreshSecret);
+    return jwt.sign(payload, process.env.refreshSecret, {expiresIn : "30s"});
 }
 module.exports = refreshGenerator;

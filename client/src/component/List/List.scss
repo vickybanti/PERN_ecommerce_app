@@ -14,7 +14,7 @@
     .--btn{
         justify-content: center;
         align-items: center;
-        margin-top: 450px;
+        margin-top: 40px;
         
 
     }
@@ -28,6 +28,21 @@
     display: flex;
     justify-content:center;
     align-items:center
+}
+.noProducts{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 100px 0;
+}
+
+.button{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 50px 0;
 }
 
 
@@ -129,12 +144,7 @@
             
 
             
-            .noProducts{
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-            }
+            
         
 
         }

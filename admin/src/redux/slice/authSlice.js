@@ -8,8 +8,6 @@ const initialState = {
     isFetching: false,
     errorMessage:null,
     error:false,
-    isAdmin:false,
-    users:[]
 }
 
 const authSlice = createSlice({
@@ -30,24 +28,6 @@ const authSlice = createSlice({
       
     },
 
-    SET_ADMIN (state,action) {
-      const {userID} = action.payload
-      state.users = state.users.map((user) =>
-        user.userID === userID ? state.isAdmin===true : user
-      );
-      console.log(state.isAdmin)
-      
-    },
-
-    SET_NOT_ADMIN (state,action) {
-      const {userID} = action.payload
-      state.users = state.users.map((user) =>
-        user.userID === userID ? state.isAdmin===false : user
-      );
-      console.log(state.isAdmin)
-
-
-    },
 
 
  

@@ -33,11 +33,11 @@ router.get("/", authorization, async(req, res) => {
     }
 });
 
-router.get("/user_id", authorization, async(req, res) => {
+router.get("/:user_id", authorization, async(req, res) => {
     try {
         //payload from authoriaztion has the user payload
         const user = await pool.query(`SELECT user_id FROM users WHERE user_id='${req.user}'`)
-        const getUser = res.json(user.rows[0]);
+        res.json(user.rows[0]);
         
     } catch (err) {
         console.error(err.message);

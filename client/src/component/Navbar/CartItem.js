@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clearProductsFromCart, deleteFromCart } from "../../redux/apiCalls";
+import ImageData from "../ImageData";
 
 const FlexBox = styled(Box)`
   display: flex;
@@ -42,6 +43,41 @@ function CartItem(){
     setMessage(`${item.title} removed from cart`, setTimeout(()=>3000))
 
   };
+
+
+
+  const [imageData, setImageData] = useState(null);
+
+  useEffect(() => {
+    const proImages = cart.cartItems.map((cart)=>cart.images)
+    if (proImages) {
+      const newImageDataArray = [];
+
+      proImages.forEach((image) => {
+        const byteArray = new Uint8Array(image.data);
+        const blob = new Blob([byteArray], { type: 'image/jpeg' });
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64Image = reader.result;
+          newImageDataArray.push(base64Image);
+
+          // Check if all images have been processed
+          if (newImageDataArray.length === proImages.length) {
+            setImageData(newImageDataArray);
+          }
+        };
+
+        reader.readAsDataURL(blob);
+      });
+    } else {
+      setImageData([]);
+    }
+  }, [cart]);
+
+
+
+
   
 
   function deleteAllCart(){
@@ -58,9 +94,9 @@ function CartItem(){
     } else{
       navigate("/login")
     }
-  }
   
   
+  } 
 
   return (
     <Box
@@ -134,15 +170,9 @@ function CartItem(){
               <FlexBox>
               {/*flex 1 for flex growth, 1 for shrinking, width is 40%*/}
                 <Box flex="1 1 40%" mt={"20px"}>
-                 <img 
-                  src={item.imageData && item.imageData[0]}
-                    alt=""
-                    style={{
-                      width:"100%",
-                      height:"100%" 
-                    }}
-                     
-                  />
+                <div style={{width:"100%", height:"100%"}}>
+                  <ImageData item={item} />
+                </div>
                 </Box>
                 <Box flex="1 1 60%">
 

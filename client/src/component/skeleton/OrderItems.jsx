@@ -4,7 +4,7 @@ import Skeleton from "./Skeleton"
 function OrderItems() {
   return (
     
-    <div className='right'>
+    <div style={{display:"flex", flexDirection:"column"}}>
     
       <Skeleton classes="text width-25" />
       <Skeleton classes="text width-25" />

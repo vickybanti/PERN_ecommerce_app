@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import "../../index.css"
 import styles from './auth.module.scss'
 import { Link, useNavigate } from 'react-router-dom';
-import { Google, Label, LoginOutlined, Mail, Password } from '@mui/icons-material';
+import { AlternateEmail, Google, Label, LockSharp, LoginOutlined, Mail, Password, Visibility, VisibilityOff } from '@mui/icons-material';
 import Loader from '../../component/loader/Loader';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Button, Input } from '@mui/material';
+import { Button, CircularProgress, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
 import { firebaseLogin } from '../../redux/apiCalls';
 import { useDispatch } from 'react-redux';
 
@@ -15,14 +15,23 @@ import { useDispatch } from 'react-redux';
 
 function Register() {
     const [email, setEmail] = useState("")
+    const [firstname, setFirstname] = useState("")
     const [password, setPassword] = useState("")
     const [cPassword, setCPassword] = useState("")
     const dispatch = useDispatch()
+    const [showPassword, setShowPassword] = useState(false)
+    const [showCPassword, setShowCPassword] = useState(false)
+
 
     const [message, setMessage] = useState("")
 
     const[isLoading, setLoading] = useState(false);
     const navigate = useNavigate()
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const handleClickShowCPassword = () => setShowCPassword((show) => !show);
+
+    
+  
 
     async function registerUser(e, res) {
       e.preventDefault();
@@ -36,7 +45,7 @@ function Register() {
            else{
         try {
         
-            const body = {email, password} 
+            const body = {email, password,firstname} 
             const response = await fetch("http://localhost:5000/auth/register", {
               method: "POST",
               headers: {"Content-Type": "application/json"},
@@ -87,27 +96,91 @@ function Register() {
     //add ToastContainer 
     
 
-    {isLoading && "Loading..."}
+    {isLoading && <CircularProgress />}
     <section className={`container ${styles.auth}`}>
       
       <div className={styles.form}>
         <h2>Register</h2>
         
         <form onSubmit={registerUser}>
+        <Input type='text' placeholder="firstname" value={firstname}
+        onChange={(e)=>setFirstname(e.target.value)}  fullWidth/>
         <Input type='email' placeholder="email" value={email}
-        onChange={(e)=>setEmail(e.target.value)} endIcon=<Mail /> fullWidth/>
-        <Input type='password' placeholder='password' value={password}
-        onChange={(e)=>setPassword(e.target.value)} fullWidth endIcon=<Password/> sx={{ marginBottom:"20px"}}/>
+        onChange={(e)=>setEmail(e.target.value)} 
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <AlternateEmail />
+            </InputAdornment>
+          ),
+        }}
 
-        <Input type='password' placeholder='confirm password' value={cPassword}
-        onChange={(e)=>setCPassword(e.target.value)} fullWidth endIcon=<Password/> sx={{ marginBottom:"20px"}}/>
-        <Button type= "submit"
+        
+        required 
+        
+        fullWidth/>
+        
+        <OutlinedInput type={showPassword ? "text" : "password"} 
+        placeholder='password' 
+        value={password}
+        fullWidth  
+        sx={{ marginBottom:"20px", marginTop:"20px"}}
+        onChange={(e)=>setPassword(e.target.value)}
+        required
+        endAdornment={
+          <InputAdornment position="end">
+            <IconButton
+              aria-label="toggle password visibility"
+              onClick={handleClickShowPassword}
+              onMouseDown={handleClickShowPassword}
+              edge="inside"
+            >
+              {showPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </InputAdornment>
+        }
+        startAdornment={
+          <InputAdornment position="start">
+            <LockSharp />
+          </InputAdornment>
+        }
+        label="Password"
+        />
+
+
+        <OutlinedInput type={showCPassword ? "text" : "password"} 
+        placeholder='password' 
+        value={cPassword}
+        fullWidth  
+        sx={{ marginBottom:"20px", marginTop:"20px"}}
+        onChange={(e)=>setCPassword(e.target.value)}
+        required
+        endAdornment={
+          <InputAdornment position="end">
+            <IconButton
+              aria-label="toggle password visibility"
+              onClick={handleClickShowCPassword}
+              onMouseDown={handleClickShowCPassword}
+              edge="inside"
+            >
+              {showCPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </InputAdornment>
+        }
+        startAdornment={
+          <InputAdornment position="start">
+            <LockSharp />
+          </InputAdornment>
+        }
+        label="Password"
+        />
+    <Button type= "submit"
         variant='contained'
         fullWidth
         sx={{backgroundColor:"Highlight"}}
-        id="submit" disabled={!email || !password} style={{fontSize:"20px"}}>
+        id="submit" disabled={!email || !password || !firstname} style={{fontSize:"20px"}}>
         <LoginOutlined />{isLoading?"Loading...":"Register"}</Button>
-        <h2>{message}</h2>
+        <h4 style={{color:"red", fontWeight:200}}>{message}</h4>
             
         <span className={styles.register}>
         

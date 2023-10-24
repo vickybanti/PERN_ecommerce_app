@@ -2,9 +2,13 @@ import React from 'react'
 import useCat from '../../hooks/useCat'
 import styles from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
+import './Navbar.module.scss'
 
 
 function CategoriesBar() {
+    const activeLink = (
+        ({isActive}) => (isActive ? `${styles.active}` : "")
+      )
 
     const {catData} = useCat()
     return (
@@ -14,17 +18,18 @@ function CategoriesBar() {
         
         <ul className='ul'>
         
-       
-        <NavLink className="btn" style={{
+       <li key={cat.id} >
+        <NavLink className= {activeLink} style={{
             width: '100%',
             
-            justifyContent: "center", alignItems:"center"}}
+            justifyContent: "center", alignItems:"center",fontWeight:"100", fontSize:"17px"}}
         to={`categories/${cat.cat_title}`}>
        
-        <li key={cat.id} style={{fontWeight:"100"}}> {cat.cat_title}</li>
+        {cat.cat_title}
         
        
         </NavLink>
+        </li>
         
         </ul>
         </div>

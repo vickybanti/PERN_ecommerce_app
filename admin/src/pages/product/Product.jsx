@@ -42,6 +42,11 @@ function Product() {
                                       <span className="itemKey">Description:</span>
                                       <span className="itemValue">{pro.desc}</span>
                                   </div>
+                                  <div className='detailItem'>
+                                      <span className="itemKey">Sizes:</span>
+                                      <span className="itemValue">{pro.brand_title}</span>
+                                  </div>
+
 
                                   <div className='detailItem'>
                                       <span className="itemKey">Price:</span>
@@ -50,9 +55,10 @@ function Product() {
 
                                   <div className='detailItem'>
                                       <span className="itemKey">Sizes:</span>
-                                      <span className="itemValue">{pro.sizes.map((size) => (size))}</span>
+                                      <span className="itemValue">{pro.sizes}</span>
                                   </div>
-
+                                
+                                  
                                   <div className='detailItem'>
                                       <span className="itemKey">Stock:</span>
                                       <span className="itemValue">{pro.stock}</span>

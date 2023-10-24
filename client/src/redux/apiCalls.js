@@ -73,21 +73,24 @@ export const login = async(dispatch, user) => {
         body: JSON.stringify(user)
       });
       const parseRes = await response.json()
+      console.log(parseRes)
       
         if(parseRes.token){
          localStorage.setItem('token', parseRes.token)
         
           const userEmail = user.email
+          
           console.log(userEmail)
-          const u1 = userEmail.substring(0,userEmail.indexOf("@"));
-          const uName = u1.charAt(0).toUpperCase() + u1.slice(1)
+          console.log(parseRes.firstname)
+          // const u1 = userEmail.substring(0,userEmail.indexOf("@"));
+          // const uName = u1.charAt(0).toUpperCase() + u1.slice(1)
         
           
           
           
           dispatch(SET_ACTIVE_USER({isLoggedIn:true, 
             userID:parseRes.user_id,
-          userName:uName,
+          userName:parseRes.firstname,
         isFetching:false,
         errorMessage:"LOGGING USER IN..."
       }))
@@ -158,8 +161,8 @@ export const clearProductsFromCart = (dispatch)=> {
 
 
 //add to cart
-export const addProduct = async(dispatch, item, imageData,count,size) => {
-    dispatch(addToCart({...item,imageData,count,size }))
+export const addProduct = async(dispatch, item,count,size) => {
+    dispatch(addToCart({...item,count,size }))
 
     
     

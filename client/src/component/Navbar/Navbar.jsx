@@ -118,7 +118,7 @@ function Navbar() {
   }
   
   const account = (
-    <span className={styles.cart} style={{position:"inherit"}} >
+    <span className={styles.name} style={{position:"inherit"}} >
     <div class="dropdown account ">
     <button class="btn btn-inverse dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     <NavLink to="/"><Person sx={{fontSize:"32px"}}/> Welcome {name} </NavLink>
@@ -127,9 +127,9 @@ function Navbar() {
     <ul class="dropdown-menu dropdown-menu-light" style={{ textAlign:"center"}}>
     
     
-    <li><NavLink to={`/profile/summary`}><AccountBox /> Account Page</NavLink></li>
+    <li><NavLink to={`/profile/summary`}><AccountBox sx={{fontSize:"20px"}}/> Account Page</NavLink></li>
       
-    <li><NavLink to={`/saved`}>{favourite}</NavLink></li>
+    <li><NavLink to={`/profile/saved`}>{favourite}</NavLink></li>
       <li><hr class="dropdown-divider" style={{width:"100%"}}/></li>
       <li><button className='--btn --btn-danger' style={{width:"100%"}} onClick={handlelogout}>
       <Logout />Logout</button></li>

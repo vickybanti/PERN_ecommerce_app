@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/apiCalls';
 import { Button, CircularProgress, Divider, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { LOGIN_FAILURE } from '../../redux/slice/authSlice';
 
 
 
@@ -37,8 +38,8 @@ function Login() {
 
         
         
-      } catch (err) {
-        console.error(err.message)
+      } catch (error) {
+        setMessage(error.message)
       }
       setMessage(errorMessage.errorMessage)
 
@@ -58,11 +59,15 @@ function Login() {
     
     
     <section className={`container ${styles.auth}`}>
-      
+    <div className={styles.loginImage}>
+    <span className={styles.loginHeading}>Welcome to admin page</span>
+    <h3 className={styles.loginSpan}>{ error && message }</h3>
+    <img src='jacket3.jpg' alt="" className={styles.img}/>
+  </div>
 
       <div className={styles.form}>
+      
       <div className='heading'>
-        <h2>Welcome to admin page</h2>
         <p>Login to get control</p>
 
         </div>
@@ -132,7 +137,7 @@ function Login() {
           <CircularProgress sx={{color:"white"}}/>
           
           :"Login"}</Button>
-            <span>{error && message}</span>
+            
             <div className={styles.links}>
                 <Link to="/reset"><h4><Label />Reset Password</h4></Link>
             </div>

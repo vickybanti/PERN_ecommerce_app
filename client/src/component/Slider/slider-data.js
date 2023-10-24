@@ -2,13 +2,13 @@ export const sliderData = [
   {
     
     image: "uploads/shoes/leather shoe banner.jpg",
-    heading: "Shoes Villa",
+    heading: "Leather Shoes",
     desc: "Up to 30% off on all onsale products.",
   },
   
   {
-    image: "uploads/shoes/jacket2.jpg",
-    heading2: "Awesome jackets and shoe combinations",
+    image: "img/banner/parallax.jpg",
+    heading: "Unisex jackets",
     desc2:"Step out in style..."
   },
 

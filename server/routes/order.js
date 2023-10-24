@@ -2,20 +2,22 @@ const router = require("express").Router();
 const pool = require("../db");
 const authorization = require("../middleware/authorization");
 const stripe = require("stripe")("sk_test_51NDulnFA3ATF2zMu8VuG068289VxPGuC2xFdTBQFWiX09vP7y1AWJOLRoxEjurV7gjjZw8WZpnXYAhcqX7qA5jze00afTsR0gt")
+const sendEmail = require("../sendEmail")
+
+const myModule = require("../template");
 
 
 
-//GET ALL ORDERS
-// router.get("/", async(req, res) => {
-//     try {
-//         //payload from authoriaztion has the user payload
-//         const newOrder = await pool.query(`SELECT * FROM orders`);
-//         res.json(newOrder.rows);
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).json("Server error")
-//     }
-// });
+//ORDER EMAIL
+
+const deliveryEmail = myModule.packageDeliveredEmail;
+    
+
+    
+
+
+      
+
 
 //GET ALL ORDERS
 router.get("/", async(req, res) => {
@@ -53,7 +55,7 @@ router.get("/id/:userId", async(req, res) => {
         console.log(res.json(newOrder.rows[0]))
     } catch (err) {
         console.error(err.message);
-        res.status(500).json("Server error")
+        
     }
 });
 
@@ -62,7 +64,7 @@ router.get("/order/:id", async(req, res) => {
     console.log(id)
     try {
         const newOrder = await pool.query(`SELECT * FROM orders WHERE id = '${id}'`);
-        const orders = await res.json(newOrder.rows);
+        const orders = res.json(newOrder.rows);
         console.log(orders)
     } catch (err) {
         console.error(err.message);
@@ -100,7 +102,21 @@ router.put("/status/:id", async(req, res) => {
     try {
         //payload from authoriaztion has the user payload
         const updateOrder = await pool.query(`UPDATE orders SET delivery_status='delivered' WHERE id='${id}'`)
+        
+        const pro = await pool.query(`SELECT * FROM orders`);
+        const allOrders = pro.rows;
+            const email = allOrders.email;
+              const send_to = email;
+              const subject = "Items delivered successfully";
+              const sent_from = "olamuyiwavictor.outlook.com";
+              const message =  deliveryEmail(allOrders.date,allOrders.orderId,allOrders.cart,allOrders.total);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              await sendEmail(subject, message, send_to, sent_from);
+            
+      
         res.json(updateOrder.rows);
+
+        
     } catch (err) {
         console.error(err.message);
         res.status(500).json("Server error")
@@ -112,6 +128,18 @@ router.put("/status/pending/:id", async(req, res) => {
     try {
         //payload from authoriaztion has the user payload
         const updateOrder = await pool.query(`UPDATE orders SET delivery_status='pending' WHERE id='${id}'`)
+        const pro = await pool.query(`SELECT * FROM orders`);
+        const allOrders = pro.rows;
+            const email = allOrders.email;
+              const send_to = email;
+              const subject = "Items delivered successfully";
+              const sent_from = "olamuyiwavictor.outlook.com";
+              const message =  myModule.processOrderEmail(allOrders.date,allOrders.orderId,allOrders.cart,allOrders.total);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              await sendEmail(subject, message, send_to, sent_from);
+            
+       
+        
         res.json(updateOrder.rows);
     } catch (err) {
         console.error(err.message);
@@ -122,7 +150,7 @@ router.put("/status/pending/:id", async(req, res) => {
 
 
 router.get("/total/month", async(req, res) => {
-    const month = new Date().getDay();
+    
     try {
         const getIncome = await pool.query(`SELECT sum(total) FROM orders`)
         res.json(getIncome.rows[0])
@@ -130,10 +158,11 @@ router.get("/total/month", async(req, res) => {
     } catch (err) {
         console.error(err.message)
     }
-
-    
+  
 
 })
+
+
 //DELETE 
 
 module.exports = router;
