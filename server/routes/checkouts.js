@@ -172,6 +172,10 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
 
     const total = parseFloat(totalPrice)
+    const cartImages = carts.map((item) => item.images)
+    const title = carts.map((item) => item.title)
+    const cartId = carts.map((item) =>item.id)
+    
     console.log(cartItems)
     console.log(email)
     console.log(firstName)
