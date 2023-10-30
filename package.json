@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@mui/x-data-grid": "^6.12.1",
+    "bcrypt-nodejs": "^0.0.3",
+    "bcryptjs": "^2.4.3",
     "nodemailer": "^6.9.5"
   }
 }
