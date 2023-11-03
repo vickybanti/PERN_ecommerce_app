@@ -1,12 +1,14 @@
 const Pool = require("pg").Pool;
+require("dotenv").config();
 
-const pool = new Pool({
-    user: "moore",
+const pool = new Pool(
+    process.env.DB_URL,
+    {
+    user: "root",
     password: "VCK8SpcMfWAm3wEjXBo4GZSyMWRZP7Yf",
-    host:"localhost",
+    host:"dpg-cl2dpobmgg9c73aqoshg-a",
     port: 5432,
-    database: "moore",
-    url:"postgres://moore:VCK8SpcMfWAm3wEjXBo4GZSyMWRZP7Yf@dpg-ckg00ugeksbs73de48ig-a.oregon-postgres.render.com/moore"
+    database: "moore_r5hq",
     
 });
 
