@@ -13,7 +13,7 @@ function CheckoutSuccess() {
   const [orderId, setOrderId] = useState("")
   useEffect(() => {
     async function getOrderId(){
-      const response = await fetch(`http://localhost:5000/order/id/${userId}`,{
+      const response = await fetch(`https://mooreserver.onrender.com/order/id/${userId}`,{
         method: "GET"
       })
       const  allOrders = await response.json()

@@ -17,7 +17,7 @@ import { useParams } from 'react-router-dom';
             try {
                 setLoading(true)
     
-                const res = await fetch(`http://localhost:5000/size/${sizes}`)
+                const res = await fetch(`https://mooreserver.onrender.com/size/${sizes}`)
                 const json = await res.json()
     
                 setData(json)

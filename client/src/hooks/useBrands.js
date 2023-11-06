@@ -10,7 +10,7 @@ const useBrand = () => {
       try {
         setLoading(true);
   
-        const res = await fetch(`http://localhost:5000/brands`);
+        const res = await fetch(`https://mooreserver.onrender.com/brands`);
         const json = await res.json();
   
         // modify the catData to include IDs

@@ -15,7 +15,7 @@ const useFetchProducts = (url) => {
         try {
             setLoading(true)
 
-            const res = await fetch(`http://localhost:5000/products`)
+            const res = await fetch(`https://mooreserver.onrender.com/products`)
             const json = await res.json()
 
             setProduct(json)

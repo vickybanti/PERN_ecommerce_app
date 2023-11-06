@@ -13,7 +13,7 @@ function useGetCart() {
     const fetchData = async () => {
       try {
         setLoadCart(true);
-        const res = await fetch(`http://localhost:5000/cart/${user_id}`);
+        const res = await fetch(`https://mooreserver.onrender.com/cart/${user_id}`);
         const json = await res.json();
         console.log(json);
         // find the category object with the matching ID

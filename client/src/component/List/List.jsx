@@ -32,11 +32,11 @@ function List({ size, filters }) {
       let apiUrl = '';
 
     if (filters === 'maxPrice') {
-      apiUrl = 'http://localhost:5000/price/desc';
+      apiUrl = 'https://mooreserver.onrender.com/price/desc';
     } else if (filters === 'minPrice') {
-      apiUrl = 'http://localhost:5000/price/';
+      apiUrl = 'https://mooreserver.onrender.com/price/';
     } else if (filters === 'trending') {
-      apiUrl = 'http://localhost:5000/trending/';
+      apiUrl = 'https://mooreserver.onrender.com/trending/';
     }
      const res = await fetch(apiUrl)
     const data = await res.json();
@@ -56,7 +56,7 @@ function List({ size, filters }) {
       setLoading(true)
 
 try {
-const res = await fetch(`http://localhost:5000/size/${size}`);
+const res = await fetch(`https://mooreserver.onrender.com/size/${size}`);
 
 const data = await res.json();
 setProducts(data);
@@ -79,13 +79,13 @@ setLoading(false);
 
     try {
       const res = await fetch(
-        title ? `http://localhost:5000/categories/${title}`
+        title ? `https://mooreserver.onrender.com/categories/${title}`
         :
-        brand ? `http://localhost:5000/brands/${brand}` 
+        brand ? `https://mooreserver.onrender.com/brands/${brand}` 
         :
-        note ?  `http://localhost:5000/search/?title=${note}`
+        note ?  `https://mooreserver.onrender.com/search/?title=${note}`
         :
-        `http://localhost:5000/products`
+        `https://mooreserver.onrender.com/products`
       );
 
       const data = await res.json();

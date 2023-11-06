@@ -15,7 +15,7 @@ const useFetch = (url) => {
             try {
                 setLoading(true)
     
-                const res = await fetch(`http://localhost:5000/newproducts`)
+                const res = await fetch(`https://mooreserver.onrender.com/newproducts`)
                 const json = await res.json()
     
                 setData(json)

@@ -9,7 +9,7 @@ function useSearch() {
         setLoading(true)
   
         try {
-          const productSearch = await fetch(`http://localhost:5000/search/`);
+          const productSearch = await fetch(`https://mooreserver.onrender.com/search/`);
           const productResponse = await productSearch.json();
   
           setProducts(productResponse)

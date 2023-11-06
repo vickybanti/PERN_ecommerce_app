@@ -11,7 +11,7 @@ const useCat = () => {
       try {
         setLoading(true);
   
-        const res = await fetch(`http://localhost:5000/categories`);
+        const res = await fetch(`https://mooreserver.onrender.com/categories`);
         const json = await res.json();
   
         // modify the catData to include IDs

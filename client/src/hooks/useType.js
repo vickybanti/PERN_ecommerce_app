@@ -14,7 +14,7 @@ import {useState,useEffect} from 'react'
             try {
                 setLoadingType(true)
     
-                const res = await fetch(`http://localhost:5000/type`)
+                const res = await fetch(`https://mooreserver.onrender.com/type`)
                 const json = await res.json()
     
                 setDataType(json)

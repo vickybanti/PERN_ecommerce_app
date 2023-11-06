@@ -14,7 +14,7 @@ import React,{useState,useEffect} from 'react'
             try {
                 setLoading(true)
     
-                const res = await fetch(`http://localhost:5000/trending`)
+                const res = await fetch(`https://mooreserver.onrender.com/trending`)
                 const json = await res.json()
     
                 setData(json)
