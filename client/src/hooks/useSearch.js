@@ -7,9 +7,16 @@ function useSearch() {
   useEffect(() => {
     async function fetchData(event) {
         setLoading(true)
+        const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+      };
   
         try {
-          const productSearch = await fetch(`https://mooreserver.onrender.com/search/`);
+          const productSearch = await fetch(`http://mooreserver.onrender.com/search/`,{
+            method:"GET",
+            headers
+          });
           const productResponse = await productSearch.json();
   
           setProducts(productResponse)

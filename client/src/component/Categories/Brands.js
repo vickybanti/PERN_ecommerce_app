@@ -8,7 +8,7 @@ function Brands() {
     <img
     className=" "
     src="uploads/shoes/IMG-20230405-WA0032.jpg"
-    //src="https://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
+    //src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
     alt=""
     style={{width:"250px", height:"200px"}}
     

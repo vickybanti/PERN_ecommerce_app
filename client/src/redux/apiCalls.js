@@ -66,10 +66,14 @@ export const login = async(dispatch, user) => {
 
   try {
       dispatch(LOGIN_START());
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+    };
 
-    const response = await fetch("http://localhost:5000/auth/login", {
+    const response = await fetch("https://mooreserver.onrender.com/auth/login", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers,
         body: JSON.stringify(user)
       });
       const parseRes = await response.json()
@@ -122,8 +126,13 @@ export const login = async(dispatch, user) => {
 
 export const logout = async(dispatch) => {
   try {
-    const res = await fetch(`http://localhost:5000/auth/logout`,{
-      method:"POST"
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+  };
+    const res = await fetch(`https://mooreserver.onrender.com/auth/logout`,{
+      method:"POST",
+      headers
     })
     res.json()
     localStorage.removeItem("token")
@@ -143,9 +152,15 @@ export const clearProductsFromCart = (dispatch)=> {
    export const deleteCart = async (dispatch, id) => {
     
     try {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+    };
 
-      const cart = await fetch(`http://localhost:5000/cart/delete/${id}`, {
-        method:"DELETE"
+
+      const cart = await fetch(`https://mooreserver.onrender.com/cart/delete/${id}`, {
+        method:"DELETE",
+        headers
       });
       dispatch(removeFromCart(cart))
     } catch (error) {
@@ -179,10 +194,14 @@ export const deleteFromCart = async(dispatch,item,id) => {
 
 export const getAllProducts = async(dispatch) => {
   dispatch(fetchProducts())
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+};
   try {
-    const fetchProduct = await fetch(`http://localhost:5000/products`,{
+    const fetchProduct = await fetch(`https://mooreserver.onrender.com/products`,{
       method: "GET",
-        headers: {"Content-Type": "application/json"},
+        headers,
     })
     const product = await fetchProduct.json()
     dispatch(productSuccess(product))
@@ -196,10 +215,14 @@ export const getAllProducts = async(dispatch) => {
 
 export const getProduct = async(dispatch, id) => {
   dispatch(fetchProducts())
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+};
   try {
-    const fetchProduct = await fetch(`http://localhost:5000/product/${id}`,{
+    const fetchProduct = await fetch(`https://localhost:5000/product/${id}`,{
       method: "GET",
-        headers: {"Content-Type": "application/json"},
+        headers
     })
     const product = await fetchProduct.json()
     dispatch(productSuccess(product,id))

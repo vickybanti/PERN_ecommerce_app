@@ -10,9 +10,16 @@ function useProCat() {
     
   
     const fetchData = async () => {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+    };
       try {
         setLoadCat(true);
-        const res = await fetch(`https://mooreserver.onrender.com/categories/${id}`);
+        const res = await fetch(`http://mooreserver.onrender.com/categories/${id}`,{
+          method:"GET",
+          headers
+        });
         const json = await res.json();
         console.log(json);
         // find the category object with the matching ID

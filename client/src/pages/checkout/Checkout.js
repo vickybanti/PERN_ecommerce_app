@@ -173,12 +173,15 @@ async function payOnDelivery(values){
     console.log(requestBody)
   
   try {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+  };
+
     setLoading(true)
-    const pay = await fetch("http://localhost:5000/checkout/payOnDelivery",{
+    const pay = await fetch("https://mooreserver.onrender.com/checkout/payOnDelivery",{
       method: "POST",
-      headers:{
-        "Content-Type":"application/json",
-      },
+      headers,
       body:JSON.stringify(requestBody)
     })
     const confirm = await pay.json()

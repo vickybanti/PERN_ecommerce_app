@@ -10,11 +10,17 @@ import {useState,useEffect} from 'react'
         
     
         const fetchDataType = async () => {
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+            };
     
             try {
                 setLoadingType(true)
     
-                const res = await fetch(`https://mooreserver.onrender.com/type`)
+                const res = await fetch(`https://mooreserver.onrender.com/type`,{
+                    method:"GET",
+                headers                })
                 const json = await res.json()
     
                 setDataType(json)

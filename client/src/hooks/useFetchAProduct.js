@@ -46,11 +46,18 @@ const useFetchAProduct = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+          const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+        };
 
             try {
                 setLoading(true)
                 
-                const res = await fetch(`https://mooreserver.onrender.com/product/${id}`)
+                const res = await fetch(`https://mooreserver.onrender.com/product/${id}`,{
+                  method:"GET",
+                  headers
+                })
                 const json = await res.json()
                 setPro(json)
                 setLoading(false)

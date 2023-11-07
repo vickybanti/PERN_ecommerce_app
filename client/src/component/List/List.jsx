@@ -27,6 +27,10 @@ function List({ size, filters }) {
   useEffect(() => {
 
     const getFilters = async () => {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+    };
       setLoading(true)
     try {
       let apiUrl = '';
@@ -38,7 +42,10 @@ function List({ size, filters }) {
     } else if (filters === 'trending') {
       apiUrl = 'https://mooreserver.onrender.com/trending/';
     }
-     const res = await fetch(apiUrl)
+     const res = await fetch(apiUrl,{
+      method:"GET",
+      headers
+    });
     const data = await res.json();
       setProducts(data);
       
@@ -54,9 +61,16 @@ function List({ size, filters }) {
   //size
     const getSizes = async () => {
       setLoading(true)
+      const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+        };
 
 try {
-const res = await fetch(`https://mooreserver.onrender.com/size/${size}`);
+const res = await fetch(`https://mooreserver.onrender.com/size/${size}`,{
+  method:"GET",
+  headers
+});
 
 const data = await res.json();
 setProducts(data);
@@ -75,6 +89,10 @@ setLoading(false);
 
 //size
     const fetchData = async () => {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+    };
             setLoading(true)
 
     try {
@@ -86,7 +104,10 @@ setLoading(false);
         note ?  `https://mooreserver.onrender.com/search/?title=${note}`
         :
         `https://mooreserver.onrender.com/products`
-      );
+      ,{
+        method:"GET",
+        headers
+      });
 
       const data = await res.json();
       setProducts(data);

@@ -44,11 +44,14 @@ function Register() {
            }
            else{
         try {
-        
+          const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+        };
             const body = {email, password,firstname} 
-            const response = await fetch("http://localhost:5000/auth/register", {
+            const response = await fetch("https://mooreserver.onrender.com/auth/register", {
               method: "POST",
-              headers: {"Content-Type": "application/json"},
+              headers,
               body: JSON.stringify(body)
             });
             const parseRes = await response.json()
