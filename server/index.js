@@ -11,8 +11,8 @@ const fs = require('fs');
 // Set a higher limit for the request body size'''
 app.use(cors());
 
-app.use(bodyParser.json({ limit: '100000000mb' }));
-app.use(bodyParser.urlencoded({ limit: '100000000mb', extended: true }));
+app.use(bodyParser.json({ limit: '1000000mb' }));
+app.use(bodyParser.urlencoded({ limit: '1000000mb', extended: true }));
 
 
 
