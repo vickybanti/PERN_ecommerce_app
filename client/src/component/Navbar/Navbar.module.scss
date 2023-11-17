@@ -67,6 +67,12 @@ header {
           }
         }
       }
+
+      @media screen and (max-width:820px) {
+        .menuItem{
+        display: none;
+        }
+      }
       
       .menuItem:hover .submenu {
         display: block;
@@ -114,23 +120,15 @@ header {
     }
       
 
-      @media screen and (max-width:460px) {
-        .searchbar{
-        margin-left: -300px;
-        
-      }
+     
     
-    }
-
-    @media screen and (max-width:820px) {
-      .searchbar{
-      margin-left: -400px;
-      
-    }
+    
+  }
+    
     @media screen and (max-width:320px) {
       .searchbar{
        
-       margin-left:-320px;
+       margin-left:200px;
       }     
    }
 
@@ -142,11 +140,9 @@ header {
     }     
  }
   
-  }
+  
     
-  }
-
-  @media screen and (max-width:912px) {
+    @media screen and (max-width:912px) {
     header{
       width: 100px;
     .header{
@@ -406,17 +402,108 @@ header {
       }
     }
   }
-  @media screen and (max-width:600px) {
-    
-  }
+  
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:1024px) {
+  
   header{
     width: 100%;
 
+
     .header{
       width: 100%;
+
+      
+      
+        .searchbar{
+        margin-left:-30px;
+        
+      }
+      
+    }
+
+
+  }
+  
+}
+@media screen and (max-width:912px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 100%;
+
+      
+      
+        .searchbar{
+          //width:80%;
+        margin-left:-77px;
+        
+      }
+      
+    }
+
+
+  }
+  
+}
+
+
+
+
+
+@media screen and (max-width:820px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 100%;
+
+      
+      
+        .searchbar{
+        margin-left:-230px;
+        
+      }
+      
+    }
+
+
+  }
+  
+}
+
+
+
+@media screen and (max-width:360px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 90%;
+
+      .searchbar{
+        margin-left:-130px;
+        
+      }
+
+      .logo{
+        width: 10%;
+
+        h2{
+          font-size: 15px;
+        }
+      }
+      
+        
+      
     }
 
 
@@ -425,6 +512,35 @@ header {
 }
 
 @media screen and (max-width:464px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 100%;
+
+      .logo{
+        width: 10%;
+
+        h2{
+          font-size: 15px;
+        }
+      }
+      
+        .searchbar{
+        margin-left:-230px;
+        
+      }
+      
+    }
+
+
+  }
+  
+}
+
+@media screen and (max-width:600px) {
   
   header{
     width: 100%;
@@ -440,7 +556,39 @@ header {
           font-size: 15px;
         }
       }
+      
+        .searchbar{
+        margin-left:-130px;
+        
+      }
+      
+    }
 
+
+  }
+  
+}
+@media screen and (max-width:320px) {
+  
+  header{
+    width: 100%;
+
+
+    .header{
+      width: 90%;
+
+      .logo{
+        width: 10%;
+
+        h2{
+          font-size: 15px;
+        }
+      }
+      
+        .searchbar{
+        margin-left:-230px;
+        
+      }
       
     }
 

@@ -11,8 +11,8 @@ const fs = require('fs');
 // Set a higher limit for the request body size'''
 app.use(cors());
 
-app.use(bodyParser.json({ limit: '1000000mb' }));
-app.use(bodyParser.urlencoded({ limit: '1000000mb', extended: true }));
+app.use(bodyParser.json({ limit: '100000000000mb' }));
+app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
 
 
 
@@ -161,6 +161,6 @@ app.get("/price", async (req, res) => {
 
 
 
-app.listen(443, () =>{
-    console.log("server has started on port 443");
+app.listen(5000, () =>{
+    console.log("server has started on port 5000");
 });

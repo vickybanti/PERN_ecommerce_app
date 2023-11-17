@@ -9,6 +9,7 @@ import { v5 as uuidv5 } from 'uuid';
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import useFetchProducts from "../hooks/useFetchProducts";
+import { makeRequest } from "../makeRequest";
 
 
 
@@ -66,17 +67,9 @@ export const login = async(dispatch, user) => {
 
   try {
       dispatch(LOGIN_START());
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-    };
-
-    const response = await fetch("https://mooreserver.onrender.com/auth/login", {
-        method: "POST",
-        headers,
-        body: JSON.stringify(user)
-      });
-      const parseRes = await response.json()
+      
+    const response = await makeRequest.post("/auth/login", JSON.stringify(user));
+      const parseRes = await response.data
       console.log(parseRes)
       
         if(parseRes.token){
@@ -126,15 +119,8 @@ export const login = async(dispatch, user) => {
 
 export const logout = async(dispatch) => {
   try {
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-  };
-    const res = await fetch(`https://mooreserver.onrender.com/auth/logout`,{
-      method:"POST",
-      headers
-    })
-    res.json()
+   
+    const res = await fetch(`http://localhost:5000/auth/logout`)
     localStorage.removeItem("token")
     dispatch(REMOVE_ACTIVE_USER({errorMessage:"Logging user out..."}));
     
@@ -203,7 +189,7 @@ export const getAllProducts = async(dispatch) => {
       method: "GET",
         headers,
     })
-    const product = await fetchProduct.json()
+    const product = await fetchProduct.data
     dispatch(productSuccess(product))
   } catch (err) {
     console.error(err.message)
@@ -224,7 +210,7 @@ export const getProduct = async(dispatch, id) => {
       method: "GET",
         headers
     })
-    const product = await fetchProduct.json()
+    const product = await fetchProduct.data
     dispatch(productSuccess(product,id))
   } catch (err) {
     console.error(err.message)

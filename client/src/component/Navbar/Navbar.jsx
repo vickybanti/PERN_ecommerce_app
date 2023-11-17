@@ -153,7 +153,7 @@ function Navbar() {
 
         <div className={styles.classics}>
         <div className={styles.navbar}>
-  <li className={styles.menuItem}> 
+ {showMenu ? <li className={styles.menuItem}> 
     Popular brands 
     <ul className={styles.submenu}>
     {brandData.map((brand) => (
@@ -161,9 +161,10 @@ function Navbar() {
       <NavLink to={`/brands/${brand.brand_title}`}><li>{brand.brand_title}</li></NavLink>
       
     ))}
+
       
     </ul>
-  </li>
+  </li> : " "}
 </div>
 </div>
 
@@ -192,6 +193,11 @@ function Navbar() {
               <span onClick={hideMenu}>&times;</span>
 
             </li>
+
+            
+            
+            
+            
             {catData.map((cat) => (
               <li key={cat.id}>
                 {showMenu ? <NavLink to={`/categories/${cat.id}`}>

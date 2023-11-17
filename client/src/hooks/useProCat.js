@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { makeRequest } from '../makeRequest';
 
 function useProCat() {
     const { id } = useParams();
@@ -10,17 +11,11 @@ function useProCat() {
     
   
     const fetchData = async () => {
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-    };
+
       try {
         setLoadCat(true);
-        const res = await fetch(`http://mooreserver.onrender.com/categories/${id}`,{
-          method:"GET",
-          headers
-        });
-        const json = await res.json();
+        const res = await makeRequest.get(`/categories/${id}`);
+        const json = await res.data;
         console.log(json);
         // find the category object with the matching ID
         // const catObj = catData.find((cat) => cat.id === parseInt(id));
@@ -32,7 +27,7 @@ function useProCat() {
         // const resProCat = await fetch(
         //  `http://localhost:5000/products/cat/${id}`
         // );
-      //  const jsonProCat = await resProCat.json();
+      //  const jsonProCat = await resProCat.data;
   
         setProCat(json);
         setLoadCat(false);

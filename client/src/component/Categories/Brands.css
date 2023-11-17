@@ -1,0 +1,51 @@
+.brands{
+    background-color:#071b28;
+}
+
+.brandbtn {
+    font-size:20px;
+    margin:50% 0;
+}
+.brandbtn :hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:912px) {
+    .brands{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+        height: 100%;
+        width: 100%;
+        padding: 100px;
+
+    }
+    .brandedimg{
+        width: 60%;
+        height: 250px;
+        margin: 50px;
+        
+    }
+    
+}
+
+@media screen and (max-width:820px) {
+    .brands{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px ;
+        margin-left: -50px;
+        
+        position: relative;
+        height: 100%;
+        width: 120%;
+
+    }
+    .brandedimg{
+        width: 200px;
+        height: 250px;
+        margin-left: 0px;
+    }
+    
+}

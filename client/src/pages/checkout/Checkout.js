@@ -12,6 +12,7 @@ import { LocalShipping, Payment, ContactPage, Check } from '@mui/icons-material'
 import { toast } from 'react-toastify';
 import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
+import { makeRequest } from '../../makeRequest';
 
 
 
@@ -132,7 +133,7 @@ async function makePayment(values) {
 const newRequestBody = {
   userId,
   email:values.email,
-  cart: JSON.stringify(cartItems),
+  cart: cartItems,
   count:counts,
   totalPrice:totalPrice,
   phoneNumber:values.phoneNumber,
@@ -173,18 +174,13 @@ async function payOnDelivery(values){
     console.log(requestBody)
   
   try {
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-  };
+    
 
     setLoading(true)
-    const pay = await fetch("https://mooreserver.onrender.com/checkout/payOnDelivery",{
-      method: "POST",
-      headers,
-      body:JSON.stringify(requestBody)
-    })
-    const confirm = await pay.json()
+    const pay = await makeRequest.post("/checkout/payOnDelivery",JSON.stringify(requestBody)
+    );
+    const confirm = await pay.data
+    console.log(confirm)
 
     if(confirm) {
       setLoading(false)

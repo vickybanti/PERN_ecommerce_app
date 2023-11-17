@@ -148,6 +148,10 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
   router.post("/payOnDelivery", async(req,res) => {
     const { cartItems,stock,totalPrice, email, city,userId, firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
+    console.log(cartItems)
+    console.log(email)
+    console.log(city)
+    console.log(userId)
     function getMonthInWords() {
       const months = [
         "January", "February", "March", "April",
@@ -228,7 +232,7 @@ const generateTransactionCode = () => {
               await sendEmail(subject, message, send_to, sent_from);
   
      
-    res.json({orders:createOrder.rows}); 
+    res.json(createOrder.rows); 
  
   
     

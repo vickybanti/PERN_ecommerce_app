@@ -24,32 +24,32 @@ router.get("/", async (req, res) => {
       const admin = await pool.query(`SELECT * FROM users WHERE isadmin=true`);
       const adminEmail = admin.rows;
   
-      // for (const users of adminEmail) {
-      //   const user = users.email;
-      //   console.log(user)
+      for (const users of adminEmail) {
+        const user = users.email;
+        console.log(user)
   
-      //   for (const product of allProducts) {
-      //     const productId = product.id;
-      //     const stock = product.stock;
+        for (const product of allProducts) {
+          const productId = product.id;
+          const stock = product.stock;
   
-      //     if (stock === 0) {
-      //       const id = productId;
-      //       const subject = "You are out of stock";
-      //       const sent_from = "olamuyiwavictor@outlook.com";
-      //       const send_to = user;
-      //       const message = stockEmail(stock,id);
-      //       await sendEmail(subject, message, send_to, sent_from);
-      //     } else if (stock <= 5) {
-      //       const id = productId;
-      //       const send_to = user;
-      //       const subject = "Few Items Left";
-      //       const sent_from = "olamuyiwavictor.outlook.com";
-      //       const message =reStockEmail(id);
-      //       await new Promise((resolve) => setTimeout(resolve, 1000));
-      //       await sendEmail(subject, message, send_to, sent_from);
-      //     }
-      //   }
-      // }
+          if (stock === 0) {
+            const id = productId;
+            const subject = "You are out of stock";
+            const sent_from = "olamuyiwavictor@outlook.com";
+            const send_to = user;
+            const message = stockEmail(stock,id);
+            await sendEmail(subject, message, send_to, sent_from);
+          } else if (stock <= 5) {
+            const id = productId;
+            const send_to = user;
+            const subject = "Few Items Left";
+            const sent_from = "olamuyiwavictor.outlook.com";
+            const message =reStockEmail(id);
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await sendEmail(subject, message, send_to, sent_from);
+          }
+        }
+      }
   
       // Send the response after all emails are sent
       res.json(allProducts);

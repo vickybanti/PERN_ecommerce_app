@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { makeRequest } from "../makeRequest";
 
 
 const useBrand = () => {
@@ -7,18 +8,12 @@ const useBrand = () => {
     const [error, setError] = useState(true);
   
     const fetchData = async () => {
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-    };
+      
       try {
         setLoading(true);
   
-        const res = await fetch(`https://mooreserver.onrender.com/brands`,{
-          method:"GET",
-          headers
-        });
-        const json = await res.json();
+        const res = await makeRequest.get(`/brands`)
+        const json = await res.data;
   
         // modify the catData to include IDs
         setBrandData(json);

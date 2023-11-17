@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { makeRequest } from "../makeRequest"
 
 function useSearch() {
     const [products, setProducts] = useState([])
@@ -7,17 +8,11 @@ function useSearch() {
   useEffect(() => {
     async function fetchData(event) {
         setLoading(true)
-        const headers = {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-      };
+        
   
         try {
-          const productSearch = await fetch(`http://mooreserver.onrender.com/search/`,{
-            method:"GET",
-            headers
-          });
-          const productResponse = await productSearch.json();
+          const productSearch = await makeRequest.get(`/search/`);
+          const productResponse = await productSearch.data;
   
           setProducts(productResponse)
         } catch (err) {

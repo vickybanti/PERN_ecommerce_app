@@ -9,7 +9,7 @@ export const sliderData = [
   {
     image: "img/banner/parallax.jpg",
     heading: "Unisex jackets",
-    desc2:"Step out in style..."
+    desc:"Step out in style..."
   },
 
   {

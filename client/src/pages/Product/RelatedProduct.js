@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Button } from '@mui/material';
 import { responsive } from '../../component/Responsive';
 import './Product.scss'
 import ItemCard from '../../component/Card/ItemCard';
 import SkeletonImg from '../../component/skeleton/SkeletonImg';
+import { makeRequest } from '../../makeRequest';
 
 function RelatedProduct() {
 
@@ -18,10 +18,8 @@ function RelatedProduct() {
         const productCat = async() => {
 
             try {
-                const getCat = await fetch(`http://localhost:5000/products/${id}`,{
-                    method:"GET"
-                })
-                const allProducts = await getCat.json()
+                const getCat = await makeRequest.get(`/products/${id}`)
+                const allProducts = await getCat.data
                 console.log(allProducts)
 
                 setProducts(allProducts)

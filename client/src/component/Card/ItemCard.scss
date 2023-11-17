@@ -1,15 +1,15 @@
 .contain {
     flex:1;
-    width:250px;
-    height:300px;
+    width:100%;
+    height:100%;
     position: relative;
-    margin-bottom: 70px; 
+    margin-bottom: 70px;
 
     .out{
         background-color: rgba(0,0,0,0.2);
         text-align: center;
-        width: 250px;
-        height: 300px;
+        width: 95%;
+        height: 90%;
         background-size: cover;
         position: absolute;
 
@@ -21,11 +21,16 @@
 
    /* Define styles for the 'img' element */
 img {
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 95%;
     justify-content: center;
-    z-index: 2;
+    align-items: center;
     cursor: pointer;
+
+    &:hover{
+        width: 100%;
+
+    }
   
     /* Define styles for the 'img' element on hover */
     &:hover + .infos{
@@ -86,9 +91,9 @@ img {
 
             .price{
                 font-family: system-ui, -apple-system,Roboto;
-                font-weight: 500;
+                font-weight: bold;
                 color:darkred;
-                font-size:15px;
+                font-size:20px;
                 right:0;
                 padding-top:10px;
                 margin-bottom:20px;

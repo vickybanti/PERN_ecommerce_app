@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Slider from '../../component/Slider/Slider'
 import Featuredroducts from '../../component/FeaturedProducts/Featuredroducts'
 import Categories from '../../component/Categories/Categories'
 import './Home.scss'
-import Contacts from '../../component/Contacts/Contacts'
 import TrendingProducts from '../../component/FeaturedProducts/TrendingProduct'
-import Zoom from '@mui/material/Zoom';
-import { AddBoxRounded, ZoomIn } from "@mui/icons-material";
-import { NavLink, useNavigate } from 'react-router-dom'
 import HomeBrand from './HomeBrand'
-import MainImage from './MainImage'
 import Subscribe from './Subscribe'
 import Discount from '../../component/FeaturedProducts/Discount'
+import Banner from '../../component/Categories/Banner'
 import { Box, Fab, Fade, useScrollTrigger } from "@mui/material/";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Brands from '../../component/Categories/Brands'
-import Articles from '../../component/upVotes'
-import Slides from '../../component/Slide'
-import Banner from '../../component/Categories/Banner'
-import CategoriesBar from '../../component/Navbar/Categories'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -65,10 +57,9 @@ function Homepage() {
       <HomeBrand />
       <Categories />
       <Featuredroducts />
-    <Discount />
+      <Brands />
       <TrendingProducts />
 
-      <Banner />
 
 
 

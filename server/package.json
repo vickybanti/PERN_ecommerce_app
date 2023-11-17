@@ -9,6 +9,7 @@
   "author": "banti",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.1",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -22,6 +23,7 @@
     "nodemailer": "^6.9.5",
     "nodemon": "^3.0.1",
     "pg": "^8.10.0",
+    "postgres": "^3.4.3",
     "react-stripe": "^0.1.0",
     "stripe": "^12.9.0",
     "uuid": "^9.0.0"

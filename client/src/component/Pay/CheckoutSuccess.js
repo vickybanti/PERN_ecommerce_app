@@ -4,6 +4,7 @@ import { clearCart } from '../../redux/slice/cartSlice'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import "./Pay.scss"
+import { makeRequest } from '../../makeRequest'
 
 function CheckoutSuccess() {
   const dispatch = useDispatch()
@@ -13,12 +14,9 @@ function CheckoutSuccess() {
   const [orderId, setOrderId] = useState("")
   useEffect(() => {
     async function getOrderId(){
-      const response = await fetch(`https://mooreserver.onrender.com/order/id/${userId}`,{
-        method: "GET"
-      })
-      const  allOrders = await response.json()
-      console.log(allOrders)
-      
+      const response = await makeRequest.get(`/order/id/${userId}`)
+      const  allOrders = await response.data  
+      console.log(allOrders)    
 
       setOrderId(allOrders.order_id)
 

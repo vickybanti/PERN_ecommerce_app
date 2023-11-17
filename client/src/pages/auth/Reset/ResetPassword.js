@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import "../../../index.css"
 import styles from '../auth.module.scss'
 import { Link } from 'react-router-dom';
-import { BackHand, Lock, Visibility, VisibilityOff } from '@mui/icons-material';
+import {  Lock, Visibility, VisibilityOff } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import { Backdrop, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
+import { makeRequest } from '../../../makeRequest';
 
 function ResetPassword() {
   const [email, setEmail] = useState("")
@@ -35,10 +36,8 @@ function ResetPassword() {
       toast.error("New passwords does not tally")
     }
     try {
-      const pass = await fetch(`http://localhost:5000/auth/reset`,{
-        method: "PUT",
+      const pass = await makeRequest.put(`/auth/reset`,{
         body:JSON.stringify(body), 
-        headers:{"Content-Type":"application/json"}
       })
       const resetPass = await pass.json()
       console.log(resetPass)

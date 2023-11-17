@@ -5,6 +5,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import '../account.scss'
+import { makeRequest } from "../../../makeRequest";
 
 function NewAddress() {
   const navigate = useNavigate();
@@ -35,12 +36,10 @@ function NewAddress() {
         setMessage("Incomplete address...")
       } else {
       try {
-        const defaultAdd = await fetch(`http://localhost:5000/order/address`,{
-          method: "POST",
-          headers:{"Content-Type":"application/json"},
+        const defaultAdd = await makeRequest.post(`/order/address`,{
           body:JSON.stringify(requestBody)
         })
-        const confirm = await defaultAdd.json()
+        const confirm = await defaultAdd.data
         if(confirm){
           setMessage(
             "Successful"

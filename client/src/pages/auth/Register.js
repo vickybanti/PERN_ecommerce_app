@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import "../../index.css"
 import styles from './auth.module.scss'
 import { Link, useNavigate } from 'react-router-dom';
-import { AlternateEmail, Google, Label, LockSharp, LoginOutlined, Mail, Password, Visibility, VisibilityOff } from '@mui/icons-material';
-import Loader from '../../component/loader/Loader';
-import {toast, ToastContainer} from 'react-toastify';
+import { AlternateEmail, Google, Label, LockSharp, LoginOutlined, Visibility, VisibilityOff } from '@mui/icons-material';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button, CircularProgress, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
 import { firebaseLogin } from '../../redux/apiCalls';
 import { useDispatch } from 'react-redux';
+import { makeRequest } from '../../makeRequest';
 
 
 
@@ -44,14 +43,10 @@ function Register() {
            }
            else{
         try {
-          const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-        };
+         
             const body = {email, password,firstname} 
-            const response = await fetch("https://mooreserver.onrender.com/auth/register", {
-              method: "POST",
-              headers,
+            const response = await makeRequest.post("/auth/register", {
+              
               body: JSON.stringify(body)
             });
             const parseRes = await response.json()

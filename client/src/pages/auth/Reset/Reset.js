@@ -3,7 +3,6 @@ import "../../index.css"
 import styles from './auth.module.scss'
 import { Link } from 'react-router-dom';
 import { BackHand } from '@mui/icons-material';
-import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser'
 
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './OrderPage.scss'
 import { useNavigate, useParams } from 'react-router-dom';
+import { makeRequest } from '../../../makeRequest';
 
 
 function OrderDetails() {
@@ -23,10 +24,8 @@ function OrderDetails() {
 
     
     try {
-      const response = await fetch(`http://localhost:5000/order/${userId}`,{
-        method: "GET"
-      })
-      const  allOrders = await response.json()
+      const response = await makeRequest.get(`/order/${userId}`)
+      const  allOrders = await response.data
 
       setOrders(allOrders)
     } catch (err) {

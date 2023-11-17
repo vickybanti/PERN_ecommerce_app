@@ -1,8 +1,12 @@
 import axios from "axios";
 
+
+const BASE_URL="http://localhost:5000/"
+const RENDER_API="rnd_aNZ9enklIKwNgICV8oQiMktGR6aj"
+
 export const makeRequest = axios.create({
-    baseURL : process.env.DATABASE_URL, 
+    baseURL : BASE_URL, 
     headers: {
-        Authorization: "bearer " + process.env.DATABASE_TOKEN,
+        'Content-Type': 'application/json',
     },
     });

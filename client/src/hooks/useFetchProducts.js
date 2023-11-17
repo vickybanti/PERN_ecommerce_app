@@ -11,19 +11,13 @@ const useFetchProducts = (url) => {
     
 
     const fetchData = async () => {
-        const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-        };
+        
 
         try {
             setLoading(true)
 
-            const res = await fetch(`https://mooreserver.onrender.com/products`,{
-                method:"GET",
-                headers
-            })
-            const json = await res.json()
+            const res = await makeRequest.get(`/products`)
+            const json = await res.data
 
             setProduct(json)
             setLoading(false)

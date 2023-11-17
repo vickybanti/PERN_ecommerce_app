@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Pay.scss"
 import { Button } from "@mui/material";
+import { makeRequest } from "../../makeRequest";
 
 function Payment() {
   const cart = useSelector((state) => state.cart.cartItems)
@@ -21,11 +22,7 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    makeRequest.post("/checkout/create-payment-intent", {
       body: JSON.stringify(requestBody),
     })
       .then(async (result) => {
@@ -33,7 +30,7 @@ function Payment() {
           throw new Error("Failed to fetch payment intent");
         }
   
-        const { clientSecret } = await result.json();
+        const { clientSecret } = await result.data;
         setClientSecret(clientSecret);
       })
       .catch((error) => {

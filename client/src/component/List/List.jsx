@@ -6,6 +6,7 @@ import { Pagination, PaginationItem, Stack } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { responsive } from '../Responsive';
 import SkeletonImg from '../skeleton/SkeletonImg';
+import { makeRequest } from '../../makeRequest';
 
 function List({ size, filters }) {
   const { title, note, brand } = useParams();
@@ -27,26 +28,20 @@ function List({ size, filters }) {
   useEffect(() => {
 
     const getFilters = async () => {
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-    };
+     
       setLoading(true)
     try {
       let apiUrl = '';
 
     if (filters === 'maxPrice') {
-      apiUrl = 'https://mooreserver.onrender.com/price/desc';
+      apiUrl = '/price/desc';
     } else if (filters === 'minPrice') {
-      apiUrl = 'https://mooreserver.onrender.com/price/';
+      apiUrl = '/price/';
     } else if (filters === 'trending') {
-      apiUrl = 'https://mooreserver.onrender.com/trending/';
+      apiUrl = '/trending/';
     }
-     const res = await fetch(apiUrl,{
-      method:"GET",
-      headers
-    });
-    const data = await res.json();
+     const res = await makeRequest.get(apiUrl);
+    const data = await res.data;
       setProducts(data);
       
         setLoading(false);
@@ -61,18 +56,11 @@ function List({ size, filters }) {
   //size
     const getSizes = async () => {
       setLoading(true)
-      const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-        };
-
+      
 try {
-const res = await fetch(`https://mooreserver.onrender.com/size/${size}`,{
-  method:"GET",
-  headers
-});
+const res = await makeRequest.get(`/size/${size}`);
 
-const data = await res.json();
+const data = await res.data;
 setProducts(data);
 
   setLoading(false);
@@ -89,27 +77,22 @@ setLoading(false);
 
 //size
     const fetchData = async () => {
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-    };
+     
             setLoading(true)
 
     try {
-      const res = await fetch(
-        title ? `https://mooreserver.onrender.com/categories/${title}`
+      const res = await makeRequest.get(
+        title ? `/categories/${title}`
         :
-        brand ? `https://mooreserver.onrender.com/brands/${brand}` 
+        brand ? `/${brand}` 
         :
-        note ?  `https://mooreserver.onrender.com/search/?title=${note}`
+        note ?  `/search/?title=${note}`
         :
-        `https://mooreserver.onrender.com/products`
-      ,{
-        method:"GET",
-        headers
-      });
+        `/products`
+      
+        );
 
-      const data = await res.json();
+      const data = await res.data;
       setProducts(data);
       
         setLoading(false);

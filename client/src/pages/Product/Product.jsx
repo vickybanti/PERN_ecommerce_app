@@ -30,6 +30,7 @@ import Grid from "@mui/material/Grid";
 import ImageCarouselZoom from "./ImageCarousel";
 import { Container } from "@mui/material";
 import ImageCarousel from './ImageCarousel';
+import { makeRequest } from '../../makeRequest';
               
 
 
@@ -69,12 +70,9 @@ function Product() {
   useEffect(()=>{
     async function getReview(){
       try {
-        const productReview = await fetch(`http://localhost:5000/review/${id}`,{
-          method:"GET",
-          headers:"application/json"
-        })
+        const productReview = await makeRequest.get(`/review/${id}`)
 
-        const reviewResponse = await productReview.json()
+        const reviewResponse = await productReview.data
         setReview(reviewResponse)
       } catch (err) {
         console.error(err.message)

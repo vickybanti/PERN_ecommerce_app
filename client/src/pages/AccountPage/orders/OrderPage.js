@@ -8,6 +8,7 @@ import OrderSkeleton from '../../../component/skeleton/OrderSkeleton';
 import OrderItems from '../../../component/skeleton/OrderItems';
 import SkeletonProduct from '../../../component/skeleton/SkeletonProduct';
 import SkeletonProductImg from '../../../component/skeleton/SkeletonProductImg';
+import { makeRequest } from '../../../makeRequest';
 
 
 function OrderPage() {
@@ -44,10 +45,8 @@ function OrderPage() {
     
     try {
       setLoading(true)
-      const response = await fetch(`http://localhost:5000/order/${userId}`,{
-        method: "GET"
-      })
-      const  allOrders = await response.json()
+      const response = await makeRequest.get(`/order/${userId}`)
+      const  allOrders = await response.data
 
       setOrders(allOrders)
       setLoading(false)

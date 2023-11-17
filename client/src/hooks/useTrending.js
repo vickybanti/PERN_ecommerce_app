@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { makeRequest } from '../makeRequest';
 
 
     const useTrending = (url) => {
@@ -10,19 +11,12 @@ import React,{useState,useEffect} from 'react'
         
         useEffect(() => {
         const fetchDataType = async () => {
-            const headers = {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
-            };
-    
+            
             try {
                 setLoading(true)
     
-                const res = await fetch(`https://mooreserver.onrender.com/trending`,{
-                    method:"GET",
-                    headers
-                })
-                const json = await res.json()
+                const res = await makeRequest.get(`/trending`)
+                const json = await res.data
     
                 setData(json)
                 setLoading(false)

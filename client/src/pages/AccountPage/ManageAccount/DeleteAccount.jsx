@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AlternateEmailRounded, Lock } from "@mui/icons-material";
 import { toast } from "react-toastify";
 import { logout } from "../../../redux/apiCalls";
+import { makeRequest } from "../../../makeRequest";
 
 function DeleteAccount() {
   const dispatch = useDispatch()
@@ -33,12 +34,10 @@ function DeleteAccount() {
       password:password
     }
     try {
-      const del = await fetch(`http://localhost:5000/auth/delete`,{
-        method:"DELETE",
+      const del = await makeRequest.delete(`/auth/delete`,{
         body:JSON.stringify(body),
-        headers: {"Content-Type": "application/json"}
       })
-      const deleteAcc = del.json()
+      const deleteAcc = del.data
       if(deleteAcc){
         toast.success("Successfully deleted account...")
         logout(dispatch)
@@ -53,10 +52,8 @@ function DeleteAccount() {
 
   useEffect(()=>{
     async function getEmail(){
-      const showEmail = await fetch(`http://localhost:5000/auth/user/${user}`,{
-        method:"GET"
-      })
-      const emailJson = await showEmail.json()
+      const showEmail = await makeRequest.get(`/auth/user/${user}`)
+      const emailJson = await showEmail.data
       console.log("info=",emailJson)
 
       setEmail(emailJson.email)
@@ -89,7 +86,7 @@ function DeleteAccount() {
           style={{ textAlign: "center", width: "100%", fontSize: "15px", color: "GrayText" }}
         >
           Before you delete your account, we would want you to know that this
-          action will delete your data across all Ayaba platforms. If that's
+          action will delete your data across all our platforms. If that's
           what you want, please proceed with entering your password to confirm
           that it's you.
         </p>
