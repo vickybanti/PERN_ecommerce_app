@@ -1,27 +1,35 @@
-import {initializeApp} from "firebase/app";
-import {getAuth} from "firebase/auth";
-import { getFirestore} from "firebase/firestore";
-import {getStorage} from "firebase/storage"
-
-//input firebase settings here
-
 // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {getFirestore} from "firebase/firestore"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
- export const firebaseConfig = {
-  apiKey: "AIzaSyBP1x-s_0ZeGArntlOr67YAz-8Z5ef5L4A",
-  authDomain: "mooreplaza-ff46d.firebaseapp.com",
-  projectId: "mooreplaza-ff46d",
-  storageBucket: "mooreplaza-ff46d.appspot.com",
-  messagingSenderId: "306312021058",
-  appId: "1:306312021058:web:449b2e2fb8c71087da59db"
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCyE2jnVPasr9iV0GZ8_B4hpn5nVdrmROM",
+  authDomain: "moorestore-a6ea8.firebaseapp.com",
+  projectId: "moorestore-a6ea8",
+  storageBucket: "moorestore-a6ea8.appspot.com",
+  messagingSenderId: "580264207855",
+  appId: "1:580264207855:web:c38e64cbdec3477d35421a",
+  measurementId: "G-6C70373WL3"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app)
+
 export const auth = getAuth(app)
-export const db = getFirestore(app)
-export const storage = getStorage(app);
-export default app;
+
+
+onAuthStateChanged(auth, user => {
+  if (user != null) {
+    console.log("Logged in")
+  } else {
+    console.log("No user")
+  }
+})

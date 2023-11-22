@@ -35,10 +35,16 @@ function ResetPassword() {
     if(newPassword !== cPassword){
       toast.error("New passwords does not tally")
     }
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)'
+  };
     try {
-      const pass = await makeRequest.put(`/auth/reset`,{
+      const pass = await fetch(`https://mooreserver.onrender.com/auth/reset`, {
+        method:"DELETE",
+        headers, 
         body:JSON.stringify(body), 
-      })
+      });
       const resetPass = await pass.json()
       console.log(resetPass)
     } catch (err) {

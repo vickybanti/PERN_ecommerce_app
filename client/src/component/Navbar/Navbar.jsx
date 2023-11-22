@@ -153,7 +153,7 @@ function Navbar() {
 
         <div className={styles.classics}>
         <div className={styles.navbar}>
- {showMenu ? <li className={styles.menuItem}> 
+ {!showMenu ? <li className={styles.menuItem}> 
     Popular brands 
     <ul className={styles.submenu}>
     {brandData.map((brand) => (

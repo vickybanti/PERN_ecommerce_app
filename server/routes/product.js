@@ -41,7 +41,7 @@ router.get("/:id", async (req, res) => {
 })
 
 router.post("/add",  upload.array('images'), async (req, res) => {
-    const { title, description, cat, price, oldPrice,stock,sizes,type } = req.body;
+    const { title, description, cat, brand, price, oldPrice,stock,sizes,type } = req.body;
     
 
 // Step 1: Remove the surrounding double quotes
@@ -81,8 +81,8 @@ console.log(sizeInt);
 
       
       const add = await pool.query(
-        `INSERT INTO products (title, "desc", cat_title, price, oldprice,stock,sizes, images, type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
-        [title, description, cat, price, oldPrice, stock,sizeInt,imageValues,type]
+        `INSERT INTO products (title, "desc", cat_title, brand_title, price, oldPrice,stock,sizes, images, type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`,
+        [title, description, cat, brand, price, oldPrice, stock,sizeInt,imageValues,type]
     );
       
       res.json(add.rows);

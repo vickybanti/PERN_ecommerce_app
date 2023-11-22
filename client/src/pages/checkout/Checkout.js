@@ -177,8 +177,12 @@ async function payOnDelivery(values){
     
 
     setLoading(true)
-    const pay = await makeRequest.post("/checkout/payOnDelivery",JSON.stringify(requestBody)
-    );
+    const pay = await makeRequest.post("/checkout/payOnDelivery", JSON.stringify(requestBody), {
+      headers: {
+        'Content-Type': 'application/json',
+        // Add any other headers if needed
+      },
+    });
     const confirm = await pay.data
     console.log(confirm)
 

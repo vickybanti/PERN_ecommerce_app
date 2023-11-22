@@ -4,12 +4,14 @@ import Topbar from "../../components/topbar/Topbar";
 import "./newUser.css";
 import { useEffect, useState } from "react";
 import useCat from "../../hooks/useCat";
+import useBrand from "../../hooks/useBrands";
 import { productInputs, userInputs } from "../../dummyData";
 import { useNavigate } from "react-router";
 
 export default function NewUser() {
 
   const navigate = useNavigate()
+  const {brandData} = useBrand()
 
   const {catData} = useCat()
 
@@ -18,6 +20,7 @@ export default function NewUser() {
       description: '',
       type:'',
       cat: '',
+      brand:'',
       price: '',
       oldPrice: '',
       stock: '',
@@ -191,7 +194,6 @@ export default function NewUser() {
           
         </div>
         <label>Type</label>
-        <label>Categories</label>
         <select className="newUserSelect" name="type" value={formData.type}  onChange={handleInputChange} id="active" >
         <option disabled>select category</option>
         
@@ -210,6 +212,18 @@ export default function NewUser() {
             <option disabled>select category</option>
             {catData.map((cats) => (
               <option value={cats.cat_id} key={cats.cat_id}>{cats.cat_title}</option>
+
+            ))}
+          </select>
+          </div>
+
+
+          <div className="newUserItem">
+            <label>Brands</label>
+            <select className="newUserSelect" name="brand" value={formData.brand}  onChange={handleInputChange} id="active" >
+            <option disabled>select brand</option>
+            {brandData.map((brand) => (
+              <option value={brand.id} key={brand.id}>{brand.brand_title}</option>
 
             ))}
           </select>

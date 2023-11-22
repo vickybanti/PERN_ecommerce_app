@@ -27,10 +27,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Grid from "@mui/material/Grid";
-import ImageCarouselZoom from "./ImageCarousel";
-import { Container } from "@mui/material";
-import ImageCarousel from './ImageCarousel';
+import ProductImageSlider from '../../component/ProductSlider';
+
 import { makeRequest } from '../../makeRequest';
+import { addToCart } from '../../redux/slice/cartSlice';
               
 
 
@@ -88,7 +88,8 @@ const [message, setMessage] = useState(false)
     if(!size){
       setMessage(true)
     } else{
-    addProduct(dispatch, proData[0], imageData,count,size)
+      dispatch(addToCart({...proData[0],imageData,count,size }))
+      setMessage(false)
     }
   }
   
@@ -168,32 +169,27 @@ const [size, setSize]  = useState("")
         setValue(newValue);
       };
   
-     
-    
-        
-    
+
+      
 
   
     return (
       <div className='product'>
         <div className='left'>
+
+        
          
         <div className='mainImg'>
       
         {loading ? <SkeletonProductImg /> : 
-          // <img src={imageData && imageData[image]} alt='' />
-         <>
-          <Container maxWidth='lg' sx={{mt:3,zIndex:'0'}}>
-          <Grid container spacing={7}>
-            <Grid item xl={10} >
-                <ImageCarousel data={imageData}/>
-            </Grid>
-          </Grid>
-        </Container>
-          
-      </>
-    }
-        </div>
+          //  <img src={imageData && imageData[image]} alt='' />
+
+  
+
+      <ProductImageSlider images={imageData && imageData} />
+  
+}
+</div>
 
 
         <div className='images'>

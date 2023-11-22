@@ -32,6 +32,8 @@ function Login() {
         // } else if(!password){
         //   error.password="Password is required"
         // }
+
+        console.log(email)
         login(dispatch, {email, password})
 
         

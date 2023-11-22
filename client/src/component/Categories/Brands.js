@@ -11,7 +11,7 @@ function Brands() {
     src="uploads/shoes/IMG-20230405-WA0032.jpg"
     //src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
     alt=""
-    style={{width:"300px", height:"400px"}}
+    style={{width:"300px", height:"300px"}}
     
   />
 
@@ -24,7 +24,8 @@ function Brands() {
     className="brandedimg"
     src="uploads/shoes/IMG-20230405-WA0028.jpg"
     alt=""
-    style={{width:"300px", height:"400px"}}
+    style={{width:"300px", height:"300px"}}
+
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Versace</button>
@@ -36,7 +37,7 @@ function Brands() {
     className=" brandedimg"
     src="uploads/shoes/3940543.jpg"
     alt=""
-    style={{width:"320px", height:"400px"}}
+    style={{width:"300px", height:"300px"}}
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Leather Works</button>
@@ -48,10 +49,11 @@ function Brands() {
     className="brandedimg"
     src="Uploads/shoes/IMG-20230530-WA0017.jpg"
     alt=""
-    style={{width:"300px", height:"400px"}}
+    style={{width:"300px", height:"300px"}}
+
   />
 
-  <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Leather jackets</button>
+  <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}> jackets</button>
   </div>
     </div>
   )
