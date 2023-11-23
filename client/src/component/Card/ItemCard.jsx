@@ -178,7 +178,7 @@ function addSave() {
 
   function handleClick(e, selectedSize) {
     e.preventDefault()
-    addProduct(dispatch,item,count,selectedSize)
+    addProduct(dispatch,item,count,imageData,selectedSize)
 
 
     
