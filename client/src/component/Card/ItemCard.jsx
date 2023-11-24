@@ -9,6 +9,7 @@ import {deleteItem, saveItem, setItemOpen} from '../../redux/slice/savedItemSlic
 import { responsive } from '../Responsive'
 import { addProduct } from '../../redux/apiCalls'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { addToCart } from '../../redux/slice/cartSlice'
 
 
 // const Info = styled.div`
@@ -178,7 +179,7 @@ function addSave() {
 
   function handleClick(e, selectedSize) {
     e.preventDefault()
-    addProduct(dispatch,item,count,imageData,selectedSize)
+    dispatch(addToCart({...item,count,imageData,size }))
 
 
     
