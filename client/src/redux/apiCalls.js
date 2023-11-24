@@ -158,7 +158,7 @@ export const clearProductsFromCart = (dispatch)=> {
 
 
 //add to cart
-export const addProduct = async(dispatch, item,count,size) => {
+export const addProduct = async(dispatch, item,count,imageData,size) => {
     dispatch(addToCart({...item,count,imageData,size }))
 
     
