@@ -24,10 +24,10 @@ ENDPOINT_ID='ep-tiny-dawn-81761022'
 //   },
 // });
 
-// const pool = new Pool({
-//     connectionString: 'postgresql://postgres:8trenzYqTu6V@ep-tiny-dawn-81761022.us-east-2.aws.neon.tech/db?sslmode=require' + '?sslmode=require',
+const pool = new Pool({
+    connectionString: 'postgresql://postgres:8trenzYqTu6V@ep-tiny-dawn-81761022.us-east-2.aws.neon.tech/db?sslmode=require' + '?sslmode=require',
 
-//   });
+  });
 
 
 
@@ -38,14 +38,14 @@ ENDPOINT_ID='ep-tiny-dawn-81761022'
 
 // // getPgVersion();
 
- const pool = new Pool({
-  host:'localhost',
-  database: 'moore',
-  username: 'postgres',
-  password: 'victormania',
-  port: 5432,
+//  const pool = new Pool({
+//   host:'localhost',
+//   database: 'moore',
+//   username: 'postgres',
+//   password: 'victormania',
+//   port: 5432,
   
-});
+// });
 
 
 
