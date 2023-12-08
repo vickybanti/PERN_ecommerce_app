@@ -235,7 +235,7 @@ const [size, setSize]  = useState("")
                 label="Size"
                 value={size}
                 onChange={handleChange}
-                sx={{fontSize:"15px"}}
+                sx={{fontSize:"15px", marginLeft:"15px"}}
               >
                
               {pro.sizes?.map((sizes)=>
