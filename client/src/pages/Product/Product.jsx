@@ -219,7 +219,7 @@ const [size, setSize]  = useState("")
         :proData.map(pro => (
           <><><h1>{pro.title}</h1><p>{pro.desc}</p></><div className='quantity'>
             <button onClick={decreaseQuantity}>-</button>
-            <h4>{count}</h4>
+            <h4 className="count">{count}</h4>
             <button onClick={increaseQuantity}> + </button>
 
             

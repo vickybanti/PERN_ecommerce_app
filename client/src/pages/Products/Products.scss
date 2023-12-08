@@ -7,3 +7,11 @@
         margin-left: -600px;
     }
 }
+
+@media screen and (max-width:360px) {
+    .filters{
+        width: 100%;
+        overflow: hidden;
+        
+    }
+}
