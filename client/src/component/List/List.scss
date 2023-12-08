@@ -113,8 +113,12 @@
             .list{
                 display:grid;
                 column-gap: 1.33%;
-                margin: 0 auto;
+                margin: 0 3px;
+                row-gap: 10px;
                 grid-template-columns: repeat(auto-fill, 100px);
+                grid-template-rows: max-content;
+
+            
     
                 .noProducts{
                     padding: 0 70px;
