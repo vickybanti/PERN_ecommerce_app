@@ -111,15 +111,11 @@
 
         @media screen and (max-width:464px) {
             .list{
-                margin-top: 50px;
-                display: flex;
-                justify-content: space-between;
-                gap: 10px;
-                
-                        
-
-            
-                
+                display:grid;
+                column-gap: 1.33%;
+                margin: 0 auto;
+                grid-template-columns: repeat(auto-fill, 100px);
+    
                 .noProducts{
                     padding: 0 70px;
                     text-align: center;

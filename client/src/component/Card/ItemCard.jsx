@@ -276,7 +276,7 @@ function addSave() {
       </div>
       </div>
       <div className="price">
-       <div className='old'> $ {item.oldPrice}</div>
+       <div className='old'>  {item.oldPrice}</div>
         
         $ {item.price}
       
