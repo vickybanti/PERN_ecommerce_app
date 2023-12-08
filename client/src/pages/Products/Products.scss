@@ -12,18 +12,12 @@
     .filters{
         width: 50%;
         overflow: hidden;
-        margin-left: -70px;
-
-        .box{
-            position:fixed;
-            width:100%;
-            display:flex;
-            flex-wrap: wrap;
+        margin-left: -120px;
+        display:flex;
+        flex-wrap: wrap;
+        position: fixed;
 
 
-           
-
-        }
         
     }
 }
