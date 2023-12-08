@@ -343,7 +343,7 @@
         .right{
             display: flex;
             flex-direction: column;
-            margin-top: 80px;
+            margin-top: 20px;
             justify-content: space-evenly;
             width: 100%;
 
@@ -356,17 +356,18 @@
         .add{
             font-size: 15px;
             padding:10px;
+            margin: 30px 0;
             
             
         }
         .count{
-            padding:10px;
+            padding:20px 30px;
         }
         .related{
             width: 80vw;
             display: flex;
             flex-direction: column;
-            margin: 10px 50px;
+            margin: 30px 50px 30px -200px;
         }
     }
     
