@@ -239,7 +239,7 @@ const [size, setSize]  = useState("")
               >
                
               {pro.sizes?.map((sizes)=>
-                <MenuItem value={sizes} sx={{fontSize:"15px"}} >{sizes}</MenuItem>
+                <MenuItem value={sizes} sx={{fontSize:"15px", paddingleft:"3px"}} >{sizes}</MenuItem>
 
                 )}
               
