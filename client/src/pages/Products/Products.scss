@@ -10,9 +10,20 @@
 
 @media screen and (max-width:360px) {
     .filters{
-        width: 100%;
+        width: 50%;
         overflow: hidden;
-        margin-left: 10px;
+        margin-left: -70px;
+
+        .box{
+            position:fixed;
+            width:100%;
+            display:flex;
+            flex-wrap: wrap;
+
+
+           
+
+        }
         
     }
 }

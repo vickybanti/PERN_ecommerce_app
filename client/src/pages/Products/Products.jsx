@@ -150,11 +150,11 @@ function Products() {
 
      
         
-        <Filter>
+        <Filter className="box">
         <Box sx={{ minWidth: 120 }} style={{isNonMobile}}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
-          <FilterListIcon sx={{fontSize:"20px", color:"cadetblue"}} />
+          <FilterListIcon className="inputs" sx={{fontSize:"20px", color:"cadetblue"}} />
           Filters
           
           </InputLabel>
