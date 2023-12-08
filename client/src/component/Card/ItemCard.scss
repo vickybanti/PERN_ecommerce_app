@@ -111,6 +111,18 @@ img {
                 
 
 }
+
+@media screen and (max-width:464px) {
+    .contain{
+        margin-top: 30px;
+        width: 100%;
+
+        img{
+            width:350px;
+            height: 300px;
+        }
+    }
+}
 .contain:hover .infos {
     display: flex;
     background-color: #071b28;

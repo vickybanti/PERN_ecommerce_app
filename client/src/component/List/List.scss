@@ -111,14 +111,8 @@
 
         @media screen and (max-width:464px) {
             .list{
-                display:grid;
-                row-gap: 20px;
-                column-gap: 1.33%;
-                padding:120px;
-                margin: 0 auto;
-                grid-template-columns: repeat(auto-fill, 250px);
-                box-shadow: var(--box-shadow);
-                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
                         
 
             
