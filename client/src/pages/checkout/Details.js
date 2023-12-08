@@ -31,7 +31,7 @@ function Details({
             />
             <Input 
             fullWidth
-            type="text"
+            type="phone"
             placeholder="Phone Number"
             onBlur={handleBlur}
             onChange={handleChange}

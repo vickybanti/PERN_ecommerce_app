@@ -17,10 +17,7 @@ const {data, loading} = useTrending('/trending')
 return (
     <div className='featured'>
         <div className='top'>
-            <h1
-            className="animate__animated animate__lightSpeedInLeft"
-            style={{ animationDelay: "1s" }}
-          >Trending Products</h1>
+            <h1>Trending Products</h1>
             
         </div>
 

@@ -1,4 +1,9 @@
-.searchArea{
-    justify-content: center;
-    width: 100%;
+
+
+@media screen and (max-width:600px) {
+    .filters{
+        width: 100%;
+        overflow: hidden;
+        margin-left: -600px;
+    }
 }

@@ -23,12 +23,15 @@ function SearchBar() {
 
     function closeView(e){
       setExpanded(false);
-      setButtonVisible(false)       
+      setButtonVisible(false)  
+      setNote(" ")     
     }
 
     function handleSubmit(e){
       e.preventDefault()
       navigate(`/search/${note}`)
+      closeView()
+      setNote("")
     }
   
     const [buttonVisible, setButtonVisible] = useState(true);

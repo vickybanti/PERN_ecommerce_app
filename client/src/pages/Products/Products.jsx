@@ -145,13 +145,13 @@ function Products() {
    <> <div id="back-to-top-anchor"></div>
     <div>
 
-      <FilterContainer style={{ paddingTop: "150px", margin: " auto 100px", color:"white"}}>
+      <FilterContainer className="filters" style={{ paddingTop: "150px", margin: " auto 100px", color:"white"}}>
 
 
      
         
         <Filter>
-        <Box sx={{ minWidth: 120 }} >
+        <Box sx={{ minWidth: 120 }} style={{isNonMobile}}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
           <FilterListIcon sx={{fontSize:"20px", color:"cadetblue"}} />

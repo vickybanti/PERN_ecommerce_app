@@ -77,9 +77,14 @@
 
     @media screen and (max-width:460px) {
       .search{
-       width: 120px;
-       margin-left:110px;
-      }     
+       width: 130px;
+       margin-left:115px;
+       font-size: 25px;
+      }  
+      .btn{
+        
+        margin-left: 23px;
+      }   
    }
 
    @media screen and (max-width:320px) {
