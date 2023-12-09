@@ -150,7 +150,25 @@
 
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 991px) {
+    .review-details {
+        padding: 0;
+    }
+
+    .order-title {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1.2;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+
+}
+
+@media only screen and (max-width: 464px) {
     .review-details {
         padding: 0;
     }
@@ -178,7 +196,9 @@
         text-transform: capitalize;
         color: #000000;
     }
-
+.overview{
+    width:100%;
+}
     .card-text {
         font-family: 'Open Sans';
         font-style: normal;
@@ -191,21 +211,4 @@
 }
 
 
-@media only screen and (max-width: 991px) {
-    .review-details {
-        padding: 0;
-    }
-
-    .order-title {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1em;
-        line-height: 1.2;
-        text-transform: capitalize;
-        color: #000000;
-    }
-
-
-}
 
