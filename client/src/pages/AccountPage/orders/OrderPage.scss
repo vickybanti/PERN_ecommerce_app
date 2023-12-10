@@ -36,16 +36,7 @@
                 width: 60%;
                 padding: 20px 0;
 
-                @media screen and (max-width:464px) {
-                
-                    .details{
-                        width: 100%;
-    
-                        
-                    }
                
-                }
-
             
     
       
@@ -177,6 +168,17 @@
    
       
 }
+
+@media screen and (max-width:464px) {
+                
+    .details{
+        width: 100%;
+
+        
+    }
+
+}
+
 .information{
     display: flex;
     justify-content: space-between;
