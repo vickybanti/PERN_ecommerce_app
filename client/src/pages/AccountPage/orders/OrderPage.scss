@@ -170,12 +170,20 @@
 }
 
 @media screen and (max-width:464px) {
-                
-    .details{
-        width: 100%;
 
-        
+    .order-container{
+        .order{
+            .order-id{
+                .allOrders{
+                    .details{
+                        width:100%
+                    }
+                }
+            }
+        }
     }
+                
+    
 
 }
 
