@@ -65,7 +65,7 @@ function Register() {
             
           } 
          catch (err) {
-             setMessage("User already exists or enter a valid email")
+             setMessage(err.status.response)
             
           }
     }

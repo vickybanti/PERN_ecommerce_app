@@ -201,6 +201,10 @@
     
 
     @media screen and (max-width: 464px) {
+        .bottom{
+            height: 100%;
+            width: 100%;
+        }
         .carousel{
        
          height: 100%;
@@ -212,7 +216,7 @@
             justify-content:center ;
             
             height:100%;
-            padding-left: 30px;
+            padding-left: 45px;
 
             img{
                 width: 100%;
