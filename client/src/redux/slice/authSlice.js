@@ -16,7 +16,7 @@ const authSlice = createSlice({
   reducers: {
     
     LOGIN_START (state) {
-      state.isFetching=false
+      state.isFetching=true
       state.error = false
       state.errorMessage = null
       state.userID = null

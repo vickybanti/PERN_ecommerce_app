@@ -90,7 +90,7 @@ export const login = async (dispatch, user) => {
         isLoggedIn: true,
         userID: parseRes.user_id,
         userName: parseRes.firstname,
-        isFetching: false,
+        
       }));
 
       console.log(parseRes.token);
@@ -98,7 +98,6 @@ export const login = async (dispatch, user) => {
       dispatch(LOGIN_FAILURE({
         error: true,
         errorMessage: parseRes.error,
-        isFetching: false,
       }));
     
     }
@@ -106,7 +105,6 @@ export const login = async (dispatch, user) => {
     dispatch(LOGIN_FAILURE({
       error: true,
       errorMessage: "email not found",
-      isFetching: false,
     }));
   }
 };
