@@ -172,11 +172,19 @@
 @media screen and (max-width:464px) {
 
     .order-container{
+        margin-left: -50px;
         .order{
             .order-id{
                 .allOrders{
                     .details{
-                        width:100%
+                        width: 150px;
+                    }
+
+                    span{
+                        width: 100%;
+                    }
+                    img{
+                        margin-bottom: 70px;
                     }
                 }
             }
