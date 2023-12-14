@@ -169,6 +169,20 @@
       
 }
 
+@media screen and (max-width:820px) {
+    .order-container{
+        .order{
+            .order_id{
+                .allOrders{
+                    .details{
+                        margin-left: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:464px) {
 
     .order-container{
@@ -184,11 +198,13 @@
                     span{
                         margin-top: 70px;
                         width: 100%;
+                        padding: 20px;
                     }
 
                     .paymentdetails{
                         padding: 15px;
                         margin-top: 50px;
+                        width: 100%;
                     }
                     
                 }

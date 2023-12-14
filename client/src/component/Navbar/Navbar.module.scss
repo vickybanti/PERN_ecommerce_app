@@ -540,9 +540,16 @@ header {
   
 }
 
+@media screen and (max-width:820px) {
+  .classics{
+    display: none;
+  }
+  .menuItem{
+    display:none;
+  }
+}
 
-
-@media screen and (max-width:360px) {
+@media screen and (max-width:464px) {
   .classics{
     display: none;
 

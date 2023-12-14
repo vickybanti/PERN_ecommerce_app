@@ -196,8 +196,8 @@ function Navbar() {
 
             
             
-            
-            <h4>Categories</h4>
+            {showMenu ? 
+            <h4>Categories</h4> : " "}
             {catData.map((cat) => (
               
               
@@ -208,7 +208,8 @@ function Navbar() {
                 </NavLink> : " "}
               </li>
             ))}
-            <h4>Popular brands</h4>
+            {showMenu ? 
+            <h4>Popular brands</h4> : " "}
             {brandData.map((brand) => (
               <li key={brand.id}>
               
