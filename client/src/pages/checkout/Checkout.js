@@ -254,8 +254,8 @@ const handleFormSubmit = async(values, actions) => {
       <div className='my-cart'>
             {cartItems.map((item) => (
         <>
-        <Box flex="1 1 40%" mt={"20px"}>
-                <div style={{width:"100%", height:"100%"}}>
+        <Box flex="1 1 30%" mt={"40px"}>
+                <div style={{width:"40%", height:"40%"}}>
                   <ImageData item={item} />
                 </div>
         </Box>
