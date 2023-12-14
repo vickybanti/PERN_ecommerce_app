@@ -76,7 +76,7 @@ function SearchBar() {
       </form>
       <button className="btn">
 
-          {expanded ? <Close onClick={closeView} sx={{fontSize:"40px"}}/> : <Search className="searchIcon" onClick={expandView} />}
+          {expanded ? <Close onClick={closeView} sx={{fontSize:"40px"}} className="close"/> : <Search className="searchIcon" onClick={expandView} />}
           </button>
           </div> 
           </>

@@ -94,11 +94,14 @@
        background-color: none;
       }  
       .btn{
-        margin-top: 270px;
-        margin-left: 120px;
-        background-color: white;
+        margin-top: 20px;
         font-size:12px;
-        z-index: 10;
+
+        .close{
+          margin-top: 70px;
+          margin-left: 80px;
+        }
+        
       }   
    }
 
