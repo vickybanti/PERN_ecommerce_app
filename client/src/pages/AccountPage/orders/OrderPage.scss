@@ -178,14 +178,19 @@
                 .allOrders{
                     .details{
                         width: 150px;
+                        padding: 15px;
                     }
 
                     span{
+                        margin-top: 70px;
                         width: 100%;
                     }
-                    img{
-                        margin-bottom: 70px;
+
+                    .paymentdetails{
+                        padding: 15px;
+                        margin-top: 50px;
                     }
+                    
                 }
             }
         }
