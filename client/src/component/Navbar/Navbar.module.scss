@@ -543,6 +543,13 @@ header {
 
 
 @media screen and (max-width:360px) {
+  .classics{
+    display: none;
+
+  }
+  .menuItem{
+    display: none;
+  }
   
   header{
     width: 100%;
