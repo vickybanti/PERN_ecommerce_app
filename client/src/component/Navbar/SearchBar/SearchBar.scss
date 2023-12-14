@@ -24,6 +24,13 @@
   width: 200px;
 }
 }
+@media screen and (max-width:464px) {
+  .search-container{
+  transition: height 0.3s linear; /* Transition for the width property */
+  height: 150px;
+
+}
+}
   
   .search-container.expanded {
     width: 400px;
@@ -51,8 +58,8 @@
 
   @media screen and (max-width:464px) {
     .search-container.expanded{
-      background-color: none;
-      margin-left:20px;
+      width: 150px;
+      margin-left:25px;
       
 
     }
@@ -85,8 +92,8 @@
 
     @media screen and (max-width:464px) {
       .search{
-       width: 300px;
-       margin-left:140px;
+       width: 320px;
+       margin-left:150px;
        font-size: 15px;
        margin-top: 80px;
        border-radius: 0;
@@ -99,7 +106,6 @@
         .close{
           margin-top: 70px;
           margin-left: 250px;
-          background-color: white;
           z-index: 10;
         }
         
