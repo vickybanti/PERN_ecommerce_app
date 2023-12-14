@@ -1,11 +1,14 @@
 import React from 'react'
 import './Brands.css'
+import { NavLink } from 'react-router-dom'
 
 function Brands() {
   return (
     <div className='brands'>
     <h2 style={{fontSize:"60px", color:"GrayText"}}>Popular brands</h2>
     <div className="brandedWears">
+    <NavLink to="/brands/nike">
+
     <img
     className="brandedimg"
     src="uploads/shoes/IMG-20230405-WA0032.jpg"
@@ -15,10 +18,14 @@ function Brands() {
     
   />
 
+
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Nike</button>
+  </NavLink>
   </div>
 
   <div className="brandedWears">
+  <NavLink to="/brands/versace">
+
 
   <img
     className="brandedimg"
@@ -29,7 +36,8 @@ function Brands() {
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Versace</button>
-    </div>
+  </NavLink>  
+  </div>
     
     <div className="brandedWears">
 
@@ -40,10 +48,17 @@ function Brands() {
     style={{width:"300px", height:"300px"}}
   />
 
-  <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>Leather Works</button>
+  <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>
+  <NavLink to="/brands/addidas">
+
+  Leather Works
+  </NavLink>
+  </button>
   </div>
 
   <div className="brandedWears">
+  <NavLink to="/brands/addidas">
+
 
   <img
     className="brandedimg"
@@ -54,6 +69,7 @@ function Brands() {
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}> jackets</button>
+ </NavLink>
   </div>
     </div>
   )

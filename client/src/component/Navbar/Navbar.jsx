@@ -197,20 +197,21 @@ function Navbar() {
             
             
             
-            
+            <h4>Categories</h4>
             {catData.map((cat) => (
               
+              
               <li key={cat.id}>
-              <h4>Categories</h4>
+              
                 {showMenu ? <NavLink to={`/categories/${cat.id}`}>
                   {cat.cat_title}
                 </NavLink> : " "}
               </li>
             ))}
-
+            <h4>Popular brands</h4>
             {brandData.map((brand) => (
               <li key={brand.id}>
-              <h4>Popular brands</h4>
+              
                 {showMenu ? <NavLink to={`/categories/${brand.id}`}>
                   {brand.brand_title}
                 </NavLink> : " "}

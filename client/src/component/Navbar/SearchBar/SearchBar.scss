@@ -77,13 +77,13 @@
 
     @media screen and (max-width:464px) {
       .search{
-       width: 190px;
-       margin-left:80px;
+       width: 300px;
+       margin-top:80px;
        font-size: 25px;
       }  
       .btn{
         
-        margin-left: 30px;
+        margin-left: 60px;
         background-color: white;
         font-size:12px;
       }   
@@ -91,15 +91,15 @@
 
    @media screen and (max-width:320px) {
     .search{
-     width: 100px;
-     margin-left:130px;
+     width: 150px;
+     margin-top:80px;
     }     
  }
  @media screen and (max-width:280px) {
   .search{
    
-   margin-left:140px;
-   width: 90px;
+   margin-top:70px;
+   width: 120px;
    font-size: 10px;
   }     
 }
