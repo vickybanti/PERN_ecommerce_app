@@ -97,13 +97,13 @@
         transition: height 0.5s linear;
       height: 50px;
       position: absolute;
-       width: 300px;
-       margin-left:10px;
+       width: 270px;
+       margin-left:-10px;
        font-size: 15px;
        margin-top: 20px;
        border-radius: 0;
        border: none;
-       box-shadow: 1px 0 2px rgb(1, 2, 2);
+       box-shadow: var(--box-shadow);
       }  
       .btn{
         margin-top: 20px;
@@ -111,8 +111,8 @@
 
         .close{
           position: absolute;
-          margin-top: 25px;
-          margin-left: 170px;
+          margin-top: 22px;
+          margin-left: 220px;
           z-index: 10;
         }
         
