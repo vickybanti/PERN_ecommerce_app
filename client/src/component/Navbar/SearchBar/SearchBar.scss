@@ -26,8 +26,8 @@
 }
 @media screen and (max-width:464px) {
   .search-container{
-  transition: height 0.3s linear; /* Transition for the width property */
-  height: 150px;
+  transition: height 0.5s linear; /* Transition for the width property */
+  height: 50px;
 
 }
 }
@@ -98,9 +98,9 @@
       height: 50px;
       position: absolute;
        width: 300px;
-       margin-left:50px;
+       margin-left:150px;
        font-size: 15px;
-       margin-top: 50px;
+       margin-top: 10px;
        border-radius: 0;
        border: none;
        border-radius: var(--box-shadow);
