@@ -42,6 +42,7 @@
   }
   @media screen and (max-width:820px) {
     .search-container.expanded{
+      position: absolute;
       width: 280px;
       margin-top: 3px;
 
@@ -58,6 +59,7 @@
 
   @media screen and (max-width:464px) {
     .search-container.expanded{
+      position: absolute;
       width: 150px;
       margin-left:25px;
       
@@ -92,12 +94,16 @@
 
     @media screen and (max-width:464px) {
       .search{
-       width: 320px;
+        transition: height 0.5s linear;
+        height: 50px;
+      position: absolute;
+       width: 350px;
        margin-left:150px;
        font-size: 15px;
        margin-top: 80px;
        border-radius: 0;
-       background-color: none;
+       border: none;
+       border-radius: var(--box-shadow);
       }  
       .btn{
         margin-top: 20px;
