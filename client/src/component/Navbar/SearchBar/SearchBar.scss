@@ -95,12 +95,12 @@
     @media screen and (max-width:464px) {
       .search{
         transition: height 0.5s linear;
-        height: 50px;
+      height: 50px;
       position: absolute;
-       width: 350px;
-       margin-left:150px;
+       width: 300px;
+       margin-left:50px;
        font-size: 15px;
-       margin-top: 80px;
+       margin-top: 50px;
        border-radius: 0;
        border: none;
        border-radius: var(--box-shadow);
@@ -110,7 +110,7 @@
         font-size:12px;
 
         .close{
-          margin-top: 70px;
+          margin-top: 50px;
           margin-left: 250px;
           z-index: 10;
         }
