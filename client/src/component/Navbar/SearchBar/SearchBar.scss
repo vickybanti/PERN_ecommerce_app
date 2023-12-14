@@ -77,15 +77,20 @@
 
     @media screen and (max-width:464px) {
       .search{
-       width: 300px;
+       width: 80%;
        margin-top:80px;
+       margin-left: 50px;
+       border-radius: 0;
+
        font-size: 25px;
       }  
       .btn{
         
-        margin-left: 60px;
+        margin-left: 100px;
         background-color: white;
         font-size:12px;
+        z-index:10;
+        
       }   
    }
 
