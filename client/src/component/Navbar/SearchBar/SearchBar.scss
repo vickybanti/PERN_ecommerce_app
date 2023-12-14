@@ -28,7 +28,6 @@
   .search-container.expanded {
     width: 400px;
     margin-top: -15px;
-    background-color: rgba(0,0,0,0.4);
     
 
     /* Expanded width */
@@ -50,10 +49,10 @@
     }
   }
 
-  @media screen and (max-width:360px) {
+  @media screen and (max-width:464px) {
     .search-container.expanded{
       background-color: none;
-      margin-left:35px;
+      margin-left:20px;
       
 
     }
@@ -87,7 +86,7 @@
     @media screen and (max-width:464px) {
       .search{
        width: 300px;
-       margin-left:170px;
+       margin-left:140px;
        font-size: 15px;
        margin-top: 80px;
        border-radius: 0;
@@ -99,7 +98,9 @@
 
         .close{
           margin-top: 70px;
-          margin-left: 80px;
+          margin-left: 250px;
+          background-color: white;
+          z-index: 10;
         }
         
       }   
