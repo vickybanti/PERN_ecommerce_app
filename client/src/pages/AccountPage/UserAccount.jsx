@@ -119,7 +119,7 @@ function UserAccount() {
                           <PersonOutlineIcon sx={{ fontSize: 30 }} />
                         </ListItemIcon>
                         <ListItemText
-                          primary="My Ayaba Account"
+                          primary="My Account"
                           primaryTypographyProps={{ fontSize: "20px", 
                           fontFamily:"fantasy", letterSpacing:"2px" }}
                         />

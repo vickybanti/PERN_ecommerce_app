@@ -69,11 +69,7 @@ header {
         }
       }
 
-      @media screen and (max-width:820px) {
-        .menuItem{
-        display: none;
-        }
-      }
+     
       
       .menuItem:hover .submenu {
         display: block;
@@ -242,7 +238,7 @@ header {
       }
     }
     .name{
-      color: #161618;
+      color: white;
       margin-left: -40px;
       display: block;    
     }
@@ -276,6 +272,9 @@ header {
   }
 
   @media screen and (max-width: 820px) {
+    .classics{
+      display: none;
+    }
     nav {
       display: block;
       position: absolute;
@@ -311,6 +310,8 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          font-size: 20px;
+          color: var(--color-primary);
           > * {
             cursor: pointer;
           }

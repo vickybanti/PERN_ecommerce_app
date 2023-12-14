@@ -190,7 +190,7 @@ function Navbar() {
 
             <li className={styles['logo-mobile']}>
               {logo}
-              <span onClick={hideMenu}>&times;</span>
+              <span onClick={hideMenu} style={{fontSize:"30px"}}>&times;</span>
 
             </li>
 

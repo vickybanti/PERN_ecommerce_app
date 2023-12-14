@@ -5,6 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Button, IconButton } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { makeRequest } from "../../makeRequest";
 
 function AccountSummary() {
   const user = useSelector((state) => state.auth.userID);
@@ -41,10 +42,8 @@ function AccountSummary() {
 
     
     try {
-      const response = await fetch(`http://localhost:5000/auth/user/${user}`,{
-        method: "GET"
-      })
-      const  res = await response.json()
+      const response = await makeRequest.get(`/auth/user/${user}`)
+      const  res = await response.data
 
       setGetUser(res)
     } catch (err) {
@@ -144,7 +143,7 @@ function AccountSummary() {
             </div>
             <div className="col-md-6">
               <div className="card h-100">
-                <p className="card-heading">AYABA STORE CREDIT</p>
+                <p className="card-heading">MOORE STORE CREDIT</p>
                 <div className="card-body">
                   <div className="card-credit">
                     <AccountBalanceWalletIcon

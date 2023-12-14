@@ -13,6 +13,7 @@ import { toast } from 'react-toastify';
 import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
+import ImageData from '../../component/ImageData';
 
 
 
@@ -253,8 +254,13 @@ const handleFormSubmit = async(values, actions) => {
       <div className='my-cart'>
             {cartItems.map((item) => (
         <>
-       
-      <h4>  {item.title}</h4><p>Price: {item.price}</p></>
+        <Box flex="1 1 40%" mt={"20px"}>
+                <div style={{width:"100%", height:"100%"}}>
+                  <ImageData item={item} />
+                </div>
+        </Box>
+
+        <h4>  {item.title}</h4><p>Price: {item.price}</p></>
       ))}
       </div>
 
