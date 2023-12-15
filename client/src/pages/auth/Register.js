@@ -65,7 +65,7 @@ function Register() {
             
           } 
          catch (err) {
-             setMessage(err.status.response)
+             setMessage(err.message)
             
           }
     }
