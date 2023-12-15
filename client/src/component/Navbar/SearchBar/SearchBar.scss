@@ -121,10 +121,9 @@
 
     @media screen and (max-width:464px) {
       .search{
-        transition: height 0.5s linear;
-      height: 50px;
+      transition:  0.5s all linear;
       position: absolute;
-       width: 270px;
+       width: 310px;
        margin-left:-10px;
        font-size: 15px;
        margin-top: 20px;
@@ -139,7 +138,7 @@
         .close{
           position: absolute;
           margin-top: 22px;
-          margin-left: 220px;
+          margin-left: 250px;
           z-index: 10;
         }
         

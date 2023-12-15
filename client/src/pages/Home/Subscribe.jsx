@@ -39,7 +39,7 @@ function Newsletter() {
       <div className='description'>GET DAILY UPDATES FROM OUR NEWSLETTER</div>
       <form onSubmit={handleSubmit} ref={ref} id="myForm">
       <div className='inputContainer'>
-        <input placeholder='Enter your email here...' name="email" style={{fontSize:"20px"}}/>
+        <input placeholder='Enter your email here...' name="email" style={{fontSize:"12px"}}/>
         <Button sx={{backgroundColor:"#27374D"}} type="submit">
           <SendIcon />
         </Button>   
