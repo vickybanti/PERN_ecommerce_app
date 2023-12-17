@@ -157,7 +157,9 @@
       input {
         height: 100%;
         border:none;
-        margin-right: 30px;
+        margin-right: 60px;
+        padding:5px;
+
       }
 
       Button {
@@ -237,7 +239,7 @@
 
           input{
             font-size:10px;
-            width:200px;
+            width:250px;
             margin-right: 10px;
           }
         }

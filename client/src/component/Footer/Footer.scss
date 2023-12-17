@@ -135,12 +135,16 @@
             padding: 0 3px;
             display: flex;
             flex-direction: column;
+
+            .item{
+                margin-top: 10px;
+            }
         }
 
         .bottom{
             bottom:0;
             width: 120%;
-            padding-left:35px;
+            margin-left:15px;
 
             
             
@@ -153,13 +157,13 @@
             }
             .copyright{
                 font-size: 8px;
-                width:200px;
+                width:100%;
                 
             }
 
             .terms{
                 font-size: 8px;
-                width: 20vw;
+                width: 100%;
             }
         }
         }
