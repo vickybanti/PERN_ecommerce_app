@@ -87,7 +87,7 @@
   @media screen and (max-width:464px) {
     .search-container.expanded{
       position: absolute;
-      width: 300px;
+      width: 200px;
       margin-left:10px;
       
 
@@ -159,13 +159,14 @@
     outline: none;
     transition: 2s linear all;
 
-  }
+
     .searchIcon{
       font-size: 40px;
       transition: 2s linear all;
 
       
     }
+  }
     .closeView{
       font-size: 40px;
       transition: 2s linear all;
