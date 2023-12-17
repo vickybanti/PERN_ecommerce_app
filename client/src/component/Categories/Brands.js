@@ -14,7 +14,8 @@ function Brands() {
     src="uploads/shoes/IMG-20230405-WA0032.jpg"
     //src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
     alt=""
-    style={{width:"300px", height:"300px"}}
+    style={{width:"150px", height:"200px", marginRight:"10px"}}
+
     
   />
 
@@ -31,7 +32,7 @@ function Brands() {
     className="brandedimg"
     src="uploads/shoes/IMG-20230405-WA0028.jpg"
     alt=""
-    style={{width:"300px", height:"300px"}}
+    style={{width:"150px", height:"200px", marginRight:"10px"}}
 
   />
 
@@ -45,7 +46,8 @@ function Brands() {
     className=" brandedimg"
     src="uploads/shoes/3940543.jpg"
     alt=""
-    style={{width:"300px", height:"300px"}}
+    style={{width:"150px", height:"200px", marginRight:"10px"}}
+
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>
@@ -64,7 +66,7 @@ function Brands() {
     className="brandedimg"
     src="Uploads/shoes/IMG-20230530-WA0017.jpg"
     alt=""
-    style={{width:"300px", height:"300px"}}
+    style={{width:"150px", height:"200px", marginRight:"10px"}}
 
   />
 
