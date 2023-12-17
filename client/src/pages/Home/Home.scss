@@ -157,7 +157,7 @@
       input {
         height: 100%;
         border:none;
-        margin-right: 100px;
+        margin-right: 130px;
         padding:5px;
 
       }
@@ -235,11 +235,12 @@
 
         .inputContainer{
           margin-left: 60px;
+          width: 100%;
           justify-content: space-between;
 
           input{
             font-size:10px;
-            width:250px;
+            width:200px;
             margin-right: 10px;
           }
         }

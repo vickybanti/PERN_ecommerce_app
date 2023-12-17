@@ -180,12 +180,13 @@ header {
 
       .logo-mobile {
         display: none;
+        color:white;
       }
 
       li {
         margin: 0 5px;
         a {
-          color: black;
+          color: white;
           font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
          font-size: 15px;
           &:hover {
@@ -313,6 +314,10 @@ header {
           > * {
             cursor: pointer;
           }
+
+          h2{
+            color:var(--color-danger)
+          }
         }
         li {
           padding: 5px 0;
@@ -351,9 +356,9 @@ header {
             display: block;
             margin: 0;
             padding: 5px 0;
-            color: black;
+            color: white;
             font-weight: bold;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid black;
 
             
           }
@@ -567,6 +572,7 @@ header {
 
       .searchbar{
         margin-left:-250px;
+        font-size:12px;
         
       }
 
