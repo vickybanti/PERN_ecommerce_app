@@ -144,7 +144,7 @@
         .bottom{
             bottom:0;
             width: 120%;
-            margin-left:-5px;
+            margin-left:-15px;
 
             
             
@@ -157,13 +157,15 @@
             }
             .copyright{
                 font-size: 8px;
-                width:100%;
+                display: flex;
+                width: 150px;
                 
             }
 
             .terms{
                 font-size: 8px;
-                width: 100%;
+                display: flex;
+                width: 150px;
             }
         }
         }

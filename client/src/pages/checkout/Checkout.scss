@@ -65,6 +65,15 @@
                 margin: auto;              
             }
 
+            @media screen and (max-width:464px) {
+                h4{
+                    font-size: 15px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+
             .p{
                 display: flex;
                 justify-content: center;
