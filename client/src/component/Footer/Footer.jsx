@@ -76,7 +76,7 @@ function Footer() {
       </div>
       <div className='bottom'>
         <div className='left'>
-          <span className='logo'>MOOREPLAZA</span>
+          <span className='logo'>MOORESTORE</span>
           <span className='copyright'>
             Copyright 2023, All rights reserved
             </span>

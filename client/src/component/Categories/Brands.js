@@ -44,27 +44,30 @@ function Brands() {
 
   <img
     className=" brandedimg"
-    src="uploads/shoes/3940543.jpg"
+    src="uploads/shoes/IMG-20230405-WA0031.jpg"
     alt=""
     style={{width:"200px", height:"200px", marginRight:"10px"}}
 
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>
-  <NavLink to="/brands/addidas">
+  <NavLink to="/brands/puma">
+  <button>
+    puma
+  </button>
 
-  Leather Works
+  
   </NavLink>
   </button>
   </div>
 
   <div className="brandedWears">
-  <NavLink to="/brands/addidas">
+  <NavLink to="/categories/jackets">
 
 
   <img
     className="brandedimg"
-    src="Uploads/shoes/IMG-20230530-WA0017.jpg"
+    src="Uploads/shoes/IMG-20230530-WA0011.jpg"
     alt=""
     style={{width:"200px", height:"200px", marginRight:"10px"}}
 

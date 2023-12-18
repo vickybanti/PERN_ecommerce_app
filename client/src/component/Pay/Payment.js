@@ -22,7 +22,7 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
+     fetch("https://mooreserver.onrender.com/checkouts/create-payment-intent", {
       method:"POST",
       body: JSON.stringify(requestBody),
     })
