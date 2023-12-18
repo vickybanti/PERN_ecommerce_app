@@ -69,9 +69,7 @@
                 h4{
                     font-size: 15px;
                 }
-                p{
-                    font-size: 12px;
-                }
+                
             }
 
             .p{
@@ -80,6 +78,12 @@
                 align-items: center;
                 padding: 20px;
                 font-size: 0.9em;
+            }
+            @media screen and (max-width:464px) {
+                .p{
+                    font-size: 15px;
+                }
+                
             }
         }
         

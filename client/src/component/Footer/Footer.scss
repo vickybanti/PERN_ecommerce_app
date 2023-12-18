@@ -142,16 +142,16 @@
         }
 
         .bottom{
-            bottom:0;
             width: 120%;
             margin-left:-15px;
-
+            margin-bottom: 0;
             
             
             .left{
 
             width: 100%;
             font-size: 20px;
+            padding-left: 3px;
 
             .logo{
                 font-size:17px ;
@@ -159,7 +159,7 @@
             .copyright{
                 font-size: 8px;
                 display: flex;
-                width: 350px;
+                width: 150px;
                 
                 
             }
