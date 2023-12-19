@@ -25,7 +25,7 @@ function Payment() {
      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method:"POST",
       body: JSON.stringify(requestBody),
-      requestMode:"no-cors"
+      mode:"no-cors"
     })
       .then(async (result) => {
         if (!result.ok) {
