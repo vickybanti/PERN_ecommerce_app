@@ -521,6 +521,11 @@ header {
 
     .header{
       width: 100%;
+
+      .logo{
+        margin-top: 10px;
+        font-size: 17px;
+      }
       
       .divider{
         display: none;
