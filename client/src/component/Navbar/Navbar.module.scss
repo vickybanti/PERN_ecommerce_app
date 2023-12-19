@@ -360,7 +360,6 @@ header {
             color: var(--color-danger);
             font-weight: bold;
 
-            
           }
           
         }
@@ -522,6 +521,10 @@ header {
 
     .header{
       width: 100%;
+      
+      .divider{
+        display: none;
+      }
 
       .logo{
         width: 10%;
@@ -534,8 +537,8 @@ header {
       
         .searchbar{
         margin-left:-170px;
-        margin-top: 10px;
-        font-size: 20px;
+        margin-top: 0;
+        font-size: 25px;
         
       }
       

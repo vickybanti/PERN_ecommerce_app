@@ -239,7 +239,7 @@ function Navbar() {
       
       
       </div>
-      <Divider sx={{width:"100%"}}/>
+      <Divider sx={{width:"100%"}} className="divide"/>
       <CategoriesBar /> 
 
     </header>
