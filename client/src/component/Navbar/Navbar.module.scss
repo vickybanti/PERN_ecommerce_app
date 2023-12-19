@@ -357,16 +357,15 @@ header {
             display: block;
             margin: 0;
             padding: 5px 0;
-            color: white;
+            color: var(--color-danger);
             font-weight: bold;
-            border-bottom: 1px solid gray;
 
             
           }
           
         }
 
-        @media screen and (max-width:360px) {
+        @media screen and (max-width:464px) {
           .loginButton{
             width: 20vw;
           }
