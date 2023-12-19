@@ -41,6 +41,7 @@ function Brands() {
   </div>
     
     <div className="brandedWears">
+    <NavLink to="/brands/prada">
 
   <img
     className=" brandedimg"
@@ -51,14 +52,15 @@ function Brands() {
   />
 
   <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>
-  <NavLink to="/brands/puma">
-  <button>
-    puma
+  
+  <button style={{fontSize:"20px", margin:"50% 0", cursor:"pointer"}}>
+      puma
   </button>
 
   
-  </NavLink>
   </button>
+  </NavLink>
+
   </div>
 
   <div className="brandedWears">
