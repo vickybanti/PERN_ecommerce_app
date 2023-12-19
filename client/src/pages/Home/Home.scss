@@ -157,7 +157,7 @@
       input {
         height: 100%;
         border:none;
-        margin-right: 130px;
+        margin-right: 170px;
         padding:5px;
 
       }
@@ -208,7 +208,7 @@
       }
     }
 
-    @media screen and (max-width: 1029px) {
+    @media screen and (max-width: 1024px) {
       .container{
           height: 100%;
           overflow: hidden;
@@ -234,13 +234,13 @@
         width:100%;
 
         .inputContainer{
-          margin-left: 60px;
+          margin-left: 30px;
           width: 100%;
           justify-content: space-between;
 
           input{
             font-size:10px;
-            width:130px;
+            width:100px;
             margin-right: 10px;
           }
         }

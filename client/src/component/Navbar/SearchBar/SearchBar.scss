@@ -87,7 +87,7 @@
   @media screen and (max-width:464px) {
     .search-container.expanded{
       position: absolute;
-      width: 330px;
+      width: 380px;
       margin:0;
       
 
@@ -123,7 +123,7 @@
       .search{
       transition:  0.5s all linear;
       position: absolute;
-       width: 310px;
+       width: 410px;
        margin-left:-10px;
        font-size: 15px;
        margin-top: 20px;
@@ -132,7 +132,7 @@
        box-shadow: var(--box-shadow);
       }  
       .btn{
-        margin-top: 20px;
+        margin-top: 10px;
         font-size:20px;
 
         .close{
