@@ -23,9 +23,12 @@ function Payment() {
 
   useEffect(() => {
      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
+      headers: {
+        "Content-Type": "application/json",
+      },
       method:"POST",
       body: JSON.stringify(requestBody),
-      mode:"no-cors"
+      
     })
       .then(async (result) => {
         if (!result.ok) {
