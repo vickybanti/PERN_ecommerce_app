@@ -7,12 +7,12 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Pay.scss"
 
-function Payment() {
+function Payment({requestBody}) {
   const cart = useSelector((state) => state.cart.cartItems)
   const totalPrice = useSelector((state)=> state.totalPrice)
   const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const requestBody = JSON.parse(searchParams.get('requestBody'));
+  // const searchParams = new URLSearchParams(location.search);
+  // const requestBody = JSON.parse(searchParams.get('requestBody'));
   
 
 

@@ -64,7 +64,7 @@ export default function CheckoutForm({requestBody}) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000",
+        return_url: "https:/mooreserver.onrender.com/success",
       },
     });
 
