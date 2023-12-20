@@ -90,12 +90,14 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
   
   
-    const paymentIntent = await stripe.paymentIntents.create({
-    
-      currency: "EUR",
-      amount: total,
-      automatic_payment_methods: { enabled: true },
-    });
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: calculateOrderAmount(items),
+    currency: "usd",
+    // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+    automatic_payment_methods: {
+      enabled: true,
+    },
+  });
 
     // Send publishable key and PaymentIntent details to client
     

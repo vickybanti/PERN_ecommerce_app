@@ -6,8 +6,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Pay.scss"
-import { Button } from "@mui/material";
-import { makeRequest } from "../../makeRequest";
 
 function Payment() {
   const cart = useSelector((state) => state.cart.cartItems)
@@ -21,28 +19,25 @@ function Payment() {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
+
   useEffect(() => {
-     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method:"POST",
-      body: JSON.stringify(requestBody),
-      
+    // Create PaymentIntent as soon as the page loads
+    fetch("https://mooreserver.onrender.com/checkouts/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
     })
-      .then(async (result) => {
-        if (!result.ok) {
-          throw new Error("Failed to fetch payment intent");
-        }
-  
-        const { clientSecret } = await result.data;
-        setClientSecret(clientSecret);
-      })
-      .catch((error) => {
-        console.error("Error fetching payment intent:", error);
-      });
-  }, [requestBody, setClientSecret]);
-  
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
+
+  const appearance = {
+    theme: 'stripe',
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
   // Render the CheckoutForm only when clientSecret is available
   return (
     <div className="pay">

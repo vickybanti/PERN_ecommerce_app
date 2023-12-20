@@ -19,7 +19,8 @@ app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
 
 
 //middleware
-
+app.use(express.static("public"));
+app.use(express.json());
 
 //register and login routes
 app.set('view engine', "ejs");
