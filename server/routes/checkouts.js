@@ -6,7 +6,7 @@ const express = require("express")
 const pool = require("../db");
 const crypto = require("crypto");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2022-08-01",
+  apiVersion: "2023-10-16",
 });
 
 const sendEmail = require("../sendEmail")

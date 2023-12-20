@@ -43,8 +43,8 @@ router.post('/', async (req, res) => {
     customer:customer.id,
     line_items, 
     mode: 'payment',
-    success_url: `http://localhost:3000/success`,
-    cancel_url: `http://localhost:3000/cart`,
+    success_url: `https://mooreserver.onrender.com/success`,
+    cancel_url: `https://mooreserver.onrender.com/checkout`,
 
   });
   
