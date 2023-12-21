@@ -91,7 +91,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
   
   
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(items),
+    amount: calculateOrderAmount(totals),
     currency: "usd",
     // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
     automatic_payment_methods: {
