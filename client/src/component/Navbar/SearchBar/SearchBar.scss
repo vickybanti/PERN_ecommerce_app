@@ -2,7 +2,7 @@
 .form {
     display: flex;
     align-items: center;
-    height:40px;
+    height:50px;
   }
   
   .search-container {
@@ -34,7 +34,6 @@
   
   .search-container.expanded {
     width: 400px;
-    margin-top: -15px;
     
 
     /* Expanded width */
@@ -161,14 +160,20 @@
 
 
     .searchIcon{
-      font-size: 30px;
+      scale: 1.25px;
+      font-weight:900;
+      font-size: 35px;
+      width: 20px;
+      height: 19px;
+      line-height: 20px;
+      top: 4px;
       transition: 2s linear all;
+
 
       
     }
   }
     .closeView{
-      font-size: 20px;
       transition: 2s linear all;
 
     }

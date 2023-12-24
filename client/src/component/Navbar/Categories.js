@@ -14,15 +14,13 @@ function CategoriesBar() {
     return (
         <div className={styles.categories}>
         {catData.map((cat) => (
-        <div className={styles.nav}>
         
-        <ul className='ul'>
+        <ul className={styles.ul}>
         
-       <li key={cat.id} >
-        <NavLink className= {activeLink} style={{
-            width: '100%',
-            
-            justifyContent: "center", alignItems:"center",fontWeight:"100", fontSize:"17px"}}
+       <li key={cat.id}>
+        <NavLink className= {activeLink} 
+                      
+         
         to={`categories/${cat.cat_title}`}>
        
         {cat.cat_title}
@@ -32,7 +30,6 @@ function CategoriesBar() {
         </li>
         
         </ul>
-        </div>
                    
     ))}
     </div>

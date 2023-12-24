@@ -66,7 +66,7 @@ function SearchBar() {
               value={note}
               placeholder="Search products..."
               rows={expanded ? 3 : 1}
-              sx={{ fontSize: "30px" }}
+              sx={{ fontSize: "18px" }}
               onFocus={() => setExpanded(true)}
               onBlur={() => setExpanded(false)} 
                />}
@@ -76,7 +76,7 @@ function SearchBar() {
       </form>
       <button className="btn">
 
-          {expanded ? <Close onClick={closeView} sx={{fontSize:"40px"}} className="close"/> : <Search className="searchIcon" onClick={expandView} />}
+          {expanded ? <Close onClick={closeView} sx={{fontSize:"20px", borderRadius:"100%", backgroundColor:"gray"}} className="close"/> : <Search sx={{fontSize:"35px"}} className="searchIcon" onClick={expandView} />}
           </button>
           </div> 
           </>

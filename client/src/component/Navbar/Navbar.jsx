@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Navbar.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagSharp } from '@mui/icons-material';
+import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagRounded,  ShoppingBagSharp } from '@mui/icons-material';
 import {HiOutlineMenuAlt3} from 'react-icons/hi';
 import {useDispatch, useSelector} from 'react-redux';
 import { REMOVE_ACTIVE_USER, selectUserName } from '../../redux/slice/authSlice';
@@ -14,6 +14,12 @@ import { setIsCartOpen } from '../../redux/slice/cartSlice';
 import CategoriesBar from './Categories';
 import SearchBar from './SearchBar/SearchBar'
 import useBrand from '../../hooks/useBrands';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
+
+
 
  
 
@@ -21,7 +27,7 @@ const logo = (
   <div className={styles.logo}>
           <Link to="/">
             <h2>
-              Moore<span>Store</span>
+              MooreStore
             </h2>
           </Link>
         </div>
@@ -39,6 +45,15 @@ function Navbar() {
   const userID = useSelector((state) => state.auth.userID)
   console.log(userID)
 
+  const [anchorEl, setAnchorEl] = useState(null);
+const open = Boolean(anchorEl);
+const handleClick = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+const handleClose = () => {
+  setAnchorEl(null);
+};
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -50,7 +65,7 @@ function Navbar() {
   const cart = (
     <span className={styles.cart}>
     <IconButton onClick={()=>dispatch(setIsCartOpen({}))}>
-    <ShoppingBagSharp sx={{fontSize:"35px", color:"#071b28"}}/>
+    <ShoppingBagRounded sx={{fontSize:"35px", color:"#071b28"}}/>
     <Badge style={{fontSize:"15px", color:"#071b28"}}>{quantity > 0 && quantity}</Badge>
 
     
@@ -62,7 +77,7 @@ function Navbar() {
   const favourite = (
     <span className={styles.cart}>
     <IconButton>
-      <Favorite sx={{fontSize:"20px", color:"red"}}/>    Saved items ({savedQuantity})
+      <Favorite sx={{fontSize:"20px", color:"black"}}/>    Saved items ({savedQuantity})
 
     </IconButton>
 
@@ -118,26 +133,70 @@ function Navbar() {
   }
   
   const account = (
-    <span className={styles.name} style={{position:"inherit"}} >
-    <div class="dropdown account ">
-    <button class="btn btn-inverse dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <NavLink to="/"><Person sx={{fontSize:"32px"}}/> Welcome {name} </NavLink>
+    <span style={{position:"inherit"}} >
+    <Button
+        id="fade-button"
+        aria-controls={open ? 'fade-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+    <NavLink to="/"><div className={styles.welcome}><Person sx={{fontSize:"35px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div></NavLink>
 
-    </button>
-    <ul class="dropdown-menu dropdown-menu-light" style={{ textAlign:"center"}}>
-    
-    
-    <li><NavLink to={`/profile/summary`}><AccountBox sx={{fontSize:"20px"}}/> Account Page</NavLink></li>
+    </Button>
+    <Menu
+        id="fade-menu"
+        MenuListProps={{
+          'aria-labelledby': 'fade-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+
+      <MenuItem onClick={handleClose}>
+      <NavLink to={`/profile/summary`}><AccountBox sx={{fontSize:"20px"}}/> My account</NavLink>
+      </MenuItem>
+      <MenuItem onClick={handleClose}><NavLink to={`/profile/saved`}>{favourite}</NavLink></MenuItem>
+      <MenuItem onClick={handlelogout}>Logout</MenuItem>
       
-    <li><NavLink to={`/profile/saved`}>{favourite}</NavLink></li>
-      <li><hr class="dropdown-divider" style={{width:"100%"}}/></li>
-      <li><button className='--btn --btn-danger' style={{width:"100%"}} onClick={handlelogout}>
-      <Logout />Logout</button></li>
+      </Menu>
+    
       
-     
-    </ul>
-  </div>
+    
   </span>
+  )
+
+
+  const loggedOut = (
+    <>
+    <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        Dashboard
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+      </>
+    
+      
+    
   )
            
     
@@ -224,7 +283,28 @@ function Navbar() {
                 
               </ShowOnLogin>
               <ShowOnLogout>
-                <NavLink to="login" onClick = {hideMenu} className={activeLink}><button className='--btn --btn-primary' style={{ width: "100%" }} ><Login />Login</button></NavLink>
+              <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        Dashboard
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose} sx={{color:"black"}}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
             </ShowOnLogout>
           </span>
 
