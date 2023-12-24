@@ -128,7 +128,7 @@ header {
     .searchbar{
       transition:all 1s step-end;
       list-style: none;
-      margin-left:100px;
+      margin-left:250px;
     }
       
 
@@ -236,9 +236,10 @@ header {
   .header-right {
     display: flex;
     font-weight: bold;
-    margin-right:5px;
+    margin-right:15px;
 
     .cart  {
+      margin-right: 45px;
       display: flex;
       color: #161618;
       font-size: 20px;

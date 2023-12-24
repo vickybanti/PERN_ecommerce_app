@@ -5,6 +5,7 @@ import { AlternateEmailRounded, Google, Label, Lock, LoginOutlined, Visibility, 
 import { useDispatch, useSelector } from 'react-redux';
 import { firebaseLogin, login } from '../../redux/apiCalls';
 import { Button, CircularProgress, Divider, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import { Link } from 'react-router-dom';
 
 
@@ -75,7 +76,7 @@ function Login() {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <AlternateEmailRounded />
+                <AlternateEmailIcon />
                 </InputAdornment>
               ),
             }}
@@ -118,23 +119,22 @@ function Login() {
             label="Password"
             />
 
-            
-            <Button type= "submit"
-        variant='contained'
-        fullWidth
-        sx={{backgroundColor:"Highlight"}}
-        id="submit" disabled={!email || !password} style={{fontSize:"20px"}}
-       
-        >
+            <Button type= "submit" variant="contained" sx={{boxShadow:"var(--box-shadow)",font:"Roboto",
+         fontSize:"17px",padding:"7px 25px",
+         fontWeight:"600",}} endIcon={<Login />} 
+         id="submit" disabled={!email || !password} style={{fontSize:"15px"}}>
+        
+           
         <LoginOutlined />{isFetching?
           
           
           <CircularProgress sx={{color:"white"}}/>
           
-          :"Login"}</Button>
+          :"Login"}
+          </Button>
             <span style={{color:"red"}}>{error && message}</span>
             <div className={styles.links}>
-                <Link to="/reset"><h4><Label />Reset Password</h4></Link>
+                <Link to="/reset"><span><Label />Forgot password?</span></Link>
             </div>
             <p></p>
             <Divider />
@@ -142,12 +142,15 @@ function Login() {
             {/*+1(201)416-6644*/}
         </form>
         <Button
-        
-          variant="contained"
-          endIcon={<Google />}
-          onClick={()=>firebaseLogin(dispatch)}
+        startIcon={<Google />}
+          variant="outlined"
           fullWidth
-          sx={{fontSize:"20px", color:"white", backgroundColor:"black"
+          
+          onClick={()=>firebaseLogin(dispatch)}
+          
+          sx={{fontSize:"15px", color:"grayText", fontFamily:"Arial",borderRadius:"5px",fontWeight:"900",
+          
+
         }}
        
         >
@@ -159,7 +162,7 @@ function Login() {
       
         <span className={styles.register}>
         
-        <p>Don't have an account?</p> <Link to="/register"><h4><Label />Register</h4></Link>
+        <p>Don't have an account?</p> <Link to="/register"><span><Label />Register</span></Link>
         
         </span>
         </div>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Navbar.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagRounded,  ShoppingBagSharp } from '@mui/icons-material';
+import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagRounded,  ShoppingBagSharp, ShoppingCart } from '@mui/icons-material';
 import {HiOutlineMenuAlt3} from 'react-icons/hi';
 import {useDispatch, useSelector} from 'react-redux';
 import { REMOVE_ACTIVE_USER, selectUserName } from '../../redux/slice/authSlice';
@@ -63,7 +63,7 @@ const handleClose = () => {
   console.log(quantity)
 
   const cart = (
-    <span className={styles.cart}>
+    <span className={styles.cart} style={{marginRight:"20px"}}>
     <IconButton onClick={()=>dispatch(setIsCartOpen({}))}>
     <ShoppingBagRounded sx={{fontSize:"35px", color:"#071b28"}}/>
     <Badge style={{fontSize:"15px", color:"#071b28"}}>{quantity > 0 && quantity}</Badge>
@@ -75,16 +75,16 @@ const handleClose = () => {
   )
 
   const favourite = (
-    <span className={styles.cart}>
-    <IconButton>
-      <Favorite sx={{fontSize:"20px", color:"black"}}/>    Saved items ({savedQuantity})
+    
+    <IconButton onClick={()=>navigate('/profile/saved')} sx={{padding:"0"}}>
+      <Favorite sx={{color:"GrayText", marginRight:"5px",fontSize:"18px",fontFamily:"Arial"}}/> Saved items ({savedQuantity})
 
     </IconButton>
 
     
       
       
-        </span>
+        
   )
 
 
@@ -140,8 +140,9 @@ const handleClose = () => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        
       >
-    <NavLink to="/"><div className={styles.welcome}><Person sx={{fontSize:"35px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div></NavLink>
+    <div className={styles.welcome}><Person sx={{fontSize:"35px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div>
 
     </Button>
     <Menu
@@ -153,13 +154,24 @@ const handleClose = () => {
         open={open}
         onClose={handleClose}
         TransitionComponent={Fade}
+        sx={{color:"Graytext", fontSize:"20px",zIndex:"99999",marginTop:"30px",marginRight:"40px",padding:"30px"
+      }}
       >
-
-      <MenuItem onClick={handleClose}>
-      <NavLink to={`/profile/summary`}><AccountBox sx={{fontSize:"20px"}}/> My account</NavLink>
+      <MenuItem onClick={handlelogout}>
+      <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",fontFamily:"Open Sans",
+      fontSize:"15px",padding:"5px 20px",backgroundColor:"var(--color-danger)",
+      fontWeight:"600"}} endIcon={<Logout />} >
+     Logout </Button>
       </MenuItem>
-      <MenuItem onClick={handleClose}><NavLink to={`/profile/saved`}>{favourite}</NavLink></MenuItem>
-      <MenuItem onClick={handlelogout}>Logout</MenuItem>
+
+      <MenuItem onClick={handleClose} sx={{fontSize:"17px",color:"Graytext"}}>
+       <Person sx={{fontSize:"18px",color:"gray", marginRight:"5px"}}/> My account
+      </MenuItem>
+      <MenuItem onClick={handleClose}>{favourite}</MenuItem>
+      <MenuItem onClick={()=>navigate('/profile/orders')} sx={{fontSize:"17px",color:"Graytext"}}>
+      <ShoppingCart sx={{fontSize:"17px",marginRight:"5px"}}/>
+      Orders</MenuItem>
+      
       
       </Menu>
     
@@ -170,29 +182,40 @@ const handleClose = () => {
 
 
   const loggedOut = (
-    <>
-    <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+    <><Button
+      id="fade-button"
+      aria-controls={open ? 'fade-menu' : undefined}
+      aria-haspopup="true"
+      aria-expanded={open ? 'true' : undefined}
+      onClick={handleClick}
+      sx={{marginTop:"40px", width:"100%"}}
+    >
+      <Person  sx={{fontSize:"35px", color:"black"}}/>
+
+    </Button>
+    <Menu
+      id="fade-menu"
+      MenuListProps={{
+        'aria-labelledby': 'fade-button',
+      }}
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      TransitionComponent={Fade}
+      sx={{marginTop:"30px",marginRight:"40px",padding:"100%",zIndex:"99999"}}
+    >
+
+        <MenuItem onClick={hideMenu} sx={{margin:"0 5px"}}>
+        <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",fontFamily:"Open Sans",
+         fontSize:"17px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
+         fontWeight:"600"}} endIcon={<Login />} onClick={()=>navigate('/login')}>
+        Login </Button>
+        </MenuItem>
+
+        <MenuItem onClick={handleClose}>{favourite}</MenuItem>
+
       </Menu>
+      
       </>
     
       
@@ -283,28 +306,7 @@ const handleClose = () => {
                 
               </ShowOnLogin>
               <ShowOnLogout>
-              <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose} sx={{color:"black"}}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
+              {loggedOut}
             </ShowOnLogout>
           </span>
 
