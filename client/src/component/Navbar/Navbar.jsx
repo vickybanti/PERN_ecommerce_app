@@ -65,7 +65,7 @@ const handleClose = () => {
   const cart = (
     <span className={styles.cart} style={{marginRight:"20px"}}>
     <IconButton onClick={()=>dispatch(setIsCartOpen({}))}>
-    <ShoppingBagRounded sx={{fontSize:"35px", color:"#071b28"}}/>
+    <ShoppingBagRounded sx={{fontSize:"30px", color:"#071b28"}}/>
     <Badge style={{fontSize:"15px", color:"#071b28"}}>{quantity > 0 && quantity}</Badge>
 
     
@@ -142,7 +142,7 @@ const handleClose = () => {
         onClick={handleClick}
         
       >
-    <div className={styles.welcome}><Person sx={{fontSize:"35px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div>
+    <div className={styles.welcome}><Person sx={{fontSize:"30px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div>
 
     </Button>
     <Menu
@@ -182,7 +182,8 @@ const handleClose = () => {
 
 
   const loggedOut = (
-    <><Button
+    <>
+    <Button
       id="fade-button"
       aria-controls={open ? 'fade-menu' : undefined}
       aria-haspopup="true"
@@ -205,11 +206,15 @@ const handleClose = () => {
       sx={{marginTop:"30px",marginRight:"40px",padding:"100%",zIndex:"99999"}}
     >
 
-        <MenuItem onClick={hideMenu} sx={{margin:"0 5px"}}>
+        <MenuItem sx={{margin:"0 5px"}} onClick{handleClose}>
+        <NavLink to={'/login'}>
         <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",fontFamily:"Open Sans",
          fontSize:"17px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
-         fontWeight:"600"}} endIcon={<Login />} onClick={()=>navigate('/login')}>
-        Login </Button>
+         fontWeight:"600"}} endIcon={<Login />} >
+         Login
+         
+         </Button>
+         </NavLink>
         </MenuItem>
 
         <MenuItem onClick={handleClose}>{favourite}</MenuItem>
