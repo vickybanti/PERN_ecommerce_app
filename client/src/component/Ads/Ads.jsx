@@ -47,7 +47,7 @@ function Ads() {
                     {index ===slide && (
                         <>
                         
-                            <p style={{fontSize:"20px",color:"black"}}>{desc}</p>
+                            <p style={{fontSize:"17px",color:"black"}}>{desc}</p>
                   
                         </>
                         
