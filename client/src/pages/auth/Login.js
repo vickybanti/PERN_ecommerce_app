@@ -76,7 +76,6 @@ function Login() {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                <AlternateEmailIcon />
                 </InputAdornment>
               )
             }}
