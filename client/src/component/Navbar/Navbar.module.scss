@@ -689,11 +689,11 @@ header {
       width: 100%;
       font: 'Open Sans';
       line-height: 13.6px;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 200;
 
         &:hover{
-          border-bottom: 0.1px gray;
+          border-bottom: 1px solid gray;
           color: var(--color-primary);
           border-width: 12px;
           transition: 4s linear all;
