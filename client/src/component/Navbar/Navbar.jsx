@@ -65,7 +65,7 @@ const handleClose = () => {
   const cart = (
     <span className={styles.cart} style={{marginRight:"20px"}}>
     <IconButton onClick={()=>dispatch(setIsCartOpen({}))}>
-    <ShoppingBagRounded sx={{fontSize:"30px", color:"#071b28", height:"40px"}}/>
+    <ShoppingBagRounded sx={{fontSize:"28px", color:"#071b28", height:"40px"}}/>
     <Badge style={{fontSize:"15px", color:"#071b28"}}>{quantity > 0 && quantity}</Badge>
 
     
@@ -142,7 +142,7 @@ const handleClose = () => {
         onClick={handleClick}
         
       >
-    <div className={styles.welcome}><Person sx={{fontSize:"25px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div>
+    <div className={styles.welcome}><Person sx={{fontSize:"28px",height:"50px",fontWeight:"900"}}/> Welcome {name} </div>
 
     </Button>
     <Menu
@@ -191,7 +191,7 @@ const handleClose = () => {
       onClick={handleClick}
       sx={{marginTop:"40px", width:"100%"}}
     >
-      <Person  sx={{fontSize:"35px", color:"black"}}/>
+      <Person  sx={{fontSize:"28px", color:"black"}}/>
 
     </Button>
     <Menu
@@ -207,7 +207,7 @@ const handleClose = () => {
     >
 
         <MenuItem sx={{margin:"0 5px"}} onClick={handleClose}>
-        <NavLink to={'/login'} style={{fontFamily:"Open Sans"}}>
+        <NavLink to={'login'} style={{fontFamily:"Open Sans"}}>
         <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",
          fontSize:"17px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
          fontWeight:"600"}} endIcon={<Login />} >
