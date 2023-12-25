@@ -206,9 +206,9 @@ const handleClose = () => {
       sx={{marginTop:"30px",marginRight:"40px",padding:"100%",zIndex:"99999"}}
     >
 
-        <MenuItem sx={{margin:"0 5px"}} onClick{handleClose}>
-        <NavLink to={'/login'}>
-        <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",fontFamily:"Open Sans",
+        <MenuItem sx={{margin:"0 5px"}} onClick={handleClose}>
+        <NavLink to={'/login'} style={{fontFamily:"Open Sans"}}>
+        <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",
          fontSize:"17px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
          fontWeight:"600"}} endIcon={<Login />} >
          Login
