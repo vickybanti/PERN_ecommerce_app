@@ -65,7 +65,7 @@ const handleClose = () => {
   const cart = (
     <span className={styles.cart} style={{marginRight:"20px"}}>
     <IconButton onClick={()=>dispatch(setIsCartOpen({}))}>
-    <ShoppingBagRounded sx={{fontSize:"25px", color:"#071b28"}}/>
+    <ShoppingBagRounded sx={{fontSize:"30px", color:"#071b28", height:"40px"}}/>
     <Badge style={{fontSize:"15px", color:"#071b28"}}>{quantity > 0 && quantity}</Badge>
 
     
