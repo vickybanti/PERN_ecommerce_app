@@ -78,7 +78,7 @@ function Login() {
                 <InputAdornment position="start">
                 <AlternateEmailIcon />
                 </InputAdornment>
-              ),
+              )
             }}
 
             
@@ -134,7 +134,7 @@ function Login() {
           </Button>
             <span style={{color:"red"}}>{error && message}</span>
             <div className={styles.links}>
-                <Link to="/reset"><span><Label />Forgot password?</span></Link>
+                <Link to="/reset"><Label />Forgot password?</Link>
             </div>
             <p></p>
             <Divider />
@@ -162,7 +162,7 @@ function Login() {
       
         <span className={styles.register}>
         
-        <p>Don't have an account?</p> <Link to="/register"><span><Label />Register</span></Link>
+        <p>Don't have an account?</p> <Link to="/register"> <Label />Register</Link>
         
         </span>
         </div>
