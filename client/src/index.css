@@ -428,12 +428,12 @@ span{
 }
 
 a {
-  font-size: 17px;
+  font-size: 15px;
   color: var(--dark-blue);
   text-decoration: none;
   transition: all 0.2s linear;
   line-height: 15px;
-  height: 26px;
+  height: 23px;
 }
 
 a:hover {

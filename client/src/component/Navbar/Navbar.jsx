@@ -209,7 +209,7 @@ const handleClose = () => {
         <MenuItem sx={{margin:"0 5px"}} onClick={handleClose}>
         <NavLink to={'login'} style={{fontFamily:"Open Sans"}}>
         <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",
-         fontSize:"17px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
+         fontSize:"12px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
          fontWeight:"600"}} endIcon={<Login />} >
          Login
          
