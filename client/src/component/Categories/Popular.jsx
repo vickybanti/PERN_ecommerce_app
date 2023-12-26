@@ -29,57 +29,55 @@ function Popular() {
     
     return (
         
-        <><div className='categoriesHeader'>
-            <h2>Popular Categories</h2>
-        </div>
-        <div className='categories'>
+        
+            <><h2>Popular Categories</h2><div className='categories'>
 
 
-                <div className='column'>
+            <div className='column'>
 
-                    <div className='rows'>
+                <div className='rows'>
                     <h4 className="catheading">Discover trending categories</h4>
-                        <img src="uploads/shoes/classic shoes.jpg" alt='' className='catimg'/>
+                    <img src="uploads/shoes/classic shoes.jpg" alt='' className='catimg' />
 
-                        <Button className="catbutton">
+                    <Button className="catbutton">
 
-                            <NavLink style={{ color: "black" }} to={`categories/leather shoes`}>Men's classic</NavLink>
+                        <NavLink style={{ color: "black" }} to={`categories/leather shoes`}>Men's classic</NavLink>
 
 
-                        </Button>
-                    </div>
+                    </Button>
                 </div>
-                
-                <div className='column column-large'>
-                    <div className='rows'>
-                                <img src="img/blog/2.jpg" alt='' className='catimg'/>
+            </div>
 
-                                <Button className="catbutton">
-                                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+            <div className='column column-large'>
+                <div className='rows'>
+                    <img src="img/blog/2.jpg" alt='' className='catimg' />
 
-                                </Button>
-                        </div>
-                    <div className='rows'>
-                    <img src="img/blog/3.webp" alt='' className='catimg'/>
+                    <Button className="catbutton">
+                        <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
 
-
-                                <Button className="catbutton">
-                                <NavLink to={`brands/Nike` || `brands/Addidas`} style={{ color: "white" }}>
-
-                                     Top Sneakers
-                                    </NavLink>
+                    </Button>
+                </div>
+                <div className='rows'>
+                    <img src="img/blog/3.webp" alt='' className='catimg' />
 
 
-                                </Button>
-                            </div>
+                    <Button className="catbutton">
+                        <NavLink to={`brands/Nike` || `brands/Addidas`} style={{ color: "white" }}>
 
-                    
-                    
+                            Top Sneakers
+                        </NavLink>
 
+
+                    </Button>
                 </div>
 
 
-            </div></>    
+
+
+            </div>
+
+
+        </div></>  
 
 
    
