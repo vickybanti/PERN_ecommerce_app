@@ -2,7 +2,7 @@
 .categoriesHeader{
 
     padding: 20px ;
-    color: lawngreen;
+    color: black;
     display: flex;
     text-align: center;
     margin: auto;
@@ -15,12 +15,13 @@
 }
 .categories{
     display:flex;
-    height: 100vh;
+    height: 80vh;
     gap: 10px;
     margin: 10px 30px 10px 50px;
     background: none;
     transition: 0.5s ease-out all;
-    padding: 0 90px;
+    padding: 0 30px;
+    width: 100%;
     
     
 }
@@ -34,14 +35,15 @@
         flex:2;
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 15px;
         transition: 0.5s ease-out all;
         
 
     }
     .column-large{
         flex:2;
-        gap:5px;
+        gap:10px;
+        margin-right: 60px;
 
                 
     }
@@ -51,6 +53,127 @@
         gap: 10px;
         position: relative;
         overflow: hidden;
+
+        .hot{
+            width: 100%;
+            gap: 10px;
+            display: flex;
+
+            
+
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            position: relative;
+
+            &:hover + .catbutton{
+                display: flex;
+                background: rgb(7,27,40);
+                background: radial-gradient(circle, rgba(7,27,40,1) 0%, rgba(120,133,141,1) 0%, rgba(129,142,150,1) 0%, rgba(76,92,102,1) 0%, rgba(20,40,52,1) 100%, rgba(172,182,188,1) 100%, rgba(239,244,247,1) 100%);
+                position: absolute;
+                width: 49.4%;
+                overflow: hidden;
+                transition: 2s all linear;
+                opacity: 1;
+                
+                
+              }
+
+              img:hover .catbutton {
+                display: flex;
+                background-color: #071b28;
+                opacity: 1;
+            
+              }
+              
+          
+              
+
+        }
+       
+        .catbutton{
+            display:none;
+            align-items: center;
+            background-color: rgba(0,0,0,0.5);
+            width:50%;
+            overflow: hidden;
+            object-fit: contain;
+            height: 20%;
+            bottom:0;
+            opacity: 1;
+            cursor: pointer;
+            transition: 2s all linear;
+            color: white;  
+            
+            &:hover{
+                opacity: 1;
+                display: flex;
+                
+            }
+
+        }
+
+        
+
+       
+        .mainButton{
+            position: absolute;
+            min-width: 80px;
+            width: fit-content;
+            height: 50px;
+            padding: 10px;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-weight: 500;
+            background-color: none;
+            text-transform: uppercase;
+        }
+
+        .mainButton {
+            border: 5px solid rgb(5, 18, 27);
+            color:black;
+            font-weight: 500;
+            transition: all 0.5s ease-in;
+            
+            
+
+            &:hover{
+                width: 62.4%;
+                margin-left: 90px;
+                height: 94.4%;
+                transition: all 0.5s ease-in-out;
+                background-color: rgba(0,0,0, 0.5);
+                font-weight: 500;
+                overflow: hidden;
+                
+            }
+        }
+
+    
+
+        
+        
+        
+
+        .tag{
+            font-size: 17px;
+            position: absolute;
+            padding: 10px;
+            background-color: #071b28;
+            color: white;
+            text-transform: capitalize;
+            
+        }
+        
         .catheading{
             position: absolute;
             transform: rotate(90deg);
@@ -71,12 +194,22 @@
         }
 
        
-
-        .catimg{
-            width: 100%;
+        .catMain{
+            width: 80%;
             height: 100%;
             object-fit:cover;
-
+            padding: 20px;
+            &:hover + .catbutton{
+                display: flex;
+                background-color: #071b28;
+                justify-content: space-between;
+              }
+        }
+        
+            
+            
+        
+    
             @media screen and (max-width: 820px) {
                 .catimg {
                   height: 100%;
@@ -85,43 +218,17 @@
                 }
             }  
             
-        }
+        
 
             
-            .catbutton{
-                position: absolute;
-                min-width: 80px;
-                width: fit-content;
-                height: 50px;
-                padding: 10px;
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                cursor: pointer;
-                border: none;
-                color: white;
-                font-weight: 500;
-                background-color: none;
-                text-transform: uppercase;
-            }
+            
 
-            .catbutton {
-                border: 5px solid rgb(5, 18, 27);
-                color:black;
-                font-weight: 500;
-                transition: all 0.5s ease-in;
+            
+            
 
-                &:hover{
-                    width: 100%;
-                    height: 100%;
-                    transition: all 0.5s ease-in-out;
-                    background-color: rgba(0,0,0, 0.5);
-                    font-weight: 500;
-                    overflow: hidden;
-                }
-            }
+                
+                
+            
 
         
         }

@@ -11,7 +11,6 @@ import Banner from '../../component/Categories/Banner'
 import { Box, Fab, Fade, useScrollTrigger } from "@mui/material/";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Brands from '../../component/Categories/Brands'
-import Popular from '../../component/Categories/Popular'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -56,7 +55,7 @@ function Homepage() {
 
       <Slider />
       <HomeBrand />
-      <Popular/>
+      <Categories />
       <Featuredroducts />
       <Brands />
       <TrendingProducts />

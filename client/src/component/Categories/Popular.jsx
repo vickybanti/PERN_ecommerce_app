@@ -1,12 +1,8 @@
 import React, {useState} from 'react'
 import './bootstrap.css'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import useCat from '../../hooks/useCat';
 import Button from '@mui/material/Button';
-import useProCat from '../../hooks/useProCat';
-import Zoom from '@mui/material/Zoom';
-import { ZoomIn } from "@mui/icons-material";
-import Fab from '@mui/material/Fab';
 import { useEffect } from 'react';
 
 
@@ -30,14 +26,15 @@ function Popular() {
     return (
         
         
-            <><h2>Popular Categories</h2><div className='categories'>
+            <><h2>Popular Categories</h2>
+            <div className='categories'>
 
 
-            <div className='column'>
+            <div className='col col-xs'>
 
-                <div className='rows'>
+                <div className='row'>
                     <h4 className="catheading">Discover trending categories</h4>
-                    <img src="uploads/shoes/classic shoes.jpg" alt='' className='catimg' />
+                    <img src="uploads/shoes/classic shoes.jpg" alt=''  />
 
                     <Button className="catbutton">
 
@@ -48,17 +45,17 @@ function Popular() {
                 </div>
             </div>
 
-            <div className='column column-large'>
-                <div className='rows'>
-                    <img src="img/blog/2.jpg" alt='' className='catimg' />
+            <div className='col col-lg'>
+                <div className='row'>
+                    <img src="img/blog/2.jpg" alt=''  />
 
                     <Button className="catbutton">
                         <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
 
                     </Button>
                 </div>
-                <div className='rows'>
-                    <img src="img/blog/3.webp" alt='' className='catimg' />
+                <div className='row'>
+                    <img src="img/blog/3.webp" alt=''  />
 
 
                     <Button className="catbutton">

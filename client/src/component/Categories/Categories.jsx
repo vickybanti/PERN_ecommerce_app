@@ -31,17 +31,18 @@ function Categories() {
     return (
         
         <><div className='categoriesHeader'>
-            <h1>Popular Categories</h1>
-        </div><div className='categories'>
+            <h2>Popular Categories</h2>
+        </div>
+        <div className='categories'>
 
 
                 <div className='column'>
 
                     <div className='rows'>
                     <h4 className="catheading">Discover trending categories</h4>
-                        <img src="uploads/shoes/classic shoes.jpg" alt='' className='catimg'/>
+                        <img src="uploads/shoes/classic shoes.jpg" alt='' className='catMain'/>
 
-                        <Button className="catbutton">
+                        <Button className="mainButton">
 
                             <NavLink style={{ color: "black" }} to={`categories/leather shoes`}>Men's classic</NavLink>
 
@@ -52,14 +53,44 @@ function Categories() {
                 
                 <div className='column column-large'>
                     <div className='rows'>
+                    <div className='hot'>
+
+                    <div className='tag'>HOT</div>
+                    
                                 <img src="img/blog/2.jpg" alt='' className='catimg'/>
 
                                 <Button className="catbutton">
                                     <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
 
                                 </Button>
+                    </div>
+                        
+
+                    <div className='hot'>
+
+                        <img src="img/blog/2.jpg" alt='' className='catimg'/>
+
+                        <Button className="catbutton">
+                            <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+
+                        </Button>
                         </div>
-                    <div className='rows'>
+                </div>
+                
+                <div className='rows'>
+                <div className='hot'>
+
+                <div className='tag'>HOT</div>
+
+                <img src="img/blog/2.jpg" alt='' className='catimg'/>
+
+                <Button className="catbutton">
+                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+
+                </Button>
+                </div>
+        
+                    <div className='hot'>
                     <img src="img/blog/3.webp" alt='' className='catimg'/>
 
 
@@ -71,7 +102,9 @@ function Categories() {
 
 
                                 </Button>
-                            </div>
+                                </div>
+                                </div>
+                            
 
                     
                     
