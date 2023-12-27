@@ -44,8 +44,9 @@ function Login() {
       } catch (err) {
         console.error(err.message)
       }
-      setMessage(errorMessage.errorMessage)
+      setMessage("");
 
+      console.log("Email:", email);
     }
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
