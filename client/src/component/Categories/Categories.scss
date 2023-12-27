@@ -17,10 +17,10 @@
     display:flex;
     height: 80vh;
     gap: 10px;
-    margin: 10px 30px 10px 50px;
+    margin: 10px 30px 10px 70px;
     background: none;
     transition: 0.5s ease-out all;
-    padding: 0 100px;
+    padding: 0 60px;
     width: 100%;
     
     
@@ -140,14 +140,14 @@
             border: none;
             background-color: none;
             text-transform: uppercase;
-            margin-left: 290px;
+            margin-left: 200px;
             font-size: 40px;
         }
 
         .mainButton {
             border: 5px solid rgb(5, 18, 27);
             font-weight: 500;
-            margin-left: 290px;
+            margin-left: 200px;
             font-size: 30px;
             
             
@@ -188,8 +188,8 @@
             transform: rotate(90deg);
             margin-top: 220px;
             justify-content: end;
-            margin-left: -260px;
-            padding: 60px;
+            margin-left: -200px;
+            padding: 40px;
             background-color: white;
             text-align: center;
             width: 95vh;
