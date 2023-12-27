@@ -20,7 +20,7 @@
     margin: 10px 30px 10px 50px;
     background: none;
     transition: 0.5s ease-out all;
-    padding: 0 30px;
+    padding: 0 100px;
     width: 100%;
     
     
@@ -35,15 +35,18 @@
         flex:2;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         transition: 0.5s ease-out all;
+        margin-left: 50px;
         
 
     }
     .column-large{
         flex:2;
         gap:10px;
-        margin-right: 60px;
+        padding-right: 80px;
+
+        
 
                 
     }
@@ -76,7 +79,7 @@
                 position: absolute;
                 width: 49.4%;
                 overflow: hidden;
-                transition: 2s all linear;
+                transition: 2s ease-out all;
                 opacity: 1;
                 
                 
@@ -105,13 +108,13 @@
             bottom:0;
             opacity: 1;
             cursor: pointer;
-            transition: 2s all linear;
+            transition: 2s ease-in-out all;
             color: white;  
             
             &:hover{
                 opacity: 1;
                 display: flex;
-                
+
             }
 
         }
@@ -120,10 +123,13 @@
 
        
         .mainButton{
+            color: white;
+            opacity: 0;
             position: absolute;
             min-width: 80px;
             width: fit-content;
-            height: 50px;
+            height: 100%;
+            width: 100%;
             padding: 10px;
             top:0;
             bottom: 0;
@@ -132,28 +138,31 @@
             margin: auto;
             cursor: pointer;
             border: none;
-            color: white;
-            font-weight: 500;
             background-color: none;
             text-transform: uppercase;
+            margin-left: 290px;
+            font-size: 40px;
         }
 
         .mainButton {
             border: 5px solid rgb(5, 18, 27);
-            color:black;
             font-weight: 500;
-            transition: all 0.5s ease-in;
+            margin-left: 290px;
+            font-size: 30px;
+            
             
             
 
             &:hover{
-                width: 62.4%;
+                opacity: 1;
+                width: 100%;
                 margin-left: 90px;
-                height: 94.4%;
-                transition: all 0.5s ease-in-out;
+                height: 100%;
+                transition: all 1s ease-in-out;
                 background-color: rgba(0,0,0, 0.5);
-                font-weight: 500;
+                font-weight: 800;
                 overflow: hidden;
+                color: white;
                 
             }
         }
@@ -177,13 +186,13 @@
         .catheading{
             position: absolute;
             transform: rotate(90deg);
-            margin-top: 270px;
+            margin-top: 220px;
             justify-content: end;
             margin-left: -260px;
-            padding: 20px;
+            padding: 60px;
             background-color: white;
             text-align: center;
-            width: 93vh;
+            width: 95vh;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 30px;
             font-weight: 200;
@@ -195,10 +204,9 @@
 
        
         .catMain{
-            width: 80%;
+            width: 100%;
             height: 100%;
             object-fit:cover;
-            padding: 20px;
             &:hover + .catbutton{
                 display: flex;
                 background-color: #071b28;
