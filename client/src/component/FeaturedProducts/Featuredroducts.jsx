@@ -45,7 +45,6 @@ return (
               
 
                 <ItemCard item={item} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}/>
-                <h3 onClick={()=>navigate(`/product/${item.id}`)}>{item.title}</h3>
          
                 </div>
                 </>
