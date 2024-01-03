@@ -191,10 +191,11 @@ function addSave() {
 
 
   return (
-    <div className= "contain" responsive={responsive} key={item.id}>
-    {item.stock <= 0 && <div className='out'>
-      <h3 className='stock'>Out of stock</h3>
-    </div>}
+    <div className= "contain" responsive={responsive} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}>
+    {item.stock <= 0 && 
+      <h3 className='out'>Out of stock</h3>
+    
+  }
     {item.stock<=0?"":item.type &&
       <Avatar
           alt={item.type}
@@ -218,8 +219,8 @@ function addSave() {
     
     }
     
-      <img key={item.id} src={imageData && imageData[0]} imageData={imageData}  alt="" onClick={()=>navigate(`/product/${item.id}`, { imageData: { imageData } } 
-      )}/>
+      <img key={item.id} src={imageData && imageData[0]} imageData={imageData}  alt="" onClick={()=>navigate(`/product/${item.id}`) } 
+      />
       
       <div className="infos">
         
@@ -236,12 +237,12 @@ function addSave() {
 
           </div><div className="icon">
 
-              {item.stock === 0 ? <span>Out of stock</span> :
+              {item.stock <1 ? <p>Out of stock</p> :
 
                 <Box
                   value={size}
                   onChange={handleSize}
-                  sx={{ height: 60, transform: 'translateX(0px)', flexGrow: 2 }}>
+                  sx={{ height: 80,background:"none", transform: 'translateX(0px)', flexGrow: 2 }}>
                   <SpeedDial
                     ariaLabel="SpeedDial controlled open example"
                     sx={{ position: 'absolute', bottom: 0, right: 0, border: "none" }}

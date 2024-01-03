@@ -41,7 +41,8 @@ return (
                 return <SkeletonImg 
                 key={i} />}):
               data?.map((item)=> (
-              <><div className="cardPro">
+              <>
+              <div className="cardPro">
               
 
                 <ItemCard item={item} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}/>

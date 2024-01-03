@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { responsive } from '../../component/Responsive';
@@ -9,6 +9,8 @@ import SkeletonImg from '../../component/skeleton/SkeletonImg';
 import { makeRequest } from '../../makeRequest';
 
 function RelatedProduct() {
+
+  const navigate = useNavigate()
 
     const {id} = useParams()
     const [products, setProducts] = useState([])
@@ -44,7 +46,7 @@ function RelatedProduct() {
         
         <div className="cardPro">
 
-        <ItemCard item={item} key={item.id} />
+        <ItemCard item={item} key={item.id} onClick={()=>navigate(`/product/${item.id}`)} />
 
         </div>
 

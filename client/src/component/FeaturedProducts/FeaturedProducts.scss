@@ -49,7 +49,7 @@
        
     .carousel{
         
-        height:90%;
+        height:100%;
         color:whitesmoke;
         width:100%;
         justify-content: space-between;
@@ -68,10 +68,10 @@
             flex-direction: column;
             padding: 0;
             margin-right: 20px;
+            margin-top: -20px;
             background-color: whitesmoke;
-            border: 4px solid transparent;
+            border: 3px solid transparent;
             border-radius: 5px;
-            box-shadow: var(--box-shadow);
             overflow: hidden;
 
 

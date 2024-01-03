@@ -252,12 +252,17 @@ const [size, setSize]  = useState("")
         
           
       
-          </div><button onClick={()=>handleClick()} className='add'>
+          </div>
+          {pro.stock < 1 ? <span>Out of Stock</span>
+            :
+            <button onClick={()=>handleClick()} className='add'>
               <AddShoppingCartIcon sx={{fontSize:"28px"}}/>
               ADD TO CART
 
 
-            </button><div className='link'>
+            </button>
+              }
+            <div className='link'>
               <div className='items'>
                 <FavoriteIcon onClick={addSave} sx={{color:isFav?"red":"black", fontSize:"28px"}}/> {isFav?"REMOVE FROM WISHLIST" :"ADD TO WISHLIST"}
               </div>

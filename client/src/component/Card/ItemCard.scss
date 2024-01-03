@@ -4,19 +4,19 @@
     height:100%;
     position: relative;
     margin-top: 100px;
+    cursor: pointer;
 
     .out{
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0,0,0,0.1);
         text-align: center;
         width: 100%;
-        height: 85%;
+        margin-top: 50%;
         background-size: cover;
         position: absolute;
+        font-size: 15px;
+        font-weight: 300;
 
-        .stock{
-            
-            text-align: center;
-        }
+       
     }   
 
    /* Define styles for the 'img' element */
@@ -27,17 +27,18 @@ img {
     align-items: center;
     cursor: pointer;
 
-    &:hover{
-        width: 100%;
+  
 
-    }
+        &:hover + .infos{
+            display: flex;
+            background-color: #071b28;
+            justify-content: space-between;
+          }
+
+    
   
     /* Define styles for the 'img' element on hover */
-    &:hover + .infos{
-        display: flex;
-        background-color: #071b28;
-        justify-content: space-between;
-      }
+    
     
   }
   
@@ -65,7 +66,7 @@ img {
             left:0;
             justify-content: space-between;
             cursor: pointer;
-
+            margin-top: -80px;
             
         
 
