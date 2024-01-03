@@ -250,7 +250,7 @@ function addSave() {
                     onOpen={handleOpen}
                     open={open}
                   >
-                    {item.sizes?.map((sizeOption) => (
+                    {item.stock === 0?"": item.sizes?.map((sizeOption) => (
                       <SpeedDialAction
                         key={sizeOption}
                         value={sizeOption}
