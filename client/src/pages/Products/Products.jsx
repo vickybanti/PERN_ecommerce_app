@@ -164,7 +164,8 @@ function Products() {
             value={filters}
             label="Filters"
             onChange={handleFilter}
-            sx={{fontSize:"15px"}}
+            sx={{fontSize:"20px"}}
+            
 
           >
 

@@ -65,7 +65,7 @@ function ResetPassword() {
             
 
             <OutlinedInput type={showPassword ? "text" : "password"} 
-            placeholder='password' 
+            placeholder='New password' 
             value={newPassword}
             fullWidth  
             sx={{ marginBottom:"20px", marginTop:"20px"}}
@@ -92,7 +92,7 @@ function ResetPassword() {
             />
 
             <OutlinedInput type={showCPassword ? "text" : "password"} 
-            placeholder='password' 
+            placeholder='Confirm password' 
             value={cPassword}
             fullWidth  
             sx={{ marginBottom:"20px", marginTop:"20px"}}

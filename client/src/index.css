@@ -279,9 +279,9 @@ span{
 }
 
 .--btn {
-  font-size: 1.6rem;
+  font-size: 17px;
   font-weight: 400;
-  padding: 6px 8px;
+  padding: 10px;
   margin: 0 5px 0 0;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -307,6 +307,8 @@ span{
 .--btn-primary {
   color: #fff;
   background: rgb(47, 112, 182);
+  padding: 20px;
+  font-size: 18px;
 }
 .--btn-secondary {
   color: #fff;

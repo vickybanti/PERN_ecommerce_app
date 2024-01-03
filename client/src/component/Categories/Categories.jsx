@@ -31,7 +31,7 @@ function Categories() {
     return (
         
         <><div className='categoriesHeader'>
-            <h2>Popular Categories</h2>
+            <h1>Popular Categories</h1>
         </div>
         <div className='categories'>
 
@@ -44,7 +44,7 @@ function Categories() {
 
                         <Button className="mainButton">
 
-                            <NavLink style={{ color: "black" }} to={`categories/leather shoes`}>Men's classic</NavLink>
+                            <NavLink style={{ color: "white" }} to={`categories/leather shoes`}>Men's classic</NavLink>
 
 
                         </Button>
@@ -52,10 +52,12 @@ function Categories() {
                 </div>
                 
                 <div className='column column-large'>
+                <div className='tag'>HOT</div>
                     <div className='rows'>
+                    
+
                     <div className='hot'>
 
-                    <div className='tag'>HOT</div>
                     
                                 <img src="img/blog/2.jpg" alt='' className='catimg'/>
 
@@ -68,24 +70,25 @@ function Categories() {
 
                     <div className='hot'>
 
-                        <img src="img/blog/2.jpg" alt='' className='catimg'/>
+                        <img src="uploads/shoes/IMG-20230405-WA0064 (1).jpg" alt='' className='catimg'/>
 
                         <Button className="catbutton">
-                            <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+                            <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Classic flips</NavLink>
 
                         </Button>
                         </div>
                 </div>
                 
+                <div className='sale'>SALE</div>
+
                 <div className='rows'>
                 <div className='hot'>
 
-                <div className='tag'>HOT</div>
-
-                <img src="img/blog/2.jpg" alt='' className='catimg'/>
+                
+                <img src="uploads/unisex.jpg" alt='' className='catimg'/>
 
                 <Button className="catbutton">
-                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Unisex jacket</NavLink>
 
                 </Button>
                 </div>

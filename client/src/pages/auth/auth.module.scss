@@ -4,24 +4,52 @@
   justify-content: center;
   align-items: center;
   padding-top: 150px;
-  background-color: #e3e3e3;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
+  
+  font: Arial;
+  
+h2{
+  color: black;
+}
   .img {
     animation: slide-down 0.5s ease;
+    
   }
 
   .form {
     width: 45rem;
     padding: 1.5rem;
     animation: slide-up 0.5s ease;
+    color: #d6d4d4;
+
+    .logbtn{
+      font-size: 18px;
+          color: black;
+          font: Arial;
+          border-radius: 30px;
+          font-weight: 600;
+          padding:10px;
+          width:60%;
+          margin-left: 20%;
+          border:1px solid #d6d4d4;
+          background-color:#d6d4d4;
+
+          &:hover{
+            background-color: #9c9c9c;
+            
+          }
+    }
+
 
     span{
       font-size: 15px;
       font-weight: 400;
       transition: 1s ease-in all;
+      color: black;
     }
+
+    
+
+    
 
     button{
       padding: 2rem;
@@ -30,11 +58,14 @@
         cursor: not-allowed;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
+
+      
     }
     h2 {
       text-align: center;
       font-size: 30px;
       margin: 0;
+      color: black;
     }
     form {
       input[type="text"],
@@ -49,21 +80,33 @@
         border: 1px solid #777;
         border-radius: 3px;
         outline: none;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+        font: Arial;
 
         
+        
       }
+      
       .links {
         display: flex;
         justify-content: space-between;
         margin: 5px 0;
+
+        .reg{
+          text-decoration: line-through;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
       }
 
       p {
         text-align: center;
         margin: 1rem;
+        color: black;
+
       }
+
+      
     }
     .register {
       display: flex;

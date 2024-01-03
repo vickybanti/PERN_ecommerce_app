@@ -24,7 +24,7 @@ function Payment({requestBody}) {
     // Create PaymentIntent as soon as the page loads
     fetch("http://localhost:3000/checkout/create-payment-intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(requestBody),
     })
       .then((res) => res.json())

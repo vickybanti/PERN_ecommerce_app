@@ -223,7 +223,7 @@ function addSave() {
       
       <div className="infos">
         
-              {item.stock <=0 ? "" :
+              
          
         
         
@@ -245,7 +245,7 @@ function addSave() {
                   <SpeedDial
                     ariaLabel="SpeedDial controlled open example"
                     sx={{ position: 'absolute', bottom: 0, right: 0, border: "none" }}
-                    icon={<AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
+                    icon={item.stock <=0 ? "" :<AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
                     onClose={handleClose}
                     onOpen={handleOpen}
                     open={open}
@@ -265,7 +265,7 @@ function addSave() {
 
             </div></>
 
-        }
+        
       </div>
       <div style={{display:"flex", justifyContent:"space-between"}}>
       <div className= "h3">

@@ -100,11 +100,7 @@ export const login = async(dispatch, user) => {
         dispatch(LOGIN_FAILURE({error:true,
           errorMessage:"wrong password...",
         isFetching:false}))
-      } else{
-        dispatch(LOGIN_FAILURE({error:true,
-          errorMessage:"User is not admin...",
-        isFetching:false}))
-      }
+      } 
   }
   }
   

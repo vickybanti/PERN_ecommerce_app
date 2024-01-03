@@ -50,6 +50,31 @@
 
                 
     }
+    .tag{
+        font-size: 17px;
+        position: absolute;
+        padding: 10px;
+        background-color: #071b28;
+        color: white;
+        text-transform: capitalize;
+        position: absolute;
+        margin-left: -20px;
+        z-index: 90;
+        box-shadow: var(--box-shadow);
+        
+    }
+
+    .sale{
+        font-size: 17px;
+        position: absolute;
+        padding: 10px;
+        background-color: #a51e14;
+        color: white;
+        margin-top: 280px;
+        z-index: 777;
+        margin-left: -20px;
+        
+    }
     .rows {
         flex:1;
         display: flex;
@@ -140,25 +165,19 @@
             text-transform: uppercase;
             margin-left: 200px;
             font-size: 40px;
-        }
+        
 
-        .mainButton {
-            border: 5px solid rgb(5, 18, 27);
-            font-weight: 500;
-            margin-left: 70px;
-            font-size: 30px;
-            
+        
             
             
 
             &:hover{
                 opacity: 1;
                 width: 100%;
-                margin-left: 70px;
+                margin-left: 50px;
                 height: 100%;
                 transition: all 1s ease-in-out;
                 background-color: rgba(0,0,0, 0.5);
-                font-weight: 800;
                 overflow: hidden;
                 color: white;
                 
@@ -171,15 +190,7 @@
         
         
 
-        .tag{
-            font-size: 17px;
-            position: absolute;
-            padding: 10px;
-            background-color: #071b28;
-            color: white;
-            text-transform: capitalize;
-            
-        }
+        
         
         .catheading{
             position: absolute;

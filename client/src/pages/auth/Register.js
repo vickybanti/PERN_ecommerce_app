@@ -181,27 +181,19 @@ function Register() {
         <h4 style={{color:"red", fontWeight:200}}>{message}</h4>
             
         <span className={styles.register}>
-        
-        <p>Already registered?</p><Link to="/login"><h4><Label />Login</h4></Link>
-        
-        </span>   
+            <p>Already have an account?</p> <Link to="/login" style={{paddingTop:"3px"}}><Label /> Login</Link>
+          </span>
         </form>
-        <Button
-        
-        variant="contained"
-        endIcon={<Google />}
-        onClick={()=>firebaseLogin(dispatch)}
-        fullWidth
-        sx={{fontSize:"20px", color:"white", backgroundColor:"black"
-      }}
-     
-      >
-      
-      
-       Login with Google
+        <button
+            className={styles.logbtn}
+            
+            onClick={() => firebaseLogin(dispatch)}
+          >
+          <img alt="google" src="./img/auth.svg" className="google" style={{width:"30px", height:"30px", padding:"5px"}}/>
+          
+            Login with Google
+          </button>
 
-      </Button>      
-        
         </div>
         
 

@@ -50,6 +50,8 @@ const open = Boolean(anchorEl);
 const handleClick = (event) => {
   setAnchorEl(event.currentTarget);
 };
+
+
 const handleClose = () => {
   setAnchorEl(null);
 };
@@ -79,13 +81,9 @@ const handleClose = () => {
     <IconButton onClick={()=>navigate('/profile/saved')} sx={{padding:"0"}}>
       <Favorite sx={{color:"GrayText", marginRight:"5px",fontSize:"18px",fontFamily:"Arial"}}/> Saved items ({savedQuantity})
 
-    </IconButton>
-
-    
+    </IconButton>      
       
-      
-        
-  )
+ )
 
 
 
@@ -206,18 +204,25 @@ const handleClose = () => {
       sx={{marginTop:"30px",marginRight:"40px",padding:"100%",zIndex:"99999"}}
     >
 
-        <MenuItem sx={{margin:"0 5px"}} onClick={handleClose}>
-        <NavLink to={'login'} style={{fontFamily:"Open Sans"}}>
-        <Button variant="contained" sx={{boxShadow:"var(--box-shadow)",
-         fontSize:"12px",padding:"7px 25px",backgroundColor:"var(--dark-blue)",
-         fontWeight:"600"}} endIcon={<Login />} >
+        <MenuItem sx={{margin:"0 5px"}} onClick={()=>navigate('/login')} onClose={handleClose}>
+        
+        <Button
+              variant="contained"
+              sx={{
+                boxShadow: 'var(--box-shadow)',
+                font: 'Roboto',
+                fontSize: '17px',
+                padding: '7px 25px',
+                fontWeight: '600',
+              }}
+              endIcon={<Login />}
+            >
          Login
+         </Button> 
          
-         </Button>
-         </NavLink>
         </MenuItem>
 
-        <MenuItem onClick={handleClose}>{favourite}</MenuItem>
+        <MenuItem onClose={handleClose}>{favourite}</MenuItem>
 
       </Menu>
       
