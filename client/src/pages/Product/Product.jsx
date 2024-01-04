@@ -177,110 +177,100 @@ const [size, setSize]  = useState("")
       <div className='product'>
         <div className='left'>
 
-        
-         
+
         <div className='mainImg'>
-      
-        {loading ? <SkeletonProductImg /> : 
-          //  <img src={imageData && imageData[image]} alt='' />
+        {proData.map((pro) => pro.stock < 1 && <h3 style={{ padding: "50%", position: "absolute", width: "100%", backgroundColor: "rgba(0,0,0,0.1)" }}  > Out of stock</h3> ) }
 
-  
 
-      <ProductImageSlider images={imageData && imageData} />
-  
-}
-</div>
+          {loading ? <SkeletonProductImg /> :
+            //  <img src={imageData && imageData[image]} alt='' />
+            <ProductImageSlider images={imageData && imageData} />}
+        </div>
 
 
         <div className='images'>
-        {/* Replace the individual image tags with the Slider component */}
-        
-      
+          {/* Replace the individual image tags with the Slider component */}
 
-    
-      {imageData && imageData.map((image, index) => (
-        <div key={index}>
-          <img src={image} alt='' onClick={() =>setImage(index)}/>
+
+
+
+          {imageData && imageData.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt='' onClick={() => setImage(index)} />
+            </div>
+          ))}
+
+
+
+
+
         </div>
-         ))}
-      
-      
-      
-    
-    
-    </div>
 
-      </div>
-
-
-      
-      <div className='right'>
-        {loading? <SkeletonProduct/>
-        :proData.map(pro => (
-          <><><h1>{pro.title}</h1><p>{pro.desc}</p></><div className='quantity'>
-            <button onClick={decreaseQuantity}>-</button>
-            <h4 className="count">{count}</h4>
-            <button onClick={increaseQuantity}> + </button>
-
-            
-             
-            <Box sx={{ minWidth: 120, borderColor:message? "red": "black" }} >
-            
-
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Size</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Size"
-                value={size}
-                onChange={handleChange}
-                sx={{fontSize:"15px", marginLeft:"15px"}}
-              >
-               
-              {pro.sizes?.map((sizes)=>
-                <MenuItem value={sizes} sx={{fontSize:"15px", paddingleft:"3px"}} >{sizes}</MenuItem>
-
-                )}
-              
-              </Select>
-            </FormControl>
-        
-          </Box>
-          
-          {message && <h2>Select a shoe size</h2>}
-        
-          
-      
-          </div>
-          {pro.stock < 1 ? <span>Out of Stock</span>
-            :
-            <button onClick={()=>handleClick()} className='add'>
-              <AddShoppingCartIcon sx={{fontSize:"28px"}}/>
-              ADD TO CART
+      </div><div className='right'>
+          {loading ? <SkeletonProduct />
+            : proData.map(pro => (
+              <><><h1>{pro.title}</h1><p>{pro.desc}</p></><div className='quantity'>
+                <button onClick={decreaseQuantity}>-</button>
+                <h4 className="count">{count}</h4>
+                <button onClick={increaseQuantity}> + </button>
 
 
-            </button>
-              }
-            <div className='link'>
-              <div className='items'>
-                <FavoriteIcon onClick={addSave} sx={{color:isFav?"red":"black", fontSize:"28px"}}/> {isFav?"REMOVE FROM WISHLIST" :"ADD TO WISHLIST"}
+
+                <Box sx={{ minWidth: 120, borderColor: message ? "red" : "black" }}>
+
+
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Size</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      label="Size"
+                      value={size}
+                      onChange={handleChange}
+                      sx={{ fontSize: "15px", marginLeft: "15px" }}
+                    >
+
+                      {pro.sizes?.map((sizes) => <MenuItem value={sizes} sx={{ fontSize: "15px", paddingleft: "3px" }}>{sizes}</MenuItem>
+
+                      )}
+
+                    </Select>
+                  </FormControl>
+
+                </Box>
+
+                {message && <h2>Select a size</h2>}
+
+
+
               </div>
 
+                <button onClick={() => handleClick()} className='add' disabled={pro.stock < 1}>
+                  <AddShoppingCartIcon sx={{ fontSize: "28px" }} />
+                  ADD TO CART
+
+
+                </button>
+
+                <div className='link'>
+                  <div className='items'>
+                    <FavoriteIcon onClick={addSave} sx={{ color: isFav ? "red" : "black", fontSize: "28px" }} /> {isFav ? "REMOVE FROM WISHLIST" : "ADD TO WISHLIST"}
+                  </div>
 
 
 
 
 
-              
-              
-              
-                
-                  <Box sx={{ width: '100%', marginTop:'30px'}} className='info'>
+
+
+
+
+
+                  <Box sx={{ width: '100%', marginTop: '30px' }} className='info'>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                       <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
-                        <Tab label="DESCRIPTION" {...a11yProps(0)} sx={{fontSize:'20px'}}/>
-                        <Tab label="REVIEW" {...a11yProps(1)} sx={{fontSize:'20px'}}/>
+                        <Tab label="DESCRIPTION" {...a11yProps(0)} sx={{ fontSize: '20px' }} />
+                        <Tab label="REVIEW" {...a11yProps(1)} sx={{ fontSize: '20px' }} />
                       </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
@@ -288,18 +278,14 @@ const [size, setSize]  = useState("")
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
 
-                    
-                    {reviews?reviews.map((item)=>(
-                      <span>{item.review}</span>
-                    )) :
-                    <h3>No review for this product yet....</h3>
-                  }
+
+                      {reviews ? reviews.map((item) => (
+                        <span>{item.review}</span>
+                      )) :
+                        <h3>No review for this product yet....</h3>}
                     </CustomTabPanel>
-                    
+
                   </Box>
-                
-              
-              
 
 
 
@@ -307,23 +293,27 @@ const [size, setSize]  = useState("")
 
 
 
-              
-            </div><hr /></>
-          ))}
-          
 
-          <div className = 'related'>
-      <h4>RELATED PRODUCTS</h4>
-      <RelatedProduct />
+
+
+
+                </div><hr /></>
+            ))}
+
+
+          <div className='related'>
+            <h4>RELATED PRODUCTS</h4>
+            <RelatedProduct />
+
+
+          </div>
+
+
+        </div>
+        </div>
+        
 
       
-      </div>
-
-
-      </div>
-
-      
-    </div>
     
   )
 }

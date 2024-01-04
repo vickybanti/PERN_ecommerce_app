@@ -237,13 +237,15 @@ function addSave() {
 
           </div><div className="icon">
 
-              {item.stock <1 ? <p>Out of stock</p> :
+              
 
                 <Box
                   value={size}
                   onChange={handleSize}
                   sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
-                  onClick={()=>navigate('')}>
+                  onClick={()=>navigate('')}
+                  disabled={item.stock < 1}
+                  >
                   <SpeedDial
                     ariaLabel="SpeedDial controlled open example inverse"
                     color='inverse'
@@ -264,7 +266,7 @@ function addSave() {
                         sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
                     ))}
                   </SpeedDial>
-                </Box>}
+                </Box>
 
 
             </div></>
