@@ -49,7 +49,7 @@ img {
     
         
         .h3{
-            font-weight: bold;
+            font-weight: 300;
             font-size:15px;
             padding-top:3px;
     }
@@ -90,15 +90,15 @@ img {
 
             .price{
                 font-family: system-ui, -apple-system,Roboto;
-                font-weight: bold;
+                font-weight: 200;
                 color:darkred;
-                font-size:20px;
+                font-size:18px;
                 right:0;
                 padding-top:10px;
                 margin-bottom:20px;
                 display:flex;
                 justify-content: space-between;
-                border-bottom: 2px solid grey;
+                border-bottom: 1px solid grey;
 
                 .old{
                     color: black;
