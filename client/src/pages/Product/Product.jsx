@@ -247,7 +247,7 @@ const [size, setSize]  = useState("")
 
                 <button onClick={() => handleClick()} className='add' disabled={pro.stock < 1}>
                   <AddShoppingCartIcon sx={{ fontSize: "28px" }} />
-                  ADD TO CART
+                  {pro.stock <1 ?"Out of stock":"ADD TO CART"}
 
 
                 </button>
