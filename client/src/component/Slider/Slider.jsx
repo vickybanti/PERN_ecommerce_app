@@ -62,7 +62,7 @@ function Slider() {
                                 
                                 <hr />
                                 <NavLink  to={'/products'} className='--btn --btn-primary'>
-                                <ShoppingBag sx={{fontSize:'40px'}}/>
+                                <ShoppingBag sx={{fontSize:'30px'}}/>
                                     Shop Now
                                 </NavLink>
                             </div>

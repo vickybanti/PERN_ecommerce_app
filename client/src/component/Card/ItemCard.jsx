@@ -242,14 +242,17 @@ function addSave() {
                 <Box
                   value={size}
                   onChange={handleSize}
-                  sx={{ height: 80,background:"none", transform: 'translateX(0px)', flexGrow: 2 }}>
+                  sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
+                  onClick={()=>navigate('')}>
                   <SpeedDial
-                    ariaLabel="SpeedDial controlled open example"
-                    sx={{ position: 'absolute', bottom: 0, right: 0, border: "none" }}
+                    ariaLabel="SpeedDial controlled open example inverse"
+                    color='inverse'
+                    sx={{ position: 'absolute', bottom: 0, right: 0, border: "none", color:"black"}}
                     icon={item.stock <=0 ? "" :<AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
                     onClose={handleClose}
                     onOpen={handleOpen}
                     open={open}
+
                   >
                     {item.stock === 0?"": item.sizes?.map((sizeOption) => (
                       <SpeedDialAction
