@@ -179,7 +179,6 @@ const [size, setSize]  = useState("")
 
 
         <div className='mainImg'>
-        {proData.map((pro) => pro.stock < 1 && <h3 style={{ padding: "50%", position: "absolute", width: "100%", backgroundColor: "rgba(0,0,0,0.1)" }}  > Out of stock</h3> ) }
 
 
           {loading ? <SkeletonProductImg /> :
