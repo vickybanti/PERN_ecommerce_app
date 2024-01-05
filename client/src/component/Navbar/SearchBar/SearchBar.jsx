@@ -29,7 +29,7 @@ function SearchBar() {
 
     function handleSubmit(e){
       e.preventDefault()
-      navigate(`/search/${note}`)
+      navigate(`Products/search/${note}`)
       closeView()
       setNote("")
     }

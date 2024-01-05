@@ -162,6 +162,8 @@ function addSave() {
     dispatch(setItemOpen({}))
   }
   setFav(!isFav);
+
+  navigate('')
 }
 
 // ...

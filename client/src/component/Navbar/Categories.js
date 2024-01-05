@@ -21,7 +21,7 @@ function CategoriesBar() {
         <NavLink className= {activeLink} 
                       
          
-        to={`categories/${cat.cat_title}`}>
+        to={`Products/categories/${cat.cat_title}`}>
        
         {cat.cat_title}
         

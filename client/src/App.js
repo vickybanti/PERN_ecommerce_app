@@ -71,6 +71,10 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
       
       <Route path='products' element={ <Products />}>
         <Route index element={<List />} />
+        <Route path='categories/:title' element={<List />} />
+         <Route path='brands/:brand' element={<List />} />
+        <Route path='search/:note' element={<List />} />
+
         <Route path='featured' element={<Featuredroducts />} />
         <Route path='trending' element={<TrendingProducts />} />
       </Route>
@@ -95,10 +99,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
         </Route>
 
 
-      <Route path='categories/:title' element={<List />} />
-      <Route path='brands/:brand' element={<List />} />
-      <Route path='search/:note' element={<List />} />
-
+      
       <Route path='product/:id' element={<Product />} />
 
       <Route path="login" element={user ? <Navigate to="/" /> : <Login />} />

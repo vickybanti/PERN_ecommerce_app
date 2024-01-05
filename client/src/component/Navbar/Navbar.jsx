@@ -75,7 +75,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                        <Badge badgeContent={quantity > 0 && quantity} color="error">
+                         <Badge badgeContent={quantity} color="error" sx={{fontSize:"15px"}}>
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}
@@ -278,7 +278,7 @@ const handleClose = () => {
     <ul className={styles.submenu}>
     {brandData.map((brand) => (
       
-      <NavLink to={`/brands/${brand.brand_title}`}><li>{brand.brand_title}</li></NavLink>
+      <NavLink to={`Products/brands/${brand.brand_title}`}><li>{brand.brand_title}</li></NavLink>
       
     ))}
 

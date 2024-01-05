@@ -27,94 +27,90 @@ function List({ size, filters }) {
 
   useEffect(() => {
 
-    const getFilters = async () => {
+//     const getFilters = async () => {
      
-      setLoading(true)
-    try {
-      let apiUrl = '';
+//       setLoading(true)
+//     try {
+//       let apiUrl = title?`/categories/${title}`:brand?`/${brand}`:note?`/search/?title=${note}`:
+//     "/products";
 
-    if (filters === 'maxPrice') {
-      apiUrl = '/price/desc';
-    } else if (filters === 'minPrice') {
-      apiUrl = '/price/';
-    } else if (filters === 'trending') {
-      apiUrl = '/trending/';
-    }
-     const res = await makeRequest.get(apiUrl);
-    const data = await res.data;
-      setProducts(data);
+//     if (filters === 'maxPrice') {
+//       apiUrl = products.sort((a, b) => a.price - b.price);;
+//     } else if (filters === 'minPrice') {
+//       apiUrl = products.sort((a, b) => b.price - a.price);
+//     } else if (filters === 'trending') {
+//      apiUrl = products.sort(a=>a.type==='trending');
+//     }
+//      const res = await makeRequest.get(apiUrl);
+//     const data = await res.data;
+//       setProducts(data);
       
-        setLoading(false);
-    } catch (err) {
-      console.error(err.message)
-      setLoading(false);
+//         setLoading(false);
+//     } catch (err) {
+//       console.error(err.message)
+//       setLoading(false);
     
-    }
-  }
+//     }
+//   }
 
 
-  //size
-    const getSizes = async () => {
-      setLoading(true)
+//   //size
+//     const getSizes = async () => {
+//       setLoading(true)
       
-try {
-const res = await makeRequest.get(`/size/${size}`);
+// try {
+// const res = await makeRequest.get(`/size/${size}`);
 
-const data = await res.data;
-setProducts(data);
+// const data = await res.data;
+// setProducts(data);
 
-  setLoading(false);
+//   setLoading(false);
 
 
 
-} catch (err) {
-console.error(err.message);
-setLoading(false);
+// } catch (err) {
+// console.error(err.message);
+// setLoading(false);
 
-} 
-    }
+// } 
+//     }
 
 
 //size
-    const fetchData = async () => {
-     
-            setLoading(true)
+const fetchData = async () => {
+  setLoading(true);
 
-    try {
-      const res = await makeRequest.get(
-        title ? `/categories/${title}`
-        :
-        brand ? `/${brand}` 
-        :
-        note ?  `/search/?title=${note}`
-        :
-        `/products`
-      
-        );
+  try {
 
-      const data = await res.data;
-      setProducts(data);
-      
-        setLoading(false);
+    const response = await makeRequest.get(
+      title?`/categories/${title}`: brand?`/${brand}`:note?`/search/?title=${note}`:
+    "/products"
+    );
+    let filteredproducts = await response.data
 
-      
-
-    } catch (err) {
-      console.error(err.message);
-      setLoading(false);
-
+    if (filters === 'maxPrice') {
+      filteredproducts.sort((a, b) => a.price - b.price);;
+    } else if (filters === 'minPrice') {
+      filteredproducts.sort((a, b) => b.price - a.price);
+    } else if (filters === 'trending') {
+      filteredproducts.sort(a=>a.type==='trending');
+   
     }
-  };
-  if (filters){
-    getFilters()
-  } else if(size){
-    getSizes()
-  } else{
-    fetchData();
-
+    
+    setProducts(filteredproducts);
+    setLoading(false);
+  } catch (err) {
+    console.error(err.message);
+    setLoading(false);
   }
+};
+
   
-}, [filters,title,note,brand,size]);
+    fetchData();
+  
+}, [filters, title, note, brand, size,products]);
+
+  
 
   const renderProducts = () => {
 

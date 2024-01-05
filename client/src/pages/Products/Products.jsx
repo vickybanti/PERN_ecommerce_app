@@ -28,12 +28,14 @@ const Container = styled.div`
 const FilterContainer = styled.div`
     display:flex;
     justify-content: space-between;
+    margin:0;
 
 `
 const FilterText = styled.span`
     font-size: 20px;
     font-weight: 600;
     margin-right: 20px;
+
 `
 
 const Title = styled.h1`
@@ -42,7 +44,8 @@ const Title = styled.h1`
 `
 
 const Filter = styled.div`
-    margin:20px;
+    margin:10px;
+
 
 `
 
