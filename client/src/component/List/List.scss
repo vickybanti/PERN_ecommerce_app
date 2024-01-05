@@ -1,20 +1,20 @@
 .list{
     display:grid;
     row-gap: 30px;
-    column-gap: 1.53%;
-    padding:45px 50px;
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, 250px);
+    column-gap: 4.3%;
+    padding:10px 30px 50px 80px;
+    margin: 0 30px;
+    grid-template-columns: repeat(auto-fill, 270px);
     box-shadow: var(--box-shadow);
     border-radius: 5px;
 
     
-    .--btn{
+    .button{
         justify-content: center;
         align-items: center;
-        margin-top: 40px;
-        
-
+        text-align: center;
+        width: 100%;
+        margin-top: 300px;
     }
     
 
@@ -32,16 +32,11 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-left:60%;
+    margin-left:70%;
+    
 }
 
-.button{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: 50px 0;
-}
+
 
 
 @media screen and (max-width:912px) {

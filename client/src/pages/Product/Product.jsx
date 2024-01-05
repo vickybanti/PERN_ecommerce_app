@@ -13,7 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { addProduct } from '../../redux/apiCalls';
 import SkeletonProduct from '../../component/skeleton/SkeletonProduct';
 import SkeletonProductImg from '../../component/skeleton/SkeletonProductImg';
@@ -243,13 +243,18 @@ const [size, setSize]  = useState("")
 
 
               </div>
-
-                <button onClick={() => handleClick()} className='add' disabled={pro.stock < 1}>
+              {
+                pro.stock <1 ?
+                <Button disabled style={{ background: "none", border: "1px solid gray" }}>Out of stock</Button>
+                :
+                <button onClick={() => handleClick()} className='add'>
                   <AddShoppingCartIcon sx={{ fontSize: "28px" }} />
-                  {pro.stock <1 ?"Out of stock":"ADD TO CART"}
+                  "ADD TO CART"
 
 
                 </button>
+                
+            }
 
                 <div className='link'>
                   <div className='items'>

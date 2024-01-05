@@ -163,7 +163,7 @@ function addSave() {
   }
   setFav(!isFav);
 
-  navigate('')
+  
 }
 
 // ...
@@ -193,19 +193,16 @@ function addSave() {
 
 
   return (
-    <div className= "contain" responsive={responsive} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}>
-    {item.stock <= 0 && 
-      <h3 className='out'>Out of stock</h3>
-    
-  }
-    {item.stock<=0?"":item.type &&
+    <div className= "contain" responsive={responsive} key={item.id} >
+   
+    {item.stock<1 &&
       <Avatar
           alt={item.type}
           className="avatar"
           component="div"
           sizes="12px"
-          sx={{backgroundColor:item.stock <=0?"rgba(0,0,0,0.4)":
-            item.type==="newArrivals"?"orangered" : "#071b28", marginTop:"20", 
+          sx={{backgroundColor:
+            item.type==="newArrivals"?"orangered": item.stock < 1 ? "orangered": "#071b28", marginTop:"20", 
           position:"absolute",
           width: "80px",
           borderRadius:"0", 
@@ -214,7 +211,7 @@ function addSave() {
         }}
       >
     
-    {item.type}
+    {item.stock < 1 ? <span style={{padding:"5px"}}>Out of stock</span> : item.type}
 
 
       </Avatar> 
