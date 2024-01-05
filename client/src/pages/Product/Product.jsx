@@ -208,7 +208,8 @@ const [size, setSize]  = useState("")
       </div><div className='right'>
           {loading ? <SkeletonProduct />
             : proData.map(pro => (
-              <><><h1>{pro.title}</h1><p>{pro.desc}</p></><div className='quantity'>
+              <><><h1 className='title'>{pro.title}</h1>
+              <p>{pro.desc}</p></><div className='quantity'>
                 <button onClick={decreaseQuantity}>-</button>
                 <h4 className="count">{count}</h4>
                 <button onClick={increaseQuantity}> + </button>
@@ -226,10 +227,10 @@ const [size, setSize]  = useState("")
                       label="Size"
                       value={size}
                       onChange={handleChange}
-                      sx={{ fontSize: "15px", marginLeft: "15px" }}
+                      sx={{ fontSize: "15px", marginLeft: "15px", paddingLeft:"10px" }}
                     >
 
-                      {pro.sizes?.map((sizes) => <MenuItem value={sizes} sx={{ fontSize: "15px", paddingleft: "3px" }}>{sizes}</MenuItem>
+                      {pro.sizes?.map((sizes) => <MenuItem value={sizes} sx={{ fontSize: "15px", paddingleft: "10px" }}>{sizes}</MenuItem>
 
                       )}
 
@@ -245,7 +246,8 @@ const [size, setSize]  = useState("")
               </div>
               {
                 pro.stock <1 ?
-                <Button disabled style={{ background: "none", border: "1px solid gray" }}>Out of stock</Button>
+                <button 
+              className="out">Out of stock</button>
                 :
                 <button onClick={() => handleClick()} className='add'>
                   <AddShoppingCartIcon sx={{ fontSize: "28px" }} />
