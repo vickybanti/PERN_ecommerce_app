@@ -83,7 +83,7 @@ const fetchData = async () => {
   try {
 
     const response = await makeRequest.get(
-      title?`/categories/${title}`: brand?`/${brand}`:note?`/search/?title=${note}`:
+      title ?`/categories/${title}`:
     "/products"
     );
     let filteredproducts = await response.data
