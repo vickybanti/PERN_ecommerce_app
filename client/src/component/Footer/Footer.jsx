@@ -65,6 +65,7 @@ function Footer() {
           <span><NavLink to={`frequent`}>Frequent questions</NavLink></span>
           <span><NavLink to={`shipping`}>Shipping policy</NavLink></span>
           <span><NavLink to={`returns`}>Return Policy</NavLink></span>
+          <span><NavLink to={`termsAndConditions`}>Terms and conditions</NavLink></span>
         
         
           
@@ -76,20 +77,9 @@ function Footer() {
       </div>
       <div className='bottom'>
         <div className='left'>
-          <span className='logo'>MOORESTORE</span>
-          <span className='copyright'>
-            Copyright 2023, All rights reserved
-            </span>
-        <div className='middle'>
-            
-            <NavLink to={`termsAndConditions`}>
-            <span className='terms'>
-              Terms and conditions
-            </span>
-            </NavLink>
-
-        </div>
-
+          <span className='logo'>&copy; MOORESTORE 2023</span>
+          
+       
 
 
 

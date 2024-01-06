@@ -3,21 +3,23 @@
     overflow: hidden;
     width: 100%;
     color: white;
+    justify-content: center;
 
     .top{
         display: flex;
         gap: 50px;
-        padding: 50px 70px 30px 100px;
+        padding: 50px 90px 30px 90px;
         color: #071b28;
 
 
         .item{
             display:flex;
-            flex:1;
+    
             flex-direction: column;
             gap:10px;
-            text-align: justify;
-            font-size: 12px;
+            margin-left: 50px;
+            font-weight: 400;
+            font-size: 8px;
             color: white;
 
             .icons{
@@ -29,8 +31,8 @@
             }
 
             h1{
-                font-size: 30px;
-                font-weight:400;
+                font-size: 18px;
+                font-weight:600;
                 color:#071b28;
             }
 
@@ -79,35 +81,25 @@
             align-items: center;
 
             .logo{
-                font-weight: bold;
-                font-size: 24px
-            }
-
-            .copyright{
-                margin-left:20px;
-                font-size: 12px;
+                font-weight: 400;
+                font-size: 18px;
+                font: Arial;
 
             }
+
+            
         }
 
-        .middle{
-            padding-left: 50px;
-
-            .terms{
-                color: white;
-                text-align: center;
-            }
-        }
+        
         .right{
-            width: 30vw;
-            justify-content: space-between;
+            width: 40%;
             display: flex;
+            justify-content: space-between;
 
             img{
                 height: 50%;
                 width: 50%;
-                margin-left: 470px;
-                
+                margin-left: 800px;
             }
         }
     }
