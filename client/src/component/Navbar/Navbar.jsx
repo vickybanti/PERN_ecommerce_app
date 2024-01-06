@@ -75,7 +75,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                         <Badge badgeContent={quantity} color="error">
+                         <Badge badgeContent={quantity} color="error" sx={{fontSize:"28px"}}>
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}
@@ -175,7 +175,7 @@ const handleClose = () => {
       }}
       anchorEl={anchorEl}
       open={open}
-      onClose={handleClose}
+      onClick={handleClose}
       TransitionComponent={Fade}
       sx={{
         color: "Graytext", fontSize: "20px", zIndex: "99999", marginTop: "60px", marginLeft: "-90px", padding: "30px"
@@ -190,7 +190,7 @@ const handleClose = () => {
             Logout </Button>
         </MenuItem>
 
-        <MenuItem onClick={handleClose} sx={{ fontSize: "17px", color: "Graytext" }}>
+        <MenuItem onClick={() => navigate('/profile/orders')} sx={{ fontSize: "17px", color: "Graytext" }}>
           <Person sx={{ fontSize: "18px", color: "gray", marginRight: "5px" }} /> My account
         </MenuItem>
         <MenuItem onClick={handleClose}>{favourite}</MenuItem>
