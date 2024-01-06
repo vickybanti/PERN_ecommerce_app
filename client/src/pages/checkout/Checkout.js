@@ -557,10 +557,10 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
   </div>
   <hr />
   <div className="d-flex justify-content-between">
-    <NavLink to="/returns" style={{ textDecoration: "none" ,padding:"40px"}}>
+    <NavLink to="/returns" style={{ textDecoration: "none" ,padding:"40px", color:"var(--color-primary)"}}>
       Return Policy
     </NavLink>
-    <NavLink to="/shipping" style={{ textDecoration: "none", padding:"40px" }}>
+    <NavLink to="/shipping" style={{ textDecoration: "none", padding:"40px", color:"var(--color-primary)" }}>
       Shipping Policy
     </NavLink>
   </div>

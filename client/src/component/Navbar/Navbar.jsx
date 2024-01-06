@@ -74,7 +74,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                         <Badge badgeContent=<span>{quantity}</span> color="error">
+                         <Badge badgeContent=<span style={{fontSize:"12px"}}>{quantity}</span> color="error">
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}
