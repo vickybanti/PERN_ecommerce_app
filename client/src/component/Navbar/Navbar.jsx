@@ -62,7 +62,6 @@ const handleClose = () => {
   const quantity = useSelector((state) => state.cart.totalQuantity);
   const savedItems = useSelector((state) => state.savedProducts.savedItems);
   const savedQuantity = savedItems.length
-  console.log(quantity)
 
   const cart = (
     <span className={styles.cart} style={{marginRight:"20px"}}>
@@ -75,7 +74,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                         <Badge badgeContent={quantity} color="error" sx={{fontSize:"28px"}}>
+                         <Badge badgeContent=<span>{quantity}</span> color="error">
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}

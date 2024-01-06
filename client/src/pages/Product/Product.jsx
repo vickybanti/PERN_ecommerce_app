@@ -251,7 +251,7 @@ const [size, setSize]  = useState("")
                 :
                 <button onClick={() => handleClick()} className='add'>
                   <AddShoppingCartIcon sx={{ fontSize: "28px" }} />
-                  "ADD TO CART"
+                  ADD TO CART
 
 
                 </button>

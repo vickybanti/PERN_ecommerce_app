@@ -181,7 +181,7 @@ function addSave() {
 
   function handleClick(e, selectedSize) {
     e.preventDefault()
-    dispatch(addToCart({...item,count,imageData,size }))
+    dispatch(addToCart({...item,count,imageData,selectedSize }))
 
 
     
@@ -242,7 +242,6 @@ function addSave() {
                   value={size}
                   onChange={handleSize}
                   sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
-                  onClick={()=>navigate('')}
                   disabled={item.stock < 1}
                   >
                   <SpeedDial

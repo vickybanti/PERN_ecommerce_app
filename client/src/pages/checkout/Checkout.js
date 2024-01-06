@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {Box, Button, Stepper, Step, RadioGroup, FormControlLabel, Radio, FormControl, FormLabel, Divider, TextField, Typography } from "@mui/material";
+import {Box, Button, Stepper, Step, RadioGroup, FormControlLabel, Radio, FormControl, FormLabel, Divider, TextField, Typography, ListItem, ListItemAvatar, Badge, Avatar, ListItemText } from "@mui/material";
 import {Formik} from "formik";
 import * as yup from "yup"
 import Shipping from "./Shipping"
@@ -236,6 +236,14 @@ const handleFormSubmit = async(values, actions) => {
   }
 }
 
+const quantity = useSelector((state) => state.cart.totalQuantity);
+
+
+  const [isCartExpanded, setCartExpanded] = useState(false);
+
+  const handleCartToggle = () => {
+    setCartExpanded(!isCartExpanded);
+  };
 
 
 
@@ -249,118 +257,25 @@ const handleFormSubmit = async(values, actions) => {
       <div className='checkout'>
       
 
-      <Box className="left">
-      <Box className="carts">
-      <h2 style={{color:"teal"}}>My items</h2>
-      <div className='my-cart'>
-     
-      {cartItems.map((item) => (
-        <>
-        <Box flex="1 1 30%" mt={"40px"} sx={{display:"flex"}}>
-                <div style={{width:"40%", height:"40%", marginRight:"30px"}}>
-                  <ImageData item={item} />
-                </div>
-                <h4 className="itemTitle">{item.title}</h4>
-                <p className='itemPrice'>Price: {item.price}</p>
-        </Box>
-        </>
-      ))}
-      </div>
-
-
-  <Box>
-  <Divider />
-        <h2>SUBTOTAL</h2>
-        <span>{totalPrice.toFixed(2)}</span>
-         
-        
-  </Box>
-  <Box>
-  <h2>TOTAL</h2>
-  {totalPrice.toFixed(2)}
-  </Box>
-  
-  </Box>
-
-
-
-
-  <Box className="checkFooter">
-  <h4 className="py-2">Why Buy From Us?</h4>
-  <div className="checkFooterRow">
-  <img
-  src="img/payment/g1.png"
-  alt="guarantee"
-  className='guarantee'
-  
-/>
-    <div className="col-9 my-auto">
-    
-      <h4 style={{ fontSize: "0.9em" }}>
-        <strong>100% Satisfaction Guarantee</strong>
-      </h4>
-      <p className='p'>
-        If you are not 100% satisfied with your purchase, we
-        will make it right! No questions asked!
-      </p>
-    </div>
-  </div>
-  <div className="checkFooterRow">
-      <img
-        src="img/payment/g2.png"
-        alt="guarantee"
-        className='guarantee'
-        
-      />
-    <div className="col-9 my-auto">
-      <h4 style={{ fontSize: "0.9em" }}>
-        <strong>
-          Over 400,000 Successfully Shipped Orders
-        </strong>
-      </h4>
-      <p className='p'>
-        We make customers happy with every order we ship. You
-        simply have to join our family.
-      </p>
-    </div>
-  </div>
-  <hr />
-  <div className="d-flex justify-content-between">
-    <NavLink to="/returns" style={{ textDecoration: "none" ,padding:"40px"}}>
-      Return Policy
-    </NavLink>
-    <NavLink to="/shipping" style={{ textDecoration: "none", padding:"40px" }}>
-      Shipping Policy
-    </NavLink>
-  </div>
-</Box>
-</Box>
-
-
-
-
-
-
-  
-      
+          
       <Box className="mainBox">
 
         <Box>
 
         </Box>
-        <Stepper activeStep={activeStep} sx={{ m: "20px 0", fontSize: "80px" }}>
+        <Stepper activeStep={activeStep} sx={{ m: "20px 0", fontSize: "15px" }}>
           <Step>
             {isSecondStep || isThirdStep || loading?
               <Check className='check' />
               :
-              <LocalShipping className='contact' />}<h4>Shipping</h4>
+              <LocalShipping className='contact' />}<span>Shipping</span>
           </Step>
           <Step>
             {isThirdStep || loading ?
               <Check className='check' />
               :
               <ContactPage className='contact' />}
-            <h4>Contact</h4>
+            <span>Contact</span>
           </Step>
           <Step>
           {loading ? 
@@ -368,7 +283,7 @@ const handleFormSubmit = async(values, actions) => {
             :
            
             <Payment className='contact' /> }
-            <h4>Payment</h4>
+            <span>Payment</span>
           </Step>
         </Stepper>
         <Box>
@@ -440,7 +355,7 @@ const handleFormSubmit = async(values, actions) => {
                     <>
                       <Button
                         onClick={() => setActiveStep(activeStep - 1)}
-                        fullWidth
+                        
                         type="submit"
                         color='primary'
                         variant='contained'
@@ -450,7 +365,7 @@ const handleFormSubmit = async(values, actions) => {
                           borderRadius: 0,
                           padding: "10px 30px",
                           fontSize: "15px",
-                          margin: "20px 0"
+                          margin:"50px 0"
                         }}
 
                       >
@@ -461,7 +376,7 @@ const handleFormSubmit = async(values, actions) => {
                   )}
 
                   <Button
-                    fullWidth
+                    
                     type="submit"
                     color='primary'
                     variant='contained'
@@ -471,7 +386,7 @@ const handleFormSubmit = async(values, actions) => {
                       borderRadius: 0,
                       padding: "10px 30px",
                       fontSize: "15px",
-                      margin: "20px 0"
+                      margin:"50px 0"
                     }}
 
 
@@ -485,22 +400,178 @@ const handleFormSubmit = async(values, actions) => {
               </form>
             )}
           </Formik>
+            
         </Box>
-                    
+        
+
+        <Box sx={{position:"absolute",}}>
+        <img src='img/payment/f1.png' alt='' style={{padding:"0 10px"}}/>
+  
+          <img src='/img/payment/f3.png' alt='' style={{padding:"0 10px"}}/>
+          <img src='img/payment/f4.png' alt='' style={{padding:"0 10px"}}/>
+          <img src='img/payment/f5.png' alt='' style={{padding:"0 10px"}}/>
+          <img src='img/payment/f6.png' alt='' style={{padding:"0 10px"}}/>
+        </Box>      
       </Box>
+
+     
+
+
+      <Box className="left">
+      <div className="carts col-lg-6 h-100">
+      <Box
+        className="p-3"
+        component="div"
+        sx={{
+          width: "100%",
+        }}
+      >
+        <div
+          className="pb-5"
+          style={{
+            overflowY: "auto",
+            height: "18em",
+          }}
+        >
+          <div>
+            {cartItems.map((value, index) => {
+              return (
+                <ListItem
+                  alignItems="flex-start"
+                  secondaryAction={
+                    <span className="d-flex flex-column">
+                      
+                        <Typography
+                          variant="span"
+                          sx={{ fontSize: "1.3em", padding: "5px 0" }}
+                        >
+                          SIZE: {value.size}
+                        </Typography>
+                      
+                      <Typography
+                        sx={{ fontSize: "1.3em", fontWeight: 400 }}
+                      >
+                        $ {(value.price * quantity).toFixed(2)}
+                      </Typography>
+                    </span>
+                  }
+                  sx={{ width: "100%" }}
+                  key={index}
+                >
+                  <ListItemAvatar>
+                    <Badge
+                      badgeContent=<span>{value.count}</span>
+                      color="primary"
+                      
+                      
+                    >
+                    
+                      
+                    <div style={{ width: "100px", height: "100px" }}>
+                    <ImageData item={value} />
+                    </div>
+                        
+                    </Badge>
+                  </ListItemAvatar>
+
+                  <ListItemText
+                    sx={{
+                      fontSize: "1.1em",
+                      margin: "auto 1em",
+                      "& .MuiListItemText-primary": {
+                        fontSize: "1.1em",
+                        width: "70%",
+                      },
+                    }}
+                    primary={value.title}
+                  />
+                </ListItem>
+              );
+            })}
+          </div>
+        </div>
+
+
+  
+  <Divider />
+  <Box sx={{display:"flex", justifyContent:"space-between", paddingTop:"30px"}}>
+        <p>SUBTOTAL</p>
+        <h4>
+        ${totalPrice.toFixed(2)}</h4>
+         
+        <p>TOTAL</p>
+  <h4>${totalPrice.toFixed(2)}</h4>
+        
+  </Box>
+  
+  
+
+  
+  
+
+  
+  </Box>
+  </div>
+
+
+
+
+  <Box className="checkFooter">
+  <h4 style={{fontSize:"20px"}}>Why Buy From Us?</h4>
+  <div className="checkFooterRow">
+  <img
+  src="img/payment/g1.png"
+  alt="guarantee"
+  className='guarantee'
+  
+/>
+    <div className="col-9 my-auto">
+    
+      <h4 style={{ fontSize: "0.8em" }}>
+        <strong>100% Satisfaction Guarantee</strong>
+      </h4>
+      <p className='p'>
+        If you are not 100% satisfied with your purchase, we
+        will make it right! No questions asked!
+      </p>
+    </div>
+  </div>
+  <div className="checkFooterRow">
+      <img
+        src="img/payment/g2.png"
+        alt="guarantee"
+        className='guarantee'
+        
+      />
+    <div className="col-9 my-auto">
+      <h4 style={{ fontSize: "0.8em" }}>
+        <strong>
+          Over 400,000 Successfully Shipped Orders
+        </strong>
+      </h4>
+      <p className='p'>
+        We make customers happy with every order we ship. You
+        simply have to join our family.
+      </p>
+    </div>
+  </div>
+  <hr />
+  <div className="d-flex justify-content-between">
+    <NavLink to="/returns" style={{ textDecoration: "none" ,padding:"40px"}}>
+      Return Policy
+    </NavLink>
+    <NavLink to="/shipping" style={{ textDecoration: "none", padding:"40px" }}>
+      Shipping Policy
+    </NavLink>
+  </div>
+</Box>
+</Box>
+
       
  
 
     </div>
-    <div className='images'>
-        <img src='img/payment/f1.png' alt='' />
 
-        <img src='img/payment/f3.png' alt='' />
-        <img src='img/payment/f4.png' alt='' />
-        <img src='img/payment/f5.png' alt='' />
-        <img src='img/payment/f6.png' alt='' />
-
-      </div>
     </></>
   )
 }

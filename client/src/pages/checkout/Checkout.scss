@@ -3,7 +3,7 @@
     display:flex;
    justify-content:flex-end;  
    margin-right: 170px;
-   margin-top: -50px;
+   
    
    img{
        aspect-ratio: 3/2;
@@ -27,11 +27,9 @@
         width:50%;
         margin: 10px auto;
         font-size: 20px;
-        border-left: 1px solid gray;
-        border-top: 1px solid gray;
         border-bottom: 1px solid gray;
     
-        padding:40px 10px 0 30px; 
+        padding:20px 10px 0 30px; 
         display: flex;
         flex-direction: column;
         border-radius: 5px;
@@ -52,7 +50,7 @@
             }
 
             .guarantee{
-                width: 25%;
+                width: 18%;
                 object-fit: contain;
                 aspect-ratio: 3/2;
                 padding-right: 10px;
@@ -62,7 +60,8 @@
             h4{
                 position: inherit;
                 transform: rotate(0);  
-                margin: auto;              
+                margin: auto;  
+                font-size: 12px;            
             }
 
             @media screen and (max-width:464px) {
@@ -81,7 +80,7 @@
                 justify-content: center;
                 align-items: center;
                 padding: 20px;
-                font-size: 0.9em;
+                font-size: 0.8em;
             }
             @media screen and (max-width:464px) {
                 .p{
@@ -94,9 +93,9 @@
 
 
 .carts{
-    border: 1px solid white;
+    border: 1px solid gray;
     padding: 30px;
-    max-height: 50%;
+    max-height: 20%;
     border-radius: 5px;
     width: 100%;
 
@@ -127,11 +126,12 @@
         width:50%;
         font-size: 100px;
         border: 1px solid white;
-        box-shadow: -2px 0 30px 0;
-        padding: 10px 30px 0 30px; 
+        box-shadow: 0 0 30px -2px;
+        padding: 0 30px; 
         margin-bottom:30px;
         border-radius: 5px;
-        margin-top: 0;
+        margin-top: -390px;
+        
 
         .check{
             background-color:var(--color-primary);
@@ -156,7 +156,7 @@
             background-color:#181616;
             border-radius:50%;
             color:white;
-            font-size:70px;
+            font-size:50px;
             margin:auto;
             padding:10px;
             
