@@ -162,7 +162,7 @@ const handleClose = () => {
 
       <div className={styles.welcome} style={{}}>
         <Person sx={{ fontSize: "32px", fontWeight: "900", color: "black" }} />
-        <p> Welcome {name} </p>
+        <span style={{ fontWeight:"400"}}> Welcome {name} </span>
       </div>
 
     </IconButton>

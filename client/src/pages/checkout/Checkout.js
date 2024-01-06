@@ -365,7 +365,7 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                           borderRadius: 0,
                           padding: "10px 30px",
                           fontSize: "15px",
-                          margin:"50px 0"
+                          margin:"30px 0"
                         }}
 
                       >
@@ -375,6 +375,9 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
 
                   )}
 
+                  
+
+                  {isFirstStep ? 
                   <Button
                     
                     type="submit"
@@ -386,14 +389,30 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                       borderRadius: 0,
                       padding: "10px 30px",
                       fontSize: "15px",
-                      margin:"50px 0"
+                      margin:"30px 10px 30px 400px"
                     }}
-
-
-
                   >
-                    {loading?"Placing order...":isFirstStep ? "Next" : "Place order"}
+                    Next
                   </Button>
+                  :
+                  <Button
+                    
+                    type="submit"
+                    color='primary'
+                    variant='contained'
+                    sx={{
+                      backgroundColor: "rgba(0,0,0,0.4)",
+                      color: "white",
+                      borderRadius: 0,
+                      padding: "10px 30px",
+                      fontSize: "15px",
+                      margin:"30px 0"
+                    }}
+                  >
+                  { loading?"Placing order...": "Place order"}
+                  </Button>
+                  
+                }
 
 
                 </Box>
