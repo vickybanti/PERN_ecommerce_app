@@ -44,7 +44,7 @@ function Categories() {
 
                         <Button className="mainButton">
 
-                            <NavLink style={{ color: "white" }} to={`categories/leather shoes`}>Men's classic</NavLink>
+                            <NavLink style={{ color: "white" }} to={`Products/categories/leather shoes`}>Men's classic</NavLink>
 
 
                         </Button>
@@ -62,7 +62,7 @@ function Categories() {
                                 <img src="img/blog/2.jpg" alt='' className='catimg'/>
 
                                 <Button className="catbutton">
-                                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Men's jacket</NavLink>
+                                    <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Men's jacket</NavLink>
 
                                 </Button>
                     </div>
@@ -73,7 +73,7 @@ function Categories() {
                         <img src="uploads/shoes/IMG-20230405-WA0064 (1).jpg" alt='' className='catimg'/>
 
                         <Button className="catbutton">
-                            <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Classic flips</NavLink>
+                            <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Classic flips</NavLink>
 
                         </Button>
                         </div>
@@ -88,7 +88,7 @@ function Categories() {
                 <img src="uploads/unisex.jpg" alt='' className='catimg'/>
 
                 <Button className="catbutton">
-                    <NavLink style={{ color: "white" }} to={`categories/jackets}`}>Unisex jacket</NavLink>
+                    <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Unisex jacket</NavLink>
 
                 </Button>
                 </div>
