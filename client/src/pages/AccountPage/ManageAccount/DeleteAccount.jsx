@@ -72,7 +72,7 @@ function DeleteAccount() {
     <div className="col-md-12">
 
       <p className="card-heading">
-        <IconButton onClick={() => navigate("/profile/manage")}>
+        <IconButton onClick={() => navigate("/profile/summary")}>
           <ArrowBackIcon />
         </IconButton>
         Delete Account

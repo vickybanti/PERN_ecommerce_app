@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import '../account.scss'
 import { makeRequest } from "../../../makeRequest";
+import { Message } from "@mui/icons-material";
 
 function NewAddress() {
   const navigate = useNavigate();
@@ -39,15 +40,26 @@ function NewAddress() {
         const defaultAdd = await makeRequest.post(`/order/address`,{
           body:JSON.stringify(requestBody)
         })
+        if (defaultAdd){
+          console.log(defaultAdd)
+        }
         const confirm = await defaultAdd.data
+        console.log(confirm)
+
+        
         if(confirm){
+          console.log(confirm)
           setMessage(
             "Successful"
           )
         }
+        else{
+          setMessage("unsuccessful")
+        }
         
       } catch (err) {
         console.error(err.message)
+        console.log(err.message)
         toast.error(err.message)
       }
     }
@@ -62,7 +74,7 @@ function NewAddress() {
         <IconButton onClick={() => navigate("/profile/address")}>
           <ArrowBackIcon />
         </IconButton>
-        Add a New Address
+        <span style={{padding:"10px"}}>Add a New Address</span>
       </p>
       <div className="card-container">
         <div className="card-body">
@@ -152,11 +164,12 @@ function NewAddress() {
             <Button
               variant="contained"
               sx={{
-                width: "60%",
+                width: "50%",
                 fontSize: "1.1em",
                 backgroundColor: "skyblue",
                 height:"50px",
-                marginBottom:"20px",
+                marginBottom:"50px",
+                marginLeft:"28%",
                 "&:hover": {
                   backgroundColor: "#4a90e2",
                 },
@@ -165,6 +178,7 @@ function NewAddress() {
             >
               SAVE ADDRESS
             </Button>
+            {message}
           </div>
           </form>
         </div>
