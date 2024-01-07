@@ -260,7 +260,7 @@ function addSave() {
                         value={sizeOption}
                         onChange={handleSize}
                         icon={sizeOption}
-                        onClick={(e) => handleClick(e, sizeOption)}
+                        onClick={(e) => handleClick(e, size)}
                         sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
                     ))}
                   </SpeedDial>

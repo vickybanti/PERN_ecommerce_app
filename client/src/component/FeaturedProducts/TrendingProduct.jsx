@@ -24,7 +24,7 @@ return (
         <div className='bottom'>
 
             {loading?
-              [...Array(10).keys()].map(i => {
+              [...Array(4).keys()].map(i => {
                 return <SkeletonImg 
                 key={i} />})
               : data.map(item => (

@@ -4,14 +4,9 @@ import Skeleton from "./Skeleton"
 function SkeletonProduct() {
   return (
     <div className='card'>
-      <Skeleton classes="text width-50" />
-      <Skeleton classes="text width-50" />
-      <Skeleton classes="productTitle" />
-      <Skeleton classes="productTitle" />
-      <Skeleton classes="productTitle" />
-      <Skeleton classes="productTitle" />
-      <Skeleton classes="productTitle" />
-      <Skeleton classes="productTitle" />
+    <Skeleton variant="rectangular" width={450} height={350} />
+      
+      
     </div>
   )
 }

@@ -1,17 +1,16 @@
+import { Skeleton } from '@mui/material'
 import React from 'react'
-import Skeleton from "./Skeleton"
 
 function OrderItems() {
   return (
-    
-    <div style={{display:"flex", flexDirection:"column"}}>
-    
-      <Skeleton classes="text width-25" />
-      <Skeleton classes="text width-25" />
-      <Skeleton classes="text width-25" />
-      <Skeleton classes="text width-25" />
-      
-      </div>
+    <><Skeleton variant="rectangular" width={210} height={118} /><div style={{ display: "flex", flexDirection: "column" }}>
+
+      <Skeleton variant="rectangular" width={210} height={118} />
+      <Skeleton variant="rectangular" width={120} height={78} />
+      <Skeleton variant="rectangular" width={120} height={78} />
+
+
+    </div></>
 
         
   )

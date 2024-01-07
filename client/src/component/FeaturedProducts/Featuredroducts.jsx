@@ -31,9 +31,10 @@ return (
           <Carousel 
           responsive={responsive} 
           className='carousel' 
-          autoPlay={true}
+          autoPlay={false}
           autoPlaySpeed={2000}
           infinite={true}>
+          
             
             {
               loading?
@@ -42,7 +43,7 @@ return (
                 key={i} />}):
               data?.map((item)=> (
               <>
-              <div className="cardPro">
+              <div className="cardPro" key={item.id}>
               
 
                 <ItemCard item={item} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}/>

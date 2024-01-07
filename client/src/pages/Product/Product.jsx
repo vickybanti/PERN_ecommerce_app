@@ -13,7 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Skeleton } from '@mui/material';
 import { addProduct } from '../../redux/apiCalls';
 import SkeletonProduct from '../../component/skeleton/SkeletonProduct';
 import SkeletonProductImg from '../../component/skeleton/SkeletonProductImg';
@@ -206,13 +206,14 @@ const [size, setSize]  = useState("")
         </div>
 
       </div><div className='right'>
-          {loading ? <SkeletonProduct />
-            : proData.map(pro => (
+          { proData.map(pro => (
               <><><h1 className='title'>{pro.title}</h1>
-              <p>{pro.desc}</p></><div className='quantity'>
-                <button onClick={decreaseQuantity}>-</button>
-                <h4 className="count">{count}</h4>
-                <button onClick={increaseQuantity}> + </button>
+              <p>{pro.desc}</p>
+              </><div className='quantity'>
+              
+                <><button onClick={decreaseQuantity}>-</button><h4 className="count">{count}</h4>
+                <button onClick={increaseQuantity}> + </button></>
+          
 
 
 
@@ -274,10 +275,12 @@ const [size, setSize]  = useState("")
 
                   <Box sx={{ width: '100%', marginTop: '30px' }} className='info'>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                    
                       <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
                         <Tab label="DESCRIPTION" {...a11yProps(0)} sx={{ fontSize: '20px' }} />
                         <Tab label="REVIEW" {...a11yProps(1)} sx={{ fontSize: '20px' }} />
                       </Tabs>
+                     
                     </Box>
                     <CustomTabPanel value={value} index={0}>
                       {pro.desc}
