@@ -22,7 +22,7 @@ function Payment({requestBody}) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:3000/checkout/create-payment-intent", {
+    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(requestBody),
