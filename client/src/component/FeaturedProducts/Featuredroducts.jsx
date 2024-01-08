@@ -43,10 +43,9 @@ return (
                 key={i} />}):
               data?.map((item)=> (
               <>
-              <div className="cardPro" key={item.id}>
-              
-
-                <ItemCard item={item} key={item.id} onClick={()=>navigate(`/product/${item.id}`)}/>
+              <div className="cardPro" key={item.id} onClick={()=>navigate(`/product/${item.id}`)}>
+  
+                <ItemCard item={item} key={item.id} />
          
                 </div>
                 </>
