@@ -74,47 +74,67 @@ const createOrder = async() => {
  
   
 
+// server.js
+//
+// Use this sample code to handle webhook events in your integration.
+//
+// 1) Paste this code into a new file (server.js)
+//
+// 2) Install dependencies
+//   npm install stripe
+//   npm install express
+//
+// 3) Run the server on http://localhost:4242
+//   node server.js
+
+// The library needs to be configured with your account's secret key.
+// Ensure the key is kept out of any version control system you might be using.
+
+
+
+// This is your Stripe CLI webhook secret for testing your endpoint locally.
 const endpointSecret = "whsec_ea99f37947029a629717e424ea6de8ce5d78f490c39e6d1dca3901af4ffc445c";
 
-router.post('/webhook', express.raw({type: 'application/json'}), async (request, response) => {
+app.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
   const sig = request.headers['stripe-signature'];
-  
-  
-  if(endpointSecret){
 
-  
   let event;
 
   try {
-    event = stripe.webhooks.constructEvent(JSON.stringify(request.rawBody), sig, endpointSecret);
-    console.log("webhook verified")
+    event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
   } catch (err) {
-    console.log(`Webhook Error: ${err.message}`)
     response.status(400).send(`Webhook Error: ${err.message}`);
     return;
   }
-  const data = event.data.object;
-  const eventType = event.type;
-  console.log(data)
-  console.log(eventType)
 
-  if(eventType==="checkout.session.completed"){
-    
-    const paymentIntent = data.payment_intent;
-    console.log(paymentIntent);
-      }
-    
-    }
   // Handle the event
-  
-
-  
-  
+  switch (event.type) {
+    case 'checkout.session.async_payment_failed':
+      const checkoutSessionAsyncPaymentFailed = event.data.object;
+      // Then define and call a function to handle the event checkout.session.async_payment_failed
+      break;
+    case 'checkout.session.async_payment_succeeded':
+      const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+      // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+      break;
+    case 'checkout.session.completed':
+      const checkoutSessionCompleted = event.data.object;
+      // Then define and call a function to handle the event checkout.session.completed
+      break;
+    case 'checkout.session.expired':
+      const checkoutSessionExpired = event.data.object;
+      // Then define and call a function to handle the event checkout.session.expired
+      break;
+    // ... handle other event types
+    default:
+      console.log(`Unhandled event type ${event.type}`);
+  }
 
   // Return a 200 response to acknowledge receipt of the event
-  response.send().end();
+  response.send();
 });
 
+app.listen(5000, () => console.log('Running on port 5000'));
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 
 
