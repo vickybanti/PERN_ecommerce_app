@@ -28,8 +28,18 @@ function Payment({requestBody}) {
       body: JSON.stringify(requestBody),
     })
       .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+      .then((data) => setClientSecret(data.clientSecret))
+      .catch(console.error());
+
+      
+        
+      
+      
+      
+      
+  }, [requestBody]);
+
+  
 
   const appearance = {
     theme: 'stripe',
