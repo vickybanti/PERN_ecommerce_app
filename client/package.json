@@ -51,8 +51,7 @@
     "stripe": "^12.8.0",
     "styled-components": "^5.3.11",
     "web-vitals": "^2.1.4",
-    "yup": "^1.2.0",
-    "proxy": "https://mooreserver.onrender.com"
+    "yup": "^1.2.0"
 
   },
   "scripts": {
