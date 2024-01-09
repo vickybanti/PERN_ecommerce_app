@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Pay.scss"
+import { makeRequest } from "../../makeRequest";
 
 function Payment({requestBody}) {
   const cart = useSelector((state) => state.cart.cartItems)
@@ -22,9 +23,7 @@ function Payment({requestBody}) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
+    makeRequest.post("/checkout/create-payment-intent", {
       body: JSON.stringify(requestBody),
     })
       .then((res) => res.json())
