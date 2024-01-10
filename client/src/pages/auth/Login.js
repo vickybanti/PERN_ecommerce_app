@@ -30,10 +30,13 @@ function Login() {
       console.log(email);
       login(dispatch, { email, password });
     } catch (err) {
-      console.error(err.message);
       setMessage(errorMessage.errorMessage);
     }
+
+    setMessage(errorMessage.errorMessage);
+
   };
+
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -123,7 +126,6 @@ function Login() {
               
               {isFetching ? <CircularProgress sx={{ color: 'white' }} /> : 'Login'}
             </Button>
-            <span style={{ color: 'red' }}>{error && message}</span>
             <div className={styles.links}>
               <Link to="/reset">
                 Forgot password?
@@ -146,6 +148,8 @@ function Login() {
           <span className={styles.register}>
             <p>Don't have an account?</p> <Link to="/register" style={{marginBottom:"4px"}}><Label /> Register</Link>
           </span>
+          <span style={{ color: 'red' }}>{error && message}</span>
+
         </div>
       </div>
     </>

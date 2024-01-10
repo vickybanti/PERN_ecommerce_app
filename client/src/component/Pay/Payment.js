@@ -8,12 +8,12 @@ import { useSelector } from "react-redux";
 import "./Pay.scss"
 import { makeRequest } from "../../makeRequest";
 
-function Payment({requestBody}) {
+function Payment() {
   const cart = useSelector((state) => state.cart.cartItems)
   const totalPrice = useSelector((state)=> state.totalPrice)
   const location = useLocation();
-  // const searchParams = new URLSearchParams(location.search);
-  // const requestBody = JSON.parse(searchParams.get('requestBody'));
+  const searchParams = new URLSearchParams(location.search);
+  const requestBody = JSON.parse(searchParams.get('requestBody'));
   
 
 
@@ -23,14 +23,19 @@ function Payment({requestBody}) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    makeRequest.post("/checkout/create-payment-intent", {
+    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
       body: JSON.stringify(requestBody),
     })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret))
-      .catch(console.error());
-
-      
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => setClientSecret(data.clientSecret))
+    .catch((error) => console.error('Error fetching payment intent:', error));
         
       
       
