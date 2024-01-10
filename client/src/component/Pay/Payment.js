@@ -8,18 +8,20 @@ import { useSelector } from "react-redux";
 import "./Pay.scss"
 import { makeRequest } from "../../makeRequest";
 
-function Payment() {
+function Payment({requestBody}) {
   const cart = useSelector((state) => state.cart.cartItems)
   const totalPrice = useSelector((state)=> state.totalPrice)
   const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const requestBody = JSON.parse(searchParams.get('requestBody'));
+  // const searchParams = new URLSearchParams(location.search);
+  // const requestBody = JSON.parse(searchParams.get('requestBody'));
   
 
 
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
+  console.log(clientSecret)
+  console.log(stripePromise)
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -35,6 +37,7 @@ function Payment() {
       return res.json();
     })
     .then((data) => setClientSecret(data.clientSecret))
+    
     .catch((error) => console.error('Error fetching payment intent:', error));
         
       

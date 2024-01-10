@@ -23,9 +23,10 @@ export default function CheckoutForm({requestBody}) {
       return;
     }
 
-    const clientSecret = new URLSearchParams(window.location.search).get(
+    const clientSecret = stripe.get(
       "payment_intent_client_secret"
     );
+    
 
     if (!clientSecret) {
       return;
