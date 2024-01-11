@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Pay.scss"
 import { makeRequest } from "../../makeRequest";
+const stripePromise = loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY");
 
 function Payment({requestBody}) {
   const cart = useSelector((state) => state.cart.cartItems)
@@ -17,7 +18,6 @@ function Payment({requestBody}) {
   
 
 
-  const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
   console.log(clientSecret)
@@ -66,7 +66,7 @@ function Payment({requestBody}) {
         </div>
       ))}
   
-      {clientSecret && stripePromise && (
+      {stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm requestBody={requestBody} />
         </Elements>

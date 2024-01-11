@@ -90,14 +90,22 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
   
   
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: calculateOrderAmount(totals),
-    currency: "usd",
-    // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
-    automatic_payment_methods: {
-      enabled: true,
-    },
+  const session = await stripe.checkout.sessions.create({
+    ui_mode: 'embedded',
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: '{{PRICE_ID}}',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
   });
+
+  res.send({clientSecret: session.client_secret});
+});
+
 
     // Send publishable key and PaymentIntent details to client
     
@@ -131,6 +139,16 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
           orders: createOrder.rows,
         });  
 
+        router.get('/session-status', async (req, res) => {
+          const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+        
+          res.send({
+            status: session.status,
+            customer_email: session.customer_details.email
+          });
+        });
+        
+
         // const send_to = email;
         // const subject = "New orders";
         // const sent_from = "olamuyiwavictor@outlook.com";
@@ -145,7 +163,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     console.error(err.message)
       
     }
-    });
+    
   
 
   router.post("/payOnDelivery", async(req,res) => {

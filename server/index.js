@@ -45,7 +45,7 @@ app.use("/brands", require("./routes/brands"))
 app.use("/review", require("./routes/review"))
 app.use("/saveditems", require("./routes/saved"));
 
-app.use("/checkout", require("./routes/stripe"))
+app.use("/checkout", require("./routes/checkouts"))
 app.use("/users", require("./routes/users"))
 
 
