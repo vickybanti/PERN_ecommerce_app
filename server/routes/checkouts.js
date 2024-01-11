@@ -35,6 +35,8 @@ router.get("/config", (req, res) => {
 });
 
 router.post("/create-payment-intent", async function handlePaymentIntent (req, res)  {
+
+  
     const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
     const stringForm = JSON.stringify(req.body.formValues)
 
@@ -90,20 +92,9 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
   
   
-  const session = await stripe.checkout.sessions.create({
-    ui_mode: 'embedded',
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: '{{PRICE_ID}}',
-        quantity: 1,
-      },
-    ],
-    mode: 'payment',
-    return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
-  });
+  
 
-  res.send({clientSecret: session.client_secret});
+  
 });
 
 
@@ -115,7 +106,18 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
         
-
+          const session = await stripe.checkout.sessions.create({
+            ui_mode: 'embedded',
+            line_items: [
+              {
+                // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                price: '{{PRICE_ID}}',
+                quantity: 1,
+              },
+            ],
+            mode: 'payment',
+          });
+          
     const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
       VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
@@ -135,7 +137,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
                
       
         res.json({
-          clientSecret: paymentIntent.client_secret,
+          clientSecret: session.client_secret,
           orders: createOrder.rows,
         });  
 
