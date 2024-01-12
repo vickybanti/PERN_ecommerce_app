@@ -1,17 +1,11 @@
-import { PaymentElement } from "@stripe/react-stripe-js";
-import { useState, useEffect } from "react";
-import { useStripe, useElements } from "@stripe/react-stripe-js";
-import { Box, Button } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
-import { clearCart } from "../../redux/slice/cartSlice";
-import { useDispatch } from "react-redux";
-import "./Pay.scss"
+import React, { useEffect, useState } from "react";
+import {
+  PaymentElement,
+  useStripe,
+  useElements
+} from "@stripe/react-stripe-js";
 
-export default function CheckoutForm({requestBody}) {
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
- 
+export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -23,10 +17,9 @@ export default function CheckoutForm({requestBody}) {
       return;
     }
 
-    const clientSecret = stripe.get(
+    const clientSecret = new URLSearchParams(window.location.search).get(
       "payment_intent_client_secret"
     );
-    
 
     if (!clientSecret) {
       return;
@@ -65,7 +58,7 @@ export default function CheckoutForm({requestBody}) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https:/mooreserver.onrender.com/success",
+        return_url: "http://localhost:3000",
       },
     });
 
@@ -101,4 +94,3 @@ export default function CheckoutForm({requestBody}) {
     </form>
   );
 }
-

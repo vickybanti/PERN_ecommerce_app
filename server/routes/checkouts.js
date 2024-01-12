@@ -103,20 +103,18 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     try {
     
         
+         
+        
+          const paymentIntent = await stripe.paymentIntents.create({
+            amount: total,
+            currency: "usd",
+            // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+            automatic_payment_methods: {
+              enabled: true,
+            },
+          });
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
-        
-          const session = await stripe.checkout.sessions.create({
-            ui_mode: 'embedded',
-            line_items: [
-              {
-                // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                price: '{{PRICE_ID}}',
-                quantity: 1,
-              },
-            ],
-            mode: 'payment',
-          });
           
     const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
@@ -137,7 +135,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
                
       
         res.json({
-          clientSecret: session.client_secret,
+          clientSecret: paymentIntent.client_secret,
           orders: createOrder.rows,
         });  
 
