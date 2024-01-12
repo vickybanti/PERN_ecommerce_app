@@ -89,24 +89,13 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
 
   const total = parseFloat(totals)
 
-
-  
-  
-  
-
-  
-});
-
-
-    // Send publishable key and PaymentIntent details to client
-    
-    try {
+  try {
     
         
          
         
           const paymentIntent = await stripe.paymentIntents.create({
-            amount: total,
+            amount: totals,
             currency: "usd",
             // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
             automatic_payment_methods: {
@@ -139,6 +128,23 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
           orders: createOrder.rows,
         });  
 
+
+      } catch (err) {
+        console.error(err.message)
+          
+        }
+        
+  
+  
+  
+
+  
+});
+
+
+    // Send publishable key and PaymentIntent details to client
+    
+    
         router.get('/session-status', async (req, res) => {
           const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
         
@@ -159,11 +165,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
       
       
       
-  } catch (err) {
-    console.error(err.message)
-      
-    }
-    
+ 
   
 
   router.post("/payOnDelivery", async(req,res) => {
