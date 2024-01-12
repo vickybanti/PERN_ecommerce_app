@@ -5,9 +5,7 @@ const router = require("express").Router();
 const express = require("express")
 const pool = require("../db");
 const crypto = require("crypto");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2011-11-15",
-});
+const stripe = require("stripe")('sk_test_51NDulnFA3ATF2zMu8VuG068289VxPGuC2xFdTBQFWiX09vP7y1AWJOLRoxEjurV7gjjZw8WZpnXYAhcqX7qA5jze00afTsR0gt')
 
 const sendEmail = require("../sendEmail")
 
