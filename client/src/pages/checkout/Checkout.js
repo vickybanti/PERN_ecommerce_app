@@ -151,8 +151,7 @@ const newRequestBody = {
 
   setLoading(true)
 
-   return <Payment />
-    //navigate("/payment",{requestBody:newRequestBody});
+  navigate("/payment",{requestBody:newRequestBody});
 
   
 
