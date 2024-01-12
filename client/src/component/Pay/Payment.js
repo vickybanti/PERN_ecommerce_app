@@ -16,6 +16,7 @@ export default function App() {
     // Create PaymentIntent as soon as the page loads
     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
+      mode:'no-cors',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
     })
