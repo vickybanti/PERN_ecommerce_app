@@ -149,10 +149,10 @@ const newRequestBody = {
   console.log(requestBody)
   setRequestBody(newRequestBody)
 
- 
-    navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+  setLoading(true)
+
+   return <Payment />
     //navigate("/payment",{requestBody:newRequestBody});
-    setLoading(true)
 
   
 
