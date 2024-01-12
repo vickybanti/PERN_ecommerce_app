@@ -28,9 +28,10 @@ router.get("/", (req, res) => {
 
 router.get("/config", (req, res) => {
   res.json({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    publishableKey: "pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY"
+    
   });
-});
+
 
 router.post("/create-payment-intent", async function handlePaymentIntent (req, res)  {
 
