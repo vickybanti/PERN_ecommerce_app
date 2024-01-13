@@ -6,7 +6,6 @@ const express = require("express")
 const pool = require("../db");
 const crypto = require("crypto");
 const stripe = require("stripe")('sk_test_51NDulnFA3ATF2zMu8VuG068289VxPGuC2xFdTBQFWiX09vP7y1AWJOLRoxEjurV7gjjZw8WZpnXYAhcqX7qA5jze00afTsR0gt')
-
 const sendEmail = require("../sendEmail")
 
 const myModule = require("../template");
@@ -29,7 +28,6 @@ router.get("/", (req, res) => {
 router.get("/config", (req, res) => {
   res.json({
     publishableKey: "pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY"
-    
   });
 
 
