@@ -95,7 +95,7 @@ const createOrder = async() => {
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 const endpointSecret = "whsec_ea99f37947029a629717e424ea6de8ce5d78f490c39e6d1dca3901af4ffc445c";
 
-app.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
+router.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
   const sig = request.headers['stripe-signature'];
 
   let event;
@@ -134,7 +134,6 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
   response.send();
 });
 
-app.listen(5000, () => console.log('Running on port 5000'));
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 
 
