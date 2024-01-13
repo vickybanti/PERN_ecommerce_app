@@ -9,7 +9,7 @@ import "./Pay.scss";
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 const stripePromise = loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY")
-export default function App() {
+export default function Payment({requestBody}) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
@@ -18,11 +18,11 @@ export default function App() {
       method: "POST",
       mode:'no-cors',
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+      body: JSON.stringify(requestBody),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+  }, [requestBody]);
 
   const appearance = {
     theme: 'stripe',
