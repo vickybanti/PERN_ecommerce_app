@@ -33,11 +33,11 @@ export default function App() {
 
   return (
     <div className="pay" style={{paddingTop:"300px"}}>
-      {clientSecret && (
+      
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
-      )}
+      
     </div>
   );
 }
