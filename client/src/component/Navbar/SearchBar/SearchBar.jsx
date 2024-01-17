@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './SearchBar.scss';
 import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
+import { useMediaQuery } from "@mui/material";
 
 function SearchBar() {
 
@@ -38,7 +39,8 @@ function SearchBar() {
 
   
        const [note, setNote] = useState("")
-      
+       
+      const isMatch = useMediaQuery('600px')
     
     
        
@@ -54,6 +56,18 @@ function SearchBar() {
           className={`search-container ${expanded ? 'expanded' : ''}`}
 
         >
+        {isMatch &&   <input
+
+          className={` search ${expanded ? 'expanded' : ''}`}
+          name="note"
+          onChange={(e) => setNote(e.target.value)}
+          value={note}
+          placeholder="Search products..."
+          rows={expanded ? 3 : 1}
+          sx={{ fontSize: "18px" }}
+          onFocus={() => setExpanded(true)}
+          onBlur={() => setExpanded(false)} 
+           />}
         
         {!expanded && <Ads />}
         

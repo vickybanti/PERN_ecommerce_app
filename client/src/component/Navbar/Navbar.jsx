@@ -6,7 +6,7 @@ import {HiOutlineMenuAlt3} from 'react-icons/hi';
 import {useDispatch, useSelector} from 'react-redux';
 import { REMOVE_ACTIVE_USER, selectUserName } from '../../redux/slice/authSlice';
 import ShowOnLogin, { ShowOnLogout } from '../Hiddenlink';
-import { Badge, Divider, IconButton, Tooltip } from '@mui/material';
+import { Badge, Divider, IconButton, Tooltip, fabClasses, useMediaQuery } from '@mui/material';
 import { logout } from "../../redux/apiCalls";
 import { toast } from 'react-toastify';
 import useCat from '../../hooks/useCat';
@@ -74,7 +74,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                         <Badge badgeContent={<span style={{fontSize:"12px"}}>{quantity && quantity}</span>} color={"error"}>
+                         <Badge badgeContent={<span style={{fontSize:"12px"}}>{quantity>1 && quantity}</span>} color={"error"}>
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}
@@ -103,8 +103,15 @@ const handleClose = () => {
   const {catData} = useCat();
   const {brandData} = useBrand()
 
+  const [showSearch, setSearch] = useState(false)
 
-  
+const setInput = () => {
+  setSearch(!setInput)
+}  
+
+const hideInput = () => {
+  setSearch(false)
+}  
 
 
   
@@ -146,6 +153,8 @@ const handleClose = () => {
     navigate('/login') 
     handleClose()
   }
+
+  const isMatch = useMediaQuery("600px")
   
   const account = (
 
@@ -241,6 +250,8 @@ const handleClose = () => {
                 fontSize: '17px',
                 padding: '7px 25px',
                 fontWeight: '600',
+
+                
               }}
               endIcon={<Login />}
             >
@@ -327,6 +338,7 @@ const handleClose = () => {
               </li>
             ))}
             
+            
           
           </ul>
 
@@ -345,16 +357,21 @@ const handleClose = () => {
               <ShowOnLogout>
               {loggedOut}
             </ShowOnLogout>
+
+           
+              {cart}
+            
           </span>
 
         </div>
     </nav>
-    {cart}
+    
     <div className={styles['menu-icon']}>
-
-        
+           
         <HiOutlineMenuAlt3 size={32} onClick={toggleMenu} />
       </div>
+
+    
       
       
       </div>

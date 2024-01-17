@@ -78,7 +78,7 @@
   @media screen and (max-width:600px) {
     .search-container.expanded{
       width: 180px;
-      margin-top: 3px;
+      margin-top: 10px;
 
     }
   }
@@ -87,7 +87,7 @@
     .search-container.expanded{
       position: absolute;
       width: 380px;
-      margin:0;
+      margin:20px 0 0 0;
       
 
     }
@@ -131,7 +131,9 @@
       transition:  0.5s all linear;
       position: absolute;
        width: 410px;
+       margin-top: 30px;
        margin-left:-40px;
+       padding-left: 30px;
        font-size: 15px;
        margin-top: 20px;
        border-radius: 0;

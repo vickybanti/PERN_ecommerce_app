@@ -38,6 +38,9 @@ header {
     align-items: center;
     background-color: inherit;
 
+    
+      
+
     .classics{
       display:flex;
       padding: 5px;
@@ -243,6 +246,8 @@ header {
       line-height: 20px;
       font-weight: 900;
       align-items: center;
+      margin: 35px 250px 35px 0px;
+      padding-left: 50px;
 
       
       &:hover {
@@ -275,7 +280,7 @@ header {
       height: 18px;
       line-height: 17px;
       margin-top: -40px;
-      margin-right: 40px;
+      margin-right: 100px;
       
       .welcome{
         font: Arial;
@@ -325,7 +330,7 @@ header {
       z-index: 9999;
       transform: translateX(-200%);
       transition: all 0.3s;
-      background-color: rgb(7, 36, 44);
+      background-color: white;
 
       .nav-wrapper {
         position: absolute;
@@ -362,7 +367,7 @@ header {
           padding: 5px 0;
           a {
             display: block;
-            color: white;
+            color: rgb(7, 36, 44);
             font-weight: bold;
             &:hover{
               color: rgb(28, 102, 163);

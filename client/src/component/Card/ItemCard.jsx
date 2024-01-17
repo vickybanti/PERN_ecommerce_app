@@ -9,7 +9,7 @@ import {deleteItem, saveItem, setItemOpen} from '../../redux/slice/savedItemSlic
 import { responsive } from '../Responsive'
 import { addProduct } from '../../redux/apiCalls'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { addToCart } from '../../redux/slice/cartSlice'
+import { addToCart, setIsCartOpen } from '../../redux/slice/cartSlice'
 
 
 // const Info = styled.div`
@@ -182,6 +182,7 @@ function addSave() {
   function handleClick(e, selectedSize) {
     e.preventDefault()
     dispatch(addToCart({...item,count,imageData,selectedSize }))
+    dispatch(setIsCartOpen({}))
 
 
     
@@ -194,6 +195,7 @@ function addSave() {
 
   return (
     <div className= "contain" responsive={responsive} key={item.id} >
+    
    
     {item.stock<1 &&
       <Avatar
