@@ -34,18 +34,18 @@ function SearchBar() {
   const [myOptions, setMyOptions] = useState([])
 
   const getDataFromAPI = () => {
-    console.log("Options Fetched from API")
-    fetch(`https://mooreserver.onrender.com/search/?title=${note}`).then((response) => {
-    return response.json()
-  }).then((response) => {
-    console.log(response.json())
-    for (var i = 0; i < response.json().length; i++) {
-      myOptions.push(response.data[i].note.title)
-    }
-    setMyOptions(myOptions)
-  })
-
-  } 
+    console.log("Options Fetched from API");
+    fetch(`https://mooreserver.onrender.com/search/?title=${note}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const newOptions = data.map((item) => item.note.title);
+        setMyOptions(newOptions);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
 
 
