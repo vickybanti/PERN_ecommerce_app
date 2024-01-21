@@ -1,255 +1,84 @@
-
 .form {
-    display: flex;
-    align-items: center;
-    height:50px;
-  }
-  
-  .search-container {
-    margin-left: 50px;
-    display: flex;
-    align-items: center;
-    transition: width 0.3s linear; /* Transition for the width property */
-    width: 500px; /* Default width */
-  }
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
 
-  @media screen and (max-width:820px) {
-    .search-container{
+.search-container {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s ease-out; /* Transition for the width property */
+  width: 500px; /* Default width */
+  animation: slide-out 2s linear all;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 820px) {
+  .search-container {
     width: 300px;
   }
 }
 
-@media screen and (max-width:600px) {
-  .search-container{
-  width: 200px;
-}
-}
-@media screen and (max-width:464px) {
-  .search-container{
-  transition: height 2s linear; /* Transition for the width property */
-  height: 50px;
-
-}
-}
-  
-  .search-container.expanded {
-    width: 400px;
-    
-
-    /* Expanded width */
-    
+@media screen and (max-width: 600px) {
+  .search-container {
+    width: 200px;
   }
-  @media screen and (max-width:820px) {
-    .search-container.expanded{
-      position: absolute;
-      width: 280px;
-      margin-top: 3px;
+}
 
-    }
+.search-container.expanded {
+  width: 400px;
+  animation: slide-out 2.5s ease-out;
+}
+
+@keyframes slide-out {
+  from {
+    width: 0px;
   }
-  @media screen and (max-width:820px) {
-    .search{
-      transition: height 0.5s linear;
-    height: 50px;
-    position: absolute;
-     width: 300px;
-     margin-left:-10px;
-     font-size: 15px;
-     margin-top: 20px;
-     border-radius: 0;
-     border: none;
-     box-shadow: var(--box-shadow);
-    }  
-    .btn{
-      margin-top: 20px;
-      font-size:20px;
-
-      .close{
-        position: absolute;
-        margin-top: 22px;
-        margin-left: 250px;
-        z-index: 10;
-      }
-      
-    }   
- }
-
-
-  @media screen and (max-width:600px) {
-    .search-container.expanded{
-      width: 180px;
-      margin-top: 10px;
-
-    }
+  to {
+    width: -500px;
   }
+}
 
-  @media screen and (max-width:464px) {
-    .search-container.expanded{
-      position: absolute;
-      width: 380px;
-      margin:20px 0 0 0;
-      
+.search {
+  width: 100%;
+  border: 0.5px solid #0c1116;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 15px;
+  transition: 2s linear all; /* Transition for the background-color property */
+  animation: slide-out 2s linear all;
+  animation-fill-mode: forwards;
+}
 
-    }
-  }
-  
+@media screen and (max-width: 820px) {
   .search {
-    width: 400px;
-    border: 0.5px solid #0c1116;
-    border-radius:5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    font-size: 15px;
-    transition: 2s linear all; /* Transition for the background-color property */
+    width: 100%;
+    font-size: 12px;
+    height: 50px;
+    margin-left: -150px;
+    margin-right: 180px;
   }
-      @media screen and (max-width:820px) {
-       .search{
-        width: 280px;
-        font-size: 12px;
-        height: 50px;
-        margin-left: -150px;
-        margin-right: 180px;
-
-
-        
-       } 
-       
-       .search-image{
-        display: none;
-       }
-       
-    }
-
-    @media screen and (max-width:820px) {
-      .close{
-        margin-top: -200px;
-      }
-    }
-
-    @media screen and (max-width:464px) {
-      .search{
-      transition:  0.5s all linear;
-      position: absolute;
-       width: 410px;
-       margin-top: 30px;
-       margin-left:-40px;
-       padding-left: 30px;
-       font-size: 15px;
-       margin-top: 20px;
-       border-radius: 0;
-       border: none;
-       box-shadow: var(--box-shadow);
-      }  
-      .btn{
-        margin-top: 10px;
-        font-size:20px;
-
-        .close{
-          position: absolute;
-          margin-top: 22px;
-          margin-left: 250px;
-          z-index: 10;
-        }
-        
-      }   
-   }
-
-  
-  
-  .search-container.expanded .search {
-    transition: 2s linear all;
-    transform: rotateX('180');
-    
-  }
-  
-  .btn {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    outline: none;
-    transition: 2s linear all;
-    
-
-
-
-    .searchIcon{
-      scale: 1.25px;
-      font-weight:900;
-      font-size: 25px;
-      line-height: 20px;
-      top: 4px;
-      transition: 2s linear all;
-
-
-      
-    }
-  }
-    .closeView{
-      transition: 2s linear all;
-
-    }
-    
-    
-/*  
-
-.form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: inherit;
-    margin-top: -30px;
-    margin-left: 40px;
-
-    .search{
-        height: 45px;
-        width: 30vw;
-        border: 1px gray;
-        font-size: 15px;
-        border-radius: 4px;
-        padding: 10px;
-        box-shadow: inset;
-        display: block;
-       
-       
-    }
-
-    .btn{
-        height: 43px;
-        position: inherit;
-        margin-left: -65px;
-        border-radius: 0 4px 4px 0;
-        background-color: rgb(24, 96, 124);
-        width: 65px;
-        color: white;
-        cursor: pointer;
-        &:hover{
-            box-shadow: none;
-        }
-
-        
-        
-    }
-    @media screen and (max-width:800px) {
-        .form{
-            margin-left: -5px;
-        }.search{
-            width: 40vw;
-
-            
-        }
-    }
-
-    @media screen and (max-width:450px) {
-        .form{
-            margin-left:10px ;
-        
-        .search{
-            width: 40vw;
-        }
-        
-        }
-      }
-
-      
 }
-*/
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: 2s linear all;
+
+  .searchIcon {
+    scale: 1.25px;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 20px;
+    top: 4px;
+    transition: 2s linear all;
+  }
+}
+
+.closeView {
+  transition: 2s linear all;
+}

@@ -1,13 +1,14 @@
 import React from 'react'
 import './Brands.css'
 import { NavLink } from 'react-router-dom'
+import { responsive } from '../Responsive'
 
 function Brands() {
   return (
     <>
     <h1>Popular brands</h1>
 
-    <div className='brands'>
+    <div className='brands' responsive={responsive}>
     <span className='span'>Explore our popular brands</span>
 
 

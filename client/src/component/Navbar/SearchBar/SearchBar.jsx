@@ -3,109 +3,97 @@ import { useNavigate } from "react-router-dom";
 import './SearchBar.scss';
 import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
-import { useMediaQuery } from "@mui/material";
+import { Autocomplete, TextField, useMediaQuery } from "@mui/material";
 
 function SearchBar() {
+  const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
-  
+  function expandView() {
+    setExpanded(true);
+  }
 
+  function closeView() {
+    setExpanded(false);
+  }
 
-
-    const[expanded, setExpanded] = useState(false);
-    const navigate = useNavigate()
-  
-    function expandView(){
-      
-      setExpanded(true);
-      setButtonVisible(true)
-      
-       
-    }
-
-    function closeView(e){
-      setExpanded(false);
-      setButtonVisible(false)  
-      setNote(" ")     
-    }
-
-    function handleSubmit(e){
-      e.preventDefault()
-      navigate(`Products/search/${note}`)
-      closeView()
-      setNote("")
-    }
-  
-    const [buttonVisible, setButtonVisible] = useState(true);
-
-  
-       const [note, setNote] = useState("")
-       
-      const isMatch = useMediaQuery('600px')
+  function handleSubmit(e) {
+    e.preventDefault();
     
+
+     
+      
     
-       
-  
-    return (
+    navigate(`Products/search/${note}`);
+    closeView();
+    setNote("");
+  }
 
-        <>
-        <div className="form" >
-        <form  onSubmit={handleSubmit}>
+  const [note, setNote] = useState("");
+  const isMatch = useMediaQuery('600px');
+  const [myOptions, setMyOptions] = useState([])
+
+  const getDataFromAPI = () => {
+    console.log("Options Fetched from API")
+    fetch(`https://mooreserver.onrender.com/search/?title=${note}`).then((response) => {
+    return response.json()
+  }).then((response) => {
+    console.log(response.json())
+    for (var i = 0; i < response.json().length; i++) {
+      myOptions.push(response.data[i].note.title)
+    }
+    setMyOptions(myOptions)
+  })
+
+  } 
 
 
-        <div
-          className={`search-container ${expanded ? 'expanded' : ''}`}
 
-        >
-        {isMatch &&   <input
-
-          className={` search ${expanded ? 'expanded' : ''}`}
-          name="note"
-          onChange={(e) => setNote(e.target.value)}
-          value={note}
-          placeholder="Search products..."
-          rows={expanded ? 3 : 1}
-          sx={{ fontSize: "18px" }}
-          onFocus={() => setExpanded(true)}
-          onBlur={() => setExpanded(false)} 
-           />}
-        
-        {!expanded && <Ads />}
-        
-          {expanded &&
+  return (
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <div className={`search-container ${expanded ? 'expanded' : ''}`}>
+          {isMatch && (
             <input
-
-              className={` search ${expanded ? 'expanded' : ''}`}
+              className={`search ${expanded ? 'expanded' : ''}`}
               name="note"
               onChange={(e) => setNote(e.target.value)}
               value={note}
               placeholder="Search products..."
-              rows={expanded ? 3 : 1}
-              sx={{ fontSize: "18px" }}
-              onFocus={() => setExpanded(true)}
-              onBlur={() => setExpanded(false)} 
-               />}
+              sx={{ fontSize: "15px" }}
+              onFocus={expandView}
+              onBlur={closeView}
+            />
+          )}
+          {!expanded && <Ads />}
+          {expanded && (
+            <Autocomplete
+            style={{ width: 500 }}
+            freeSolo
+            autoComplete
+            autoHighlight
+            options={myOptions.map((option) => option.title)}
+            renderInput={(params) => (
+              <TextField {...params}
+                onChange={getDataFromAPI}
+                variant="outlined"
+                label="Search Box"
+              />
+            )}
+            onSubmit={handleSubmit}
+          />
+          )}
         </div>
-
-
       </form>
       <button className="btn">
-
-          {expanded ? <Close onClick={closeView} sx={{fontSize:"20px", borderRadius:"100%", backgroundColor:"gray"}} className="close"/> : <Search sx={{fontSize:"35px"}} className="searchIcon" onClick={expandView} />}
-          </button>
-          </div> 
-          </>
-
-
-
-        
-     
-         
-         
-
-
-      
-      
-
-    );
+        {expanded ? (
+          <Close onClick={closeView} className="close" />
+        ) : (
+          <Search className="searchIcon" onClick={expandView} />
+        )}
+      </button>
+    </div>
+  );
 }
-export default SearchBar
+
+export default SearchBar;
