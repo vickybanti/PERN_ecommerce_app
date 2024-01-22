@@ -26,6 +26,7 @@ function SearchBar() {
     
     navigate(`Products/search/${note}`);
     closeView();
+    setNote(" ")
     
   }
 
@@ -41,6 +42,7 @@ function SearchBar() {
         console.log(data);
         //const newOptions = data.map((item) => item.title);
         setMyOptions(data);
+        setNote(data.map((item) => item.title))
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -63,7 +65,7 @@ function SearchBar() {
             freeSolo
             autoComplete
             autoHighlight
-            options={myOptions.map((option) =>setNote(option.title))}
+            options={myOptions.map((option) =>option.title)}
             value={note}
             sx={{fontSize:"17px"}}
             renderInput={(params) => (
