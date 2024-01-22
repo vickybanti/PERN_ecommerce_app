@@ -26,7 +26,7 @@ function SearchBar() {
     
     navigate(`Products/search/${note}`);
     closeView();
-    setNote("");
+    
   }
 
   const [note, setNote] = useState("");
@@ -63,13 +63,17 @@ function SearchBar() {
             freeSolo
             autoComplete
             autoHighlight
-            options={myOptions.map((option) => setNote(option.title))}
+            options={myOptions.map((option) =>setNote(option.title))}
             value={note}
+            sx={{fontSize:"17px"}}
             renderInput={(params) => (
               <TextField {...params}
                 onChange={getDataFromAPI}
                 variant="outlined"
                 label="Search Box"
+                sx={{fontSize:"17px"}}
+                value={note}
+
               />
             )}
                                 
