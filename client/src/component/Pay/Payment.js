@@ -16,12 +16,17 @@ export default function Payment({requestBody}) {
     // Create PaymentIntent as soon as the page loads
     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
-      mode:'no-cors',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
     })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setClientSecret(data.clientSecret))
+      .catch((error) => console.error("Error fetching clientSecret:", error));
   }, [requestBody]);
 
   const appearance = {
