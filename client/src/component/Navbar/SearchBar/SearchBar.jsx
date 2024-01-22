@@ -39,7 +39,7 @@ function SearchBar() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        const newOptions = data.map((item) => item.note.title);
+        const newOptions = data.map((item) => item.title);
         setMyOptions(newOptions);
       })
       .catch((error) => {
