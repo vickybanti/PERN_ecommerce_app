@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './SearchBar.scss';
 import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
-import { Autocomplete, TextField, useMediaQuery } from "@mui/material";
+import { Autocomplete, Stack, TextField, useMediaQuery } from "@mui/material";
 
 function SearchBar() {
   const [expanded, setExpanded] = useState(false);
@@ -53,26 +53,18 @@ function SearchBar() {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className={`search-container ${expanded ? 'expanded' : ''}`}>
-          {isMatch && (
-            <input
-              className={`search ${expanded ? 'expanded' : ''}`}
-              name="note"
-              onChange={(e) => setNote(e.target.value)}
-              value={note}
-              placeholder="Search products..."
-              sx={{ fontSize: "15px" }}
-              onFocus={expandView}
-              onBlur={closeView}
-            />
-          )}
+          
           {!expanded && <Ads />}
           {expanded && (
+            <Stack spacing={2} sx={{ width: 300 }}>
+          
             <Autocomplete
             style={{ width: 500 }}
             freeSolo
             autoComplete
             autoHighlight
-            options={myOptions.map((option) => option.title)}
+            options={myOptions.map((option) => setNote(option.title))}
+            value={note}
             renderInput={(params) => (
               <TextField {...params}
                 onChange={getDataFromAPI}
@@ -80,9 +72,9 @@ function SearchBar() {
                 label="Search Box"
               />
             )}
-            onSubmit={handleSubmit}
-            
+                                
           />
+          </Stack>
           )}
         </div>
       </form>
