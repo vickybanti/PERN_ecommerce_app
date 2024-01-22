@@ -80,7 +80,7 @@ function SearchBar() {
                 label="Search Box"
               />
             )}
-            onSubmit={handleSubmit}
+            
           />
           )}
         </div>
