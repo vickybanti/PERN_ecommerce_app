@@ -62,7 +62,6 @@ function SearchBar() {
         <div className={`search-container ${expanded ? 'expanded' : ''}`}>
           {!expanded && <Ads />}
           {expanded && (
-            <Stack spacing={2} sx={{ width: 300 }}>
               <Autocomplete
                 style={{ width: 500 }}
                 freeSolo
@@ -81,7 +80,6 @@ function SearchBar() {
                   />
                 )}
               />
-            </Stack>
           )}
         </div>
       </form>
