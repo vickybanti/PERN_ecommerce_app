@@ -39,8 +39,8 @@ function SearchBar() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        const newOptions = data.map((item) => item.title);
-        setMyOptions(newOptions);
+        //const newOptions = data.map((item) => item.title);
+        setMyOptions(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -80,6 +80,7 @@ function SearchBar() {
                 label="Search Box"
               />
             )}
+            onSubmit={handleSubmit}
             
           />
           )}
