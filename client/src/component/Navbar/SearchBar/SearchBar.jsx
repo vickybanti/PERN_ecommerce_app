@@ -60,7 +60,7 @@ function SearchBar() {
     <div className="form">
       <form onSubmit={handleSubmit}>
           
-          {expanded && (
+          
               <Autocomplete
                 style={{ width: 500 }}
                 freeSolo
@@ -79,7 +79,7 @@ function SearchBar() {
                   />
                 )}
               />
-          )}
+        
       </form>
       <button className="btn">
         
