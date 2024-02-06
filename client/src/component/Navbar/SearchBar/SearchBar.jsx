@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
-import { Autocomplete, Stack, TextField, useMediaQuery } from "@mui/material";
+import { Autocomplete, Input, Stack, TextField, useMediaQuery } from "@mui/material";
 
 function SearchBar() {
   const [expanded, setExpanded] = useState(false);
@@ -62,7 +62,7 @@ function SearchBar() {
           
           
               <Autocomplete
-                style={{ width: 500 }}
+                style={{ width: 450 ,zIndex:9999}}
                 freeSolo
                 autoComplete
                 autoHighlight
@@ -70,20 +70,18 @@ function SearchBar() {
                 value={note}
                 onChange={handleInputChange}
                 renderInput={(params) => (
-                  <TextField
+                  <Input
                     {...params}
                     variant="outlined"
-                    label="Search Box"
-                    sx={{ fontSize: "17px" }}
+                    placeholder="Search items here..."
                     value={note}
+                    sx={{fontSize:"17px"}}
                   />
                 )}
               />
         
       </form>
-      <button className="btn">
-        
-      </button>
+      
     </div>
   );
 }
