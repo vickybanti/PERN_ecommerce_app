@@ -59,7 +59,7 @@ function SearchBar() {
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <div className={`search-container ${expanded ? 'expanded' : ''}`}>
+        <div className={`search-container ${expanded ? 'expanded' : 'search'}`}>
           {!expanded && <Ads />}
           {expanded && (
               <Autocomplete
