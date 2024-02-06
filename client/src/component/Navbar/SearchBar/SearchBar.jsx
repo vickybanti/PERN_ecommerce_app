@@ -70,7 +70,7 @@ function SearchBar() {
                 value={note}
                 onChange={handleInputChange}
                 renderInput={(params) => (
-                  <Input
+                  <TextField
                     {...params}
                     variant="outlined"
                     placeholder="Search items here..."
