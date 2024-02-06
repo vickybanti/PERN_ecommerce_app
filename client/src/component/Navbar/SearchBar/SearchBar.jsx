@@ -59,8 +59,7 @@ function SearchBar() {
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <div className={`search-container ${expanded ? 'expanded' : 'search'}`}>
-          {!expanded && <Ads />}
+          
           {expanded && (
               <Autocomplete
                 style={{ width: 500 }}
@@ -81,14 +80,9 @@ function SearchBar() {
                 )}
               />
           )}
-        </div>
       </form>
       <button className="btn">
-        {expanded ? (
-          <Close onClick={closeView} className="close" />
-        ) : (
-          <Search className="searchIcon" onClick={expandView} />
-        )}
+        
       </button>
     </div>
   );
