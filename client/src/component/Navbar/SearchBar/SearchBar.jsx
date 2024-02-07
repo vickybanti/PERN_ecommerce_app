@@ -4,6 +4,7 @@ import { Close, Search } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
 import { Autocomplete, Input, Stack, TextField, useMediaQuery } from "@mui/material";
 
+
 function SearchBar() {
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
@@ -34,17 +35,17 @@ function SearchBar() {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, 300); // Adjust the delay as needed
+  }, 100); // Adjust the delay as needed
 
   const handleInputChange = (event, value) => {
-    setNote(value);
     getDataFromAPI();
+    setNote(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e,value) => {
     e.preventDefault();
+    setNote(value);
     navigate(`Products/search/${note}`);
-    setNote("");
     setExpanded(false);
   };
 
@@ -56,29 +57,41 @@ function SearchBar() {
     setExpanded(false);
   };
 
+    const textFieldStyle = {
+      fontSize: '16px !important',
+    };
+  
+  
+  
+
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
+
           
           
               <Autocomplete
-                style={{ width: 450 ,zIndex:9999}}
-                freeSolo
+                style={{ width: 450 }}
                 autoComplete
                 autoHighlight
                 options={myOptions}
+                font={25}
+
                 value={note}
                 onChange={handleInputChange}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     variant="outlined"
-                    placeholder="Search items here..."
                     value={note}
-                    sx={{fontSize:"17px"}}
-                  />
+                    placeholder="Search items here..."
+                    style={textFieldStyle}
+                    />
                 )}
               />
+                
+
+              
         
       </form>
       
