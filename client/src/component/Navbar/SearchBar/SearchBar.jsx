@@ -38,8 +38,9 @@ function SearchBar() {
   }, 100); // Adjust the delay as needed
 
   const handleInputChange = (event, value) => {
-    getDataFromAPI();
     setNote(value);
+    getDataFromAPI();
+
   };
 
   const handleSubmit = (e,value) => {
@@ -83,7 +84,6 @@ function SearchBar() {
                   <TextField
                     {...params}
                     variant="outlined"
-                    value={note}
                     placeholder="Search items here..."
                     style={textFieldStyle}
                     />
