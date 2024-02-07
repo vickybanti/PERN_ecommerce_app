@@ -150,8 +150,8 @@ const newRequestBody = {
   setRequestBody(newRequestBody)
 
  
-    //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    navigate("/payment",{requestBody:requestBody});
+    navigate("payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+    //navigate("/payment",{requestBody:requestBody});
     setLoading(true)
 
   
