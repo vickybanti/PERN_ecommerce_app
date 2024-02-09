@@ -21,9 +21,9 @@ export default function CheckoutForm() {
       "payment_intent_client_secret"
     );
 
-    if (!clientSecret) {
-      return;
-    }
+    // if (!clientSecret) {
+    //   return;
+    // }
 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
@@ -43,54 +43,56 @@ export default function CheckoutForm() {
     });
   }, [stripe]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!stripe || !elements) {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    if (!stripe) {
       // Stripe.js hasn't yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
-
+  
     setIsLoading(true);
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000",
-      },
-    });
-
-    // This point will only be reached if there is an immediate error when
-    // confirming the payment. Otherwise, your customer will be redirected to
-    // your `return_url`. For some payment methods like iDEAL, your customer will
-    // be redirected to an intermediate site first to authorize the payment, then
-    // redirected to the `return_url`.
-    if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
-    } else {
-      setMessage("An unexpected error occurred.");
+  
+    // Trigger form validation and wallet collection
+    const {error: submitError} = await elements.submit();
+    if (submitError) {
+      console.error(submitError);
+      return;
     }
-
-    setIsLoading(false);
+  
+    // Create the SetupIntent and obtain clientSecret
+    const res = await fetch("/create-intent", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+    });
+  
+    const {client_secret: clientSecret} = await res.json();
+  
+    // Use the clientSecret and Elements instance to confirm the setup
+    const {error} = await stripe.confirmSetup({
+      elements,
+      clientSecret,
+      confirmParams: {
+        return_url: 'https://example.com/order/123/complete',
+      },
+      // Uncomment below if you only want redirect for redirect-based payments
+      // redirect: "if_required",
+    });
+  
+    if (error) {
+      console.error(error);
+    }
   };
 
-  const paymentElementOptions = {
-    layout: "tabs"
-  }
-
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-      </button>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+    <div className="CheckoutForm">
+    <label>
+      Card details
+      
+    </label>
+    <PaymentElement />
+    <button id="submit">Submit</button>
+  </div>
   );
 }

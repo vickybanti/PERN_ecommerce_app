@@ -150,7 +150,7 @@ const newRequestBody = {
   setRequestBody(newRequestBody)
 
  
-    //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+    navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
     
     setLoading(true)
 
@@ -218,11 +218,7 @@ const handleFormSubmit = async(values, actions) => {
   
   if(isThirdStep){
     if (formValues==="Credit/Debit Cards"){
-      <form onSubmit={makePayment(values)}>
-
-        <Payment />
-      
-      </form>
+      makePayment(values)
       
     }
     if (formValues==="Pay On Delivery"){

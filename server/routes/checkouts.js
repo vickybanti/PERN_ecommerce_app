@@ -91,14 +91,13 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
         
          
         
-          const paymentIntent = await stripe.paymentIntent.create({
-            amount: total,
-            currency: "usd",
-            // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
-            automatic_payment_methods: {
-              enabled: true,
-            },
-          });
+    const paymentIntent = await stripe.setupIntents.create({
+      customer: customer.id,
+      // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+      automatic_payment_methods: {
+        enabled: true,
+      },
+    });
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
           
@@ -121,7 +120,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
                
       
         res.json({
-          clientSecret: paymentIntent.client_secret,
+          client_secret: intent.client_secret,
           orders: createOrder.rows,
         });  
 
