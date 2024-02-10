@@ -21,12 +21,14 @@ function Payment(props,requestBody) {
 
   return (
     <>
+    <div className='pay'>
       <h1>Payment</h1>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret, }}>
           <CheckoutForm />
         </Elements>
       )}
+      </div>
     </>
   );
 }
