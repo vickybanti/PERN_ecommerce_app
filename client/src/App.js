@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
  
   Route,
@@ -45,11 +45,23 @@ import Terms from './pages/Company/Terms';
 import Shipping from './pages/FAQ/Shipping';
 import Return from './pages/FAQ/Return';
 import Frequent from './pages/FAQ/Frequent';
+import {loadStripe} from '@stripe/stripe-js';
+
 
 // const Products = React.lazy(()=> import('./pages/Products/Products'))
 
 
 function App() {
+  const [ stripePromise, setStripePromise ] = useState(null);
+
+  useEffect(() => {
+    fetch("https://mooreserver.onrender.com/checkout//config").then(async (r) => {
+      const { publishableKey } = await r.json();
+      setStripePromise(loadStripe(publishableKey));
+    });
+  }, []);
+
+  
 
 
 const user = useSelector((state)=> state.auth.isLoggedIn)
@@ -107,7 +119,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
 
       <Route path="register" element={<Register/> } />
       <Route path="checkout" element={user? <Checkout /> : <Login />} />
-      <Route path="payment" element={<Payment />} />
+      <Route path="/" element={<Payment stripePromise={stripePromise} />} />
       <Route path='reset' element={<ResetPassword />} />
       <Route path='cart' element={<Cart /> } />
       <Route path='success' element={user? <CheckoutSuccess /> :<NoMatch /> } />
