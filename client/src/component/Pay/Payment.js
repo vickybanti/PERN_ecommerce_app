@@ -3,13 +3,17 @@ import {useEffect, useState} from 'react';
 import {Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm'
 
-function Payment(props) {
+function Payment(props,requestBody) {
   const { stripePromise } = props;
   const [ clientSecret, setClientSecret ] = useState('');
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent")
+    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
+      method:"POST",
+      body:JSON.stringify(requestBody),
+      headers:{"Content-Type":"application/json"}
+    })
       .then((res) => res.json())
       .then(({clientSecret}) => setClientSecret(clientSecret));
   }, []);
