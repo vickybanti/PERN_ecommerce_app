@@ -3,8 +3,8 @@ import {useEffect, useState} from 'react';
 import {Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm'
 
-function Payment({requestBody}) {
-  const { stripePromise } = requestBody;
+function Payment(props) {
+  const { stripePromise } = props;
   const [ clientSecret, setClientSecret ] = useState('');
 
   useEffect(() => {
