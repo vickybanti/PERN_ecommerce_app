@@ -1,9 +1,57 @@
 .form {
   display: flex;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  margin-top: 20px;
+  width:100%;
+  margin-left: 80px;
+  justify-content: center;
+
+  .input{
+    width: 400px;
+  }
   
 }
+
+@media screen and (max-width: 1024px){
+  .form{
+    margin-left: 90px;
+    width: 100%;
+    .input{
+      width: 300px;
+    }
+    
+  }
+}
+
+@media screen and (max-width: 820px){
+  .form{
+    margin-left: 30px;
+    width: 70%;
+    .input{
+      width: 300px;
+    }
+    
+  }
+}
+@media screen and (max-width: 464px){
+  .form{
+    margin-left: 200px;
+    width: 50%;
+    .input{
+      width: 150px;
+    }
+    
+  }
+}
+
+@media screen and (max-width: 280px){
+  .form{
+    margin-left: 200px;
+    width: 50%;
+    .input{
+      width: 120px;
+    }
+    
+  }
+}
+
 

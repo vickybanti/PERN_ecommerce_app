@@ -548,10 +548,12 @@ header {
 
     .header{
       width: 100%;
+      padding: 0;
 
       .logo{
         margin-top: 10px;
         font-size: 17px;
+        margin-left: -20px;
       }
       
       .divider{
@@ -581,7 +583,7 @@ header {
   
 }
 
-@media screen and (max-width:820px) {
+@media screen and (max-width:1024px) {
   .classics{
     display: none;
   }

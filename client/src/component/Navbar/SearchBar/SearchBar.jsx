@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Close, Search } from "@mui/icons-material";
+import { Close, Search, SearchOffRounded } from "@mui/icons-material";
 import Ads from "../../Ads/Ads";
 import { Autocomplete, Input, Stack, TextField, useMediaQuery } from "@mui/material";
+import './SearchBar.scss'
 
 
 function SearchBar() {
@@ -52,7 +53,8 @@ function SearchBar() {
                     style={textFieldStyle}
                     value={note}
                     onChange={handleInputChange}
-                    sx={{fontSize:"15px", width:"400px", marginLeft:"50px"}}
+                    sx={{fontSize:"15px"}}
+                    className="input"
                     />
                 
               
