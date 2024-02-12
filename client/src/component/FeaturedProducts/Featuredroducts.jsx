@@ -26,7 +26,7 @@ return (
            <h1>New Arrivals</h1>
             
           </div>
-
+  <div className="bottom">
         
           <Carousel 
           responsive={responsive} 
@@ -56,6 +56,7 @@ return (
 
               
               </Carousel>
+              </div>
               </div>
 
           

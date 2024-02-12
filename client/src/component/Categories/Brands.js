@@ -8,11 +8,13 @@ function Brands() {
     <>
     <h1>Popular brands</h1>
 
-    <div className='brands' responsive={responsive}>
+    <div className='brands'>
     <span className='span'>Explore our popular brands</span>
 
+    <div className="allbrands" responsive={responsive}>
 
-      <div className="brandedWears">
+
+      <div className="brandedWears" >
         <NavLink to="/brands/nike">
 
           <img
@@ -72,6 +74,8 @@ function Brands() {
 
           <button style={{ fontSize: "20px", margin: "50% 0", cursor: "pointer" }}> Prada</button>
         </NavLink>
+
+        </div>
       </div>
     </div></>
   )

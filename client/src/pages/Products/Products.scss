@@ -2,23 +2,45 @@
 
 @media screen and (max-width:600px) {
     .filters{
-        width: 100%;
+        width: 70%;
         overflow: hidden;
         margin-left: -600px;
+    }
+    .products{
+        margin-left: auto;
     }
 }
 
 @media screen and (max-width:464px) {
     .filters{
         width: 60%;
-        overflow: hidden;
-        margin-left: -320px;
-        display:flex;
-        flex-wrap: wrap;
-        
-        
+        margin-right: 510px;
 
+        .filterbox{
+            
+            margin-left: 10px;
 
-        
-    }
+            .box{
+                width: 15%;
+            font-size: 12px;
+            margin-left: -90px;
+            position: absolute;
+            padding: 10px;
+            bottom: 2;
+            }
+            .reset{
+                margin-left: -90px;
+                position: inherit;
+            }
+
+            .sizebox{
+                margin-left: -180px;
+                position: absolute;
+                padding: 10px;
+                width: 35%;
+            }
+        }
+           }
+
+    
 }

@@ -32,6 +32,17 @@
     
   }
 }
+@media screen and (max-width: 600px){
+  .form{
+    margin-left: 45px;
+
+    .input{
+      width:250px;
+    }
+    
+    
+  }
+}
 @media screen and (max-width: 464px){
   .form{
     margin-left: 200px;

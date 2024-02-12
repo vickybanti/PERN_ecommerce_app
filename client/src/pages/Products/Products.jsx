@@ -153,8 +153,8 @@ function Products() {
 
      
         
-        <Filter className="box">
-        <Box sx={{ minWidth: 120 }} style={{isNonMobile}}>
+        <Filter className="filterbox">
+        <Box sx={{ minWidth: 120 }} className="box">
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
           <FilterListIcon className="inputs" sx={{fontSize:"20px", color:"cadetblue"}} />
@@ -183,15 +183,17 @@ function Products() {
         
         </Filter>
 
-        <Filter>
+        <Filter className='reset'>
         <h2>Reset Filters</h2>
-        <ResetTv sx={{color:"black", fontSize:"30px",cursor:"pointer"}} onClick={(event)=>reset(event)}/>
+        <ResetTv 
+        sx={{color:"black", fontSize:"30px",cursor:"pointer"}} 
+        onClick={(event)=>reset(event)} />
     
         </Filter>
-        <Filter>
+        <Filter className='filterbox'>
         
       
-        <Box sx={{ minWidth: 120 }} >
+        <Box sx={{ minWidth: 120 }} className="sizebox">
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label"><FilterListIcon sx={{fontSize:"20px", color:"cadetblue"}} />Size</InputLabel>
             <Select
@@ -219,11 +221,15 @@ function Products() {
         
        
       </FilterContainer>
-          
-      {<List  size={size} 
+      {
+        
+        <List  size={size} 
       filters={filters}
+      className="products"
       
-      />}
+      />
+     
+    }
 
     </div>
     <ScrollTop>

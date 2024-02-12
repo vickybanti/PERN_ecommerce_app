@@ -189,15 +189,67 @@
         }
     }
     .checkout{
-        
+        display:flex;
+        flex-direction: column;
         width: 100%;
         margin: 0;
-        padding: 40px 10px;
+        padding: 120px 10px;
 
         .left{
             width: 100%;
             display: flex;
             justify-content: center;
+
+        .checkFooter{
+            
+            img{
+                width:50px;
+            }
+            .d-flex{
+                display: flex;
+                justify-content: center;
+                padding: 0 10px;
+            }
+            
+
+        }     
+            
+        }
+
+        .mainBox{
+            width: 100%;
+            margin-top: 50px;
+
+            .paymentSvg{
+                margin-left: 180px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:820px) {
+    .images{
+        img{
+            width: 60px;
+        }
+    }
+    .checkout{
+        
+        width: 60%;
+        margin: 0;
+        padding: 60px 10px;
+
+        .left{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            
 
         .checkFooter{
             
@@ -244,12 +296,16 @@
         flex-direction: column;
         width: 100%;
         margin: 0;
-        padding: 40px 0;
+        padding: 90px 0;
 
         .left{
             width: 100%;
             display: flex;
             justify-content: center;
+
+            Button{
+                margin-right:90px;
+            }
 
         .checkFooter{
             
