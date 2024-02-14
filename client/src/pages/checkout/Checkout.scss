@@ -8,8 +8,8 @@
    img{
        aspect-ratio: 3/2;
        object-fit: contain;
-       width: auto;
-       mix-blend-mode: color-burn;
+       width: 25%;
+       padding-right: 15px;
    }
 }
 
@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     margin:  0 20px;
-    padding-top: 100px;
+    padding-top: 150px;
 
 
 .left{

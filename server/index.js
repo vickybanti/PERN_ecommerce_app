@@ -48,6 +48,8 @@ app.use("/saveditems", require("./routes/saved"));
 app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 
+app.use(cors({ origin: 'https://mooreserver.onrender.com/' }));
+
 
 
 //ROUTES//
