@@ -253,6 +253,24 @@
                     .categories{
                         display: flex;
                         flex-direction: column;
+                        margin-left: -60px;
+                        width: 100%;
+                        justify-content: center;
+                        margin-top: 500px;
+                        margin-bottom: 3px;
+
+
+                        .catheading{
+                            display: none;
+                        }
+                        .column{
+                            width: 100%;
+                            margin-right: 90px;
+                        }
+                        .column-large{
+                            margin-left: 90px;
+                        }
+        
                     }
                 }
 

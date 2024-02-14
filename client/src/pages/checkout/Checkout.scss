@@ -240,9 +240,9 @@
     }
     .checkout{
         
-        width: 60%;
+        width: 100%;
         margin: 0;
-        padding: 60px 10px;
+        padding: 100px 10px;
 
         .left{
             width: 100%;
@@ -298,6 +298,9 @@
         margin: 0;
         padding: 90px 0;
 
+        .next{
+            margin-left: 250px;
+        }
         .left{
             width: 100%;
             display: flex;
@@ -381,11 +384,103 @@
 
 @media screen and (max-width:480px) {
     .images{
-        margin: auto;
+        padding: 0px;
     }
     
     .checkout{
+        overflow: hidden;
+        .next{
+            margin-left: 180px;
+           }
+        
         .left{
+           .carts{
+            margin-top: 150px;
+            font-size: 12px;
+
+            .d-flex {
+                font-size: 12px;
+                padding: 50px;
+            }
+
+            .title{
+                margin-right: 20px;
+                margin-bottom: 100px;
+            }
+
+            
+           }
+            
+            .checkFooter{
+                strong{
+                    z-index: 1;
+                    padding-top: 50px;
+                    font-size: 15px;
+                }
+                
+                .p{
+                    display: none;                    
+                }
+
+                
+            }
+        }
+        
+
+        .mainBox{
+            width: 90%;
+
+            .paymentSvg{
+                margin-left: 130px;
+            }
+            
+            h4{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:280px) {
+    .images{
+        padding: 0px;
+    }
+    
+    .checkout{
+        overflow: hidden;
+        margin: 2px;
+        .next{
+            margin-left: 100px;
+           }
+        
+        .left{
+           .carts{
+            margin-top: 350px;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .d-flex {
+                font-size: 12px;
+                padding: 50px;
+                margin-top: 80px;
+            }
+
+            .title{
+                margin-right: 20px;
+                margin-bottom: 100px;
+                margin-top: 80px;
+
+            }
+            .price{
+                display: flex;
+                flex-direction: column;
+            }
+
+            
+           }
+            
             .checkFooter{
                 strong{
                     z-index: 1;

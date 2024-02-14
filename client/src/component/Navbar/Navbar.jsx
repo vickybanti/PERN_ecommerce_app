@@ -179,6 +179,7 @@ const hideInput = () => {
     </IconButton>
     </Tooltip>
     <Menu
+    className={styles.fademenu}
       id="fade-menu"
       MenuListProps={{
         'aria-labelledby': 'fade-button',
@@ -188,7 +189,7 @@ const hideInput = () => {
       onClick={handleClose}
       TransitionComponent={Fade}
       sx={{
-        color: "Graytext", fontSize: "20px", zIndex: "99999", marginTop: "60px", marginLeft: "-90px", padding: "30px"
+        color: "Graytext", fontSize: "20px", zIndex: "99999", marginTop: "60px", marginLeft: "10px", padding: "30px"
       }}
     >
         <MenuItem onClick={handlelogout}>

@@ -18,11 +18,16 @@ export  const responsive = {
         },
         
         mobile: {
-          breakpoint: { max:600 , min: 0 },
+          breakpoint: { max:600 , min: 464 },
           items: 2,
           
 
-        }
+        },
+        smallerMobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        },
+
       };
       
 

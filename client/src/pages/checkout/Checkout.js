@@ -384,6 +384,7 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                     type="submit"
                     color='primary'
                     variant='contained'
+                    className="next"
                     sx={{
                       backgroundColor: "rgba(0,0,0,0.4)",
                       color: "white",
@@ -503,6 +504,7 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                         width: "70%",
                       },
                     }}
+                    className='title'
                     primary={value.title}
                   />
                 </ListItem>
@@ -514,7 +516,8 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
 
   
   <Divider />
-  <Box sx={{display:"flex", justifyContent:"space-between", paddingTop:"30px"}}>
+  <Box sx={{display:"flex", justifyContent:"space-between", paddingTop:"30px"}}
+  className="price">
         <p>SUBTOTAL</p>
         <h4>
         ${totalPrice.toFixed(2)}</h4>

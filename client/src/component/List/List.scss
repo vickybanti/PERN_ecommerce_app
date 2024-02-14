@@ -92,11 +92,12 @@
 
     @media screen and (max-width:600px) {
         .list{
-            column-gap: 4%;
+            column-gap: 1.44%;
+            row-gap: 1px;
             padding: 10px;
     
             .products{
-                padding-top: 100px;
+                padding: 100px 0;
             }
             
         }
@@ -113,10 +114,11 @@
         @media screen and (max-width:464px) {
             .list{
                 display:grid;
-                column-gap: 1.33%;
-                row-gap: 10px;
+                column-gap: 0.33%;
+                row-gap: 1px;
                 grid-template-columns: repeat(auto-fill, 270px);
-                padding-left: 40px;
+                padding-left: 100px;
+                margin-left: 10px;
                 
 
             
