@@ -313,7 +313,9 @@
         .checkFooter{
             
             img{
-                width:50px;
+                width:10px;
+                margin: 0;
+                padding: 0;
             }
             
 
@@ -395,16 +397,19 @@
         
         .left{
            .carts{
-            margin-top: 150px;
+            margin-top: 0px;
             font-size: 12px;
+            padding-left: 3px;
+            padding-top: 10px;
+
 
             .d-flex {
                 font-size: 12px;
-                padding: 50px;
+                margin-right: 15px;
             }
 
             .title{
-                margin-right: 20px;
+                margin-right: 15px;
                 margin-bottom: 100px;
             }
 

@@ -425,13 +425,13 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
         </Box>
         
 
-        <Box sx={{position:"absolute",}}>
-        <img src='img/payment/f1.png' alt='' style={{padding:"0 10px"}}/>
+        <Box sx={{position:"absolute"}} className="images">
+        <img src='img/payment/f1.png' alt='' />
   
-          <img src='/img/payment/f3.png' alt='' style={{padding:"0 10px"}}/>
-          <img src='img/payment/f4.png' alt='' style={{padding:"0 10px"}}/>
-          <img src='img/payment/f5.png' alt='' style={{padding:"0 10px"}}/>
-          <img src='img/payment/f6.png' alt='' style={{padding:"0 10px"}}/>
+          <img src='/img/payment/f3.png' alt='' style={{marginRight:"1px"}}/>
+          <img src='img/payment/f4.png' alt='' style={{marginRight:"1px"}}/>
+          <img src='img/payment/f5.png' alt='' style={{marginRight:"1px"}}/>
+          <img src='img/payment/f6.png' alt='' style={{marginRight:"1px"}}/>
         </Box>      
       </Box>
 
@@ -483,6 +483,7 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                     <Badge
                       badgeContent=<span>{value.count}</span>
                       color="primary"
+                      sx={{borderRadius:"50%"}}
                       
                       
                     >
