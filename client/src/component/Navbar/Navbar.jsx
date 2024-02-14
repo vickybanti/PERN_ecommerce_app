@@ -335,7 +335,7 @@ const hideInput = () => {
               
               <li key={cat.id}>
               
-                {showMenu ? <NavLink to={`/categories/${cat.id}`}>
+                {showMenu ? <NavLink to={`/Products/categories/${cat.cat_title}`}>
                   {cat.cat_title}
                 </NavLink> : " "}
               </li>
