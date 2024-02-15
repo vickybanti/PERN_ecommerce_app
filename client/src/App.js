@@ -118,7 +118,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
 
 
       <Route path="register" element={<Register/> } />
-      <Route path="checkout" element={user? <Checkout /> : <Login />} />
+      <Route path="checkout" element={user? <Checkout stripePromise={stripePromise}/> : <Login />} />
       <Route path="payment" element={<Payment stripePromise={stripePromise} />} />
       <Route path='reset' element={<ResetPassword />} />
       <Route path='cart' element={<Cart /> } />

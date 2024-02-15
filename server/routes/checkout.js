@@ -117,7 +117,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
           
                
       
-        res.send({
+        res.json({
           client_secret: paymentIntent.client_secret,
           orders: createOrder.rows,
         });

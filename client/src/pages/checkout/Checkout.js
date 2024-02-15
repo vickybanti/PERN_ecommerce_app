@@ -14,10 +14,10 @@ import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 import {Elements} from '@stripe/react-stripe-js';
-import CheckoutForm from './CheckoutForm'
+import CheckoutForm from '../../component/Pay/CheckoutForm';
 
 
 
@@ -84,7 +84,7 @@ const checkoutSchema = [
   
   
 
-function Checkout() {
+function Checkout(props) {
   const totalPrice = useSelector((state)=>state.cart.totalPrice)
   const cartItems = useSelector((state)=>state.cart.cartItems)
   const counts = cartItems.map((cart) => cart.count)
@@ -133,6 +133,8 @@ function Checkout() {
         return code;
       }
 
+      const { stripePromise } = props;
+    const [ clientSecret, setClientSecret ] = useState('');
       
 async function makePayment(values) {
     
@@ -158,10 +160,9 @@ const newRequestBody = {
     //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
     // navigate("/payment ",{requestBody:newRequestBody});
 
-    const { stripePromise } = props;
-    const [ clientSecret, setClientSecret ] = useState('');
+    
   
-    useEffect(() => {
+    
       // Create PaymentIntent as soon as the page loads
       fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
         method:"POST",
@@ -170,7 +171,7 @@ const newRequestBody = {
       })
         .then((res) => res.json())
         .then(({clientSecret}) => setClientSecret(clientSecret));
-    }, [requestBody]);
+    
   
     console.log(stripePromise)
     console.log(clientSecret)
@@ -271,6 +272,7 @@ const handleFormSubmit = async(values, actions) => {
 
   }
 }
+
 
 const quantity = useSelector((state) => state.cart.totalQuantity);
 
