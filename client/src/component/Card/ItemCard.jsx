@@ -179,9 +179,9 @@ function addSave() {
   console.log(size)
   
 
-  function handleClick(e, selectedSize) {
+  function handleClick(e,size) {
     e.preventDefault()
-    dispatch(addToCart({...item,count,imageData,selectedSize }))
+    dispatch(addToCart({...item,imageData,count,size }))
     dispatch(setIsCartOpen({}))
 
 
@@ -262,7 +262,7 @@ function addSave() {
                         value={sizeOption}
                         onChange={handleSize}
                         icon={sizeOption}
-                        onClick={(e) => handleClick(e, size)}
+                        onClick={(e) => handleClick(e, sizeOption)}
                         sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
                     ))}
                   </SpeedDial>

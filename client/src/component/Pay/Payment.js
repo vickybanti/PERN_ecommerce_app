@@ -19,6 +19,7 @@ function Payment(props,requestBody) {
   }, [requestBody]);
 
   console.log(stripePromise)
+  console.log(clientSecret)
 
 
   return (
