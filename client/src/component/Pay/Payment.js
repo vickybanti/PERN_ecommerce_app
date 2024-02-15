@@ -16,7 +16,9 @@ function Payment(props,requestBody) {
     })
       .then((res) => res.json())
       .then(({clientSecret}) => setClientSecret(clientSecret));
-  }, []);
+  }, [requestBody]);
+
+  console.log(stripePromise)
 
 
   return (
