@@ -14,6 +14,11 @@ import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
+import {useEffect, useState} from 'react';
+
+import {Elements} from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm'
+
 
 
 
@@ -150,8 +155,26 @@ const newRequestBody = {
   setRequestBody(newRequestBody)
 
  
-    navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    //navigate("/payment ",{requestBody:newRequestBody});
+    //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+    // navigate("/payment ",{requestBody:newRequestBody});
+
+    const { stripePromise } = props;
+    const [ clientSecret, setClientSecret ] = useState('');
+  
+    useEffect(() => {
+      // Create PaymentIntent as soon as the page loads
+      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
+        method:"POST",
+        body:JSON.stringify(requestBody),
+        headers:{"Content-Type":"application/json"}
+      })
+        .then((res) => res.json())
+        .then(({clientSecret}) => setClientSecret(clientSecret));
+    }, [requestBody]);
+  
+    console.log(stripePromise)
+    console.log(clientSecret)
+  
     
     setLoading(true)
 
@@ -219,7 +242,19 @@ const handleFormSubmit = async(values, actions) => {
   
   if(isThirdStep){
     if (formValues==="Credit/Debit Cards"){
-      makePayment(values)
+      <div className='pay'>
+      <h1>Payment</h1>
+      <form onSubmit={makePayment(values)}>
+      {clientSecret && stripePromise && (
+        <Elements stripe={stripePromise} options={{ clientSecret, }}>
+          <CheckoutForm />
+        </Elements>
+      
+      )}
+      </form>
+      </div>
+    
+  
       
     }
     if (formValues==="Pay On Delivery"){
