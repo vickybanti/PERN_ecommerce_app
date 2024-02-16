@@ -112,6 +112,28 @@ function Checkout(props) {
   
     console.log(formValues)
 
+
+    useEffect(() => {
+
+       // Create PaymentIntent as soon as the page loads
+       fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
+        method:"GET",
+        //body:JSON.stringify(requestBody),
+        //headers:{"Content-Type":"application/json"}
+      })
+        .then((res) => res.json())
+        .then(({clientSecret}) => setClientSecret(clientSecret));
+    
+  
+    console.log(stripePromise)
+    console.log(clientSecret)
+  
+    
+    setLoading(true)
+
+  
+    
+    }, [])
     
 
 
@@ -163,23 +185,7 @@ const newRequestBody = {
     
   
     
-      // Create PaymentIntent as soon as the page loads
-      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
-        method:"GET",
-        //body:JSON.stringify(requestBody),
-        //headers:{"Content-Type":"application/json"}
-      })
-        .then((res) => res.json())
-        .then(({clientSecret}) => setClientSecret(clientSecret));
-    
-  
-    console.log(stripePromise)
-    console.log(clientSecret)
-  
-    
-    setLoading(true)
-
-  
+     
 
 
 }
@@ -246,7 +252,7 @@ const handleFormSubmit = async(values, actions) => {
       <div className='pay'>
       <h1>Payment</h1>
       <form onSubmit={makePayment(values)}>
-      {clientSecret && stripePromise && (
+      {(
         <Elements stripe={stripePromise} options={{ clientSecret, }}>
           <CheckoutForm />
         </Elements>
