@@ -12,13 +12,13 @@ function Payment(props,requestBody) {
     const makePay = async() => {
 
     
-    await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
+    const res = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
       method:"GET",
       // body:JSON.stringify(requestBody),
       // headers:{"Content-Type":"application/json"}
     })
-      .then((res) => res.json())
-      .then(({client_secret}) => setClientSecret(client_secret));
+      const {client_secret} = await res.json()
+       setClientSecret(client_secret);
   }
   makePay()
   }, [requestBody]);
@@ -32,7 +32,7 @@ function Payment(props,requestBody) {
     <div className='pay'>
       <h1>Payment</h1>
       {(
-        <Elements stripe={stripePromise} options={{ clientSecret }}>
+        <Elements stripe={stripePromise} options={ clientSecret }>
           <CheckoutForm />
         </Elements>
       )}
