@@ -31,60 +31,60 @@ router.get("/config", (req, res) => {
   });
 });
 
-router.get("/create-payment-intent", async function handlePaymentIntent (req, res)  {
+router.post("/create-payment-intent", async function handlePaymentIntent (req, res)  {
 
   
-  //   const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
-  //   const stringForm = JSON.stringify(req.body.formValues)
+    const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
+    const stringForm = JSON.stringify(req.body.formValues)
 
 
-  //   function getMonthInWords() {
-  //     const months = [
-  //       "January", "February", "March", "April",
-  //       "May", "June", "July", "August",
-  //       "September", "October", "November", "December"
-  //     ];
+    function getMonthInWords() {
+      const months = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
     
-  //     const currentDate = new Date();
-  //     const currentMonthIndex = currentDate.getMonth();
-  //     const currentMonthInWords = months[currentMonthIndex];
+      const currentDate = new Date();
+      const currentMonthIndex = currentDate.getMonth();
+      const currentMonthInWords = months[currentMonthIndex];
     
-  //     return currentMonthInWords;
-  //   }
+      return currentMonthInWords;
+    }
     
-  //   const currentMonth = getMonthInWords();
-  //   const currentDate = new Date();
+    const currentMonth = getMonthInWords();
+    const currentDate = new Date();
 
 
 
-  //   console.log(userId)
-  //   console.log(email)
-  //   console.log(firstName)
-  //   console.log(lastName)
-  //   console.log(country)
-  //   console.log(state)
-  //   console.log(street1)
-  //   console.log(street2)
-  //   console.log(city)
-  //   console.log(phoneNumber) 
-  //   console.log(stringForm) 
-
-    
-
+    console.log(userId)
+    console.log(email)
+    console.log(firstName)
+    console.log(lastName)
+    console.log(country)
+    console.log(state)
+    console.log(street1)
+    console.log(street2)
+    console.log(city)
+    console.log(phoneNumber) 
+    console.log(stringForm) 
 
     
 
-  //   const carts = JSON.parse(cart)
+
+    
+
+    const carts = JSON.parse(cart)
     
  
     
-  //  const totals =  carts.map((item) => (
-  //   item.price * 100
+   const totals =  carts.map((item) => (
+    item.price * 100
        
-  // ));
-  // const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
+  ));
+  const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
 
-  // const total = parseFloat(totals)
+  const total = parseFloat(totals)
 
   try {
     
@@ -99,11 +99,11 @@ router.get("/create-payment-intent", async function handlePaymentIntent (req, re
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
           
-    // const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
-    //     country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
-    //   VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
-    //   '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
-    //   'pending','${total}','${total}','${currentDate}', '${currentMonth}')` );
+    const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
+      VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
+      '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
+      'pending','${total}','${total}','${currentDate}', '${currentMonth}')` );
 
       
 
@@ -117,7 +117,7 @@ router.get("/create-payment-intent", async function handlePaymentIntent (req, re
           
                
       
-        res.json({
+        res.send({
           client_secret: paymentIntent.client_secret,
           // orders: createOrder.rows,
         });
