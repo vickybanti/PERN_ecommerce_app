@@ -32,7 +32,7 @@ function Payment(props,requestBody) {
     <div className='pay'>
       <h1>Payment</h1>
       {(
-        <Elements stripe={stripePromise} options={ clientSecret }>
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
         </Elements>
       )}
