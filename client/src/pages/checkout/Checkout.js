@@ -113,29 +113,7 @@ function Checkout(props) {
     console.log(formValues)
 
 
-    useEffect(() => {
-
-       // Create PaymentIntent as soon as the page loads
-       fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
-        method:"GET",
-        //body:JSON.stringify(requestBody),
-        //headers:{"Content-Type":"application/json"}
-      })
-        .then((res) => res.json())
-        .then(({clientSecret}) => setClientSecret(clientSecret));
     
-  
-    console.log(stripePromise)
-    console.log(clientSecret)
-  
-    
-    setLoading(true)
-
-  
-    
-    }, [])
-    
-
 
     
 
@@ -180,7 +158,7 @@ const newRequestBody = {
 
  
     //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    // navigate("/payment ",{requestBody:newRequestBody});
+    navigate("/payment ",{requestBody:newRequestBody});
 
     
   
@@ -249,17 +227,7 @@ const handleFormSubmit = async(values, actions) => {
   
   if(isThirdStep){
     if (formValues==="Credit/Debit Cards"){
-      <div className='pay'>
-      <h1>Payment</h1>
-      <form onSubmit={makePayment(values)}>
-      {(
-        <Elements stripe={stripePromise} options={{ clientSecret, }}>
-          <CheckoutForm />
-        </Elements>
-      
-      )}
-      </form>
-      </div>
+      makePayment(values)
     
   
       
