@@ -18,7 +18,7 @@ function Payment(props,requestBody) {
       // headers:{"Content-Type":"application/json"}
     })
       .then((res) => res.json())
-      .then(({clientSecret}) => setClientSecret(clientSecret));
+      .then(({data}) => setClientSecret(data.clientSecret));
   }
   makePay()
   }, [requestBody]);
