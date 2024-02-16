@@ -18,12 +18,10 @@ function Payment(props,requestBody) {
       // headers:{"Content-Type":"application/json"}
     })
       .then((res) => res.json())
-      .then(({data}) => setClientSecret(data.clientSecret));
+      .then(({client_secret}) => setClientSecret(client_secret));
   }
   makePay()
   }, [requestBody]);
-
-
 
   console.log(stripePromise)
   console.log(clientSecret)
@@ -34,7 +32,7 @@ function Payment(props,requestBody) {
     <div className='pay'>
       <h1>Payment</h1>
       {(
-        <Elements stripe={stripePromise} options={{ clientSecret, }}>
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
         </Elements>
       )}
