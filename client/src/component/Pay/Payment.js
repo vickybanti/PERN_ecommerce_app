@@ -17,8 +17,8 @@ function Payment(props,requestBody) {
       // body:JSON.stringify(requestBody),
       // headers:{"Content-Type":"application/json"}
     })
-      const {client_secret} = await res.json()
-       setClientSecret(client_secret);
+      const data = await res.json()
+       setClientSecret(data.client_secret);
   }
   makePay()
   }, [requestBody]);
