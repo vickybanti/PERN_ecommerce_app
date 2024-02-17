@@ -160,7 +160,7 @@ const newRequestBody = {
 
  
     //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    navigate("/payment ",{requestBody:newRequestBody});
+    navigate("/pay ",{requestBody:newRequestBody});
 
     
   

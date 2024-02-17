@@ -119,7 +119,7 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
 
       <Route path="register" element={<Register/> } />
       <Route path="checkout" element={user? <Checkout stripePromise={stripePromise}/> : <Login />} />
-      <Route path="payment" element={<Payment stripePromise={stripePromise} />} />
+      <Route path="pay" element={<Payment stripePromise={stripePromise} />} />
       <Route path='reset' element={<ResetPassword />} />
       <Route path='cart' element={<Cart /> } />
       <Route path='success' element={user? <CheckoutSuccess /> :<NoMatch /> } />
@@ -134,7 +134,6 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
       <Route path='privacyPolicy' element={<PrivacyPolicy />}></Route>
       <Route path='shipping' element={<Shipping />}></Route>
       <Route path='returns' element={<Return />}></Route>
-      <Route path='payment' element={<Payment />}></Route>
       <Route path='frequent' element={<Frequent />}></Route>
       <Route path='termsAndConditions' element={<Terms />}></Route>
 
