@@ -21,6 +21,8 @@ export default function CheckoutForm() {
       "payment_intent_client_secret"
     );
 
+    console.log(clientSecret)
+
     if (!clientSecret) {
       return;
     }
