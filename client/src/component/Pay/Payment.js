@@ -20,7 +20,7 @@ function Payment(props,requestBody) {
 
     const getPay = await response.json()
     console.log(getPay)
-    setClientSecret(getPay.client_secret)
+    setClientSecret(getPay.clientSecret)
     // .then((res) => console.log(res.json()))
     // .then((data) => setClientSecret(data.clientSecret));
   
