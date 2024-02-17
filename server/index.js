@@ -52,6 +52,10 @@ app.use(cors({
     origin: 'https://pern-ecommerce-app.vercel.app',
   }));
   
+  app.use(cors({
+    origin: 'https://mooreserver.onrender.com',
+  }));
+  
 
 
 //ROUTES//
