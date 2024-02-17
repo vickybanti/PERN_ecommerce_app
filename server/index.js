@@ -52,9 +52,17 @@ app.use(cors({
     origin: 'https://pern-ecommerce-app.vercel.app',
   }));
   
-  app.use(cors({
-    origin: 'https://mooreserver.onrender.com',
-  }));
+  const { createProxyMiddleware } = require('http-proxy-middleware');
+
+  module.exports = function (app) {
+    app.use(
+      '/checkout',
+      createProxyMiddleware({
+        target: 'https://mooreserver.onrender.com',
+        changeOrigin: true,
+      })
+    );
+  };
   
 
 
