@@ -156,9 +156,11 @@ const newRequestBody = {
   console.log(requestBody)
   setRequestBody(newRequestBody)
 
+
+
  
-    navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    //navigate("/payment ",{requestBody:newRequestBody});
+    //navigate("/payment?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+    navigate("/payment ",{requestBody:newRequestBody});
 
     
   
@@ -228,9 +230,7 @@ const handleFormSubmit = async(values, actions) => {
   if(isThirdStep){
     if (formValues==="Credit/Debit Cards"){
       makePayment(values)
-    
-  
-      
+     
     }
     if (formValues==="Pay On Delivery"){
       payOnDelivery(values)
@@ -292,9 +292,8 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
           <Step>
           {loading ? 
             <Check className='check' />
-            :
-           
-            <Payment className='contact' /> }
+            :         
+           <Payment className='contact' /> }
             <span>Payment</span>
           </Step>
         </Stepper>

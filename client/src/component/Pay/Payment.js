@@ -11,15 +11,21 @@ function Payment(props,requestBody) {
     // Create PaymentIntent as soon as the page loads
    
     
-    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
+    const pay = async()=> {
+      const response = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent",{
       method:"POST",
       body:JSON.stringify(requestBody),
       headers:{"Content-Type":"application/json"}
     })
-    .then((res) => res.json())
-    .then((data) => setClientSecret(data.clientSecret));
+
+    const getPay = await response.json()
+    console.log(getPay)
+    setClientSecret(getPay.client_secret)
+    // .then((res) => console.log(res.json()))
+    // .then((data) => setClientSecret(data.clientSecret));
   
-  
+    }
+    pay()
   }, [requestBody]);
 
   console.log(stripePromise)
@@ -37,7 +43,7 @@ function Payment(props,requestBody) {
     <>
     <div className='pay'>
       <h1>Payment</h1>
-      {clientSecret && (
+      {(
         <Elements stripe={stripePromise} options={ options }>
           <CheckoutForm />
         </Elements>
