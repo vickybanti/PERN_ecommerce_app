@@ -1,6 +1,13 @@
 
 const Pool = require("pg").Pool;
 require('dotenv').config();
+const cors = require("cors");
+
+
+app.use(cors({
+    origin: 'https://pern-ecommerce-app.vercel.app/',
+  }));
+  
 
 let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
@@ -23,6 +30,7 @@ ENDPOINT_ID='ep-tiny-dawn-81761022'
 //     options: `project=${ENDPOINT_ID}`,
 //   },
 // });
+
 
 const pool = new Pool({
     connectionString: 'postgresql://postgres:8trenzYqTu6V@ep-tiny-dawn-81761022.us-east-2.aws.neon.tech/db?sslmode=require' + '?sslmode=require',
