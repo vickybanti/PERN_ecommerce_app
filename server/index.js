@@ -49,7 +49,7 @@ app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 
 app.use(cors({
-    origin: 'https://pern-ecommerce-app.vercel.app',
+    origin: 'https://mooreserver.onrender.com',
   }));
   
  const { createProxyMiddleware } = require('http-proxy-middleware');
