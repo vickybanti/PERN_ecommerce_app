@@ -3,7 +3,7 @@ const pool = require("../db");
 const cors = require("cors");
 
 app.use(cors({
-    origin: 'https://mooreserver.onrender.com/',
+    origin: 'https://pern-ecommerce-app.vercel.app/',
   }));
   
 

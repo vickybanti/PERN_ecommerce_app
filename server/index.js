@@ -10,7 +10,7 @@ const fs = require('fs');
 
 // Set a higher limit for the request body size'''
 app.use(cors({
-    origin: 'https://mooreserver.onrender.com/',
+    origin: 'https://pern-ecommerce-app.vercel.app/',
   }));
   
 

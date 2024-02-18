@@ -5,7 +5,7 @@ const pool = require("../db");
 const cors = require("cors")
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://pern-ecommerce-app.vercel.app/',
   }));
   
 
