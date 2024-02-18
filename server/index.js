@@ -50,6 +50,8 @@ app.use("/saveditems", require("./routes/saved"));
 
 app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
+app.use("/trending", require("./routes/trending"))
+app.use("/newproducts", require("./routes/newproducts"))
 
 
 //  const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -102,14 +104,7 @@ app.post('/image', async (req, res) => {
   
 // get the new arrivals of product
 
-app.get("/newproducts", async (req,res) => {
-    try {
-        const allProducts = await pool.query(`SELECT * FROM products WHERE type='newArrivals'`);
-        res.json(allProducts.rows);
-    } catch (err) {
-        console.log(err.message);
-        
-    }})
+
 
 //get the title of new arrival
 app.get("/type", async (req, res) => {
@@ -127,14 +122,14 @@ app.get("/type", async (req, res) => {
 
 // get the trending product
 
-app.get("/trending", async (req,res) => {
-    try {
-        const allProducts = await pool.query(`SELECT * FROM products WHERE type='trending'`);
-        res.json(allProducts.rows);
-    } catch (err) {
-        console.log(err.message);
+// app.get("/trending", async (req,res) => {
+//     try {
+//         const allProducts = await pool.query(`SELECT * FROM products WHERE type='trending'`);
+//         res.json(allProducts.rows);
+//     } catch (err) {
+//         console.log(err.message);
         
-    }})
+//     }})
 
 
     app.get("/size/:size", async (req,res) => {
