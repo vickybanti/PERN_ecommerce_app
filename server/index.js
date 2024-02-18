@@ -9,7 +9,10 @@ const fs = require('fs');
 
 
 // Set a higher limit for the request body size'''
-app.use(cors());
+app.use(cors({
+    origin: '*',
+  }));
+  
 
 app.use(bodyParser.json({ limit: '100000000000mb' }));
 app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
@@ -48,10 +51,7 @@ app.use("/saveditems", require("./routes/saved"));
 app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 
-app.use(cors({
-    origin: 'https://pern-ecommerce-app.vercel.app',
-  }));
-  
+
 //  const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // module.exports = function (app) {
