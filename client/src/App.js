@@ -55,7 +55,7 @@ function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
 
   useEffect(() => {
-    fetch("https://mooreserver.onrender.com/checkout//config").then(async (r) => {
+    fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
       const { publishableKey } = await r.json();
       setStripePromise(loadStripe(publishableKey));
     });
