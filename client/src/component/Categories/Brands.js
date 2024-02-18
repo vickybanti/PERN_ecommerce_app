@@ -22,10 +22,10 @@ function Brands() {
             src="uploads/shoes/IMG-20230405-WA0032.jpg"
             //src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
             alt=""
-            style={{ width: "200px", height: "200px", marginRight: "10px" }} />
+             />
 
 
-          <button style={{ fontSize: "20px", margin: "50% 0", cursor: "pointer" }}>Nike</button>
+          <button className='brandbtn'>Nike</button>
         </NavLink>
       </div>
 
@@ -37,9 +37,8 @@ function Brands() {
             className="brandedimg"
             src="uploads/shoes/IMG-20230405-WA0028.jpg"
             alt=""
-            style={{ width: "200px", height: "200px", marginRight: "10px" }} />
-
-          <button style={{ fontSize: "20px", margin: "50% 0", cursor: "pointer" }}>Versace</button>
+/>
+          <button className='brandbtn'>Versace</button>
         </NavLink>
       </div>
 
@@ -50,10 +49,10 @@ function Brands() {
             className=" brandedimg"
             src="uploads/shoes/IMG-20230405-WA0031.jpg"
             alt=""
-            style={{ width: "200px", height: "200px", marginRight: "10px" }} />
+             />
 
 
-            <button style={{ fontSize: "20px", margin: "50% 0", cursor: "pointer" }}>
+            <button className='brandbtn'>
               puma
             </button>
 
@@ -70,9 +69,9 @@ function Brands() {
             className="brandedimg"
             src="Uploads/shoes/IMG-20230530-WA0011.jpg"
             alt=""
-            style={{ width: "200px", height: "200px", marginRight: "10px" }} />
+             />
 
-          <button style={{ fontSize: "20px", margin: "50% 0", cursor: "pointer" }}> Prada</button>
+          <button className='brandbtn'> Prada</button>
         </NavLink>
 
         </div>
