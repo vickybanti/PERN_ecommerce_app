@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { makeRequest } from '../makeRequest';
 
 
-    const useTrending = (url) => {
+    const useTrending = () => {
         const [data, setData] = useState([]);
         const [loading, setLoading] = useState(null)
         const [error, setError] = useState(true)
@@ -30,7 +30,7 @@ import { makeRequest } from '../makeRequest';
     
        
             fetchDataType();
-        }, [url])
+        }, [])
         return { data, loading, error};
     }
     

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { makeRequest } from "../makeRequest";
 
 
-const useFetch = (url) => {
+const useFetch = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(null)
     const [error, setError] = useState(true)
@@ -29,7 +29,7 @@ const useFetch = (url) => {
         }
     
         fetchData();
-    }, [url])
+    }, [])
     return { data, loading, error};
 }
 

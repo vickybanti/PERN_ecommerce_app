@@ -11,6 +11,8 @@ const fs = require('fs');
 // Set a higher limit for the request body size'''
 app.use(cors({
     origin: 'https://pern-ecommerce-app.vercel.app/',
+    methods: 'GET, PUT,POST , DELETE, '
+
   }));
   
 
