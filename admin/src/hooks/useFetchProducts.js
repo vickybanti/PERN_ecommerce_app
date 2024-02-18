@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { makeRequest } from "../../../client/src/makeRequest";
 
 
 const useFetchProducts = (url) => {
@@ -15,8 +16,8 @@ const useFetchProducts = (url) => {
         try {
             setLoading(true)
 
-            const res = await fetch(`http://localhost:5000/products`)
-            const json = await res.json()
+            const res = await makeRequest.get(`/products`)
+            const json = await res.data;
 
             setProduct(json)
             setLoading(false)

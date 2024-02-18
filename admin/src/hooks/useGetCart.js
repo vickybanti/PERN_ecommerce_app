@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { makeRequest } from '../../../client/src/makeRequest';
 
 function useGetCart() {
     const { user_id } = useParams();
@@ -13,8 +14,8 @@ function useGetCart() {
     const fetchData = async () => {
       try {
         setLoadCart(true);
-        const res = await fetch(`http://localhost:5000/cart/${user_id}`);
-        const json = await res.json();
+        const res = await makeRequest.get(`/cart/${user_id}`);
+        const json = await res.data;
         console.log(json);
         // find the category object with the matching ID
         // const catObj = catData.find((cat) => cat.id === parseInt(id));

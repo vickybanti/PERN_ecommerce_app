@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { makeRequest } from '../../../client/src/makeRequest';
 
 function useProCat() {
     const { id } = useParams();
@@ -12,8 +13,8 @@ function useProCat() {
     const fetchData = async () => {
       try {
         setLoadCat(true);
-        const res = await fetch(`http://localhost:5000/categories/${id}`);
-        const json = await res.json();
+        const res = await makeRequest.get(`/categories/${id}`);
+        const json = await res.data;
         console.log(json);
         // find the category object with the matching ID
         // const catObj = catData.find((cat) => cat.id === parseInt(id));

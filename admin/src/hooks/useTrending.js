@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { makeRequest } from '../../../client/src/makeRequest';
 
 
     const useTrending = (url) => {
@@ -14,7 +15,7 @@ import React,{useState,useEffect} from 'react'
             try {
                 setLoading(true)
     
-                const res = await fetch(`http://localhost:5000/trending`)
+                const res = await makeRequest.get(`/trending`)
                 const json = await res.json()
     
                 setData(json)

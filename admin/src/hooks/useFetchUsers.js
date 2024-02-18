@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SET_USERS } from "../redux/slice/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { makeRequest } from "../../../client/src/makeRequest";
 
 
 const useFetchUsers = (url) => {
@@ -18,8 +19,8 @@ const useFetchUsers = (url) => {
             try {
                 setLoading(true)
     
-                const res = await fetch(`http://localhost:5000/users`)
-                const json = await res.json()
+                const res = await makeRequest.get(`/users`)
+                const json = await res.data;
     
                 setData(json)
                 dispatch(SET_USERS(json));

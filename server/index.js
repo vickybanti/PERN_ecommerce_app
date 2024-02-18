@@ -9,12 +9,7 @@ const fs = require('fs');
 
 
 // Set a higher limit for the request body size'''
-app.use(cors({
-    origin: 'https://pern-ecommerce-app.vercel.app/',
-    methods: 'GET, PUT,POST , DELETE, '
 
-  }));
-  
 
 app.use(bodyParser.json({ limit: '100000000000mb' }));
 app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));

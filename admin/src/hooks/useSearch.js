@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { makeRequest } from "../../../client/src/makeRequest"
 
 function useSearch() {
     const [products, setProducts] = useState([])
@@ -9,8 +10,8 @@ function useSearch() {
         setLoading(true)
   
         try {
-          const productSearch = await fetch(`http://localhost:5000/search/`);
-          const productResponse = await productSearch.json();
+          const productSearch = await makeRequest.get(`/search/`);
+          const productResponse = await productSearch.data;
   
           setProducts(productResponse)
         } catch (err) {

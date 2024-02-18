@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { makeRequest } from "../../../client/src/makeRequest";
 
 
 const useCat = () => {
@@ -10,8 +11,8 @@ const useCat = () => {
       try {
         setLoading(true);
   
-        const res = await fetch(`http://localhost:5000/categories`);
-        const json = await res.json();
+        const res = await makeRequest.get(`/categories`);
+        const json = await res.data;
   
         // modify the catData to include IDs
         setCatData(json);

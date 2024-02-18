@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from 'react-router-dom';
+import { makeRequest } from "../../../client/src/makeRequest";
 
 
 const useFetchAProduct = () => {
@@ -50,8 +51,8 @@ const useFetchAProduct = () => {
             try {
                 setLoading(true)
                 
-                const res = await fetch(`http://localhost:5000/product/${id}`)
-                const json = await res.json()
+                const res = await makeRequest.get(`/product/${id}`)
+                const json = await res.data;
                 setPro(json)
                 setLoading(false)
     
