@@ -14,10 +14,8 @@ import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
-import {useEffect} from 'react';
 
-import {Elements} from '@stripe/react-stripe-js';
-import CheckoutForm from '../../component/Pay/CheckoutForm';
+
 
 
 
