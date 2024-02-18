@@ -48,6 +48,21 @@ app.use("/saveditems", require("./routes/saved"));
 app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 
+app.use(cors({
+    origin: 'https://pern-ecommerce-app.vercel.app',
+  }));
+  
+ const { createProxyMiddleware } = require('http-proxy-middleware');
+
+// module.exports = function (app) {
+//   app.use(
+//     '/checkout',
+//     createProxyMiddleware({
+//       target: 'https://mooreserver.onrender.com',
+//       changeOrigin: true,
+//     })
+//   );
+// };
 
 
 
