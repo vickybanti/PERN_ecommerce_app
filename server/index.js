@@ -10,7 +10,7 @@ const fs = require('fs');
 
 // Set a higher limit for the request body size'''
 app.use(cors({
-    origin: 'https://mooreserve.onrender.com/',
+    origin: 'https://mooreserver.onrender.com/',
   }));
   
 

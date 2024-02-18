@@ -11,7 +11,7 @@ app.use(cors({
 
 
 
-router.get("/", async (req,res) => {
+router.get("/", cors(),async (req,res) => {
     try {
         const allProducts = await pool.query(`SELECT * FROM products WHERE type='trending'`);
         res.json(allProducts.rows);
