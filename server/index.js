@@ -21,6 +21,10 @@ app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
 //middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cors({
+    origin:'https://pern-ecommerce-app.vercel.app/',
+    methods:['GET','POST','PATCH','PUT','DELETE']
+}))
 
 //register and login routes
 app.set('view engine', "ejs");
