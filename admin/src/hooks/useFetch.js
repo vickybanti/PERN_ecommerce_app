@@ -16,8 +16,8 @@ const useFetch = (url) => {
                 setLoading(true)
     
                 const res = await makeRequest.get(`/newproducts`, {
-                    Origin: "https://mooreserver.onrender.com/",
-                    "Access-Control-Request-Method": "DELETE"
+                    Origin: "https://pern-ecommerce-app.vercel.app/",
+                    "Access-Control-Request-Method": "GET"
                 
                 })
                 const json = await res.data;

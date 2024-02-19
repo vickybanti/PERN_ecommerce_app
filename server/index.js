@@ -22,8 +22,9 @@ app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cors({
-    origin:'https://pern-ecommerce-app.vercel.app/',
-    methods:['GET','POST','PATCH','PUT','DELETE']
+    origin: "https://pern-ecommerce-app.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
 }))
 
 //register and login routes
