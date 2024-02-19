@@ -15,7 +15,10 @@ const useFetch = (url) => {
             try {
                 setLoading(true)
     
-                const res = await makeRequest.get(`/newproducts`)
+                const res = await makeRequest.get(`/newproducts`, {
+                    method:"GET",
+                    headers:{"Access-Control-Allow-Origin":"*"}
+                })
                 const json = await res.data;
     
                 setData(json)
