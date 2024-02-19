@@ -16,8 +16,9 @@ const useFetch = (url) => {
                 setLoading(true)
     
                 const res = await makeRequest.get(`/newproducts`, {
-                    method:"GET",
-                    headers:{"Content-Type":"application/json"}
+                    Origin: "https://mooreserver.onrender.com/",
+                    "Access-Control-Request-Method": "DELETE"
+                
                 })
                 const json = await res.data;
     
