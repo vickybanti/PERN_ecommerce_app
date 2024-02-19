@@ -13,6 +13,7 @@ const headers = {
 
 export const makeRequest = axios.create({
     baseURL : BASE_URL, 
+    headers
     
     });
 
