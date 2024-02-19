@@ -4,6 +4,7 @@ const cors = require("cors");
 
 app.use(cors({
     origin: 'https://pern-ecommerce-app.vercel.app/',
+    methods:['GET','POST']
   }));
   
 
