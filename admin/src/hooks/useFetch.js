@@ -17,7 +17,7 @@ const useFetch = (url) => {
     
                 const res = await makeRequest.get(`/newproducts`, {
                     method:"GET",
-                    headers:{"Access-Control-Allow-Origin":"*"}
+                    headers:{"Content-Type":"application/json"}
                 })
                 const json = await res.data;
     
