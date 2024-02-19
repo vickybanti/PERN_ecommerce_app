@@ -15,12 +15,7 @@ import { makeRequest } from '../makeRequest';
             try {
                 setLoading(true)
     
-                const res = await makeRequest.get(`/trending`,{
-                    headers:{"Content-Type":"application/json",
-                    Origin: "https://pern-ecommerce-app.vercel.app/",
-                    "Access-Control-Request-Method": "GET"}
-                    
-                })
+                const res = await makeRequest.get(`/trending`)
                 const json = await res.data
     
                 setData(json)
