@@ -6,14 +6,15 @@ const RENDER_API="rnd_aNZ9enklIKwNgICV8oQiMktGR6aj"
 const headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)',
-    Origin: "https://mooreserver.onrender.com/",
-    "Access-Control-Allow-Origin": "https://mooreserver.onrender.com/"
+    'origin':'https://pern-ecommerce-app.vercel.app',
+    'access-control-allow-origin': 'https://mooreserver.onrender.com'
 };
 
 
 export const makeRequest = axios.create({
     baseURL : BASE_URL, 
-    headers
+    headers,
+    credentials: "include"
     
     });
 
