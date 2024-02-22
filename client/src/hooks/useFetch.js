@@ -17,7 +17,9 @@ const useFetch = () => {
     
             const res = await fetch("https://mooreserver.onrender.com/newproducts",{
           method:"GET",
-          origin: 'https://mooreserver.onrender.com'
+          "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+             "Access-Control-Allow-Methods": "GET, OPTIONS, POST",
         });
         const json = await res.json();
     
