@@ -7,7 +7,7 @@ const headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer (rnd_aNZ9enklIKwNgICV8oQiMktGR6aj)',
     'origin':'https://pern-ecommerce-app.vercel.app',
-    'access-control-allow-origin': 'https://mooreserver.onrender.com'
+    'Access-control-allow-origin': 'https://mooreserver.onrender.com'
 };
 
 

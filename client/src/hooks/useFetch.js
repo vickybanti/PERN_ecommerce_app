@@ -15,8 +15,11 @@ const useFetch = () => {
             try {
                 setLoading(true)
     
-                const res = await makeRequest.get(`/newproducts`)
-                const json = await res.data
+            const res = await fetch("https://mooreserver.onrender.com/newproducts",{
+          method:"GET",
+          origin: 'https://mooreserver.onrender.com'
+        });
+        const json = await res.json();
     
                 setData(json)
                 setLoading(false)

@@ -15,9 +15,11 @@ import { makeRequest } from '../makeRequest';
             try {
                 setLoading(true)
     
-                const res = await makeRequest.get(`/trending`)
-                const json = await res.data
-    
+            const res = await fetch("https://mooreserver.onrender.com/trending",{
+          method:"GET",
+          origin: 'https://mooreserver.onrender.com'
+        });
+        const json = await res.json();
                 setData(json)
                 setLoading(false)
     
