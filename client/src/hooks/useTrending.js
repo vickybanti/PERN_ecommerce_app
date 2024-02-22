@@ -17,7 +17,7 @@ import { makeRequest } from '../makeRequest';
     
             const res = await fetch("https://mooreserver.onrender.com/trending",{
           method:"GET",
-          origin: 'https://mooreserver.onrender.com'
+          mode:"cors"
         });
         const json = await res.json();
                 setData(json)
