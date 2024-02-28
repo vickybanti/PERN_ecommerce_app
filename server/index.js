@@ -6,6 +6,17 @@ const authorization = require("./middleware/authorization")
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
+app.use(
+    express.static(path.join(__dirname, "client"), {
+      setHeaders: (res, path, stat) => {
+        if (path === "/service-worker.js") {
+          res.set("Content-Type", "application/javascript");
+        }
+      },
+    })
+  );
+  
+
 
 
 // Set a higher limit for the request body size'''

@@ -17,7 +17,10 @@ import { makeRequest } from '../makeRequest';
     
             const res = await fetch("https://mooreserver.onrender.com/trending",{
           method:"GET",
-          mode:"cors"
+          headers: { 
+            "Content-Type" : "application/json",
+            'Access-control-allow-origin': 'https://mooreserver.onrender.com/'
+        },
         });
         const json = await res.json();
                 setData(json)
