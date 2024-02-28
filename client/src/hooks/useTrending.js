@@ -19,7 +19,7 @@ import { makeRequest } from '../makeRequest';
           method:"GET",
           headers: { 
             "Content-Type" : "application/json",
-            'Access-control-allow-origin': 'https://pern-ecommerce-app.vercel.app/'
+            'Access-Control-Allow-Origin': 'https://pern-ecommerce-app.vercel.app/'
         },
         });
         const json = await res.json();
