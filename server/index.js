@@ -32,14 +32,7 @@ app.use(bodyParser.urlencoded({ limit: '10000000000mb', extended: true }));
 //middleware
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors({
-    origin: "https://pern-ecommerce-app.vercel.app",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, 
-  headers:{
-    'Access-Control-Allow-Origin':"https://pern-ecommerce-app.vercel.app",
-  },
-}))
+app.use(cors({ origin: 'https://pern-ecommerce-app.vercel.app', 'Access-Control-Allow-Origin':'https://pern-ecommerce-app.vercel.app'}));
 
 //register and login routes
 app.set('view engine', "ejs");
