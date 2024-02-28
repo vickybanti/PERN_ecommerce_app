@@ -5,7 +5,7 @@ const pool = require("./db");
 const authorization = require("./middleware/authorization")
 const bodyParser = require('body-parser');
 const fs = require('fs');
-
+require("./vercel.json")
 app.use(
     express.static(path.join(__dirname, "client"), {
       setHeaders: (res, path, stat) => {
