@@ -17,7 +17,7 @@ import { makeRequest } from '../makeRequest';
     
             const res = await fetch("https://mooreserver.onrender.com/trending",{
           method:"GET",
-          mode:"same-origin",
+          mode:"cors",
           origin:"https://pern-ecommerce-app.vercel.app",
           headers: { 
             "Content-Type" : "application/json",
