@@ -7,6 +7,9 @@ const cors = require("cors")
 router.use(cors({
     "allowedHeaders":"*",
     "origin":"*",
+    headers:{
+        'Access-Control-Allow-Origin':"https://pern-ecommerce-app.vercel.app",
+      },
     
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, 

@@ -18,12 +18,13 @@ import { makeRequest } from '../makeRequest';
             const res = await fetch("https://mooreserver.onrender.com/trending",{
           method:"GET",
           mode:"cors",
-          origin:"https://pern-ecommerce-app.vercel.app",
+          
+          'Access-Control-Allow-Origin':{
+            origin:"https://pern-ecommerce-app.vercel.app",
+          },
           headers: { 
             "Content-Type" : "application/json",
-            'Access-Control-Allow-Origin': 'https://mooreserver.onrender.com/trending',
-            'origin':'https://pern-ecommerce-app.vercel.app',
-            
+    
         },
         });
         const json = await res.json();
