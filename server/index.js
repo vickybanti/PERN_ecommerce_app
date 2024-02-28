@@ -36,6 +36,9 @@ app.use(cors({
     origin: "https://pern-ecommerce-app.vercel.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, 
+  headers:{
+    'Access-Control-Allow-Origin':"https://pern-ecommerce-app.vercel.app",
+  },
 }))
 
 //register and login routes
