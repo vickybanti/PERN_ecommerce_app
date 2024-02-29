@@ -18,7 +18,8 @@ const useFetch = () => {
             const res = await fetch("https://mooreserver.onrender.com/newproducts",{
           method:"GET",
           "Content-Type":"application/json",
-          mode:"no-cors"
+          mode:"cors",
+          origin:"https://pern-ecommerce-app.vercel.app"
         });
         const json = await res.json();
     
