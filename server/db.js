@@ -2,13 +2,7 @@
 const Pool = require("pg").Pool;
 require('dotenv').config();
 const cors = require("cors");
-
-
-app.use(cors({
-    origin: 'https://pern-ecommerce-app.vercel.app/',
-    methods: 'GET, PUT,POST , DELETE, '
-  }));
-  
+ 
 
 let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
