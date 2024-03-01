@@ -7,18 +7,9 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 require("./vercel.json")
 
-app.use(cors({ origin: 'https://pern-ecommerce-app.vercel.app'}));
+app.use(cors({ origin: 'https://pern-ecommerce-app.vercel.app','Access-Control-Allow-Origin':'https://pern-ecommerce-app.vercel.app'}));
 
-app.use(
-    express.static(path.join(__dirname, "client"), {
-      setHeaders: (res, path, stat) => {
-        if (path === "/service-worker.js") {
-          res.set("Content-Type", "application/javascript");
-        }
-      },
-    })
-  );
-  
+
 
 
 
