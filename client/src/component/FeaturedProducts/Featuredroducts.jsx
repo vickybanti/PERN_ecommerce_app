@@ -28,7 +28,7 @@ return (
           <Carousel 
           responsive={responsive} 
           className='carousel' 
-          autoPlay={false}
+          autoPlay={true}
           autoPlaySpeed={2000}
           infinite={true}>
           
