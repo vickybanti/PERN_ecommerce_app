@@ -53,7 +53,19 @@ app.use("/saveditems", require("./routes/saved"));
 app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 app.use("/trending", require("./routes/trending"))
-app.use("/newproducts", require("./routes/newproducts"))
+
+
+
+
+app.get("/", async (req,res) => {
+    try {
+        const allProducts = await pool.query(`SELECT * FROM products WHERE type='newArrivals'`);
+        res.json(allProducts.rows);
+    } catch (err) {
+        console.log(err.message);
+        
+    }})
+
 
 
 //  const { createProxyMiddleware } = require('http-proxy-middleware');
