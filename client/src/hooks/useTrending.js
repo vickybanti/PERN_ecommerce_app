@@ -15,19 +15,8 @@ import { makeRequest } from '../makeRequest';
             try {
                 setLoading(true)
     
-            const res = await fetch("https://mooreserver.onrender.com/trending",{
-          method:"GET",
-          mode:"cors",
-          
-          'Access-Control-Allow-Origin':{
-            origin:"https://pern-ecommerce-app.vercel.app",
-          },
-          headers: { 
-            "Content-Type" : "application/json",
-    
-        },
-        });
-        const json = await res.json();
+            const res = await makeRequest.get("/trending");
+        const json = await res.data;
                 setData(json)
                 setLoading(false)
     

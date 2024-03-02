@@ -15,13 +15,8 @@ const useFetch = () => {
             try {
                 setLoading(true)
     
-            const res = await fetch("https://mooreserver.onrender.com/newproducts",{
-          method:"GET",
-          "Content-Type":"application/json",
-          mode:"cors",
-          origin:"https://pern-ecommerce-app.vercel.app"
-        });
-        const json = await res.json();
+            const res = await makeRequest.get("/newproducts")
+        const json = await res.data;
     
                 setData(json)
                 setLoading(false)
