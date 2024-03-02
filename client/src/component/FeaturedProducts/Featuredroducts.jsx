@@ -5,9 +5,7 @@ import useFetch from '../../hooks/useFetch';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { responsive } from '../Responsive';
-import { Button, Skeleton } from '@mui/material';
 import SkeletonImg from '../skeleton/SkeletonImg';
-import { useNavigate } from 'react-router-dom';
 
 
   
@@ -16,9 +14,8 @@ import { useNavigate } from 'react-router-dom';
 function Featuredroducts() {
   
 
-const {data, loading} = useFetch()
+const {data, loading} = useFetch('/newproducts')
 console.log("data =", data) 
-const navigate = useNavigate()
 
 return (
     <div className='featured'>

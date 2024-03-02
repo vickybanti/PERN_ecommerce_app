@@ -16,6 +16,7 @@ const useFetch = () => {
                 setLoading(true)
     
             const res = await makeRequest.get("/newproducts")
+            console.log(res)
         const json = await res.data;
     
                 setData(json)
