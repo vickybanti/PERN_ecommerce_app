@@ -57,7 +57,7 @@ app.use("/trending", require("./routes/trending"))
 
 
 
-app.get("/", async (req,res) => {
+app.get("/newproducts", async (req,res) => {
     try {
         const allProducts = await pool.query(`SELECT * FROM products WHERE type='newArrivals'`);
         res.json(allProducts.rows);
