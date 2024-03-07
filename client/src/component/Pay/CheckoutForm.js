@@ -26,6 +26,8 @@ export default function CheckoutForm() {
     if (!clientSecret) {
       return;
     }
+    
+   
 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
