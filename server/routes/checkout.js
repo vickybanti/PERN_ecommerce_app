@@ -115,7 +115,7 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
       //   }))
   
           
-          
+          console.log(paymentIntent)
                
       
         res.send({
