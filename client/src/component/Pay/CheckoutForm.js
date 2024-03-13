@@ -5,7 +5,7 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({clientSecret}) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -17,9 +17,7 @@ export default function CheckoutForm() {
       return;
     }
 
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
+  
 
     console.log(clientSecret)
 
@@ -45,7 +43,7 @@ export default function CheckoutForm() {
           break;
       }
     });
-  }, [stripe]);
+  }, [stripe,clientSecret]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
