@@ -4,7 +4,7 @@ import CheckoutForm from './CheckoutForm';
 
 function Payment(props, requestBody) {
   const { stripePromise } = props;
-  const [clientSecret, setClientSecret] = useState('');
+  const [clientSecret, setClientSecret] = useState(null);
 
   useEffect(() => {
     const pay = async () => {
@@ -33,6 +33,7 @@ function Payment(props, requestBody) {
     appearance,
   };
 
+  console.log(options)
   return (
     <>
       <div className='pay'>
