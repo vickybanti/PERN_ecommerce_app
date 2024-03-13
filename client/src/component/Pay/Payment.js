@@ -4,7 +4,7 @@ import CheckoutForm from './CheckoutForm';
 
 function Payment(props, requestBody) {
   const { stripePromise } = props;
-  const [clientSecret, setClientSecret] = useState(null);
+  const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
     const pay = async () => {
@@ -16,6 +16,7 @@ function Payment(props, requestBody) {
         });
 
         const data = await response.json();
+        console.log(data)
         setClientSecret(data.client_secret); // Use data.client_secret instead of data.clientSecret
       } catch (error) {
         console.error("Error fetching client secret:", error.message);
