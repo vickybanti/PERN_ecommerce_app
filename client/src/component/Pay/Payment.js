@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
+import { makeRequest } from '../../makeRequest';
 
 function Payment(props, requestBody) {
   const { stripePromise } = props;
@@ -10,10 +11,8 @@ function Payment(props, requestBody) {
   useEffect(() => {
     async function pay(){
       try {
-        const response = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
-          method: "POST",
+        const response = await makeRequest.post("/checkout/create-payment-intent", {
           body: JSON.stringify(requestBody),
-          headers: { "Content-Type": "application/json" }
         });
         console.log(response)
 
