@@ -4,16 +4,18 @@ import CheckoutForm from './CheckoutForm';
 
 function Payment(props, requestBody) {
   const { stripePromise } = props;
-  const [clientSecret, setClientSecret] = useState('');
+  const [clientSecret, setClientSecret] = useState([]);
+
 
   useEffect(() => {
-    const pay = async () => {
+    async function pay(){
       try {
         const response = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
           method: "POST",
           body: JSON.stringify(requestBody),
           headers: { "Content-Type": "application/json" }
         });
+        console.log(response)
 
         const data = await response.json();
         console.log(data)
