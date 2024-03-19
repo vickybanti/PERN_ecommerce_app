@@ -118,7 +118,7 @@ router.get("/create-payment-intent", async function handlePaymentIntent (req, re
           console.log(paymentIntent.client_secret)
                
       
-        res.json({
+        res.send({
           publishableKey: "pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY",
           client_secret: paymentIntent.id,
           // orders: createOrder.rows,
