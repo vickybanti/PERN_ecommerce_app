@@ -41,9 +41,11 @@ function Payment(props, requestBody) {
     appearance,
   };
 
+
+  console.log(options)
   return (
     <>
-      <div className='pay'>
+      <div className='pay' style={{paddingTop:"500px"}}>
         <h1>Payment</h1>
         {(
           <Elements stripe={stripePromise} options={options}>
