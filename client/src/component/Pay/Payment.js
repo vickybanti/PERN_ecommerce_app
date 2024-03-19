@@ -5,17 +5,13 @@ import { makeRequest } from '../../makeRequest';
 
 function Payment(props, requestBody) {
   const { stripePromise } = props;
-  const [clientSecret, setClientSecret] = useState([]);
-
+  const [clientSecret, setClientSecret] = useState(null); // Initialize clientSecret as null
 
   useEffect(() => {
-    async function pay(){
+    async function pay() {
       try {
         const response = await makeRequest.get("/checkout/create-payment-intent");
-        console.log(response)
-
         const data = await response.json();
-        console.log(data)
         setClientSecret(data.client_secret); // Use data.client_secret instead of data.clientSecret
       } catch (error) {
         console.error("Error fetching client secret:", error.message);
@@ -28,12 +24,23 @@ function Payment(props, requestBody) {
   const appearance = {
     theme: 'stripe',
   };
+
+  // Check if clientSecret is valid before rendering Elements
+  if (!clientSecret) {
+    return <div>Loading...</div>;
+  }
+
+  // Extracting id and secret from clientSecret
+  const [id, secret] = clientSecret.split("_secret_");
+
+  // Forming client secret in the required format
+  const formattedClientSecret = `${id}_secret_${secret}`;
+
   const options = {
-    clientSecret: `${clientSecret}`, // Use clientSecret as it is now in the correct format
+    clientSecret: formattedClientSecret, // Use the formatted client secret
     appearance,
   };
 
-  console.log(options)
   return (
     <>
       <div className='pay'>
