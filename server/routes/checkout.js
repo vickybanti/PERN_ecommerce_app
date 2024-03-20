@@ -91,7 +91,7 @@ router.get("/create-payment-intent", async function handlePaymentIntent (req, re
         
          
         
-    const paymentIntent = await stripe.paymentIntents.create({
+    const paymentIntent = stripe.paymentIntents.create({
       currency: 'USD',
       amount: total,
       payment_method_types:["card"],

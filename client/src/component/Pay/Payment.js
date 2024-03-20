@@ -12,6 +12,8 @@ function Payment(props, requestBody) {
       try {
         const response = await makeRequest.get("/checkout/create-payment-intent");
         const data = await response.json();
+
+        console.log(data)
         setClientSecret(data.client_secret); // Use data.client_secret instead of data.clientSecret
       } catch (error) {
         console.error("Error fetching client secret:", error.message);
@@ -20,6 +22,10 @@ function Payment(props, requestBody) {
 
     pay();
   }, [requestBody]);
+
+  console.log(clientSecret)
+
+
 
   const appearance = {
     theme: 'stripe',
