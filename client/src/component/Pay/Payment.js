@@ -10,7 +10,7 @@ function Payment(props, requestBody) {
   useEffect(() => {
     async function pay() {
       try {
-        const response = await makeRequest.get("/checkout/create-payment-intent");
+        const response = await makeRequest.post("/checkout/create-payment-intent");
         const data = await response.json();
 
         console.log(data)
