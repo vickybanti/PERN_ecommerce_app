@@ -26,8 +26,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/config", (req, res) => {
-  res.json({
-    publishableKey: "pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY"
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   });
 });
 
@@ -91,11 +91,10 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
         
          
         
-    const paymentIntent = stripe.paymentIntents.create({
-      currency: 'USD',
-      amount: total,
-      payment_method_types:["card"],
-      automatic_payment_methods: { enabled: true }
+    const paymentIntent = await stripe.paymentIntents.create({
+      currency: "USD",
+      amount: amount,
+      automatic_payment_methods: { enabled: true },
     });
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
@@ -119,15 +118,17 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
                
       
         res.send({
-          publishableKey: "pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY",
-          client_secret: paymentIntent.id,
-          // orders: createOrder.rows,
+          clientSecret: paymentIntent.client_secret,
+          orders: createOrder.rows,
         });
 
 
-      } catch (err) {
-        console.error(err.message)
-          
+      } catch (e) {
+        return res.status(400).send({
+          error: {
+            message: e.message,
+          },
+        });
         }
         
   

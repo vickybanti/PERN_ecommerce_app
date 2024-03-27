@@ -131,8 +131,7 @@ function Checkout(props) {
         return code;
       }
 
-      const { stripePromise } = props;
-    const [ clientSecret, setClientSecret ] = useState('');
+     
       
 async function makePayment(values) {
     
@@ -154,7 +153,7 @@ const newRequestBody = {
   console.log(requestBody)
   setRequestBody(newRequestBody)
  
-    navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+     navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(requestBody)));
     //navigate("/pay ",{requestBody:newRequestBody});
 
     

@@ -1,64 +1,38 @@
-import { useEffect, useState } from 'react';
-import { Elements } from '@stripe/react-stripe-js';
-import CheckoutForm from './CheckoutForm';
-import { makeRequest } from '../../makeRequest';
+import { useEffect, useState } from "react";
 
-function Payment(props, requestBody) {
-  const { stripePromise } = props;
-  const [clientSecret, setClientSecret] = useState(null); // Initialize clientSecret as null
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
+import { loadStripe } from "@stripe/stripe-js";
+
+function Payment({requestBody}) {
+  const [stripePromise, setStripePromise] = useState(null);
+  const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    async function pay() {
-      try {
-        const response = await makeRequest.post("/checkout/create-payment-intent");
-        const data = await response.json();
+    fetch("/config").then(async (r) => {
+      const { publishableKey } = await r.json();
+      setStripePromise(loadStripe(publishableKey));
+    });
+  }, []);
 
-        console.log(data)
-        setClientSecret(data.client_secret); // Use data.client_secret instead of data.clientSecret
-      } catch (error) {
-        console.error("Error fetching client secret:", error.message);
-      }
-    };
+  useEffect(() => {
+    fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
+      method: "POST",
+      body: JSON.stringify({requestBody}),
+    }).then(async (result) => {
+      var { clientSecret } = await result.json();
+      setClientSecret(clientSecret);
+    });
+  }, []);
 
-    pay();
-  }, [requestBody]);
-
-  console.log(clientSecret)
-
-
-
-  const appearance = {
-    theme: 'stripe',
-  };
-
-  // Check if clientSecret is valid before rendering Elements
-  if (!clientSecret) {
-    return <div>Loading...</div>;
-  }
-
-  // Extracting id and secret from clientSecret
-  const [id, secret] = clientSecret.split("_secret_");
-
-  // Forming client secret in the required format
-  const formattedClientSecret = `${id}_secret_${secret}`;
-
-  const options = {
-    clientSecret: formattedClientSecret, // Use the formatted client secret
-    appearance,
-  };
-
-
-  console.log(options)
   return (
     <>
-      <div className='pay' style={{paddingTop:"500px"}}>
-        <h1>Payment</h1>
-        {(
-          <Elements stripe={stripePromise} options={options}>
-            <CheckoutForm clientSecret={clientSecret}/>
-          </Elements>
-        )}
-      </div>
+      <h1>React Stripe and the Payment Element</h1>
+      {clientSecret && stripePromise && (
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
+          <CheckoutForm />
+        </Elements>
+      )}
     </>
   );
 }
