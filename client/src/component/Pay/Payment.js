@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 
-function Payment({requestBody}) {
+function Payment({newRequestBody}) {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -18,7 +18,7 @@ function Payment({requestBody}) {
   useEffect(() => {
     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({requestBody}),
+      body: JSON.stringify({newRequestBody}),
     }).then(async (result) => {
       var { clientSecret } = await result.json();
       setClientSecret(clientSecret);
