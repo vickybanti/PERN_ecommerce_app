@@ -23,6 +23,7 @@ function Payment({newRequestBody}) {
       body: JSON.stringify({newRequestBody}),
     }).then(async (result) => {
       var { clientSecret } = await result.json();
+      console.log(result.json())
       setClientSecret(clientSecret);
     });
   }, [newRequestBody]);
@@ -31,12 +32,14 @@ function Payment({newRequestBody}) {
 
   return (
     <>
+    <div className="pay"  style={{paddingTop:"300px"}}>
       <h1>React Stripe and the Payment Element</h1>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
         </Elements>
       )}
+      </div>
     </>
   );
 }
