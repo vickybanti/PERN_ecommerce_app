@@ -9,7 +9,7 @@ function Payment({newRequestBody}) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("/config").then(async (r) => {
+    fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
       const { publishableKey } = await r.json();
       setStripePromise(loadStripe(publishableKey));
     });
