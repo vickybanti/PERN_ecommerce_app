@@ -23,7 +23,7 @@ function Payment({newRequestBody}) {
   useEffect(() => {
      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({newRequestBody}),
+      body: JSON.stringify(newRequestBody),
     }).then(async (result) => {
       var { clientSecret } = await result.json();
       console.log(result.json())
