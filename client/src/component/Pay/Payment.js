@@ -13,7 +13,7 @@ function Payment({newRequestBody}) {
     fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
       const { publishableKey } = await r.json();
       console.log(publishableKey)
-      setStripePromise(loadStripe({publishableKey}));
+      setStripePromise(loadStripe(publishableKey));
     });
   }, []);
 
