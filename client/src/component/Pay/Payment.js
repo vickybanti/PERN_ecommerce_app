@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -11,6 +12,8 @@ function Payment({newRequestBody}) {
   useEffect(() => {
     fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
       const { publishableKey } = await r.json();
+      console.log(r.json())
+      console.log({publishableKey})
       setStripePromise(loadStripe(publishableKey));
     });
   }, []);
