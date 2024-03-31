@@ -35,7 +35,7 @@ router.get("/config", (req, res) => {
   });
 });
 
-router.post("/create-payment-intent", async function handlePaymentIntent (req, res)  {
+router.post("/create-payment-intent",async (req, res) => {
 
   
     const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
@@ -102,6 +102,8 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
     });
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
+          console.log(paymentIntent.client_secret)
+
           
     const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
@@ -118,7 +120,6 @@ router.post("/create-payment-intent", async function handlePaymentIntent (req, r
       //   }))
   
           
-          console.log(paymentIntent.client_secret)
                
       
         res.send({
