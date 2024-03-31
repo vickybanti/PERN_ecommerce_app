@@ -36,7 +36,7 @@ function Payment({newRequestBody}) {
     <>
     <div className="pay"  style={{paddingTop:"300px"}}>
       <h1>React Stripe and the Payment Element</h1>
-      {clientSecret && stripePromise && (
+      {stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />
         </Elements>

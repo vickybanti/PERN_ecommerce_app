@@ -12,7 +12,7 @@ const cors = require("cors");
 
 const myModule = require("../template");
 
-router.use(cors({ origin: 'https://pern-ecommerce-app.vercel.app','Access-Control-Allow-Origin':'https://pern-ecommerce-app.vercel.app'}));
+router.use(cors());
 
 
 
