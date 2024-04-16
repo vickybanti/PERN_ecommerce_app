@@ -46,11 +46,10 @@ function SearchBar() {
       <form onSubmit={handleSubmit}
 
       >
-      <IconButton style={{ position: 'absolute', top: '50%', 
-      right: '10px', 
+      <IconButton style={{ 
       transform: 'translateY(-50%)' , 
       borderRight:'1px gray'}}>
-            <i className="fas fa-search"></i>
+            <i className="fas fa-search" style={{color:'gray'}}></i>
           </IconButton>
       
       
