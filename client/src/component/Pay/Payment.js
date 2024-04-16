@@ -24,7 +24,7 @@ function Payment({newRequestBody}) {
       method: "POST",
       body: JSON.stringify(newRequestBody),
     }).then(async (result) => {
-      var { clientSecret } = await result.json();
+      const { clientSecret } = await result.json();
       console.log(clientSecret)
       setClientSecret(clientSecret);
     });

@@ -7,15 +7,16 @@ const pool = require("../db");
 const crypto = require("crypto");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const sendEmail = require("../sendEmail")
-const cors = require("cors");
+
+
 
 
 const myModule = require("../template");
 
-router.use(cors());
 
 
 
+console.log(stripe)
 //ORDER EMAIL
 const orderEmail = myModule.createOrderEmail;
     
@@ -124,7 +125,7 @@ router.post("/create-payment-intent",async (req, res) => {
       
         res.send({
           clientSecret: paymentIntent.client_secret,
-          orders: createOrder.rows,
+          //orders: createOrder.rows,
         });
 
 
