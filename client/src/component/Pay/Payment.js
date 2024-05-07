@@ -23,9 +23,10 @@ function Payment({newRequestBody}) {
      fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
       method: "POST",
       body: JSON.stringify({newRequestBody}),
+      headers: {"Content-Type":"application/json"}
     }).then(async (result) => {
       console.log(result)
-      const { clientSecret } = await result.json();
+      const { client_secret : clientSecret } = await result.json();
       console.log(clientSecret)
       setClientSecret(clientSecret);
     });
