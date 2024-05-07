@@ -7,7 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 function Payment({newRequestBody}) {
   const [stripePromise, setStripePromise] = useState(null);
-  const [clientSecret, setClientSecret] = useState("");
+  const [clientSecret, setClientSecret] = useState(null);
 
   useEffect(() => {
     fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
