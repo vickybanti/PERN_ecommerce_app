@@ -83,13 +83,13 @@ router.post("/create-payment-intent",async (req, res) => {
     
  
     
-   const totals =  carts.map((item) => (
+   const total =  carts.map((item) => (
     item.price * 100
        
   ));
   const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
 
-  const total = parseFloat(totals)
+  //const total = parseFloat(totals)
 
   try {
     
@@ -100,7 +100,7 @@ router.post("/create-payment-intent",async (req, res) => {
       currency: "USD",
       amount: total,
       automatic_payment_methods: { enabled: true },
-    });
+    }); 
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
           console.log(paymentIntent.client_secret)
@@ -123,7 +123,7 @@ router.post("/create-payment-intent",async (req, res) => {
           
                
       
-        res.send({
+        res.json({
           clientSecret: paymentIntent.client_secret,
           //orders: createOrder.rows,
         });
