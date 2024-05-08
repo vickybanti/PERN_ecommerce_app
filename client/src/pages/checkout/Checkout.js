@@ -14,10 +14,13 @@ import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
+import { useHistory } from 'react-router-dom';
 
 
 
 
+
+const history = useHistory()
 
 
 
@@ -132,6 +135,26 @@ function Checkout(props) {
       }
 
      
+    
+      const navigateToPay = (newRequestBody) => {
+        // Create a form element
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/pay';
+    
+        // Create an input element to hold the request body
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'requestBody';
+        input.value = JSON.stringify(newRequestBody);
+    
+        // Append the input to the form
+        form.appendChild(input);
+    
+        // Append the form to the document body and submit it
+        document.body.appendChild(form);
+        form.submit();
+      };
       
 async function makePayment(values) {
     
@@ -152,8 +175,10 @@ const newRequestBody = {
 }
   console.log(requestBody)
   setRequestBody(newRequestBody)
+
+    navigateToPay(newRequestBody);
  
-     navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
+    // navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
     //navigate("/pay ",{requestBody:newRequestBody});
 
     
