@@ -20,7 +20,7 @@ function Payment({newRequestBody}) {
   console.log(stripePromise)
 
   useEffect(() => {
-     fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
+     fetch("https://mooreserver.onrender.com/checkout/create_payment_intent", {
       method: "POST",
       body: JSON.stringify({newRequestBody}),
       headers: {"Content-Type":"application/json"}

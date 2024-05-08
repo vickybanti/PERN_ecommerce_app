@@ -36,7 +36,7 @@ router.get("/config", (req, res) => {
   });
 });
 
-router.post("/create-payment-intent",async (req, res) => {
+router.post("/create_payment_intent",async (req, res) => {
 
   
     const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
