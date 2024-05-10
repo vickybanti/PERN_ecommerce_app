@@ -97,16 +97,19 @@ router.post("/create_payment_intent",async (req, res) => {
          
         
     const paymentIntent = await stripe.paymentIntents.create({
-      currency: "USD",
-      amount: total,
-      automatic_payment_methods: { enabled: true },
-    }); 
+      amount: 1099,
+      currency: 'usd',
+      // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+      automatic_payment_methods: {
+        enabled: true,
+      }
+    })
           const paymentIntentId = paymentIntent.id
           console.log(paymentIntentId)
           console.log(paymentIntent.client_secret)
 
           
-    const createOrder =await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+    const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
       VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
       '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
