@@ -1,9 +1,9 @@
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// import { Elements } from "@stripe/react-stripe-js";
-// import CheckoutForm from "./CheckoutForm";
-// import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
+import { loadStripe } from "@stripe/stripe-js";
 
 // function Payment({newRequestBody}) {
 //   const [stripePromise, setStripePromise] = useState(null);
