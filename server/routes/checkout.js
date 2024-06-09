@@ -1,5 +1,4 @@
-﻿const { resolve } = require("path");
-// Replace if using a different env file or config
+﻿// Replace if using a different env file or config
 require("dotenv").config();
 const router = require("express").Router();
 const pool = require("../db");
