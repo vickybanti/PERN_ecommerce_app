@@ -1,7 +1,6 @@
 
 .images{
     display:flex;
-   justify-content:flex-end;  
    margin-right: 170px;
    
    
@@ -130,7 +129,7 @@
         padding: 0 30px; 
         margin-bottom:30px;
         border-radius: 5px;
-        margin-top: -510px;
+        margin-top: -600px;
         
 
         .check{
@@ -141,7 +140,6 @@
             margin:auto;
             padding:10px;
             transition: 0.7s ease-in-out all;
-            transform: animation linear all;
 
             @keyframes animation {
                 to{

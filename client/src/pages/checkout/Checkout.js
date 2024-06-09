@@ -453,7 +453,7 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
         </Box>
         
 
-        <Box sx={{position:"absolute"}} className="images">
+        <Box className="images">
         <img src='img/payment/f1.png' alt='' />
   
           <img src='/img/payment/f3.png' alt='' style={{marginRight:"1px"}}/>
