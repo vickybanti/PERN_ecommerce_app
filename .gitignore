@@ -1,2 +1,4 @@
 node_modules
 *.vsidx
+/package.json
+/package-lock.json
