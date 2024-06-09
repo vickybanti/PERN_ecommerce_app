@@ -9,6 +9,7 @@ import Zoom from '@mui/material/Zoom';
 import { ZoomIn } from "@mui/icons-material";
 import Fab from '@mui/material/Fab';
 import { useEffect } from 'react';
+import { motion } from "framer-motion"
 
 
 
@@ -30,97 +31,94 @@ function Categories() {
     
     return (
 
-        <motion.div
-  initial={{ x: "50%" }}
-  animate={{ x: "calc(100vw - 50%)" }}
-/>
-        
-        <><div className='categoriesHeader'>
-            <h1>Popular Categories</h1>
-        </div>
-        <div className='categories'>
+        <><motion.div
+            initial={{ x: "50%" }}
+            animate={{ x: "calc(100vw - 50%)" }} /><><div className='categoriesHeader'>
+                <h1>Popular Categories</h1>
+            </div>
+                <div className='categories'>
 
 
-                <div className='column'>
+                    <div className='column'>
 
-                    <div className='rows'>
-                    <h4 className="catheading">Discover trending categories</h4>
-                        <img src="uploads/shoes/classic shoes.jpg" alt='' className='catMain'/>
+                        <div className='rows'>
+                            <h4 className="catheading">Discover trending categories</h4>
+                            <img src="uploads/shoes/classic shoes.jpg" alt='' className='catMain' />
 
-                        <Button className="mainButton">
+                            <Button className="mainButton">
 
-                            <NavLink style={{ color: "white" }} to={`Products/categories/leather shoes`}>Men's classic</NavLink>
+                                <NavLink style={{ color: "white" }} to={`Products/categories/leather shoes`}>Men's classic</NavLink>
 
 
-                        </Button>
+                            </Button>
+                        </div>
                     </div>
-                </div>
-                
-                <div className='column column-large'>
-                <div className='tag'>HOT</div>
-                    <div className='rows'>
-                    
 
-                    <div className='hot'>
+                    <div className='column column-large'>
+                        <div className='tag'>HOT</div>
+                        <div className='rows'>
 
-                    
-                                <img src="img/blog/2.jpg" alt='' className='catimg'/>
+
+                            <div className='hot'>
+
+
+                                <img src="img/blog/2.jpg" alt='' className='catimg' />
 
                                 <Button className="catbutton">
                                     <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Men's jacket</NavLink>
 
                                 </Button>
-                    </div>
-                        
+                            </div>
 
-                    <div className='hot'>
 
-                        <img src="uploads/shoes/IMG-20230405-WA0064 (1).jpg" alt='' className='catimg'/>
+                            <div className='hot'>
 
-                        <Button className="catbutton">
-                            <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Classic flips</NavLink>
+                                <img src="uploads/shoes/IMG-20230405-WA0064 (1).jpg" alt='' className='catimg' />
 
-                        </Button>
+                                <Button className="catbutton">
+                                    <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Classic flips</NavLink>
+
+                                </Button>
+                            </div>
                         </div>
-                </div>
-                
-                <div className='sale'>SALE</div>
 
-                <div className='rows'>
-                <div className='hot'>
+                        <div className='sale'>SALE</div>
 
-                
-                <img src="uploads/unisex.jpg" alt='' className='catimg'/>
+                        <div className='rows'>
+                            <div className='hot'>
 
-                <Button className="catbutton">
-                    <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Unisex jacket</NavLink>
 
-                </Button>
-                </div>
-        
-                    <div className='hot'>
-                    <img src="img/blog/3.webp" alt='' className='catimg'/>
+                                <img src="uploads/unisex.jpg" alt='' className='catimg' />
+
+                                <Button className="catbutton">
+                                    <NavLink style={{ color: "white" }} to={`Products/categories/jackets}`}>Unisex jacket</NavLink>
+
+                                </Button>
+                            </div>
+
+                            <div className='hot'>
+                                <img src="img/blog/3.webp" alt='' className='catimg' />
 
 
                                 <Button className="catbutton">
-                                <NavLink to={`brands/Nike` || `brands/Addidas`} style={{ color: "white" }}>
+                                    <NavLink to={`brands/Nike` || `brands/Addidas`} style={{ color: "white" }}>
 
-                                     Top Sneakers
+                                        Top Sneakers
                                     </NavLink>
 
 
                                 </Button>
-                                </div>
-                                </div>
-                            
-
-                    
-                    
-
-                </div>
+                            </div>
+                        </div>
 
 
-            </div></>    
+
+
+
+                    </div>
+
+
+                </div></></>    
 
 
    

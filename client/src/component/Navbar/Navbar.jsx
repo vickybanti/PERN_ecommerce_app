@@ -18,10 +18,12 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
-import { stagger, animate } from "framer-motion"
+import { stagger, animate, useAnimate } from "framer-motion"
+import { MenuToggle } from "./MenuToggle";
 
 
 
+animate(".styles.welcome", { x: 300 }, { delay: stagger(0.1) })
 
 
  
@@ -64,10 +66,62 @@ const handleClose = () => {
 
   const quantity = useSelector((state) => state.cart.totalQuantity);
   const savedItems = useSelector((state) => state.savedProducts.savedItems);
-  const savedQuantity = savedItems.length
+    const savedQuantity = savedItems.length
 
-  const cart = (
-    <span className={styles.cart} style={{marginRight:"20px"}}>
+
+
+    function useMenuAnimation(isOpen: boolean) {
+        const [scope, animate] = useAnimate();
+
+        useEffect(() => {
+            const menuAnimations = isOpen
+                ? [
+                    [
+                        "{styles.cart}",
+                        { transform: "translateX(0%)" },
+                        { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }
+                    ],
+                    [
+                        "li",
+                        { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
+                        { delay: stagger(0.05), at: "-0.1" }
+                    ]
+                ]
+                : [
+                    [
+                        "li",
+                        { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
+                        { delay: stagger(0.05, { from: "last" }), at: "<" }
+                    ],
+                    ["{styles.cart}", { transform: "translateX(-100%)" }, { at: "-0.1" }]
+                ];
+
+            animate([
+                [
+                    "path.top",
+                    { d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5" },
+                    { at: "<" }
+                ],
+                ["path.middle", { opacity: isOpen ? 0 : 1 }, { at: "<" }],
+                [
+                    "path.bottom",
+                    { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
+                    { at: "<" }
+                ],
+                ...menuAnimations
+            ]);
+        }, [isOpen]);
+
+        return scope;
+    }
+
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const scope = useMenuAnimation(isOpen);
+    const cart = (       
+
+        <span className={styles.cart} style={{ marginRight: "20px" }} ref={scope}>
     <Tooltip title="View Cart">
                       <IconButton
                         size="large"
@@ -77,7 +131,7 @@ const handleClose = () => {
                           borderRadius: 0
                         }}
                       >
-                         <Badge badgeContent={<span style={{fontSize:"12px"}}>{quantity>0 && quantity}</span>} color={"error"}>
+                         <Badge badgeContent={<span style={{fontSize:"12px"}}>{quantity>0 && quantity}</span>} color={quantity && "error"}>
                           <ShoppingBagRounded
                             className="nav-icon"
                             sx={{ fontSize: "30px",color:"black" }}
@@ -162,7 +216,6 @@ const hideInput = () => {
   const account = (
 
       <>
-    animate(".styles.welcome", { x: 300 }, { delay: stagger(0.1) })
 
     <Tooltip title="View Account" >
     <IconButton
@@ -363,10 +416,12 @@ const hideInput = () => {
               </ShowOnLogin>
               <ShowOnLogout>
               {loggedOut}
-            </ShowOnLogout>
+                          </ShowOnLogout>
 
-           
-              {cart}
+                          
+
+                              {cart}
+                          
             
           </span>
 

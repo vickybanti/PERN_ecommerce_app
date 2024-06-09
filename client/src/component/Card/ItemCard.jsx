@@ -10,6 +10,8 @@ import { responsive } from '../Responsive'
 import { addProduct } from '../../redux/apiCalls'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { addToCart, setIsCartOpen } from '../../redux/slice/cartSlice'
+import {motion} from "framer-motion"
+
 
 
 // const Info = styled.div`
@@ -194,107 +196,105 @@ function addSave() {
 
 
     return (
+       
 
-        <motion.div imageData
-  whileHover={{ scale: 1.2 }}
-  onHoverStart={e => {}}
-  onHoverEnd={e => {}}
-/>
-    <div className= "contain" responsive={responsive} key={item.id} >
-    
-   
-    {item.stock<1 &&
-      <Avatar
-          alt={item.type}
-          className="avatar"
-          component="div"
-          sizes="12px"
-          sx={{backgroundColor:
-            item.type==="newArrivals"?"orangered": item.stock < 1 ? "orangered": "#071b28", marginTop:"20", 
-          position:"absolute",
-          width: "80px",
-          borderRadius:"0", 
-          fontWeight:"bold",
-          color:"whitesmoke",
-        }}
-      >
-    
-    {item.stock < 1 ? <span style={{padding:"5px"}}>Out of stock</span> : item.type}
+        <><motion.div imageData
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={e => { } }
+            onHoverEnd={e => { }} />
+
+            <div className="contain" responsive={responsive} key={item.id}>
 
 
-      </Avatar> 
-    
-    }
-    
-      <img key={item.id} src={imageData && imageData[0]} imageData={imageData}  alt="" onClick={()=>navigate(`/product/${item.id}`) } 
-      />
-      
-      <div className="infos">
-        
-              
-         
-        
-        
-        
-        <><div className="icon">
+                {item.stock < 1 &&
+                    <Avatar
+                        alt={item.type}
+                        className="avatar"
+                        component="div"
+                        sizes="12px"
+                        sx={{
+                            backgroundColor: item.type === "newArrivals" ? "orangered" : item.stock < 1 ? "orangered" : "#071b28", marginTop: "20",
+                            position: "absolute",
+                            width: "80px",
+                            borderRadius: "0",
+                            fontWeight: "bold",
+                            color: "whitesmoke",
+                        }}
+                    >
+
+                        {item.stock < 1 ? <span style={{ padding: "5px" }}>Out of stock</span> : item.type}
+
+
+                    </Avatar>}
+
+                <img key={item.id} src={imageData && imageData[0]} imageData={imageData} alt="" onClick={() => navigate(`/product/${item.id}`)} />
+
+                <div className="infos">
 
 
 
-            <FavoriteBorderIcon style={{ color: isFav ? "red" : "white", fontSize: "30px" }} onClick={addSave} />
 
-          </div><div className="icon">
 
-              
 
-                <Box
-                  value={size}
-                  onChange={handleSize}
-                  sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
-                  disabled={item.stock <= 0}
-                  >
-                  <SpeedDial
-                    ariaLabel="SpeedDial controlled open example inverse"
-                    color='inverse'
-                    sx={{ position: 'absolute', bottom: 0, right: 0, border: "none", color:"black"}}
-                    icon={item.stock <=0 ? "" :<AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
-                    onClose={handleClose}
-                    onOpen={handleOpen}
-                    open={open}
+                    <><div className="icon">
 
-                  >
-                    {item.stock === 0?"": item.sizes?.map((sizeOption) => (
-                      <SpeedDialAction
-                        key={sizeOption}
-                        value={sizeOption}
-                        onChange={handleSize}
-                        icon={sizeOption}
-                        onClick={(e) => handleClick(e, sizeOption)}
-                        sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
-                    ))}
-                  </SpeedDial>
-                </Box>
 
+
+                        <FavoriteBorderIcon style={{ color: isFav ? "red" : "white", fontSize: "30px" }} onClick={addSave} />
+
+                    </div><div className="icon">
+
+
+
+                            <Box
+                                value={size}
+                                onChange={handleSize}
+                                sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
+                                disabled={item.stock <= 0}
+                            >
+                                <SpeedDial
+                                    ariaLabel="SpeedDial controlled open example inverse"
+                                    color='inverse'
+                                    sx={{ position: 'absolute', bottom: 0, right: 0, border: "none", color: "black" }}
+                                    icon={item.stock <= 0 ? "" : <AddShoppingCart sx={{ fontSize: "30px", border: "none", color: "white" }} />}
+                                    onClose={handleClose}
+                                    onOpen={handleOpen}
+                                    open={open}
+
+                                >
+                                    {item.stock === 0 ? "" : item.sizes?.map((sizeOption) => (
+                                        <SpeedDialAction
+                                            key={sizeOption}
+                                            value={sizeOption}
+                                            onChange={handleSize}
+                                            icon={sizeOption}
+                                            onClick={(e) => handleClick(e, sizeOption)}
+                                            sx={{ color: "black", fontSize: "20px", fontFamily: "fantasy" }} />
+                                    ))}
+                                </SpeedDial>
+                            </Box>
+
+
+                        </div></>
+
+
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div className="h3">
+                        {item.title}
+                    </div>
+                    <div className="cat" style={{ color: "gray", fontFamily: "cursive", fontSize: "14px" }}>
+                        {item.brand_title}
+                    </div>
+                </div>
+                <div className="price">
+                    <div className='old'>  {item.oldPrice}</div>
+
+                    $ {item.price}
+
+                </div>
 
             </div></>
-
-        
-      </div>
-      <div style={{display:"flex", justifyContent:"space-between"}}>
-      <div className= "h3">
-        {item.title}
-      </div>
-      <div className="cat" style={{color:"gray", fontFamily:"cursive", fontSize:"14px"}}>
-        {item.brand_title}
-      </div>
-      </div>
-      <div className="price">
-       <div className='old'>  {item.oldPrice}</div>
-        
-        $ {item.price}
-      
-      </div>
-      
-    </div>
   )
 }
 
