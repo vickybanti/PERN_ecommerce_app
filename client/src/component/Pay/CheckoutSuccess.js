@@ -1,63 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { clearCart } from '../../redux/slice/cartSlice'
-import { useNavigate } from 'react-router-dom'
-import { Button } from '@mui/material'
-import "./Pay.scss"
-import { makeRequest } from '../../makeRequest'
+import { useEffect, useState } from 'react';
 
-function CheckoutSuccess() {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const userId = useSelector((state) => state.auth.userID)
+function Completion(props) {
+    const [messageBody, setMessageBody] = useState('');
+    const { stripePromise } = props;
 
-  const [orderId, setOrderId] = useState("")
-  useEffect(() => {
-    async function getOrderId(){
-      const response = await makeRequest.get(`/order/id/${userId}`)
-      const  allOrders = await response.data  
-      console.log(allOrders)    
+    useEffect(() => {
+        if (!stripePromise) return;
 
-      setOrderId(allOrders.order_id)
+        stripePromise.then(async (stripe) => {
+            const url = new URL(window.location);
+            const clientSecret = url.searchParams.get('payment_intent_client_secret');
+            const { error, paymentIntent } = await stripe.retrievePaymentIntent(clientSecret);
 
+            setMessageBody(error ? `> ${error.message}` : (
+                <>&gt; Payment {paymentIntent.status}: <a href={`https://dashboard.stripe.com/test/payments/${paymentIntent.id}`} target="_blank" rel="noreferrer">{paymentIntent.id}</a></>
+            ));
+        });
+    }, [stripePromise]);
 
-    }
-    getOrderId()
-  
-   
-  }, [userId])
-  
-
-  function handleClick(){
-    dispatch(clearCart())
-    navigate("/")
-
-  }
-
-
-
-
-
-
-  return (
-    <div className='success'>
-    <img src='img/about/happy.svg' alt='' className='successImg'/>
-
-    <div className='pay-details'>
-    
-      <h2 >Checkout Successful. Your transaction id is {orderId} </h2>
-    
-      
-      <Button 
-      variant='outlined'
-      sx={{fontFamily:"Arial",
-          fontSize:"15px"}}
-      
-      onClick={()=>handleClick()}>Continue Shopping</Button>
-      </div>
-      </div>
-
-  )
+    return (
+        <>
+            <h1>Thank you!</h1>
+            <a href="/">home</a>
+            <div id="messages" role="alert" style={messageBody ? { display: 'block' } : {}}>{messageBody}</div>
+        </>
+    );
 }
 
-export default CheckoutSuccess
+export default Completion;
