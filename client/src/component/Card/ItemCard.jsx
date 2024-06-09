@@ -193,7 +193,13 @@ function addSave() {
   const handleClose = () => setOpen(false);
 
 
-  return (
+    return (
+
+        <motion.div imageData
+  whileHover={{ scale: 1.2 }}
+  onHoverStart={e => {}}
+  onHoverEnd={e => {}}
+/>
     <div className= "contain" responsive={responsive} key={item.id} >
     
    
@@ -244,7 +250,7 @@ function addSave() {
                   value={size}
                   onChange={handleSize}
                   sx={{ height: 50, transform: 'translateX(0px)', flexGrow: 2 }}
-                  disabled={item.stock < 1}
+                  disabled={item.stock <= 0}
                   >
                   <SpeedDial
                     ariaLabel="SpeedDial controlled open example inverse"

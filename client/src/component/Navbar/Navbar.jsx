@@ -18,6 +18,9 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
+import { stagger, animate } from "framer-motion"
+
+
 
 
 
@@ -158,7 +161,8 @@ const hideInput = () => {
   
   const account = (
 
-    <>
+      <>
+    animate(".styles.welcome", { x: 300 }, { delay: stagger(0.1) })
 
     <Tooltip title="View Account" >
     <IconButton

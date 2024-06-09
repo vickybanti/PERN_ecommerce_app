@@ -30,7 +30,10 @@ function Categories() {
     
     return (
 
-        <motion.div animate={{ x: 100 }} />
+        <motion.div
+  initial={{ x: "50%" }}
+  animate={{ x: "calc(100vw - 50%)" }}
+/>
         
         <><div className='categoriesHeader'>
             <h1>Popular Categories</h1>
