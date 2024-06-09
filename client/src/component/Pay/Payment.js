@@ -9,7 +9,7 @@ function Payment(props) {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https:mooreserver.onrender.com/checkout/create-payment-intent")
+        fetch("https://mooreserver.onrender.com/checkout/create-payment-intent")
             .then((res) => res.json())
             .then(({ clientSecret }) => setClientSecret(clientSecret));
     }, []);
@@ -17,12 +17,14 @@ function Payment(props) {
 
     return (
         <>
+            <div style={{paddingTop:"100px"} }>
             <h1>Payment</h1>
             {clientSecret && stripePromise && (
                 <Elements stripe={stripePromise} options={{ clientSecret, }}>
                     <CheckoutForm />
                 </Elements>
             )}
+            </div>
         </>
     );
 }
