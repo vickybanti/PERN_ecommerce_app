@@ -177,15 +177,8 @@ router.post("/create_payment_intent",async (req, res) => {
           },
         });
         }
-
-
-
   
-  
-  
-
-  
-    });
+   
 
 router.post('/webhook', async (req, res) => {
     let data, eventType;
