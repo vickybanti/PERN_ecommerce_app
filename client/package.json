@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "firebase": "^9.22.0",
     "formik": "^2.4.2",
+    "framer-motion": "^11.2.10",
     "got": "^13.0.0",
     "node-fetch": "^3.3.1",
     "nodemailer": "^6.9.5",

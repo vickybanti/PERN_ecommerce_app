@@ -29,6 +29,8 @@ function Categories() {
     
     
     return (
+
+        <motion.div animate={{ x: 100 }} />
         
         <><div className='categoriesHeader'>
             <h1>Popular Categories</h1>
