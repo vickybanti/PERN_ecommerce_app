@@ -119,7 +119,7 @@ router.post("/create_payment_intent",async (req, res) => {
 
   //const total = parseFloat(totals)
 
-  try {
+  
     
         
          
@@ -127,58 +127,65 @@ router.post("/create_payment_intent",async (req, res) => {
       let orderAmount = total;
       let paymentIntent;
 
-      try {
-          if (calculateTax) {
-              let taxCalculation = await calculate_tax(orderAmount, "usd")
+    try {
+        if (calculateTax) {
+            let taxCalculation = await calculate_tax(orderAmount, "usd")
 
-              paymentIntent = await stripe.paymentIntents.create({
-                  currency: 'usd',
-                  amount: taxCalculation.amount_total,
-                  automatic_payment_methods: { enabled: true },
-                  metadata: { tax_calculation: taxCalculation.id }
-              });
-          }
-          else {
-              paymentIntent = await stripe.paymentIntents.create({
-                  currency: 'usd',
-                  amount: orderAmount,
-                  automatic_payment_methods: { enabled: true }
-              });
-          }
+            paymentIntent = await stripe.paymentIntents.create({
+                currency: 'usd',
+                amount: taxCalculation.amount_total,
+                automatic_payment_methods: { enabled: true },
+                metadata: { tax_calculation: taxCalculation.id }
+            });
+        }
+        else {
+            paymentIntent = await stripe.paymentIntents.create({
+                currency: 'usd',
+                amount: orderAmount,
+                automatic_payment_methods: { enabled: true }
+            });
+        }
 
-          
-    const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+
+        const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
       VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
       '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
-      'pending','${total}','${total}','${currentDate}', '${currentMonth}')` );
+      'pending','${total}','${total}','${currentDate}', '${currentMonth}')`);
 
-      
 
-    
-      // await Promise.all(proIdCountPairs.map(async ({ id, count }) => {
-      //   await pool.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [count, id]);
-      //     await pool.query('COMMIT');
-      //   }))
-  
-          
-               
-      
+
+
+        // await Promise.all(proIdCountPairs.map(async ({ id, count }) => {
+        //   await pool.query('UPDATE products SET stock = stock - $1 WHERE id = $2', [count, id]);
+        //     await pool.query('COMMIT');
+        //   }))
+
+
+
+
         res.json({
-          clientSecret: paymentIntent.client_secret,
-          //orders: createOrder.rows,
+            clientSecret: paymentIntent.client_secret,
+            //orders: createOrder.rows,
         });
 
-
+    
       } catch (e) {
         return res.status(400).send({
           error: {
             message: e.message,
           },
         });
-        }
+       }
+
+
+
   
-   
+  
+  
+
+  
+    })
 
 router.post('/webhook', async (req, res) => {
     let data, eventType;
