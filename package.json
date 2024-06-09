@@ -1,4 +1,4 @@
-{
+
   "dependencies": {
     "@mui/x-data-grid": "^6.12.1",
     "bcrypt-nodejs": "^0.0.3",
