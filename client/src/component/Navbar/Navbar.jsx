@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import styles from './Navbar.module.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {  AccountBox, Favorite, Login, Logout, Person,  ShoppingBagRounded,  ShoppingBagSharp, ShoppingCart } from '@mui/icons-material';
-import {HiOutlineMenuAlt3} from 'react-icons/hi';
-import {useDispatch, useSelector} from 'react-redux';
+import { HiOutlineMenuAlt3 } from 'react-icons/hi';
+import { useDispatch, useSelector } from 'react-redux';
 import { REMOVE_ACTIVE_USER, selectUserName } from '../../redux/slice/authSlice';
 import ShowOnLogin, { ShowOnLogout } from '../Hiddenlink';
 import { Badge, Divider, IconButton, Tooltip, fabClasses, useMediaQuery } from '@mui/material';
@@ -17,12 +17,12 @@ import useBrand from '../../hooks/useBrands';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Fade from '@mui/material/Fade';
+import Fade from '@mui/material/Fade';  
 import { stagger, animate, useAnimate } from "framer-motion"
+import { useRef } from "react"
 
 
 
-animate(".styles.welcome", { x: 300 }, { delay: stagger(0.1) })
 
 
  
@@ -69,58 +69,14 @@ const handleClose = () => {
 
 
 
-    function useMenuAnimation(isOpen: boolean) {
-        const [scope, animate] = useAnimate();
 
-        useEffect(() => {
-            const menuAnimations = isOpen
-                ? [
-                    [
-                        "{styles.cart}",
-                        { transform: "translateX(0%)" },
-                        { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }
-                    ],
-                    [
-                        "li",
-                        { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-                        { delay: stagger(0.05), at: "-0.1" }
-                    ]
-                ]
-                : [
-                    [
-                        "li",
-                        { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-                        { delay: stagger(0.05, { from: "last" }), at: "<" }
-                    ],
-                    ["{styles.cart}", { transform: "translateX(-100%)" }, { at: "-0.1" }]
-                ];
-
-            animate([
-                [
-                    "path.top",
-                    { d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5" },
-                    { at: "<" }
-                ],
-                ["path.middle", { opacity: isOpen ? 0 : 1 }, { at: "<" }],
-                [
-                    "path.bottom",
-                    { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
-                    { at: "<" }
-                ],
-                ...menuAnimations
-            ]);
-        }, [isOpen]);
-
-        return scope;
-    }
-
+    
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const scope = useMenuAnimation(isOpen);
     const cart = (       
 
-        <span className={styles.cart} style={{ marginRight: "20px" }} ref={scope}>
+        <span className={styles.cart} style={{ marginRight: "20px" }} >
     <Tooltip title="View Cart">
                       <IconButton
                         size="large"
