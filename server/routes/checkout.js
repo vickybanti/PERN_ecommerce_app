@@ -2,13 +2,11 @@
 // Replace if using a different env file or config
 require("dotenv").config();
 const router = require("express").Router();
-const express = require("express")
 const pool = require("../db");
 const crypto = require("crypto");
 const sendEmail = require("../sendEmail")
 const myModule = require("../template");
-const express = require('express');
-const app = express();
+
 const { resolve } = require('path');
 // Replace if using a different env file or config
 const env = require('dotenv').config({ path: './.env' });
