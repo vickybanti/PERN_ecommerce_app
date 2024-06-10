@@ -139,12 +139,12 @@ router.post("/create_payment_intent",async (req, res) => {
             });
         }
         else {
-             paymentIntent = await stripe.paymentIntents.create({
+            paymentIntent = await stripe.paymentIntents.create({
                 currency: 'usd',
                 amount: total,
                 automatic_payment_methods: { enabled: true }
             });
-        
+        }
 
 
         const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
