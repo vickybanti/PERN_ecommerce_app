@@ -6,6 +6,7 @@ import CheckoutForm from './CheckoutForm'
 function Payment(props) {
     const { stripePromise } = props;
     const [clientSecret, setClientSecret] = useState('');
+    console.log("stripepromis", stripePromise)
 
     useEffect(() => {
         async function getSecret() {
@@ -19,7 +20,9 @@ function Payment(props) {
                 const data = await response.json();
                 const { clientSecret } = data; // Destructure clientSecret from the response data
 
+
                 setClientSecret(clientSecret);
+                console.log(clientSecret)
             } catch (error) {
                 console.error("Error fetching secret:", error);
             }
@@ -32,10 +35,10 @@ function Payment(props) {
 
     return (
         <>
-            <div style={{paddingTop:"100px"} }>
+            <div style={{paddingTop:"200px"} }>
             <h1>Payment</h1>
             {clientSecret && stripePromise && (
-                <Elements stripe={stripePromise} options={{ clientSecret, }}>
+                <Elements stripe={stripePromise} options={{ clientSecret }}>
                     <CheckoutForm />
                 </Elements>
             )}
