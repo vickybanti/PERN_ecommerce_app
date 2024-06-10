@@ -125,21 +125,21 @@ router.post("/create_payment_intent",async (req, res) => {
          
         
       //let orderAmount = total;
-      //let paymentIntent;
+      let paymentIntent;
 
     try {
-        //if (calculateTax) {
-        //    let taxCalculation = await calculate_tax(orderAmount, "usd")
+        if (calculateTax) {
+            let taxCalculation = await calculate_tax(total, "usd")
 
-        //    paymentIntent = await stripe.paymentIntents.create({
-        //        currency: 'usd',
-        //        amount: taxCalculation.amount_total,
-        //        automatic_payment_methods: { enabled: true },
-        //        metadata: { tax_calculation: taxCalculation.id }
-        //    });
-        //}
-        //else {
-            const paymentIntent = await stripe.paymentIntents.create({
+            paymentIntent = await stripe.paymentIntents.create({
+                currency: 'usd',
+                amount: taxCalculation.amount_total,
+                automatic_payment_methods: { enabled: true },
+                metadata: { tax_calculation: taxCalculation.id }
+            });
+        }
+        else {
+             paymentIntent = await stripe.paymentIntents.create({
                 currency: 'usd',
                 amount: total,
                 automatic_payment_methods: { enabled: true }
