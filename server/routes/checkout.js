@@ -37,34 +37,16 @@ router.get("/config", (req, res) => {
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   });
 });
+const calculateOrderAmount = (items) => {
+    // Replace this constant with a calculation of the order's amount
+    // Calculate the order total on the server to prevent
+    // people from directly manipulating the amount on the client
+    return total;
+};
 
-//const calculate_tax = async (orderAmount, currency) => {
-//    const taxCalculation = await stripe.tax.calculations.create({
-//        currency,
-//        customer_details: {
-//            address: {
-//                line1: "10709 Cleary Blvd",
-//                city: "Plantation",
-//                state: "FL",
-//                postal_code: "33322",
-//                country: "US",
-//            },
-//            address_source: "shipping",
-//        },
-//        line_items: [
-//            {
-//                amount: orderAmount,
-//                reference: "ProductRef",
-//                tax_behavior: "exclusive",
-//                tax_code: "txcd_30011000"
-//            }
-//        ],
-//    });
+router.post("/create_payment_intent", async (req, res) => {
+    
 
-//    return taxCalculation;
-//};
-
-router.post("/create_payment_intent",async (req, res) => {
 
   
     const { cart, email, userId, city,firstName, lastName, country, state, street1, street2,phoneNumber } = req.body;
@@ -124,27 +106,14 @@ router.post("/create_payment_intent",async (req, res) => {
         
          
         
-      //let orderAmount = total;
-      let paymentIntent;
-
-    try {
-        if (calculateTax) {
-            let taxCalculation = await calculate_tax(total, "usd")
-
-            paymentIntent = await stripe.paymentIntents.create({
-                currency: 'usd',
-                amount: taxCalculation.amount_total,
-                automatic_payment_methods: { enabled: true },
-                metadata: { tax_calculation: taxCalculation.id }
-            });
-        }
-        else {
-            paymentIntent = await stripe.paymentIntents.create({
-                currency: 'usd',
-                amount: total,
-                automatic_payment_methods: { enabled: true }
-            });
-        }
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: calculateOrderAmount(carts),
+        currency: "usd",
+        // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+        automatic_payment_methods: {
+            enabled: true,
+        },
+    });
 
 
         const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
@@ -170,66 +139,10 @@ router.post("/create_payment_intent",async (req, res) => {
         });
 
     
-      } catch (e) {
-        return res.status(400).send({
-          error: {
-            message: e.message,
-          },
-        });
-       }
+      } 
 
 
 
-  
-  
-  
-
-  
-    })
-
-router.post('/webhook', async (req, res) => {
-    let data, eventType;
-
-    // Check if webhook signing is configured.
-    if (process.env.STRIPE_WEBHOOK_SECRET) {
-        // Retrieve the event by verifying the signature using the raw body and secret.
-        let event;
-        let signature = req.headers['stripe-signature'];
-        try {
-            event = stripe.webhooks.constructEvent(
-                req.rawBody,
-                signature,
-                process.env.STRIPE_WEBHOOK_SECRET
-            );
-        } catch (err) {
-            console.log(`⚠️  Webhook signature verification failed.`);
-            return res.sendStatus(400);
-        }
-        data = event.data;
-        eventType = event.type;
-    } else {
-        // Webhook signing is recommended, but if the secret is not configured in `config.js`,
-        // we can retrieve the event data directly from the request body.
-        data = req.body.data;
-        eventType = req.body.type;
-    }
-
-    if (eventType === 'payment_intent.succeeded') {
-        // Funds have been captured
-        // Fulfill any orders, e-mail receipts, etc
-        // To cancel the payment after capture you will need to issue a Refund (https://stripe.com/docs/api/refunds)
-        console.log('💰 Payment captured!');
-    } else if (eventType === 'payment_intent.payment_failed') {
-        console.log('❌ Payment failed.');
-    }
-    res.sendStatus(200);
-});
-
-
-
-    // Send publishable key and PaymentIntent details to client
-    
-    
         router.get('/session-status', async (req, res) => {
           const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
         
