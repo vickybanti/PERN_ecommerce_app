@@ -38,31 +38,31 @@ router.get("/config", (req, res) => {
   });
 });
 
-const calculate_tax = async (orderAmount, currency) => {
-    const taxCalculation = await stripe.tax.calculations.create({
-        currency,
-        customer_details: {
-            address: {
-                line1: "10709 Cleary Blvd",
-                city: "Plantation",
-                state: "FL",
-                postal_code: "33322",
-                country: "US",
-            },
-            address_source: "shipping",
-        },
-        line_items: [
-            {
-                amount: orderAmount,
-                reference: "ProductRef",
-                tax_behavior: "exclusive",
-                tax_code: "txcd_30011000"
-            }
-        ],
-    });
+//const calculate_tax = async (orderAmount, currency) => {
+//    const taxCalculation = await stripe.tax.calculations.create({
+//        currency,
+//        customer_details: {
+//            address: {
+//                line1: "10709 Cleary Blvd",
+//                city: "Plantation",
+//                state: "FL",
+//                postal_code: "33322",
+//                country: "US",
+//            },
+//            address_source: "shipping",
+//        },
+//        line_items: [
+//            {
+//                amount: orderAmount,
+//                reference: "ProductRef",
+//                tax_behavior: "exclusive",
+//                tax_code: "txcd_30011000"
+//            }
+//        ],
+//    });
 
-    return taxCalculation;
-};
+//    return taxCalculation;
+//};
 
 router.post("/create_payment_intent",async (req, res) => {
 
