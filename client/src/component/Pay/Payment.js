@@ -9,7 +9,7 @@ function Payment(props) {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://mooreserver.onrender.com/checkout/create_payment_intent")
+        fetch("https://mooreserver.onrender.com/checkout/create-payment-intent")
             .then((res) => res.json())
             .then(({ clientSecret }) => setClientSecret(clientSecret));
     }, []);
