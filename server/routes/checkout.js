@@ -8,7 +8,6 @@ const myModule = require("../template");
 
 const { resolve } = require('path');
 // Replace if using a different env file or config
-const env = require('dotenv').config({ path: './.env' });
 const calculateTax = false;
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
@@ -22,10 +21,6 @@ console.log(stripe)
 //ORDER EMAIL
 const orderEmail = myModule.createOrderEmail;
     
-
-
-router.use(express.static(process.env.STATIC_DIR));
-
 
 router.get("/", (req, res) => {
   const path = resolve(process.env.STATIC_DIR + "/index.html");
