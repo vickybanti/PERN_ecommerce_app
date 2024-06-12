@@ -94,6 +94,8 @@ router.post("/create_payment_intent", async (req, res) => {
     ));
     const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
 
+
+
     //const total = parseFloat(totals)
 
 
@@ -110,6 +112,7 @@ router.post("/create_payment_intent", async (req, res) => {
         },
     });
 
+    console.log(paymentIntent)
 
     const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
         country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
