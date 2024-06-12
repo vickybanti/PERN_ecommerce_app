@@ -144,7 +144,7 @@ function Checkout(props) {
         // Create an input element to hold the request body
         const input = document.createElement('input');
         input.type = 'hidden';
-        input.name = 'requestBody';
+          input.name = 'newRequestBody';
         input.value = JSON.stringify(newRequestBody);
     
         // Append the input to the form
@@ -175,10 +175,10 @@ const newRequestBody = {
   console.log(requestBody)
   setRequestBody(newRequestBody)
 
-    navigateToPay(newRequestBody);
+  //  navigateToPay(newRequestBody);
  
     // navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    //navigate("/pay ",{newRequestBody});
+    navigate("/pay ",{newRequestBody});
 
     
   
@@ -371,7 +371,8 @@ const quantity = useSelector((state) => state.cart.totalQuantity);
                           label="Pay On Delivery" 
                           fontSize="40px"/>
                       </RadioGroup>
-                    </FormControl><div className='paymentSvg'>
+                                      </FormControl>
+                                          <div className='paymentSvg'>
                         <img src='img/about/payment.svg' alt='' />
                       </div></>
 
