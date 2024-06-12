@@ -4,6 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "./CheckoutForm";
 import { useParams } from 'react-router-dom';
+import { request } from "../../../../../../../../AppData/Local/Microsoft/TypeScript/5.2/node_modules/undici-types/api";
 
 
 // Make sure to call loadStripe outside of a component’s render to avoid
@@ -18,7 +19,7 @@ export default function Payment() {
     const { requestBody } = useParams();
 
     const [clientSecret, setClientSecret] = useState("");
-    console.log(requestBody)
+    console.log("requestBody", requestBody)
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
