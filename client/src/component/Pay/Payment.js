@@ -9,9 +9,9 @@ import CheckoutForm from "./CheckoutForm";
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe("pk_live_51NDulnFA3ATF2zMuDUWo4t8bpy3wcz4HJwpdWn1OYJEBQm2f2TErzhMFWIL8vHbpkqojlDBkqT7w8UA0VpaGd2WT00o35YyMxG");
 
-export default function Payment() { 
+export default function Payment({newRequestBody}) { 
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function Payment() {
         fetch("https://mooreserver.onrender.com/checkout/create_payment_intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+            body: JSON.stringify({ newRequestBody }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
