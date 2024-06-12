@@ -13,6 +13,7 @@ const stripePromise = loadStripe("pk_live_51NDulnFA3ATF2zMuDUWo4t8bpy3wcz4HJwpdW
 
 export default function Payment({newRequestBody}) { 
     const [clientSecret, setClientSecret] = useState("");
+    console.log(newRequestBody)
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
@@ -23,7 +24,9 @@ export default function Payment({newRequestBody}) {
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
-    }, []);
+    }, [newRequestBody]);
+
+    console.log(clientSecret)
 
     const appearance = {
         theme: 'stripe',
