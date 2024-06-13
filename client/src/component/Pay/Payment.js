@@ -26,13 +26,13 @@ export default function Payment() {
         fetch("https://mooreserver.onrender.com/checkout/create_payment_intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify( requestBody ),
+            body: JSON.stringify( requestBody )        
         })
 
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
         
-    }, [newRequestBody]);
+    }, [requestBody]);
 
     console.log(clientSecret)
 
