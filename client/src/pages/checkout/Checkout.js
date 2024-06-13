@@ -15,7 +15,6 @@ import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
 import { useHistory } from 'react-router-dom';
-import Stripe
 
 
 
