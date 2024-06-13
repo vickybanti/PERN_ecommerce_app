@@ -13,7 +13,7 @@ import { request } from "../../../../../../../../AppData/Local/Microsoft/TypeScr
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
 const stripePromise = loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY")
-
+console.log(stripePromise)
 
 export default function Payment() {
     const { requestBody } = useParams();
