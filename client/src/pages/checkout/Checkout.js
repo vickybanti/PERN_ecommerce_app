@@ -177,14 +177,12 @@ const newRequestBody = {
             sessionId:session.id
         })
 
+        console.log(result)
+
     
 
 
-  //  navigateToPay(newRequestBody);
- 
-    // navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    //navigate(`/pay/${requestBody}`);
-
+  
     
   
     
