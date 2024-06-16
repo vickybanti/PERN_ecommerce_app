@@ -47,7 +47,7 @@ router.post("/create_payment_intent", async (req, res) => {
     const { cart, email, userId, city, firstName, lastName, country, state, street1, street2, phoneNumber } = req.body;
     const stringForm = JSON.stringify(req.body.formValues)
 
-    
+
 
 
     //function getMonthInWords() {
@@ -95,12 +95,12 @@ router.post("/create_payment_intent", async (req, res) => {
     const lineItems = carts.map(cart => ({
         price_data: {
             currency: "usd",
-                product_data: {
+            product_data: {
                 name: cart.title,
-                    images: [ImageData],
-                },
+                images: [ImageData],
+            },
             unit_amount: Math.round(total)
-                
+
         },
         quantity: cart.count
     })
@@ -111,10 +111,11 @@ router.post("/create_payment_intent", async (req, res) => {
         line_items: lineItems,
         mode: "payment",
         success_url: "",
-        cancel_url:""
+        cancel_url: ""
     })
 
     res.json({ id: session.id })
+})
 
 
    
