@@ -136,25 +136,7 @@ function Checkout(props) {
 
      
     
-      const navigateToPay = (newRequestBody) => {
-        // Create a form element
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = '/pay';
-    
-        // Create an input element to hold the request body
-        const input = document.createElement('input');
-        input.type = 'hidden';
-          input.name = 'newRequestBody';
-        input.value = JSON.stringify(newRequestBody);
-    
-        // Append the input to the form
-        form.appendChild(input);
-    
-        // Append the form to the document body and submit it
-        document.body.appendChild(form);
-        form.submit();
-      };
+      
     const [clientSecret, setClientSecret] = useState("");
 
       
