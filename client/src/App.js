@@ -52,14 +52,7 @@ import {loadStripe} from '@stripe/stripe-js';
 
 
 function App() {
-  const [ stripePromise, setStripePromise ] = useState(null);
 
-  useEffect(() => {
-    fetch("https://mooreserver.onrender.com/checkout/config").then(async (r) => {
-      const { publishableKey } = await r.json();
-      setStripePromise(loadStripe(publishableKey));
-    });
-  }, []);
 
   
 
@@ -118,8 +111,8 @@ const user = useSelector((state)=> state.auth.isLoggedIn)
 
 
       <Route path="register" element={<Register/> } />
-      <Route path="checkout" element={user? <Checkout stripePromise={stripePromise}/> : <Login />} />
-      <Route path="pay" element={<Payment stripePromise={stripePromise} />} />
+      <Route path="checkout" element={user? <Checkout /> : <Login />} />
+      <Route path="pay" element={<Payment />} />
       <Route path='reset' element={<ResetPassword />} />
       <Route path='cart' element={<Cart /> } />
       <Route path='success' element={user? <CheckoutSuccess /> :<NoMatch /> } />
