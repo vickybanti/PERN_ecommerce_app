@@ -14,7 +14,7 @@ import { clearCart } from '../../redux/slice/cartSlice';
 import "./Checkout.scss"
 import { makeRequest } from '../../makeRequest';
 import ImageData from '../../component/ImageData';
-import { useHistory } from 'react-router-dom';
+import { loadStripe } from "@stripe/stripe-js";
 
 
 
@@ -155,8 +155,13 @@ function Checkout(props) {
         document.body.appendChild(form);
         form.submit();
       };
+    const [clientSecret, setClientSecret] = useState("");
+
       
-async function makePayment(values) {
+    async function makePayment(values) {
+        const stripe = await loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY")
+        console.log(stripe)
+
     
 const newRequestBody = {
   userId,
@@ -174,12 +179,29 @@ const newRequestBody = {
   lastName :  values.billingAddress.lastName
 }
   console.log(requestBody)
-  setRequestBody(newRequestBody)
+        setRequestBody(newRequestBody)
+
+        // Create PaymentIntent as soon as the page loads
+   const response = await fetch("https://mooreserver.onrender.com/checkout/create_payment_intent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody)
+        })
+
+           
+
+        const session = await response.json()
+        const result = stripe.redirecToCheckout({
+            sessionId:session.id
+        })
+
+    
+
 
   //  navigateToPay(newRequestBody);
  
     // navigate("/pay?requestBody=" + encodeURIComponent(JSON.stringify(newRequestBody)));
-    navigate(`/pay/${requestBody}`);
+    //navigate(`/pay/${requestBody}`);
 
     
   

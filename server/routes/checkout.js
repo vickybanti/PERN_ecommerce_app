@@ -47,23 +47,25 @@ router.post("/create_payment_intent", async (req, res) => {
     const { cart, email, userId, city, firstName, lastName, country, state, street1, street2, phoneNumber } = req.body;
     const stringForm = JSON.stringify(req.body.formValues)
 
+    
 
-    function getMonthInWords() {
-        const months = [
-            "January", "February", "March", "April",
-            "May", "June", "July", "August",
-            "September", "October", "November", "December"
-        ];
 
-        const currentDate = new Date();
-        const currentMonthIndex = currentDate.getMonth();
-        const currentMonthInWords = months[currentMonthIndex];
+    //function getMonthInWords() {
+    //    const months = [
+    //        "January", "February", "March", "April",
+    //        "May", "June", "July", "August",
+    //        "September", "October", "November", "December"
+    //    ];
 
-        return currentMonthInWords;
-    }
+    //    const currentDate = new Date();
+    //    const currentMonthIndex = currentDate.getMonth();
+    //    const currentMonthInWords = months[currentMonthIndex];
 
-    const currentMonth = getMonthInWords();
-    const currentDate = new Date();
+    //    return currentMonthInWords;
+    //}
+
+    //const currentMonth = getMonthInWords();
+    //const currentDate = new Date();
 
 
 
@@ -85,14 +87,37 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
     const carts = JSON.parse(cart)
-
-
-
     const total = carts.map((item) => (
         item.price * 100
 
     ));
-    const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
+
+    const lineItems = carts.map(cart => {
+        price_data: {
+            currency: "usd",
+                product_data: {
+                name: cart.title,
+                    images: [ImageData],
+                },
+            unit_amount: Math.round(total)
+                
+        },
+        quantity: cart.count
+    })
+
+    const session = await stripe.checkouts.session.create({
+        payment_method_types: ["card"],
+        line_items: lineItems,
+        mode: "payment",
+        success_url: "",
+        cancel_url:""
+    })
+
+    res.json({ id: session.id })
+
+
+   
+    //const proIdCountPairs = carts.map((item) => ({ id: item.id, count: parseInt(item.count) }));
 
 
 
@@ -103,22 +128,22 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
 
-    const paymentIntent = await stripe.paymentIntents.create({
-        amount: calculateOrderAmount(carts),
-        currency: "usd",
-        // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
-        automatic_payment_methods: {
-            enabled: true,
-        },
-    });
+    //const paymentIntent = await stripe.paymentIntents.create({
+    //    amount: calculateOrderAmount(carts),
+    //    currency: "usd",
+    //    // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
+    //    automatic_payment_methods: {
+    //        enabled: true,
+    //    },
+    //});
 
-    console.log(paymentIntent)
+    //console.log(paymentIntent)
 
-    const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
-        country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
-      VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
-      '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
-      'pending','${total}','${total}','${currentDate}', '${currentMonth}')`);
+    //const createOrder = await pool.query(`INSERT INTO orders (user_id,order_id,firstname, lastname,cart,
+    //    country, city, state, street1,street2, email, phone_number, payment_status, payment_intent, delivery_status, subtotal, total,date, month)
+    //  VALUES('${userId}','${paymentIntent}','${firstName}','${lastName}','${cart}','${country}',
+    //  '${city}','${state}','${street1}','${street2}','${email}','${phoneNumber}', 'paid','${paymentIntentId}',
+    //  'pending','${total}','${total}','${currentDate}', '${currentMonth}')`);
 
 
 
@@ -131,13 +156,13 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
 
-    res.send({
-        clientSecret: paymentIntent.client_secret,
-        orders: createOrder.rows,
-    });
+//    res.send({
+//        clientSecret: paymentIntent.client_secret,
+//        orders: createOrder.rows,
+//    });
 
 
-});
+//});
 
 
 
