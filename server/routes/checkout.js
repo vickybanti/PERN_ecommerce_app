@@ -92,7 +92,7 @@ router.post("/create_payment_intent", async (req, res) => {
 
     ));
 
-    const lineItems = carts.map(cart => {
+    const lineItems = carts.map(cart => ({
         price_data: {
             currency: "usd",
                 product_data: {
@@ -104,6 +104,7 @@ router.post("/create_payment_intent", async (req, res) => {
         },
         quantity: cart.count
     })
+    )
 
     const session = await stripe.checkouts.session.create({
         payment_method_types: ["card"],
