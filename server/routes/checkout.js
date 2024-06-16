@@ -6,6 +6,9 @@ const crypto = require("crypto");
 const sendEmail = require("../sendEmail")
 const myModule = require("../template");
 
+
+router.use(cors())
+
 const { resolve } = require('path');
 // Replace if using a different env file or config
 const calculateTax = false;

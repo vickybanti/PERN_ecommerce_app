@@ -9,7 +9,7 @@ const fs = require('fs');
 app.use(express.static("public"));
 app.use(express.json());
 
-app.use(cors({ origin: 'https://pern-ecommerce-app.vercel.app','Access-Control-Allow-Origin':'https://pern-ecommerce-app.vercel.app'}));
+app.use(cors());
 
 
 
