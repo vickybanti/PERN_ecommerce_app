@@ -99,7 +99,7 @@ router.post("/create_payment_intent", async (req, res) => {
                 name: cart.title,
                 images: [ImageData],
             },
-            unit_amount: Math.round(total)
+            unit_amount: total
 
         },
         quantity: cart.count
