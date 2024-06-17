@@ -50,29 +50,27 @@ function CartItem(){
 
   useEffect(() => {
     const proImages = cart.cartItems.map((cart)=>cart.images)
-    if (proImages) {
-      const newImageDataArray = [];
+      if (proImages) {
+          const newImageDataArray = [];
 
-      proImages.forEach((image) => {
-        const byteArray = new Uint8Array(image.data);
-        const blob = new Blob([byteArray], { type: 'image/jpeg' });
+          proImages.forEach((image) => {
+              const byteArray = new Uint8Array(image.data);
+              const blob = new Blob([byteArray], { type: 'image/jpeg' });
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64Image = reader.result;
-          newImageDataArray.push(base64Image);
+              const imageUrl = URL.createObjectURL(blob);
+              newImageDataArray.push(imageUrl);
+          });
+
 
           // Check if all images have been processed
           if (newImageDataArray.length === proImages.length) {
-            setImageData(newImageDataArray);
-          }
-        };
+              setImageData(newImageDataArray);
 
-        reader.readAsDataURL(blob);
-      });
-    } else {
-      setImageData([]);
-    }
+
+          } else {
+              setImageData([]);
+          }
+      }
   }, [cart]);
 
 

@@ -63,19 +63,17 @@ console.log(sizeInt);
     console.log(req.body)
     const imageFiles = req.body.images
     console.log(imageFiles)
+    //const imageFiles = req.files.map(file => `uploads/shoes/${file.filename}`);
     const imageDataArray = imageFiles.map((images) => fs.readFileSync(`uploads/shoes/${images}`));
+    //const imageDataArray = imageFiles.map(imagePath => fs.readFileSync(imagePath));
     console.log(imageDataArray);
      
   
     try {
-      // const imageValues = images.map((image) => {
-      //   const base64Image = image.buffer.toString('base64');
-      //   return base64Image;
-      //     });
-      //     console.log(imageValues)
 
+        const imageValues = imageDataArray.map((imageData) => Buffer.from(imageData));
+        //const imageValues = imageDataArray.map(imageData => Buffer.from(imageData));
 
-      const imageValues = imageDataArray.map((imageData) => Buffer.from(imageData));
       console.log(imageValues)
 
 

@@ -1,32 +1,30 @@
+
 import React, { useState, useEffect } from 'react';
 
 function ImageData({ item }) {
   const [imageData, setImageData] = useState(null);
 
   useEffect(() => {
-    if (item.images) {
-      const newImageDataArray = [];
+      if (item.images) {
+          const newImageDataArray = [];
 
-      item.images.forEach((image) => {
-        const byteArray = new Uint8Array(image.data);
-        const blob = new Blob([byteArray], { type: 'image/jpeg' });
+          item.images.forEach((image) => {
+              const byteArray = new Uint8Array(image.data);
+              const blob = new Blob([byteArray], { type: 'image/jpeg' });
 
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64Image = reader.result;
-          newImageDataArray.push(base64Image);
+              const imageUrl = URL.createObjectURL(blob);
+              newImageDataArray.push(imageUrl);
+          });
 
           // Check if all images have been processed
           if (newImageDataArray.length === item.images.length) {
-            setImageData(newImageDataArray);
-          }
-        };
+              setImageData(newImageDataArray);
 
-        reader.readAsDataURL(blob);
-      });
-    } else {
-      setImageData([]);
-    }
+
+          } else {
+              setImageData([]);
+          }
+      }
   }, [item]);
 
   return <div >
