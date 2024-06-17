@@ -99,7 +99,7 @@ router.post("/create_payment_intent", async (req, res) => {
             currency: "usd",
             product_data: {
                 name: cart.title,
-                images: [ImageData],
+                price:cart.price
             },
             unit_amount: total
 
