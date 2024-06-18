@@ -46,7 +46,7 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
 
-    const { cartTitle , cartPrice} = req.body;
+    const { cartTitle, cartPrice, count, total } = req.body;
     console.log(cartItems)
     const stringForm = JSON.stringify(req.body.formValues)
 
@@ -76,11 +76,7 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
 
-    const carts = JSON.parse(cart)
-    const total = carts.map((item) => (
-        item.price * 100
-
-    ));
+    
 
     const lineItems = {
         price_data: {
@@ -92,7 +88,7 @@ router.post("/create_payment_intent", async (req, res) => {
             unit_amount: total
 
         },
-        quantity: cart.count
+        quantity: count
 
     }
 

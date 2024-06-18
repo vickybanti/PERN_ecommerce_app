@@ -147,6 +147,7 @@ function Checkout(props) {
 
         const cartTitle = cartItems.map((cart) => cart.title)
         const cartPrice = cartItems.map((cart) => cart.price)
+        const total = cartItems.map((cart) => cart.total)
 
 
 
@@ -156,6 +157,7 @@ const newRequestBody = {
     email: values.email,
     cartTitle,
     cartPrice,
+    total,
     
         count:counts,
   totalPrice:totalPrice,
