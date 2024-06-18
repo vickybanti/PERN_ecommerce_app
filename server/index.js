@@ -7,10 +7,11 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 app.use(express.static("public"));
-app.use(express.json());
 
-app.use(cors());
-
+app.use(cors({
+    origin: 'https://pern-ecommerce-app.onrender.com',
+    credentials: true // Allow cookies and other credentials to be sent
+}));
 
 
 
