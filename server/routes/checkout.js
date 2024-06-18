@@ -97,8 +97,8 @@ router.post("/create_payment_intent", async (req, res) => {
         payment_method_types: ["card"],
         line_items: lineItems,
         mode: "payment",
-        success_url: "",
-        cancel_url: ""
+        success_url: "https://pern-ecommerce-app.onrender.com/success",
+        cancel_url: "https://pern-ecommerce-app.onrender.com/cancel"
     })
 
     res.json({ id: session.id })
