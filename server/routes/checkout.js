@@ -47,6 +47,7 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
     const { cartItems } = req.body;
+    console.log(cartItems)
     const stringForm = JSON.stringify(req.body.formValues)
 
 
@@ -69,19 +70,6 @@ router.post("/create_payment_intent", async (req, res) => {
     //const currentMonth = getMonthInWords();
     //const currentDate = new Date();
 
-
-
-    console.log(userId)
-    console.log(email)
-    console.log(firstName)
-    console.log(lastName)
-    console.log(country)
-    console.log(state)
-    console.log(street1)
-    console.log(street2)
-    console.log(city)
-    console.log(phoneNumber)
-    console.log(stringForm)
 
 
 
