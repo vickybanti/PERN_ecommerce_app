@@ -47,7 +47,8 @@ router.post("/create_payment_intent", async (req, res) => {
 
 
     const { cartTitle, cartPrice, count, total } = req.body;
-    console.log(cartItems)
+    console.log(cartTitle)
+    console.log(cartPrice)
     const stringForm = JSON.stringify(req.body.formValues)
 
 
