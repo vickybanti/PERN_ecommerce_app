@@ -180,7 +180,7 @@ const newRequestBody = {
        body: JSON.stringify(newRequestBody)
         })
 
-           
+           console.log(response.json())
 
         const session = await response.json()
         const result = stripe.redirecToCheckout({
