@@ -1,5 +1,6 @@
 const express = require('express');
-const app = express();
+const router = require('express').Router;
+const router = express();
 const {resolve} = require('path');
 // Replace if using a different env file or config
 const env = require('dotenv').config({path: './.env'});
@@ -14,7 +15,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 });
 
 app.use(express.static(process.env.STATIC_DIR));
-app.use(
+router.use(
   express.json({
     // We need the raw body to verify webhook signatures.
     // Let's compute it only when hitting the Stripe webhook endpoint.
@@ -26,18 +27,18 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   const path = resolve(process.env.STATIC_DIR + '/index.html');
   res.sendFile(path);
 });
 
-app.get('/config', (req, res) => {
+router.get('/config', (req, res) => {
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   });
 });
 
-app.get('/create-payment-intent', async (req, res) => {
+router.get('/create-payment-intent', async (req, res) => {
   // Create a PaymentIntent with the amount, currency, and a payment method type.
   //
   // See the documentation [0] for the full list of supported parameters.
@@ -66,7 +67,7 @@ app.get('/create-payment-intent', async (req, res) => {
 // Expose a endpoint as a webhook handler for asynchronous events.
 // Configure your webhook in the stripe developer dashboard
 // https://dashboard.stripe.com/test/webhooks
-app.post('/webhook', async (req, res) => {
+router.post('/webhook', async (req, res) => {
   let data, eventType;
 
   // Check if webhook signing is configured.
@@ -104,6 +105,8 @@ app.post('/webhook', async (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(4242, () =>
+router.listen(4242, () =>
   console.log(`Node server listening at http://localhost:4242`)
 );
+
+module.exports = router
