@@ -6,7 +6,10 @@
     "\\client\\src\\component",
     "\\client\\src\\component\\Categories",
     "\\client\\src\\pages",
-    "\\client\\src\\pages\\Home"
+    "\\client\\src\\pages\\Home",
+    "\\server",
+    "\\server\\routes"
   ],
+  "SelectedNode": "\\server\\routes\\stripe.js",
   "PreviewInSolutionExplorer": false
 }
