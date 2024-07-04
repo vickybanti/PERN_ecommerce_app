@@ -174,7 +174,7 @@ const newRequestBody = {
         setRequestBody(newRequestBody)
 
         // Create PaymentIntent as soon as the page loads
-   const response = await fetch("https://mooreserver.onrender.com/checkout/create_payment_intent", {
+   const response = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent", {
             method: "POST",
        headers: { "Content-Type": "application/json"},
        body: JSON.stringify(newRequestBody)
