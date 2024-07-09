@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { SET_USERS } from "../redux/slice/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { makeRequest } from "../../../client/src/makeRequest";
+import { makeRequest } from "../makeRequest";
 
 
 const useFetchUsers = (url) => {

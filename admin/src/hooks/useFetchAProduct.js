@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from 'react-router-dom';
-import { makeRequest } from "../../../client/src/makeRequest";
+import { makeRequest } from "../makeRequest";
 
 
 const useFetchAProduct = () => {

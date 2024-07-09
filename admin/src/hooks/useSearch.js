@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { makeRequest } from "../../../client/src/makeRequest"
+import { makeRequest } from "../makeRequest";
 
 function useSearch() {
     const [products, setProducts] = useState([])

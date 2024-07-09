@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { makeRequest } from "../../../client/src/makeRequest";
+import { makeRequest } from "../makeRequest";
 
 
 const useFetchOrders = (url) => {

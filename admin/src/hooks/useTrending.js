@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { makeRequest } from '../../../client/src/makeRequest';
+import { makeRequest } from "../makeRequest";
 
 
     const useTrending = (url) => {
