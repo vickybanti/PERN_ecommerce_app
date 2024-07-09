@@ -52,7 +52,7 @@ app.use("/categories", require("./routes/categories"))
 app.use("/brands", require("./routes/brands"))
 app.use("/review", require("./routes/review"))
 app.use("/saveditems", require("./routes/saved"));
-app.use("/checkout", require("./routes/checkouts"))
+app.use("/checkout", require("./routes/checkout"))
 app.use("/users", require("./routes/users"))
 app.use("/trending", require("./routes/trending"))
 
