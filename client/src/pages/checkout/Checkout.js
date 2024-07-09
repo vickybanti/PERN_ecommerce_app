@@ -141,7 +141,7 @@ function Checkout(props) {
 
       
     async function makePayment(values) {
-        const stripe = loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY")
+        const stripe = await loadStripe("pk_test_51NDulnFA3ATF2zMuXsGjxz0JMzcX6Hj0QEQRBDx2RenNEnv3yz2R0WxB9cmSBhwrYzSMHago4LCa6nYPrSUkwBMu00Nx7VrwrY")
         console.log(stripe)
         console.log(cartItems)
 
@@ -174,7 +174,7 @@ const newRequestBody = {
         setRequestBody(newRequestBody)
 
         // Create PaymentIntent as soon as the page loads
-        const response = await fetch("https://mooreserver.onrender.com/checkout/create-payment-intent/", {
+        const response = await fetch("https://mooreserver.onrender.com/checkout/create_payment_intent/", {
             method: "POST",
             body: JSON.stringify(newRequestBody),
             headers: { "Content-Type": "application/json"},
