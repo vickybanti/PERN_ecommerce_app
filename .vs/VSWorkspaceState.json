@@ -6,10 +6,11 @@
     "\\client\\src\\component",
     "\\client\\src\\component\\Categories",
     "\\client\\src\\pages",
+    "\\client\\src\\pages\\checkout",
     "\\client\\src\\pages\\Home",
     "\\server",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\server\\routes\\stripe.js",
+  "SelectedNode": "\\server\\routes\\checkouts.js",
   "PreviewInSolutionExplorer": false
 }

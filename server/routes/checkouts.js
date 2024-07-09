@@ -105,8 +105,6 @@ router.post('/webhook', async (req, res) => {
   res.sendStatus(200);
 });
 
-router.listen(4242, () =>
-  console.log(`Node server listening at http://localhost:4242`)
-);
+
 
 module.exports = router
