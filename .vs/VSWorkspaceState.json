@@ -1,16 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\client",
-    "\\client\\src",
-    "\\client\\src\\component",
-    "\\client\\src\\component\\Categories",
-    "\\client\\src\\pages",
-    "\\client\\src\\pages\\checkout",
-    "\\client\\src\\pages\\Home",
-    "\\server",
-    "\\server\\routes"
+    "\\admin",
+    "\\admin\\src",
+    "\\admin\\src\\hooks"
   ],
-  "SelectedNode": "\\server\\routes\\checkouts.js",
+  "SelectedNode": "\\admin\\src\\hooks\\useBrands.js",
   "PreviewInSolutionExplorer": false
 }

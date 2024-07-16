@@ -124,7 +124,8 @@ function Login() {
               style={{ fontSize: '20px' }}
             >
               
-              {isFetching ? <CircularProgress sx={{ color: 'white' }} /> : 'Login'}
+              {isFetching ? <CircularProgress sx={{ color: 'white' }} /> :!error?'Login':errorMessage?'Login': 'Login'}
+               
             </Button>
             <div className={styles.links}>
               <Link to="/reset">
