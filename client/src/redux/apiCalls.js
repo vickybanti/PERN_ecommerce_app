@@ -12,7 +12,8 @@ import { makeRequest, userRequest } from "../makeRequest";
 
 
 export const firebaseLogin = async(dispatch) => {
-  dispatch(LOGIN_START());
+    dispatch(LOGIN_START());
+    
 
 
 
@@ -22,7 +23,8 @@ signInWithPopup(auth, provider)
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
-    localStorage.setItem('token', token)
+      localStorage.setItem('token', token)
+
 
     // The signed-in user info.
     const user = result.user;
@@ -79,28 +81,31 @@ export const login = async (dispatch, user) => {
     const parseRes = await response.json();
     console.log(parseRes);
 
-    if (parseRes.token) {
-      localStorage.setItem('token', parseRes.token);
+      if (parseRes.token) {
+          localStorage.setItem('token', parseRes.token);
 
-      const userEmail = user.email;
-      console.log(userEmail);
-      console.log(parseRes.firstname);
+          const userEmail = user.email;
+          console.log(userEmail);
+          console.log(parseRes.firstname);
 
-      dispatch(SET_ACTIVE_USER({
-        isLoggedIn: true,
-        userID: parseRes.user_id,
-        userName: parseRes.firstname,
-        
-      }));
+          dispatch(SET_ACTIVE_USER({
+              isLoggedIn: true,
+              userID: parseRes.user_id,
+              userName: parseRes.firstname,
 
-      console.log(parseRes.token);
-    } else if (!parseRes.user_id) {
-      dispatch(LOGIN_FAILURE({
-        error: true,
-        errorMessage: parseRes.error,
-      }));
-    
-    }
+          }));
+
+          console.log(parseRes.token);
+      } else if (!parseRes.user_id) {
+          dispatch(LOGIN_FAILURE({
+              error: true,
+              errorMessage: parseRes.error,
+          }));
+
+      }
+      else {
+          dispatch(LOGIN_FAILURE())
+      }
   } catch (error) {
     dispatch(LOGIN_FAILURE({
       error: true,

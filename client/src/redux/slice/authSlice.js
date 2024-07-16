@@ -44,7 +44,8 @@ const authSlice = createSlice({
       state.email=null
       state.userID = null
       state.isFetching=false
-      state.error=true
+        state.error = true
+        state.isFetching=false
       state.errorMessage=action.payload
     },
 
