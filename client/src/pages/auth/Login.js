@@ -8,6 +8,7 @@ import { firebaseLogin, login } from '../../redux/apiCalls';
 import { Link } from 'react-router-dom';
 import styles from './auth.module.scss';
 import '../../index.css';
+ 
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -124,7 +125,7 @@ function Login() {
               style={{ fontSize: '20px' }}
             >
               
-              {isFetching ? <CircularProgress sx={{ color: 'white' }} /> :!error?'Login':errorMessage?'Login': 'Login'}
+              {isFetching ? <CircularProgress sx={{ color: 'white' }} /> : error?'Login':errorMessage?'Login': 'Login'}
                
             </Button>
             <div className={styles.links}>

@@ -39,13 +39,12 @@ const authSlice = createSlice({
         state.errorMessage=action.payload
     },
 
-    LOGIN_FAILURE(state, action){
+      LOGIN_FAILURE(state, action) {
+      state.isFetching = false
       state.isLoggedIn=false
       state.email=null
       state.userID = null
-      state.isFetching=false
-        state.error = true
-        state.isFetching=false
+      state.error = true
       state.errorMessage=action.payload
     },
 
