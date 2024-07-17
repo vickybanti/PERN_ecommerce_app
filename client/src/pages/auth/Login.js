@@ -107,27 +107,29 @@ function Login() {
                 </InputAdornment>
               }
             />
+                      <Button
+                          type="submit"
+                          variant="contained"
+                          fullWidth
+                          sx={{
+                              boxShadow: 'var(--box-shadow)',
+                              font: 'Arial',
+                              fontSize: '17px',
+                              padding: '7px 25px',
+                              fontWeight: '600',
+                          }}
+                          endIcon={<LoginOutlined sx={{ color: 'white' }} />}
+                          id="submit"
+                          disabled={!email || !password}
+                          style={{ fontSize: '20px' }}
+                      >
+                          {isFetching ? (
+                              <CircularProgress sx={{ color: 'white' }} />
+                          ) : (
+                              'Login'
+                          )}
+                      </Button>
 
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{
-                boxShadow: 'var(--box-shadow)',
-                font: 'Arial',
-                fontSize: '17px',
-                padding: '7px 25px',
-                fontWeight: '600',
-              }}
-              endIcon={<LoginOutlined sx={{color:"white"}}/>}
-              id="submit"
-              disabled={!email || !password}
-              style={{ fontSize: '20px' }}
-            >
-              
-              {isFetching ? <CircularProgress sx={{ color: 'white' }} /> : error?'Login':errorMessage?'Login': 'Login'}
-               
-            </Button>
             <div className={styles.links}>
               <Link to="/reset">
                 Forgot password?
