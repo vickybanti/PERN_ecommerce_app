@@ -1,15 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\admin\\src",
-    "\\admin\\src\\hooks",
     "\\client",
     "\\client\\src",
     "\\client\\src\\firebase",
-    "\\client\\src\\pages\\auth",
     "\\client\\src\\redux",
     "\\client\\src\\redux\\slice"
   ],
-  "SelectedNode": "\\client\\src\\redux\\slice\\authSlice.js",
   "PreviewInSolutionExplorer": false
 }

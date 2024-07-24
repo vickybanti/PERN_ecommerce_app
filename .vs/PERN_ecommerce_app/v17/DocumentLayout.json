@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\redux\\apiCalls.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\firebase\\config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\firebase\\config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\admin\\src\\hooks\\useBrands.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -106,50 +106,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "authSlice.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\slice\\authSlice.js",
               "RelativeDocumentMoniker": "client\\src\\redux\\slice\\authSlice.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\slice\\authSlice.js",
               "RelativeToolTip": "client\\src\\redux\\slice\\authSlice.js",
-              "ViewState": "AQIAACEAAACAZmZmZmYkwC0AAAAcAAAA",
+              "ViewState": "AQIAAB4AAAAgMzMzMzMLwCoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T15:27:02.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-16T15:27:02.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Login.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
               "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
               "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAAAIgAAAARAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAcwJgAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-07-16T15:00:23.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "apiCalls.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js",
               "RelativeDocumentMoniker": "client\\src\\redux\\apiCalls.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js",
               "RelativeToolTip": "client\\src\\redux\\apiCalls.js",
-              "ViewState": "AQIAAFoAAAAANDMzMzMLwGwAAAATAAAA",
+              "ViewState": "AQIAADEAAAAAkJmZmZnJvxwAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T14:59:43.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-16T14:59:43.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "config.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\firebase\\config.js",
               "RelativeDocumentMoniker": "client\\src\\firebase\\config.js",
@@ -157,8 +155,7 @@
               "RelativeToolTip": "client\\src\\firebase\\config.js",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T14:42:31.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-16T14:42:31.047Z"
             },
             {
               "$type": "Document",
@@ -170,8 +167,7 @@
               "RelativeToolTip": "admin\\src\\hooks\\useBrands.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-12T12:14:29.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T12:14:29.807Z"
             },
             {
               "$type": "Document",
