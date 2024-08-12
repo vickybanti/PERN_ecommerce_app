@@ -53,9 +53,8 @@ signInWithPopup(auth, provider)
     // IdP data available using getAdditionalUserInfo(result)
     // ...
   }).catch((error) => {
-      dispatch(LOGIN_FAILURE());
-      console.error(error);
-     GoogleAuthProvider.credentialFromError(error);
+            console.error(error);
+     //GoogleAuthProvider.credentialFromError(error);
     // ...
   });
   

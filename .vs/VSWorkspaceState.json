@@ -3,9 +3,14 @@
     "",
     "\\client",
     "\\client\\src",
+    "\\client\\src\\component",
+    "\\client\\src\\component\\Card",
+    "\\client\\src\\component\\FeaturedProducts",
     "\\client\\src\\firebase",
-    "\\client\\src\\redux",
+    "\\client\\src\\pages",
+    "\\client\\src\\pages\\Product",
     "\\client\\src\\redux\\slice"
   ],
+  "SelectedNode": "\\client\\src\\pages\\Product\\Product.scss",
   "PreviewInSolutionExplorer": false
 }
