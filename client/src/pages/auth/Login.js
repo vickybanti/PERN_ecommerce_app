@@ -125,9 +125,9 @@ function Login() {
                       >
                           {isFetching ? (
                               <CircularProgress sx={{ color: 'white' }} />
-                          ) : firebaseLogin(dispatch)?'Login':(
+                          ) :
                               'Login'
-                          )}
+                          }
                       </Button>
 
             <div className={styles.links}>
