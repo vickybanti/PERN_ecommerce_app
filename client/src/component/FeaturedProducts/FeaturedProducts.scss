@@ -37,7 +37,7 @@
     row-gap: 20px;
     column-gap: 1.33%;
     padding:40px;
-    margin: 50px auto;
+    margin: 50px 20px;
     grid-template-columns: repeat(auto-fill, 250px);
 
 
@@ -220,7 +220,7 @@
 
         
         .carousel{
-            margin-left: -120px;
+            margin-left: -80px;
             z-index: 0;
 
             button{
