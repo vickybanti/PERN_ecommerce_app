@@ -1,5 +1,5 @@
 module.exports = function(req, res, next) {
-    const {email, password} = req.body;
+    const {email, password, firstname} = req.body;
 
     function validEmail(email) {
         //learn reg x for email validation
@@ -7,7 +7,7 @@ module.exports = function(req, res, next) {
     }
 
     if(req.path === "/register") {
-        if(![email, password].every(Boolean))
+        if(![email, password, firstname].every(Boolean))
         return res.status(401).send("Missing credentials");
 
     }else if(req.path === "/login") {

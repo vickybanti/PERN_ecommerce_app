@@ -52,8 +52,13 @@ router.post("/register",validator, async(req,res) => {
             const sent_from = "olamuyiwavictor@outlook.com";
             const send_to = email;
             const message = welcome;
-            await sendEmail(subject, message, send_to, sent_from);
-        res.json({ token });
+           const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
+        if (sendEmail) {
+            res.json({ token });
+
+        } else {
+            console.log("email does not exist")
+        }
         
     } catch (err) {
         console.log(err.message);

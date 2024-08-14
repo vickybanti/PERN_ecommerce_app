@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Product\\Product.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
     },
@@ -19,12 +11,44 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Product\\Product.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Card\\ItemCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Footer\\Footer.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Navbar.module.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Navbar\\Navbar.module.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Footer\\Footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Categories\\Categories.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Categories\\Categories.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Categories.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Navbar\\Categories.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -37,6 +61,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\slice\\authSlice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\redux\\slice\\authSlice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Navbar\\CartItem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Cart\\Cart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Cart\\Cart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Card\\ItemCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\firebase\\config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -91,10 +131,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\routes\\product.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Navbar\\CartItem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -115,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Home\\Homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\Categories\\Categories.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Home\\HomeBrand.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Home\\HomeBrand.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
@@ -130,76 +162,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Product.scss",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss",
-              "RelativeDocumentMoniker": "client\\src\\pages\\Product\\Product.scss",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss",
-              "RelativeToolTip": "client\\src\\pages\\Product\\Product.scss",
-              "ViewState": "AQIAAHkBAAAAKDMzMzMLwKEBAAAAAAAA",
+              "Title": "Products.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx",
+              "RelativeDocumentMoniker": "client\\src\\pages\\Products\\Products.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx",
+              "RelativeToolTip": "client\\src\\pages\\Products\\Products.jsx",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-08-13T13:49:56.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Navbar.module.scss",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Navbar.module.scss",
+              "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\Navbar.module.scss",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Navbar.module.scss",
+              "RelativeToolTip": "client\\src\\component\\Navbar\\Navbar.module.scss",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAALoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
-              "WhenOpened": "2024-07-24T13:12:23.2Z",
+              "WhenOpened": "2024-08-13T12:34:58.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SearchBar.scss",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
+              "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
+              "RelativeToolTip": "client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-08-13T12:32:40.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Footer.scss",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.scss",
+              "RelativeDocumentMoniker": "client\\src\\component\\Footer\\Footer.scss",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.scss",
+              "RelativeToolTip": "client\\src\\component\\Footer\\Footer.scss",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAAAIwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-08-13T12:30:31.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Footer.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.jsx",
+              "RelativeDocumentMoniker": "client\\src\\component\\Footer\\Footer.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.jsx",
+              "RelativeToolTip": "client\\src\\component\\Footer\\Footer.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-08-13T12:30:30.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Categories.scss",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.scss",
+              "RelativeDocumentMoniker": "client\\src\\component\\Categories\\Categories.scss",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.scss",
+              "RelativeToolTip": "client\\src\\component\\Categories\\Categories.scss",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAEkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-08-13T12:29:20.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Product.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Product\\Product.jsx",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.jsx",
               "RelativeToolTip": "client\\src\\pages\\Product\\Product.jsx",
-              "ViewState": "AQIAABoBAAAAZGZmZmYgwA8AAAA2AAAA",
+              "ViewState": "AQIAAMsAAAAAMzMzMzMrwPgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2024-07-24T13:11:54.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ItemCard.jsx",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx",
-              "RelativeDocumentMoniker": "client\\src\\component\\Card\\ItemCard.jsx",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx",
-              "RelativeToolTip": "client\\src\\component\\Card\\ItemCard.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-07-24T13:08:16.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrendingProduct.jsx",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
-              "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
-              "RelativeToolTip": "client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-07-24T13:07:56.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Product.scss",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss",
+              "RelativeDocumentMoniker": "client\\src\\pages\\Product\\Product.scss",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss",
+              "RelativeToolTip": "client\\src\\pages\\Product\\Product.scss",
+              "ViewState": "AQIAAE8AAAAAMDMzMzMLwGIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-07-24T13:12:23.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Categories.js",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Categories.js",
+              "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\Categories.js",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Categories.js",
+              "RelativeToolTip": "client\\src\\component\\Navbar\\Categories.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-13T12:28:12.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Cart.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Cart\\Cart.jsx",
+              "RelativeDocumentMoniker": "client\\src\\pages\\Cart\\Cart.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Cart\\Cart.jsx",
+              "RelativeToolTip": "client\\src\\pages\\Cart\\Cart.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-08-12T13:19:13.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FeaturedProducts.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
               "RelativeToolTip": "client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
-              "ViewState": "AQIAABUBAAAAODMzMzMLwO8AAAAMAAAA",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAAANwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
               "WhenOpened": "2024-07-24T13:04:49.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Featuredroducts.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx",
               "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx",
@@ -212,7 +322,58 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CartItem.js",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js",
+              "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\CartItem.js",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js",
+              "RelativeToolTip": "client\\src\\component\\Navbar\\CartItem.js",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-17T23:12:43.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.js",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
+              "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
+              "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAAAIMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-16T15:00:23.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Categories.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx",
+              "RelativeDocumentMoniker": "client\\src\\component\\Categories\\Categories.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx",
+              "RelativeToolTip": "client\\src\\component\\Categories\\Categories.jsx",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAFUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-06-07T22:32:33.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TrendingProduct.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
+              "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
+              "RelativeToolTip": "client\\src\\component\\FeaturedProducts\\TrendingProduct.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-07-24T13:07:56.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "authSlice.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\slice\\authSlice.js",
               "RelativeDocumentMoniker": "client\\src\\redux\\slice\\authSlice.js",
@@ -220,36 +381,37 @@
               "RelativeToolTip": "client\\src\\redux\\slice\\authSlice.js",
               "ViewState": "AQIAAB4AAAAgMzMzMzMLwCoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T15:27:02.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.js",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
-              "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
-              "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAcwJsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T15:00:23.033Z",
+              "WhenOpened": "2024-07-16T15:27:02.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "apiCalls.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js",
               "RelativeDocumentMoniker": "client\\src\\redux\\apiCalls.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js",
               "RelativeToolTip": "client\\src\\redux\\apiCalls.js",
-              "ViewState": "AQIAADEAAAAAkJmZmZnJvxwAAAAjAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAADUAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T14:59:43.566Z"
+              "WhenOpened": "2024-07-16T14:59:43.566Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
+              "Title": "ItemCard.jsx",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx",
+              "RelativeDocumentMoniker": "client\\src\\component\\Card\\ItemCard.jsx",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Card\\ItemCard.jsx",
+              "RelativeToolTip": "client\\src\\component\\Card\\ItemCard.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-07-24T13:08:16.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "config.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\firebase\\config.js",
               "RelativeDocumentMoniker": "client\\src\\firebase\\config.js",
@@ -261,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "useBrands.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\admin\\src\\hooks\\useBrands.js",
               "RelativeDocumentMoniker": "admin\\src\\hooks\\useBrands.js",
@@ -273,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "package-lock.json",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\admin\\package-lock.json",
               "RelativeDocumentMoniker": "admin\\package-lock.json",
@@ -285,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\admin\\package.json",
               "RelativeDocumentMoniker": "admin\\package.json",
@@ -297,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "checkouts.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\checkouts.js",
               "RelativeDocumentMoniker": "server\\routes\\checkouts.js",
@@ -309,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "ImageData.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\ImageData.js",
               "RelativeDocumentMoniker": "client\\src\\component\\ImageData.js",
@@ -321,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\.env",
               "RelativeDocumentMoniker": "server\\.env",
@@ -333,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\index.js",
               "RelativeDocumentMoniker": "server\\index.js",
@@ -345,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "checkout.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\checkout.js",
               "RelativeDocumentMoniker": "server\\routes\\checkout.js",
@@ -357,19 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CartItem.js",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js",
-              "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\CartItem.js",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\CartItem.js",
-              "RelativeToolTip": "client\\src\\component\\Navbar\\CartItem.js",
-              "ViewState": "AQIAADIAAAAAQJqZmZnJvz8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-17T23:12:43.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "Payment.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Pay\\Payment.js",
               "RelativeDocumentMoniker": "client\\src\\component\\Pay\\Payment.js",
@@ -381,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "Checkout.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\checkout\\Checkout.js",
               "RelativeDocumentMoniker": "client\\src\\pages\\checkout\\Checkout.js",
@@ -393,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
               "Title": "product.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\product.js",
               "RelativeDocumentMoniker": "server\\routes\\product.js",
@@ -405,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "cart.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\cart.js",
               "RelativeDocumentMoniker": "server\\routes\\cart.js",
@@ -417,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "stripe.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\stripe.js",
               "RelativeDocumentMoniker": "server\\routes\\stripe.js",
@@ -429,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\package.json",
               "RelativeDocumentMoniker": "client\\package.json",
@@ -441,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "Navbar.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Navbar.jsx",
               "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\Navbar.jsx",
@@ -453,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "App.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\App.js",
               "RelativeDocumentMoniker": "client\\src\\App.js",
@@ -465,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "Homepage.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Home\\Homepage.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Home\\Homepage.jsx",
@@ -477,19 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Categories.jsx",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx",
-              "RelativeDocumentMoniker": "client\\src\\component\\Categories\\Categories.jsx",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx",
-              "RelativeToolTip": "client\\src\\component\\Categories\\Categories.jsx",
-              "ViewState": "AQIAAE0AAACAZmZmZmYkwFUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-06-07T22:32:33.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "HomeBrand.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Home\\HomeBrand.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Home\\HomeBrand.jsx",
