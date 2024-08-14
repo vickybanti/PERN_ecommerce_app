@@ -45,10 +45,7 @@ function Register() {
         try {
          
             const body = { email, password, firstname }
-            const response = await userRequest.post("/auth/register", {
-              
-              body: JSON.stringify(body)
-            });
+            const response = await makeRequest.post("/auth/register", body);
             const parseRes = await response.data
             if (parseRes) {
                 console.log(parseRes)
