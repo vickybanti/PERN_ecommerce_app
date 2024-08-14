@@ -8,12 +8,20 @@ const headers = {
   
 };
 
+const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
+const currentUser = user && JSON.parse(user).currentUser;
+const token = currentUser?.accesstoken;
+
 export const makeRequest = axios.create({
   baseURL: BASE_URL,
   headers,
 });
 
 export const userRequest = axios.create({
-  baseURL: BASE_URL,
-  headers,
+    baseURL: BASE_URL,
+    headers: {
+        common: {
+            ...(token && { token: `Bearer ${token}` }),
+        },
+    },
 });

@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Button, CircularProgress, IconButton, Input, InputAdornment, OutlinedInput } from '@mui/material';
 import { firebaseLogin } from '../../redux/apiCalls';
 import { useDispatch } from 'react-redux';
-import { makeRequest } from '../../makeRequest';
+import { makeRequest, userRequest } from '../../makeRequest';
 
 
 
@@ -44,8 +44,8 @@ function Register() {
            else{
         try {
          
-            const body = {email, password,firstname} 
-            const response = await makeRequest.post("/auth/register", {
+            const body = { email, password, firstname }
+            const response = await userRequest.post("/auth/register", {
               
               body: JSON.stringify(body)
             });
