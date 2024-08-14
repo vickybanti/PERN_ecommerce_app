@@ -48,17 +48,17 @@ router.post("/register",validator, async(req,res) => {
         //generating a user token
 
         const token = jwtGenerator(newUser.rows[0].user_id);
-        const subject = "Welcome to moore store";
-            const sent_from = "olamuyiwavictor@outlook.com";
-            const send_to = email;
-            const message = welcome;
-           const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
-        if (sendEmail) {
+        //const subject = "Welcome to moore store";
+           // const sent_from = "olamuyiwavictor@outlook.com";
+            //const send_to = email;
+            //const message = welcome;
+           //const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
+        //if (sendEmail) {
             res.json({ token });
 
-        } else {
-            console.log("email does not exist")
-        }
+        //} else {
+          //  console.log("email does not exist")
+        //}
         
     } catch (err) {
         console.log(err.message);
