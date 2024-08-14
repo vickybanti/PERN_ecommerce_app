@@ -49,7 +49,7 @@ function Register() {
               
               body: JSON.stringify(body)
             });
-            const parseRes = await response.json()
+            const parseRes = await response.data
             if (parseRes) {
                 console.log(parseRes)
                 localStorage.setItem('token', parseRes.token)

@@ -94,8 +94,7 @@ router.post("/refresh", refresh,async(req, res)=> {
 router.post("/login",validator, async (req, res) => {
      //destructuring the req.body
      const {email, password} = req.body;
-     console.log("email=", email)
-     console.log("password=", password)
+   
 
 
     try {
