@@ -27,9 +27,9 @@ router.post("/register",validator, async(req,res) => {
         const user =  await pool.query("SELECT * FROM users WHERE email = $1",[email]);
 
         if (user.rows.length > 0) {
-            return res.status(401).send("user already exists");
+            return res.status(401).json("user already exists");
 
-        } else {
+        } 
 
             //bcrypt the password
 
@@ -54,12 +54,12 @@ router.post("/register",validator, async(req,res) => {
             const message = welcome;
             const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
             if (!sendEmail) {
-                return res.status(401).send("email does not exist");
+                return res.status(401).json("email does not exist");
 
         }
             res.json({ token });
 
-        }
+        
         
     } catch (err) {
         console.log(err.message);
