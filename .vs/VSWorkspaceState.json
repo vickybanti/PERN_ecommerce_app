@@ -3,14 +3,14 @@
     "",
     "\\client",
     "\\client\\src",
-    "\\client\\src\\component",
-    "\\client\\src\\component\\Card",
-    "\\client\\src\\component\\FeaturedProducts",
     "\\client\\src\\firebase",
     "\\client\\src\\pages",
+    "\\client\\src\\pages\\auth",
     "\\client\\src\\pages\\Product",
-    "\\client\\src\\redux\\slice"
+    "\\server",
+    "\\server\\middleware",
+    "\\server\\routes"
   ],
-  "SelectedNode": "\\client\\src\\pages\\Product\\Product.scss",
+  "SelectedNode": "\\server\\routes\\jwAuth.js",
   "PreviewInSolutionExplorer": false
 }

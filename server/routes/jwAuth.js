@@ -28,37 +28,38 @@ router.post("/register",validator, async(req,res) => {
 
         if (user.rows.length > 0) {
             return res.status(401).send("user already exists");
-        
-        }
 
-        //bcrypt the password
+        } else {
 
-        const saltRounds = 10;
-        const salt = await bcrypt.genSalt(saltRounds);
+            //bcrypt the password
 
-        const bcryptPassword = await bcrypt.hash(password, salt);
+            const saltRounds = 10;
+            const salt = await bcrypt.genSalt(saltRounds);
 
-        //enter a new user
-        const date = new Date()
-        const created = new Date().getMonth();
-        const newUser = await pool.query(`INSERT INTO users (email, password, firstname,createdat,
+            const bcryptPassword = await bcrypt.hash(password, salt);
+
+            //enter a new user
+            const date = new Date()
+            const created = new Date().getMonth();
+            const newUser = await pool.query(`INSERT INTO users (email, password, firstname,createdat,
              updatedat, isadmin) VALUES 
              ('${email}','${bcryptPassword}','${firstname}','${date}','${date}','false' ) RETURNING*`);
 
-        //generating a user token
+            //generating a user token
 
-        const token = jwtGenerator(newUser.rows[0].user_id);
-        //const subject = "Welcome to moore store";
-           // const sent_from = "olamuyiwavictor@outlook.com";
-            //const send_to = email;
-            //const message = welcome;
-           //const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
-        //if (sendEmail) {
+            const token = jwtGenerator(newUser.rows[0].user_id);
+            const subject = "Welcome to moore store";
+            const sent_from = "olamuyiwavictor@outlook.com";
+            const send_to = email;
+            const message = welcome;
+            const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
+            if (!sendEmail) {
+                return res.status(401).send("email does not exist");
+
+        }
             res.json({ token });
 
-        //} else {
-          //  console.log("email does not exist")
-        //}
+        }
         
     } catch (err) {
         console.log(err.message);

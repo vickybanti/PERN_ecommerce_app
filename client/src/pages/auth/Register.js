@@ -91,7 +91,6 @@ function Register() {
     //add ToastContainer 
     
 
-    {isLoading && <CircularProgress />}
     <section className={`container ${styles.auth}`}>
       
       <div className={styles.form}>
@@ -174,7 +173,7 @@ function Register() {
         fullWidth
         sx={{backgroundColor:"Highlight"}}
         id="submit" disabled={!email || !password || !firstname} style={{fontSize:"20px"}}>
-        <LoginOutlined />{isLoading?"Loading...":"Register"}</Button>
+          <LoginOutlined />{ isLoading? <CircularProgress /> : "Register"}</Button>
         <h4 style={{color:"red", fontWeight:200}}>{message}</h4>
             
         <span className={styles.register}>
