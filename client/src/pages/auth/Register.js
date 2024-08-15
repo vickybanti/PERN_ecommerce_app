@@ -45,7 +45,7 @@ function Register() {
         try {
          
             const body = { email, password, firstname }
-            const response = await makeRequest.post("/auth/register", body);
+            const response = await makeRequest.post("/auth/register",{ body: JSON.stringify(body)});
             const parseRes = await response.data
             if (parseRes) {
                 console.log(parseRes)
@@ -62,7 +62,7 @@ function Register() {
             
           } 
          catch (err) {
-             setMessage(err.message)
+             console.error(err.message)
             
           }
     }
