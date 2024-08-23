@@ -27,7 +27,7 @@ router.post("/register", validator, async (req, res) => {
         // Check if user already exists
         const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
         if (user.rows.length > 0) {
-            return res.status(400).send("User already exists");
+            return res.status(400).json("User already exists");
         }
 
         // Hash the password using bcrypt
@@ -53,7 +53,7 @@ router.post("/register", validator, async (req, res) => {
         const message = welcome;
         const emailSent = await sendEmail(subject, message, send_to, sent_from);
         if (!emailSent) {
-            return res.status(500).send("Failed to send email");
+            return res.status(500).json("Failed to send email");
         }
 
         // Return the token as the response
@@ -61,7 +61,7 @@ router.post("/register", validator, async (req, res) => {
 
     } catch (err) {
         console.error(err.message);
-        res.status(500).send("Server error");
+        res.status(500).json("Server error");
     }
 });
 

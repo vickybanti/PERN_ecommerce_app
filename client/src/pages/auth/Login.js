@@ -130,6 +130,8 @@ function Login() {
                           }
                       </Button>
 
+                      <span style={{ color: 'red' }}>{error && message}</span>
+
             <div className={styles.links}>
               <Link to="/reset">
                 Forgot password?
@@ -152,7 +154,7 @@ function Login() {
           <span className={styles.register}>
             <p>Don't have an account?</p> <Link to="/register" style={{marginBottom:"4px"}}><Label /> Register</Link>
           </span>
-          <span style={{ color: 'red' }}>{error && message}</span>
+         
 
         </div>
       </div>
