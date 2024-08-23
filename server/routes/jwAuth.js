@@ -19,52 +19,51 @@ const welcome = myModule.welcome;
 
 //registering
 
-router.post("/register",validator, async(req,res) => {
+router.post("/register", validator, async (req, res) => {
     try {
-        //destructure the req.body(name, email, password)
-        const { email, password,firstname} = req.body
+        // Destructure the req.body (name, email, password)
+        const { email, password, firstname } = req.body;
 
-        const user =  await pool.query("SELECT * FROM users WHERE email = $1",[email]);
-
+        // Check if user already exists
+        const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
         if (user.rows.length > 0) {
-            return res.send("user already exists");
+            return res.status(400).send("User already exists");
+        }
 
-        } 
+        // Hash the password using bcrypt
+        const saltRounds = 10;
+        const salt = await bcrypt.genSalt(saltRounds);
+        const bcryptPassword = await bcrypt.hash(password, salt);
 
-            //bcrypt the password
+        // Insert a new user into the database
+        const date = new Date();
+        const newUser = await pool.query(
+            `INSERT INTO users (email, password, firstname, createdat, updatedat, isadmin) 
+            VALUES ($1, $2, $3, $4, $4, false) RETURNING *`,
+            [email, bcryptPassword, firstname, date]
+        );
 
-            const saltRounds = 10;
-            const salt = await bcrypt.genSalt(saltRounds);
+        // Generate a user token
+        const token = jwtGenerator(newUser.rows[0].user_id);
 
-            const bcryptPassword = await bcrypt.hash(password, salt);
+        // Send welcome email
+        const subject = "Welcome to Moore Store";
+        const sent_from = "olamuyiwavictor@outlook.com";
+        const send_to = email;
+        const message = welcome;
+        const emailSent = await sendEmail(subject, message, send_to, sent_from);
+        if (!emailSent) {
+            return res.status(500).send("Failed to send email");
+        }
 
-            //enter a new user
-            const date = new Date()
-            const created = new Date().getMonth();
-            const newUser = await pool.query(`INSERT INTO users (email, password, firstname,createdat,
-             updatedat, isadmin) VALUES 
-             ('${email}','${bcryptPassword}','${firstname}','${date}','${date}','false' ) RETURNING*`);
+        // Return the token as the response
+        res.json({ token });
 
-            //generating a user token
-
-            const token = jwtGenerator(newUser.rows[0].user_id);
-            const subject = "Welcome to moore store";
-            const sent_from = "olamuyiwavictor@outlook.com";
-            const send_to = email;
-            const message = welcome;
-            const sendEmail =  await sendEmail(subject, message, send_to, sent_from);
-            if (!sendEmail) {
-                return res.send("email does not exist");
-                }
-            res.json({ token });
-
-        
-        
     } catch (err) {
-        console.log(err.message);
-        res.send("server error");
-        
+        console.error(err.message);
+        res.status(500).send("Server error");
     }
+});
 
    
 });

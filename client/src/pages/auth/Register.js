@@ -32,40 +32,40 @@ function Register() {
     
   
 
-    async function registerUser(e, res) {
-      e.preventDefault();
-          console.log(email,password);
-          if (password !==cPassword) {
-              setMessage("Passwords do not match")
-           }
-           else if( password.length <6 ){
-              setMessage("Password is less than 6 characters")
-           }
-           else{
+    async function registerUser(e) {
+        e.preventDefault();
+
+        if (password !== cPassword) {
+            setMessage("Passwords do not match");
+            return;
+        } else if (password.length < 6) {
+            setMessage("Password is less than 6 characters");
+            return;
+        }
+
         try {
-         
-            const body = { email, password, firstname }
-            const response = await makeRequest.post("/auth/register",{ body: JSON.stringify(body)});
-            const parseRes = await response.data
-            if (parseRes) {
-                console.log(parseRes)
-                localStorage.setItem('token', parseRes.token)
-                setMessage("User registration successful")
-                navigate("/login") 
-                 
+            const body = { email, password, firstname };
+            const response = await makeRequest.post("/auth/register", body);
+            const parseRes = response.data;
+
+            if (response.status === 200) { // Check if the registration was successful
+                localStorage.setItem('token', parseRes.token);
+                setMessage("User registration successful");
+                navigate("/login");
+            } else if (response.status === 400) { // Handle the case where the user already exists
+                setMessage("User already exists");
+            } else {
+                setMessage("Registration failed");
             }
-            
-            else {
-             setMessage("User already exists")
-            }
-            setLoading(false)
-            
-          } 
-         catch (err) {
-             console.error(err.message)
-            
-          }
+
+            setLoading(false);
+        } catch (err) {
+            console.error(err.message);
+            setMessage(err.response ? err.response.data : "Server error");
+            setLoading(false);
+        }
     }
+
         // registration with firebase
   //       createUserWithEmailAndPassword(auth, email, password)
   // .then((userCredential) => {
