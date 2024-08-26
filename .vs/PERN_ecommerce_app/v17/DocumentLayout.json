@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\jwAuth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\routes\\jwAuth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\makeRequest.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\makeRequest.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\userId.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -37,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Product\\Product.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\Products\\Products.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
@@ -77,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\redux\\apiCalls.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -186,35 +186,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "userId.js",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\userId.js",
-              "RelativeDocumentMoniker": "server\\middleware\\userId.js",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\userId.js",
-              "RelativeToolTip": "server\\middleware\\userId.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-14T10:49:55.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "authorization.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js",
               "RelativeDocumentMoniker": "server\\middleware\\authorization.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js",
               "RelativeToolTip": "server\\middleware\\authorization.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAcAAAAgMzMzMzMrwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-14T10:49:36.397Z"
+              "WhenOpened": "2024-08-14T10:49:36.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "validator.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\validator.js",
               "RelativeDocumentMoniker": "server\\middleware\\validator.js",
@@ -226,33 +215,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "jwAuth.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\jwAuth.js",
               "RelativeDocumentMoniker": "server\\routes\\jwAuth.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\jwAuth.js",
               "RelativeToolTip": "server\\routes\\jwAuth.js",
-              "ViewState": "AQIAACwAAAAAnJmZmZn5vzsAAAAAAAAA",
+              "ViewState": "AQIAAA8AAACgmZmZmZklwCAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-14T10:30:55.08Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Register.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js",
               "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Register.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js",
               "RelativeToolTip": "client\\src\\pages\\auth\\Register.js",
-              "ViewState": "AQIAACcAAAAAAJqZmZnJvzMAAAA9AAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAQwEMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-14T10:26:58.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "Products.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Products\\Products.jsx",
@@ -260,11 +249,12 @@
               "RelativeToolTip": "client\\src\\pages\\Products\\Products.jsx",
               "ViewState": "AQIAAFkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-08-13T13:49:56.349Z"
+              "WhenOpened": "2024-08-13T13:49:56.349Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Navbar.module.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Navbar.module.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\Navbar.module.scss",
@@ -276,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\index.js",
               "RelativeDocumentMoniker": "server\\index.js",
@@ -284,12 +274,36 @@
               "RelativeToolTip": "server\\index.js",
               "ViewState": "AQIAACYAAAAAAAAAAAAAADUAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-16T16:32:25.895Z",
+              "WhenOpened": "2024-06-16T16:32:25.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.js",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
+              "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
+              "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAAAIQAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-16T15:00:23.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "userId.js",
+              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\userId.js",
+              "RelativeDocumentMoniker": "server\\middleware\\userId.js",
+              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\userId.js",
+              "RelativeToolTip": "server\\middleware\\userId.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-14T10:49:55.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "makeRequest.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\makeRequest.js",
               "RelativeDocumentMoniker": "client\\src\\makeRequest.js",
@@ -301,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "SearchBar.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\SearchBar\\SearchBar.scss",
@@ -313,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Footer.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\Footer\\Footer.scss",
@@ -325,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Footer.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Footer\\Footer.jsx",
               "RelativeDocumentMoniker": "client\\src\\component\\Footer\\Footer.jsx",
@@ -337,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Categories.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\Categories\\Categories.scss",
@@ -349,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Product.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Product\\Product.jsx",
@@ -361,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Product.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Product\\Product.scss",
               "RelativeDocumentMoniker": "client\\src\\pages\\Product\\Product.scss",
@@ -373,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Categories.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Navbar\\Categories.js",
               "RelativeDocumentMoniker": "client\\src\\component\\Navbar\\Categories.js",
@@ -397,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "FeaturedProducts.scss",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
               "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\FeaturedProducts.scss",
@@ -409,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Featuredroducts.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx",
               "RelativeDocumentMoniker": "client\\src\\component\\FeaturedProducts\\Featuredroducts.jsx",
@@ -433,19 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Login.js",
-              "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
-              "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
-              "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
-              "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAAAIMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-16T15:00:23.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Categories.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\component\\Categories\\Categories.jsx",
               "RelativeDocumentMoniker": "client\\src\\component\\Categories\\Categories.jsx",

@@ -64,7 +64,7 @@ function Register() {
             setMessage(err.response ? err.response.data : "Server error");
             setLoading(false);
         }
-    }
+    
 
         // registration with firebase
   //       createUserWithEmailAndPassword(auth, email, password)
