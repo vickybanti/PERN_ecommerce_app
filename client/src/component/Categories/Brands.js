@@ -15,12 +15,11 @@ function Brands() {
 
 
       <div className="brandedWears" >
-        <NavLink to="/brands/nike">
+        <NavLink to="/Products/brands/nike">
 
           <img
             className="brandedimg"
             src="uploads/shoes/IMG-20230405-WA0032.jpg"
-            //src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
             alt=""
              />
 
@@ -30,7 +29,7 @@ function Brands() {
       </div>
 
       <div className="brandedWears">
-        <NavLink to="/brands/versace">
+        <NavLink to="/Products/brands/versace">
 
 
           <img
@@ -43,10 +42,10 @@ function Brands() {
       </div>
 
       <div className="brandedWears">
-        <NavLink to="/brands/prada">
+        <NavLink to="/Poducts/brands/prada">
 
           <img
-            className=" brandedimg"
+            className="brandedimg"
             src="uploads/shoes/IMG-20230405-WA0031.jpg"
             alt=""
              />
@@ -67,7 +66,7 @@ function Brands() {
 
           <img
             className="brandedimg"
-            src="Uploads/shoes/IMG-20230530-WA0011.jpg"
+            src="http://clarks.scene7.com/is/image/Pangaea2Build/M_8TH_ST_SPORTS_Mobile?wid=705&fmt=webp"
             alt=""
              />
 

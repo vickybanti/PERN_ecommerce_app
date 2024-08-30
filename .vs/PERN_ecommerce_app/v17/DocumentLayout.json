@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server\\middleware\\authorization.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:client\\src\\pages\\auth\\Register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -186,11 +186,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "authorization.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\middleware\\authorization.js",
               "RelativeDocumentMoniker": "server\\middleware\\authorization.js",
@@ -198,8 +198,7 @@
               "RelativeToolTip": "server\\middleware\\authorization.js",
               "ViewState": "AQIAAAcAAAAgMzMzMzMrwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-14T10:49:36.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-14T10:49:36.397Z"
             },
             {
               "$type": "Document",
@@ -215,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "jwAuth.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\server\\routes\\jwAuth.js",
               "RelativeDocumentMoniker": "server\\routes\\jwAuth.js",
@@ -223,25 +222,24 @@
               "RelativeToolTip": "server\\routes\\jwAuth.js",
               "ViewState": "AQIAAA8AAACgmZmZmZklwCAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-14T10:30:55.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-14T10:30:55.08Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Register.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js",
               "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Register.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Register.js",
               "RelativeToolTip": "client\\src\\pages\\auth\\Register.js",
-              "ViewState": "AQIAACwAAAAAAAAAAAAQwEMAAAAAAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAAEEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-14T10:26:58.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Products.jsx",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\Products\\Products.jsx",
               "RelativeDocumentMoniker": "client\\src\\pages\\Products\\Products.jsx",
@@ -249,8 +247,7 @@
               "RelativeToolTip": "client\\src\\pages\\Products\\Products.jsx",
               "ViewState": "AQIAAFkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-08-13T13:49:56.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T13:49:56.349Z"
             },
             {
               "$type": "Document",
@@ -278,13 +275,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Login.js",
               "DocumentMoniker": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
               "RelativeDocumentMoniker": "client\\src\\pages\\auth\\Login.js",
               "ToolTip": "C:\\Users\\VICTOR\\source\\repos\\vickybanti\\PERN_ecommerce_app\\client\\src\\pages\\auth\\Login.js",
               "RelativeToolTip": "client\\src\\pages\\auth\\Login.js",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAAAIQAAABOAAAA",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAAAIQAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-07-16T15:00:23.033Z",
               "EditorCaption": ""
