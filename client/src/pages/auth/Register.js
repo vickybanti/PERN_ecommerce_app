@@ -48,7 +48,7 @@ function Register() {
             const response = await makeRequest.post("/auth/register", JSON.stringify(body));
             const parseRes = response.data;
 
-            if (response.status === 200) { // Check if the registration was successful
+            if (parseRes) { // Check if the registration was successful
                 localStorage.setItem('token', parseRes.token);
                 setMessage("User registration successful");
                 navigate("/login");
